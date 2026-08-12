@@ -61118,6 +61118,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -61133,11 +61134,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -61208,6 +61211,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -61268,6 +61275,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -61286,6 +61297,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -66179,6 +66194,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -66194,11 +66210,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -66269,6 +66287,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -66329,6 +66351,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -66347,6 +66373,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -73855,6 +73885,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -73870,11 +73901,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -73945,6 +73978,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -74005,6 +74042,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -74023,6 +74064,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -75642,6 +75687,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -75657,11 +75703,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -75732,6 +75780,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -75792,6 +75844,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -75810,6 +75866,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -77610,6 +77670,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -77625,11 +77686,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -77700,6 +77763,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -77760,6 +77827,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -77778,6 +77849,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -79315,6 +79390,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -79330,11 +79406,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -79405,6 +79483,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -79465,6 +79547,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -79483,6 +79569,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -81020,6 +81110,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -81035,11 +81126,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -81110,6 +81203,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -81170,6 +81267,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -81188,6 +81289,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -82702,6 +82807,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -82717,11 +82823,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -82792,6 +82900,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -82852,6 +82964,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -82870,6 +82986,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -84407,6 +84527,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -84422,11 +84543,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -84497,6 +84620,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -84557,6 +84684,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -84575,6 +84706,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -86412,6 +86547,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -86427,11 +86563,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -86502,6 +86640,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -86562,6 +86704,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -86580,6 +86726,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -88166,6 +88316,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -88181,11 +88332,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -88256,6 +88409,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -88316,6 +88473,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -88334,6 +88495,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -89920,6 +90085,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -89935,11 +90101,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -90010,6 +90178,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -90070,6 +90242,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -90088,6 +90264,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -91674,6 +91854,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -91689,11 +91870,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -91764,6 +91947,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -91824,6 +92011,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -91842,6 +92033,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -93428,6 +93623,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -93443,11 +93639,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -93518,6 +93716,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -93578,6 +93780,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -93596,6 +93802,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -95182,6 +95392,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -95197,11 +95408,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -95272,6 +95485,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -95332,6 +95549,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -95350,6 +95571,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -97066,6 +97291,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -97081,11 +97307,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -97156,6 +97384,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -97216,6 +97448,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -97234,6 +97470,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -98820,6 +99060,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -98835,11 +99076,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -98910,6 +99153,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -98970,6 +99217,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -98988,6 +99239,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -100574,6 +100829,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -100589,11 +100845,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -100664,6 +100922,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -100724,6 +100986,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -100742,6 +101008,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -102328,6 +102598,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -102343,11 +102614,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -102418,6 +102691,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -102478,6 +102755,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -102496,6 +102777,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -104082,6 +104367,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -104097,11 +104383,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -104172,6 +104460,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -104232,6 +104524,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -104250,6 +104546,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -105836,6 +106136,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -105851,11 +106152,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -105926,6 +106229,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -105986,6 +106293,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -106004,6 +106315,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -111494,6 +111809,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -111509,11 +111825,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -111583,6 +111901,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -111643,6 +111965,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -111661,6 +111987,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -111757,6 +112087,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -111772,11 +112103,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -111846,6 +112179,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -111906,6 +112243,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -111924,6 +112265,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -148710,6 +149055,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -148725,11 +149071,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -148800,6 +149148,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -148860,6 +149212,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -148878,6 +149234,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -149107,6 +149467,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -149122,11 +149483,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -149197,6 +149560,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -149257,6 +149624,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -149275,6 +149646,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -149485,6 +149860,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -149500,11 +149876,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -149575,6 +149953,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -149635,6 +150017,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -149653,6 +150039,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -149882,6 +150272,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -149897,11 +150288,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -149972,6 +150365,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -150032,6 +150429,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -150050,6 +150451,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",
@@ -150260,6 +150665,7 @@
           "DKK",
           "EUR",
           "FJD",
+          "GHS",
           "HKD",
           "HUF",
           "ISK",
@@ -150275,11 +150681,13 @@
           "NZD",
           "NGN",
           "NOK",
+          "OMR",
           "XPF",
           "PEN",
           "PHP",
           "PLN",
           "GBP",
+          "QAR",
           "RWF",
           "SAR",
           "SGD",
@@ -150350,6 +150758,10 @@
               "name": "Fjd"
             },
             {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
               "value": "HKD",
               "name": "Hkd"
             },
@@ -150410,6 +150822,10 @@
               "name": "Nok"
             },
             {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
               "value": "XPF",
               "name": "Xpf"
             },
@@ -150428,6 +150844,10 @@
             {
               "value": "GBP",
               "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
             },
             {
               "value": "RWF",

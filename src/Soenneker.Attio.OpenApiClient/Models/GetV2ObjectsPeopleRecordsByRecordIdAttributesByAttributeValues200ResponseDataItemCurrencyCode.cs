@@ -55,6 +55,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         #pragma warning disable CS1591
         Fjd,
         #pragma warning restore CS1591
+        [EnumMember(Value = "GHS")]
+        #pragma warning disable CS1591
+        Ghs,
+        #pragma warning restore CS1591
         [EnumMember(Value = "HKD")]
         #pragma warning disable CS1591
         Hkd,
@@ -115,6 +119,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         #pragma warning disable CS1591
         Nok,
         #pragma warning restore CS1591
+        [EnumMember(Value = "OMR")]
+        #pragma warning disable CS1591
+        Omr,
+        #pragma warning restore CS1591
         [EnumMember(Value = "XPF")]
         #pragma warning disable CS1591
         Xpf,
@@ -134,6 +142,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         [EnumMember(Value = "GBP")]
         #pragma warning disable CS1591
         Gbp,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "QAR")]
+        #pragma warning disable CS1591
+        Qar,
         #pragma warning restore CS1591
         [EnumMember(Value = "RWF")]
         #pragma warning disable CS1591
