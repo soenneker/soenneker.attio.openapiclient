@@ -14,7 +14,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>One or more events the webhook is subscribed to.</summary>
+        /// <summary>One or more events the webhook is subscribed to.Within a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate — whether against another webhook or repeated within a single request — is rejected with a `409 uniqueness_conflict`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItem>? Subscriptions { get; set; }

@@ -40,7 +40,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #endif
         /// <summary>The state of the webhook. Webhooks marked as active and degraded will receive events, inactive ones will not. If a webhook remains in the degraded state for 7 days, it will be marked inactive.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataStatus? Status { get; set; }
-        /// <summary>One or more events the webhook is subscribed to.</summary>
+        /// <summary>One or more events the webhook is subscribed to.Within a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate — whether against another webhook or repeated within a single request — is rejected with a `409 uniqueness_conflict`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItem>? Subscriptions { get; set; }

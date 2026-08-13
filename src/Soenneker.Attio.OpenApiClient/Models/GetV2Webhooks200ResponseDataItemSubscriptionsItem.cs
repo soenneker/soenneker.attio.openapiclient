@@ -16,7 +16,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of event the webhook is subscribed to.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200ResponseDataItemSubscriptionsItemEventType? EventType { get; set; }
-        /// <summary>Filters to determine whether the webhook event should be sent. If null, the filter always passes.</summary>
+        /// <summary>Filters to determine whether the webhook event should be sent. If null, the filter always passes.When filters are compared for uniqueness, key order and the order of operations are ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200ResponseDataItemSubscriptionsItemFilter? Filter { get; set; }

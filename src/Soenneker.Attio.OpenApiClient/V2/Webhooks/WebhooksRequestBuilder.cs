@@ -65,13 +65,14 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a webhook and associated subscriptions.Required scopes: `webhook:read-write`.&quot;
+        /// &quot;Create a webhook and associated subscriptions.Each combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.Required scopes: `webhook:read-write`.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks409Response">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response?> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,6 +87,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks400Response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks409Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -109,7 +111,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a webhook and associated subscriptions.Required scopes: `webhook:read-write`.&quot;
+        /// &quot;Create a webhook and associated subscriptions.Each combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.Required scopes: `webhook:read-write`.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

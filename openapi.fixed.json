@@ -3389,7 +3389,11 @@
             "schema": {
               "type": "string",
               "description": "Filter tasks by workspace member assignees. Workspace members can be referenced by either their email address or ID. Pass an empty value or the string \u0060null\u0060 to find tasks with no assignee.",
-              "nullable": true
+              "nullable": true,
+              "example": "50cf242c-7fa3-4cad-87d0-75b1af71c57b",
+              "x-jsonschema-examples": [
+                "alice@attio.com"
+              ]
             }
           },
           {
@@ -4980,7 +4984,7 @@
           "Webhooks"
         ],
         "summary": "Create a webhook",
-        "description": "\u0022Create a webhook and associated subscriptions.\n\nRequired scopes: \u0060webhook:read-write\u0060.\u0022",
+        "description": "\u0022Create a webhook and associated subscriptions.\n\nEach combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.\n\nRequired scopes: \u0060webhook:read-write\u0060.\u0022",
         "operationId": "PostV2Webhooks",
         "requestBody": {
           "content": {
@@ -5008,6 +5012,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PostV2Webhooks400Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2Webhooks409Response"
                 }
               }
             }
@@ -5078,7 +5092,7 @@
           "Webhooks"
         ],
         "summary": "Update a webhook",
-        "description": "\u0022Update a webhook and associated subscriptions.\n\nRequired scopes: \u0060webhook:read-write\u0060.\u0022",
+        "description": "\u0022Update a webhook and associated subscriptions.\n\nEach combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409. Changing the target URL re-checks the webhook\u0027s existing subscriptions against the new URL.\n\nRequired scopes: \u0060webhook:read-write\u0060.\u0022",
         "operationId": "PatchV2WebhooksByWebhookId",
         "parameters": [
           {
@@ -5119,6 +5133,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2WebhooksByWebhookId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2WebhooksByWebhookId409Response"
                 }
               }
             }
@@ -9856,7 +9880,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -14468,6 +14493,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2Webhooks409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2Webhooks409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PostV2Webhooks409ResponseType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/PostV2Webhooks409ResponseCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Each subscription must have a unique combination of target URL, event type and filter."
+          }
+        },
+        "description": "Conflict"
+      },
       "GetV2WebhooksByWebhookId200Response": {
         "required": [
           "data"
@@ -14552,6 +14602,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PatchV2WebhooksByWebhookId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2WebhooksByWebhookId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PatchV2WebhooksByWebhookId409ResponseType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/PatchV2WebhooksByWebhookId409ResponseCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Each subscription must have a unique combination of target URL, event type and filter."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2WebhooksByWebhookId200Response": {
         "type": "object",
@@ -17499,7 +17574,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "The default value for this attribute. Static values are used to directly populate values using their contents. Dynamic values are used to lookup data at the point of creation. For example, you could use a dynamic value to insert a value for the currently logged in user. Which default values are available is dependent on the type of the attribute. Default values are not currently supported on people or company objects.",
@@ -17524,7 +17600,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "The default value for this attribute. Static values are used to directly populate values using their contents. Dynamic values are used to lookup data at the point of creation. For example, you could use a dynamic value to insert a value for the currently logged in user. Which default values are available is dependent on the type of the attribute. Default values are not currently supported on people or company objects.",
@@ -17982,10 +18059,11 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
-        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.",
+        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.\n\nWhen filters are compared for uniqueness, key order and the order of operations are ignored.",
         "example": {
           "$and": [
             {
@@ -18008,10 +18086,11 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
-        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.",
+        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.\n\nWhen filters are compared for uniqueness, key order and the order of operations are ignored.",
         "example": {
           "$and": [
             {
@@ -18034,10 +18113,11 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
-        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.",
+        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.\n\nWhen filters are compared for uniqueness, key order and the order of operations are ignored.",
         "example": {
           "$and": [
             {
@@ -18060,10 +18140,11 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
-        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.",
+        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.\n\nWhen filters are compared for uniqueness, key order and the order of operations are ignored.",
         "example": {
           "$and": [
             {
@@ -18086,10 +18167,11 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
-        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.",
+        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.\n\nWhen filters are compared for uniqueness, key order and the order of operations are ignored.",
         "example": {
           "$and": [
             {
@@ -18112,10 +18194,11 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
-        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.",
+        "description": "Filters to determine whether the webhook event should be sent. If null, the filter always passes.\n\nWhen filters are compared for uniqueness, key order and the order of operations are ignored.",
         "example": {
           "$and": [
             {
@@ -20725,7 +20808,7 @@
             "items": {
               "$ref": "#/components/schemas/GetV2Webhooks200ResponseDataItemSubscriptionsItem"
             },
-            "description": "One or more events the webhook is subscribed to."
+            "description": "One or more events the webhook is subscribed to.\n\nWithin a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate \u2014 whether against another webhook or repeated within a single request \u2014 is rejected with a \u0060409 uniqueness_conflict\u0060."
           },
           "id": {
             "$ref": "#/components/schemas/GetV2Webhooks200ResponseDataItemId"
@@ -20759,7 +20842,7 @@
             "items": {
               "$ref": "#/components/schemas/PostV2WebhooksRequestDataSubscriptionsItem"
             },
-            "description": "One or more events the webhook is subscribed to."
+            "description": "One or more events the webhook is subscribed to.\n\nWithin a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate \u2014 whether against another webhook or repeated within a single request \u2014 is rejected with a \u0060409 uniqueness_conflict\u0060."
           }
         }
       },
@@ -20786,7 +20869,7 @@
             "items": {
               "$ref": "#/components/schemas/PostV2Webhooks200ResponseDataSubscriptionsItem"
             },
-            "description": "One or more events the webhook is subscribed to."
+            "description": "One or more events the webhook is subscribed to.\n\nWithin a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate \u2014 whether against another webhook or repeated within a single request \u2014 is rejected with a \u0060409 uniqueness_conflict\u0060."
           },
           "id": {
             "$ref": "#/components/schemas/PostV2Webhooks200ResponseDataId"
@@ -20828,7 +20911,7 @@
             "items": {
               "$ref": "#/components/schemas/GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem"
             },
-            "description": "One or more events the webhook is subscribed to."
+            "description": "One or more events the webhook is subscribed to.\n\nWithin a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate \u2014 whether against another webhook or repeated within a single request \u2014 is rejected with a \u0060409 uniqueness_conflict\u0060."
           },
           "id": {
             "$ref": "#/components/schemas/GetV2WebhooksByWebhookId200ResponseDataId"
@@ -20858,7 +20941,7 @@
             "items": {
               "$ref": "#/components/schemas/PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItem"
             },
-            "description": "One or more events the webhook is subscribed to."
+            "description": "One or more events the webhook is subscribed to.\n\nWithin a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate \u2014 whether against another webhook or repeated within a single request \u2014 is rejected with a \u0060409 uniqueness_conflict\u0060."
           }
         }
       },
@@ -20884,7 +20967,7 @@
             "items": {
               "$ref": "#/components/schemas/PatchV2WebhooksByWebhookId200ResponseDataSubscriptionsItem"
             },
-            "description": "One or more events the webhook is subscribed to."
+            "description": "One or more events the webhook is subscribed to.\n\nWithin a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate \u2014 whether against another webhook or repeated within a single request \u2014 is rejected with a \u0060409 uniqueness_conflict\u0060."
           },
           "id": {
             "$ref": "#/components/schemas/PatchV2WebhooksByWebhookId200ResponseDataId"
@@ -70069,6 +70152,47 @@
           ]
         }
       },
+      "PostV2Webhooks409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PostV2Webhooks409ResponseType": {
+        "enum": [
+          "invalid_request_error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2Webhooks409ResponseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "invalid_request_error",
+              "name": "InvalidRequestError"
+            }
+          ]
+        }
+      },
+      "PostV2Webhooks409ResponseCode": {
+        "enum": [
+          "uniqueness_conflict"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2Webhooks409ResponseCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "uniqueness_conflict",
+              "name": "UniquenessConflict"
+            }
+          ]
+        }
+      },
       "GetV2WebhooksByWebhookId404ResponseStatusCode": {
         "enum": [
           404
@@ -70147,6 +70271,47 @@
             {
               "value": "not_found",
               "name": "NotFound"
+            }
+          ]
+        }
+      },
+      "PatchV2WebhooksByWebhookId409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2WebhooksByWebhookId409ResponseType": {
+        "enum": [
+          "invalid_request_error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2WebhooksByWebhookId409ResponseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "invalid_request_error",
+              "name": "InvalidRequestError"
+            }
+          ]
+        }
+      },
+      "PatchV2WebhooksByWebhookId409ResponseCode": {
+        "enum": [
+          "uniqueness_conflict"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2WebhooksByWebhookId409ResponseCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "uniqueness_conflict",
+              "name": "UniquenessConflict"
             }
           ]
         }
