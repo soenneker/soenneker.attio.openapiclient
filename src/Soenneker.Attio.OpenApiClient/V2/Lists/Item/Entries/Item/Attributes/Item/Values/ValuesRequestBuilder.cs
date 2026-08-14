@@ -57,6 +57,35 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item.Attributes.It
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// &quot;Replaces the entire value history of a single attribute on a list entry, primarily to migrate historic data from an external source. Every value the attribute currently has is destroyed, including values not present in the request, and the supplied values are written with the `active_from` and `active_until` timestamps given.Values may be supplied in any order and gaps between intervals are allowed. For attributes that accept a single value, at most one value may be active at a time, so intervals may not overlap and at most one may have a `null` `active_until`. At least one value is required.Webhooks and workflow triggers do not fire for these writes, so migrating history does not replay automations. Search indexes and caches are still updated, and formula attributes that depend on this attribute are still recalculated.Value history cannot be written for relationship attributes, formula attributes, enriched attributes, or immutable system attributes such as the entry&apos;s parent record.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues404Response">When receiving a 404 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response?> PutAsync(global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response> PutAsync(global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues404Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// &quot;Gets all values for a given attribute on a list entry. This endpoint has the ability to return all historic values using the `show_historic` query param. Historic values are sorted from oldest to newest (by `active_from`).Required scopes: `list_entry:read`, `list_configuration:read`.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -73,6 +102,28 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item.Attributes.It
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// &quot;Replaces the entire value history of a single attribute on a list entry, primarily to migrate historic data from an external source. Every value the attribute currently has is destroyed, including values not present in the request, and the supplied values are written with the `active_from` and `active_until` timestamps given.Values may be supplied in any order and gaps between intervals are allowed. For attributes that accept a single value, at most one value may be active at a time, so intervals may not overlap and at most one may have a `null` `active_until`. At least one value is required.Webhooks and workflow triggers do not fire for these writes, so migrating history does not replay automations. Search indexes and caches are still updated, and formula attributes that depend on this attribute are still recalculated.Value history cannot be written for relationship attributes, formula attributes, enriched attributes, or immutable system attributes such as the entry&apos;s parent record.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

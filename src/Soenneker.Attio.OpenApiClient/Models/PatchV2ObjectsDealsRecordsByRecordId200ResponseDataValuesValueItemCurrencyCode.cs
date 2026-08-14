@@ -47,6 +47,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         #pragma warning disable CS1591
         Dkk,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EGP")]
+        #pragma warning disable CS1591
+        Egp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "EUR")]
         #pragma warning disable CS1591
         Eur,
