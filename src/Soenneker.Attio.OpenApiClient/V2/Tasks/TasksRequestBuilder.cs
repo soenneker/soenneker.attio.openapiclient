@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks
         {
         }
         /// <summary>
-        /// &quot;List all tasks. Results are sorted by creation date, from oldest to newest.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// List all tasks. Results are sorted by creation date, from oldest to newest.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Tasks200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Tasks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Tasks200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new task.At present, tasks can only be created from plaintext without record reference formatting.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// Creates a new task.At present, tasks can only be created from plaintext without record reference formatting.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Tasks200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Tasks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Tasks200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all tasks. Results are sorted by creation date, from oldest to newest.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// List all tasks. Results are sorted by creation date, from oldest to newest.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Creates a new task.At present, tasks can only be created from plaintext without record reference formatting.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// Creates a new task.At present, tasks can only be created from plaintext without record reference formatting.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -142,7 +142,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks
             return new global::Soenneker.Attio.OpenApiClient.V2.Tasks.TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all tasks. Results are sorted by creation date, from oldest to newest.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// List all tasks. Results are sorted by creation date, from oldest to newest.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TasksRequestBuilderGetQueryParameters 

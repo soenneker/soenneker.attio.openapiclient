@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records
         {
         }
         /// <summary>
-        /// &quot;Creates a new workspace record. This endpoint will throw on conflicts of unique attributes, like `workspace_id`. If you would prefer to update workspace records on conflicts, please use the Assert workspace record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Creates a new workspace record. This endpoint will throw on conflicts of unique attributes, like `workspace_id`. If you would prefer to update workspace records on conflicts, please use the Assert workspace record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the `workspace_id` attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the `workspace_id` attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new workspace record. This endpoint will throw on conflicts of unique attributes, like `workspace_id`. If you would prefer to update workspace records on conflicts, please use the Assert workspace record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Creates a new workspace record. This endpoint will throw on conflicts of unique attributes, like `workspace_id`. If you would prefer to update workspace records on conflicts, please use the Assert workspace record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the `workspace_id` attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the `workspace_id` attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records.RecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the `workspace_id` attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the `workspace_id` attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordsRequestBuilderPutQueryParameters 

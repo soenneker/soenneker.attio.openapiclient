@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item.Attributes
         {
         }
         /// <summary>
-        /// &quot;Gets all values for a given attribute on a deal record. Historic values can be queried using the `show_historic` query param. Historic values are sorted from oldest to newest (by `active_from`).Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Gets all values for a given attribute on a deal record. Historic values can be queried using the `show_historic` query param. Historic values are sorted from oldest to newest (by `active_from`).Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item.Attributes
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Gets all values for a given attribute on a deal record. Historic values can be queried using the `show_historic` query param. Historic values are sorted from oldest to newest (by `active_from`).Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Gets all values for a given attribute on a deal record. Historic values can be queried using the `show_historic` query param. Historic values are sorted from oldest to newest (by `active_from`).Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item.Attributes
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item.Attributes.Item.Values.ValuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Gets all values for a given attribute on a deal record. Historic values can be queried using the `show_historic` query param. Historic values are sorted from oldest to newest (by `active_from`).Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Gets all values for a given attribute on a deal record. Historic values can be queried using the `show_historic` query param. Historic values are sorted from oldest to newest (by `active_from`).Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ValuesRequestBuilderGetQueryParameters 

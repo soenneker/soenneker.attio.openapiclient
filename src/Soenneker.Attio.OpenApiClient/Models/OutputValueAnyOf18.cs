@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf18AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.TextAttributeType? AttributeType { get; set; }
         /// <summary>A raw text field. Values are limited to 10MB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf18AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.TextAttributeType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf18AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.TextAttributeType>("attribute_type", AttributeType);
             writer.WriteStringValue("value", Value);
         }
     }

@@ -23,7 +23,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public List<global::Soenneker.Attio.OpenApiClient.Models.OutputValue> Template { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf2Type? Type { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.StaticValueType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf2"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "template", n => { Template = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.OutputValue>(global::Soenneker.Attio.OpenApiClient.Models.OutputValue.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.StaticValueType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.OutputValue>("template", Template);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.StaticValueType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

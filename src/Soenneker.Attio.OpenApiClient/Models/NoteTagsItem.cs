@@ -37,7 +37,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem();
             if("NoteTagsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

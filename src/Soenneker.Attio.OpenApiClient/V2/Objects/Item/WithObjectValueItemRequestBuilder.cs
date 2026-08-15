@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
         {
         }
         /// <summary>
-        /// &quot;Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.&quot;
+        /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValue200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValue200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValue200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.&quot;
+        /// Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -98,7 +98,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.&quot;
+        /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.&quot;
+        /// Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

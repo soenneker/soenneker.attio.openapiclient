@@ -7,28 +7,84 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetV2Self200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class GetV2Self200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf1"/></summary>
+        /// <summary>The active property</summary>
+        public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The intended audience for this token, for Bearer tokens this is the same as the client_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf1? GetV2Self200ResponseAnyOf1 { get; set; }
+        public string? Aud { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf1 GetV2Self200ResponseAnyOf1 { get; set; }
+        public string Aud { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2"/></summary>
+        /// <summary>The ID of the workspace member who authorized this token initially. Almost every token has one, but it is omitted for the app access tokens that Attio created itself rather than on a member&apos;s behalf.</summary>
+        public Guid? AuthorizedByWorkspaceMemberId { get; set; }
+        /// <summary>Identifies the client the token was issued to. For app access tokens this is the app ID. Workspace access tokens have no OAuth client, so this is the workspace access token ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2? GetV2Self200ResponseAnyOf2 { get; set; }
+        public string? ClientId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2 GetV2Self200ResponseAnyOf2 { get; set; }
+        public string ClientId { get; set; }
 #endif
+        /// <summary>The time at which this token will expire, if set, as a number of seconds since January 1 1970 UTC. Attio access tokens do not currently expire, so this is always null.</summary>
+        public double? Exp { get; set; }
+        /// <summary>The time at which this token was issued, as a number of seconds since January 1 1970 UTC.</summary>
+        public double? Iat { get; set; }
+        /// <summary>The issuer of the token. Always attio.com</summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.AttioComIss? Iss { get; set; }
+        /// <summary>A space-separated list of scopes associated with this token</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Scope { get; set; }
+#nullable restore
+#else
+        public string Scope { get; set; }
+#endif
+        /// <summary>Since Bearer tokens grant Workspace-level permissions, this property contains the workspace_id.</summary>
+        public Guid? Sub { get; set; }
+        /// <summary>The type of token, always Bearer.</summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType? TokenType { get; set; }
+        /// <summary>The ID of the workspace the token is scoped to.</summary>
+        public Guid? WorkspaceId { get; set; }
+        /// <summary>The logo URL of the workspace the token is scoped to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkspaceLogoUrl { get; set; }
+#nullable restore
+#else
+        public string WorkspaceLogoUrl { get; set; }
+#endif
+        /// <summary>The name of the workspace the token is scoped to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkspaceName { get; set; }
+#nullable restore
+#else
+        public string WorkspaceName { get; set; }
+#endif
+        /// <summary>The slug of the workspace the token is scoped to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkspaceSlug { get; set; }
+#nullable restore
+#else
+        public string WorkspaceSlug { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200Response"/> and sets the default values.
+        /// </summary>
+        public GetV2Self200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,10 +93,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200Response();
-            result.GetV2Self200ResponseAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf1();
-            result.GetV2Self200ResponseAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2();
-            return result;
+            return new global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +101,23 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetV2Self200ResponseAnyOf1 != null || GetV2Self200ResponseAnyOf2 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(GetV2Self200ResponseAnyOf1, GetV2Self200ResponseAnyOf2);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "aud", n => { Aud = n.GetStringValue(); } },
+                { "authorized_by_workspace_member_id", n => { AuthorizedByWorkspaceMemberId = n.GetGuidValue(); } },
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "exp", n => { Exp = n.GetDoubleValue(); } },
+                { "iat", n => { Iat = n.GetDoubleValue(); } },
+                { "iss", n => { Iss = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttioComIss>(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "sub", n => { Sub = n.GetGuidValue(); } },
+                { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType>(); } },
+                { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
+                { "workspace_logo_url", n => { WorkspaceLogoUrl = n.GetStringValue(); } },
+                { "workspace_name", n => { WorkspaceName = n.GetStringValue(); } },
+                { "workspace_slug", n => { WorkspaceSlug = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,7 +126,21 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf1>(null, GetV2Self200ResponseAnyOf1, GetV2Self200ResponseAnyOf2);
+            writer.WriteBoolValue("active", Active);
+            writer.WriteStringValue("aud", Aud);
+            writer.WriteGuidValue("authorized_by_workspace_member_id", AuthorizedByWorkspaceMemberId);
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteDoubleValue("exp", Exp);
+            writer.WriteDoubleValue("iat", Iat);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttioComIss>("iss", Iss);
+            writer.WriteStringValue("scope", Scope);
+            writer.WriteGuidValue("sub", Sub);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType>("token_type", TokenType);
+            writer.WriteGuidValue("workspace_id", WorkspaceId);
+            writer.WriteStringValue("workspace_logo_url", WorkspaceLogoUrl);
+            writer.WriteStringValue("workspace_name", WorkspaceName);
+            writer.WriteStringValue("workspace_slug", WorkspaceSlug);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

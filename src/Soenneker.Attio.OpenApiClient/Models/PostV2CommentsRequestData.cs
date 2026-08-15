@@ -46,8 +46,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry Entry { get; set; }
 #endif
-        /// <summary>The format that the comment content is provided in. The `plaintext` format uses the line feed character `\n` to create new lines within the note content. Rich text formatting and links are not supported.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataFormat? Format { get; set; }
+        /// <summary>The format of the task content to be created. Rich text formatting, links and @references are not supported.</summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat? Format { get; set; }
         /// <summary>The record property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +87,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "entry", n => { Entry = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry>(global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataFormat>(); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat>(); } },
                 { "record", n => { Record = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord>(global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord.CreateFromDiscriminatorValue); } },
                 { "thread_id", n => { ThreadId = n.GetGuidValue(); } },
             };
@@ -103,7 +103,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry>("entry", Entry);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataFormat>("format", Format);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat>("format", Format);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord>("record", Record);
             writer.WriteGuidValue("thread_id", ThreadId);
             writer.WriteAdditionalData(AdditionalData);

@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
         {
         }
         /// <summary>
-        /// &quot;Delete a single note by ID.Required scopes: `note:read-write`.&quot;
+        /// Delete a single note by ID.Required scopes: `note:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2NotesByNoteId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2NotesByNoteId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2NotesByNoteId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.&quot;
+        /// Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete a single note by ID.Required scopes: `note:read-write`.&quot;
+        /// Delete a single note by ID.Required scopes: `note:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +99,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.&quot;
+        /// Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

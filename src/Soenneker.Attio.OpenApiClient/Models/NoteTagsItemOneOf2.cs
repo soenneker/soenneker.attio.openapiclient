@@ -25,7 +25,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The ID of the record that is tagged in the note.</summary>
         public Guid? RecordId { get; set; }
         /// <summary>The type of entity tagged in the note. Can be either &apos;workspace-member&apos; or &apos;record&apos;</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf2Type? Type { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.RecordType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf2"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "record_id", n => { RecordId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.RecordType>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("object", Object);
             writer.WriteGuidValue("record_id", RecordId);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.RecordType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

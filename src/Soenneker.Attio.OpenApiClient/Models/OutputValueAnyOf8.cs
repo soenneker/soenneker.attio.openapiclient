@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType? AttributeType { get; set; }
         /// <summary>When the interaction occurred.</summary>
         public DateTimeOffset? InteractedAt { get; set; }
         /// <summary>The type of interaction e.g. calendar or email.</summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType>(); } },
                 { "interacted_at", n => { InteractedAt = n.GetDateTimeOffsetValue(); } },
                 { "interaction_type", n => { InteractionType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8InteractionType>(); } },
                 { "owner_actor", n => { OwnerActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8OwnerActor>(global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8OwnerActor.CreateFromDiscriminatorValue); } },
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType>("attribute_type", AttributeType);
             writer.WriteDateTimeOffsetValue("interacted_at", InteractedAt);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8InteractionType>("interaction_type", InteractionType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf8OwnerActor>("owner_actor", OwnerActor);

@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Sql
         {
         }
         /// <summary>
-        /// &quot;Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Sql200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Sql
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Sql200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Sql200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

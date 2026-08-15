@@ -19,7 +19,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200ResponseDataValuesPrimaryEmailAddressItemAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType? AttributeType { get; set; }
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +95,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "active_from", n => { ActiveFrom = n.GetDateTimeOffsetValue(); } },
                 { "active_until", n => { ActiveUntil = n.GetDateTimeOffsetValue(); } },
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200ResponseDataValuesPrimaryEmailAddressItemAttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType>(); } },
                 { "created_by_actor", n => { CreatedByActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200ResponseDataValuesPrimaryEmailAddressItemCreatedByActor>(global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200ResponseDataValuesPrimaryEmailAddressItemCreatedByActor.CreateFromDiscriminatorValue); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
                 { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
@@ -113,7 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200ResponseDataValuesPrimaryEmailAddressItemAttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType>("attribute_type", AttributeType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200ResponseDataValuesPrimaryEmailAddressItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteStringValue("email_address", EmailAddress);
             writer.WriteStringValue("email_domain", EmailDomain);

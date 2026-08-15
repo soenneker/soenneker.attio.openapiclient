@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf11AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PersonalNameAttributeType? AttributeType { get; set; }
         /// <summary>The first name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +56,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf11AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PersonalNameAttributeType>(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "full_name", n => { FullName = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
@@ -69,7 +69,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf11AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PersonalNameAttributeType>("attribute_type", AttributeType);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("full_name", FullName);
             writer.WriteStringValue("last_name", LastName);

@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf1AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ActorReferenceAttributeType? AttributeType { get; set; }
         /// <summary>The ID of the referenced actor.</summary>
         public Guid? ReferencedActorId { get; set; }
         /// <summary>The type of the referenced actor. [Read more information on actor types here](/docs/actors).</summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf1AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.ActorReferenceAttributeType>(); } },
                 { "referenced_actor_id", n => { ReferencedActorId = n.GetGuidValue(); } },
                 { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf1ReferencedActorType>(); } },
             };
@@ -48,7 +48,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf1AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.ActorReferenceAttributeType>("attribute_type", AttributeType);
             writer.WriteGuidValue("referenced_actor_id", ReferencedActorId);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf1ReferencedActorType>("referenced_actor_type", ReferencedActorType);
         }

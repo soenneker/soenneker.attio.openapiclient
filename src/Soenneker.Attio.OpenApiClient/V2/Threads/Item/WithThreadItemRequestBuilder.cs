@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads.Item
         {
         }
         /// <summary>
-        /// &quot;Get all comments in a thread.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.&quot;
+        /// Get all comments in a thread.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get all comments in a thread.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.&quot;
+        /// Get all comments in a thread.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

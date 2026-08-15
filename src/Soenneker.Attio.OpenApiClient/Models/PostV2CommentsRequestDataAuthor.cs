@@ -17,8 +17,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthorType? Type { get; set; }
+        /// <summary>The type of entity tagged in the note. Can be either &apos;workspace-member&apos; or &apos;record&apos;</summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthor"/> and sets the default values.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthorType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberType>(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthorType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

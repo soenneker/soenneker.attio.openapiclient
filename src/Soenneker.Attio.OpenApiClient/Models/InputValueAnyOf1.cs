@@ -15,7 +15,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The ID of the referenced Actor.</summary>
         public Guid? ReferencedActorId { get; set; }
         /// <summary>The type of the referenced actor. Currently, only workspace members can be written into actor reference attributes. [Read more information on actor types here](/docs/actors).</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf1ReferencedActorType? ReferencedActorType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType? ReferencedActorType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "referenced_actor_id", n => { ReferencedActorId = n.GetGuidValue(); } },
-                { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf1ReferencedActorType>(); } },
+                { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("referenced_actor_id", ReferencedActorId);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf1ReferencedActorType>("referenced_actor_type", ReferencedActorType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>("referenced_actor_type", ReferencedActorType);
         }
     }
 }

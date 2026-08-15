@@ -23,13 +23,6 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem> Values { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestData"/> and sets the default values.
-        /// </summary>
-        public PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestData()
-        {
-            ReplaceHistory = true;
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestData"/></returns>

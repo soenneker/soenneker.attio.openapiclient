@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records.Query
         {
         }
         /// <summary>
-        /// &quot;Lists company records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Lists company records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecordsQuery200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records.Query
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecordsQuery200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecordsQuery200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Lists company records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Lists company records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

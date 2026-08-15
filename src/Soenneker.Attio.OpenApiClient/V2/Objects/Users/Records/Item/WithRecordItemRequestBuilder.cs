@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item
         {
         }
         /// <summary>
-        /// &quot;Deletes a single user record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.&quot;
+        /// Deletes a single user record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsUsersRecordsByRecordId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsUsersRecordsByRecordId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsUsersRecordsByRecordId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Gets a single user record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Gets a single user record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to update user records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert user endpoint](/rest-api/endpoint-reference/users/upsert-a-user-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to update user records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert user endpoint](/rest-api/endpoint-reference/users/upsert-a-user-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +119,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes a single user record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.&quot;
+        /// Deletes a single user record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +138,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Gets a single user record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Gets a single user record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to update user records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert user endpoint](/rest-api/endpoint-reference/users/upsert-a-user-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to update user records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert user endpoint](/rest-api/endpoint-reference/users/upsert-a-user-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

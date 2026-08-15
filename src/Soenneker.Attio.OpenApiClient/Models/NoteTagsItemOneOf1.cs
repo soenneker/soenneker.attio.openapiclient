@@ -15,7 +15,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of entity tagged in the note. Can be either &apos;workspace-member&apos; or &apos;record&apos;</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf1Type? Type { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberType? Type { get; set; }
         /// <summary>The ID of the workspace member that is tagged in the note.</summary>
         public Guid? WorkspaceMemberId { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf1Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberType>(); } },
                 { "workspace_member_id", n => { WorkspaceMemberId = n.GetGuidValue(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf1Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberType>("type", Type);
             writer.WriteGuidValue("workspace_member_id", WorkspaceMemberId);
             writer.WriteAdditionalData(AdditionalData);
         }

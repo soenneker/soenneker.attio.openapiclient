@@ -17,7 +17,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
         public DateTimeOffset? ActiveUntil { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200ResponseDataItemValuesNameItemAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PersonalNameAttributeType? AttributeType { get; set; }
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "active_from", n => { ActiveFrom = n.GetDateTimeOffsetValue(); } },
                 { "active_until", n => { ActiveUntil = n.GetDateTimeOffsetValue(); } },
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200ResponseDataItemValuesNameItemAttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PersonalNameAttributeType>(); } },
                 { "created_by_actor", n => { CreatedByActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200ResponseDataItemValuesNameItemCreatedByActor>(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200ResponseDataItemValuesNameItemCreatedByActor.CreateFromDiscriminatorValue); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "full_name", n => { FullName = n.GetStringValue(); } },
@@ -86,7 +86,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200ResponseDataItemValuesNameItemAttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PersonalNameAttributeType>("attribute_type", AttributeType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200ResponseDataItemValuesNameItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("full_name", FullName);

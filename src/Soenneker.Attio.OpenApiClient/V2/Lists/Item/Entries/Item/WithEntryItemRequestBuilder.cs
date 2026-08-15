@@ -40,7 +40,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
         {
         }
         /// <summary>
-        /// &quot;Deletes a single list entry by its `entry_id`.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// Deletes a single list entry by its `entry_id`.Required scopes: `list_entry:read-write`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ListsByListEntriesByEntryId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ListsByListEntriesByEntryId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ListsByListEntriesByEntryId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Gets a single list entry by its `entry_id`.Required scopes: `list_entry:read`, `list_configuration:read`.&quot;
+        /// Gets a single list entry by its `entry_id`.Required scopes: `list_entry:read`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `list_entry:read-write`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to add multiselect attribute values without removing those value that already exist.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to add multiselect attribute values without removing those value that already exist.Required scopes: `list_entry:read-write`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -140,7 +140,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes a single list entry by its `entry_id`.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// Deletes a single list entry by its `entry_id`.Required scopes: `list_entry:read-write`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Gets a single list entry by its `entry_id`.Required scopes: `list_entry:read`, `list_configuration:read`.&quot;
+        /// Gets a single list entry by its `entry_id`.Required scopes: `list_entry:read`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `list_entry:read-write`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to add multiselect attribute values without removing those value that already exist.Required scopes: `list_entry:read-write`, `list_configuration:read`.&quot;
+        /// Use this endpoint to update list entries by `entry_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to add multiselect attribute values without removing those value that already exist.Required scopes: `list_entry:read-write`, `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

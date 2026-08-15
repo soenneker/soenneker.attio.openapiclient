@@ -40,7 +40,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files.Item
         {
         }
         /// <summary>
-        /// &quot;Delete a single file by ID. Deleting a folder will delete all of its descendants.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read-write`, `object_configuration:read`, `record_permission:read`.&quot;
+        /// Delete a single file by ID. Deleting a folder will delete all of its descendants.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read-write`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2FilesByFileId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2FilesByFileId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2FilesByFileId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a single file entry by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read`, `object_configuration:read`, `record_permission:read`.&quot;
+        /// Get a single file entry by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2FilesByFileId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2FilesByFileId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2FilesByFileId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete a single file by ID. Deleting a folder will delete all of its descendants.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read-write`, `object_configuration:read`, `record_permission:read`.&quot;
+        /// Delete a single file by ID. Deleting a folder will delete all of its descendants.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read-write`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a single file entry by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read`, `object_configuration:read`, `record_permission:read`.&quot;
+        /// Get a single file entry by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

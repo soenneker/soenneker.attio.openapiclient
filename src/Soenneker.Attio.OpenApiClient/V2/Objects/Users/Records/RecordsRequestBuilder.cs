@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records
         {
         }
         /// <summary>
-        /// &quot;Creates a new user record. This endpoint will throw on conflicts of unique attributes, like `primary_email_address`. If you would prefer to update user records on conflicts, please use the Assert user record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Creates a new user record. This endpoint will throw on conflicts of unique attributes, like `primary_email_address`. If you would prefer to update user records on conflicts, please use the Assert user record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the `primary_email_address` attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the `primary_email_address` attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new user record. This endpoint will throw on conflicts of unique attributes, like `primary_email_address`. If you would prefer to update user records on conflicts, please use the Assert user record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Creates a new user record. This endpoint will throw on conflicts of unique attributes, like `primary_email_address`. If you would prefer to update user records on conflicts, please use the Assert user record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the `primary_email_address` attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the `primary_email_address` attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.RecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the `primary_email_address` attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the `primary_email_address` attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordsRequestBuilderPutQueryParameters 

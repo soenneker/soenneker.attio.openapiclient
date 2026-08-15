@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings.Item.Tr
         {
         }
         /// <summary>
-        /// &quot;Deprecated: prefer using `GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id` to get the transcript for a call recording.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.&quot;
+        /// Deprecated: prefer using `GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id` to get the transcript for a call recording.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings.Item.Tr
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deprecated: prefer using `GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id` to get the transcript for a call recording.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.&quot;
+        /// Deprecated: prefer using `GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id` to get the transcript for a call recording.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings.Item.Tr
             return new global::Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings.Item.Transcript.TranscriptRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Deprecated: prefer using `GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id` to get the transcript for a call recording.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.&quot;
+        /// Deprecated: prefer using `GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id` to get the transcript for a call recording.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TranscriptRequestBuilderGetQueryParameters 

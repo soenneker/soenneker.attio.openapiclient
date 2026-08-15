@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Workspace_members.Item
         {
         }
         /// <summary>
-        /// &quot;Gets a single workspace member by ID.Required scopes: `user_management:read`.&quot;
+        /// Gets a single workspace member by ID.Required scopes: `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceMembersByWorkspaceMemberId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Workspace_members.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceMembersByWorkspaceMemberId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceMembersByWorkspaceMemberId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Gets a single workspace member by ID.Required scopes: `user_management:read`.&quot;
+        /// Gets a single workspace member by ID.Required scopes: `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf2AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CheckboxAttributeType? AttributeType { get; set; }
         /// <summary>A boolean representing whether the checkbox is checked or not. The string values &apos;true&apos; and &apos;false&apos; are also accepted.</summary>
         public bool? Value { get; set; }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf2AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CheckboxAttributeType>(); } },
                 { "value", n => { Value = n.GetBoolValue(); } },
             };
         }
@@ -45,7 +45,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf2AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CheckboxAttributeType>("attribute_type", AttributeType);
             writer.WriteBoolValue("value", Value);
         }
     }

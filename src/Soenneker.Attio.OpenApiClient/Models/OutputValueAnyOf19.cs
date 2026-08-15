@@ -14,7 +14,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf19AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.TimestampAttributeType? AttributeType { get; set; }
         /// <summary>A timestamp value represents a single, universal moment in time using an ISO 8601 formatted string. This means that a timestamp consists of a date, a time (with nanosecond precision), and a time zone. Attio will coerce timestamps which do not provide full nanosecond precision and UTC is assumed if no time zone is provided. For example, &quot;2023&quot;, &quot;2023-01&quot;, &quot;2023-01-02&quot;, &quot;2023-01-02T13:00&quot;, &quot;2023-01-02T13:00:00&quot;, and &quot;2023-01-02T13:00:00.000000000&quot; will all be coerced to &quot;2023-01-02T13:00:00.000000000Z&quot;. Timestamps are always returned in UTC. For example, writing a timestamp value using the string &quot;2023-01-02T13:00:00.000000000+02:00&quot; will result in the value &quot;2023-01-02T11:00:00.000000000Z&quot; being returned. The maximum date is &quot;9999-12-31T23:59:59.999999999Z&quot;.</summary>
         public Date? Value { get; set; }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf19AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.TimestampAttributeType>(); } },
                 { "value", n => { Value = n.GetDateValue(); } },
             };
         }
@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf19AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.TimestampAttributeType>("attribute_type", AttributeType);
             writer.WriteDateValue("value", Value);
         }
     }

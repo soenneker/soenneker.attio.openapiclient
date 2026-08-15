@@ -14,7 +14,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     {
         /// <summary>An RFC 3339 timestamp for when this value became active. May not be in the future.</summary>
         public DateTimeOffset? ActiveFrom { get; set; }
-        /// <summary>&quot;An RFC 3339 timestamp for when this value stopped being active, or `null` if it is still active. Must be after `active_from` and may not be in the future. This key is required: omitting it is almost always a mistake in a migration.&quot;</summary>
+        /// <summary>An RFC 3339 timestamp for when this value stopped being active, or `null` if it is still active. Must be after `active_from` and may not be in the future. This key is required: omitting it is almost always a mistake in a migration.</summary>
         public DateTimeOffset? ActiveUntil { get; set; }
         /// <summary>The value itself, in the same form accepted when updating a record or list entry. For complete documentation on values for all attribute types, please see our [attribute type docs](/docs/attribute-types).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

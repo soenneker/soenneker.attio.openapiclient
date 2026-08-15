@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records
         {
         }
         /// <summary>
-        /// &quot;Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the `avatar_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the `avatar_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the `email_addresses` attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the `email_addresses` attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the `avatar_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the `avatar_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the `email_addresses` attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the `email_addresses` attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.People.Records.RecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the `email_addresses` attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the `email_addresses` attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordsRequestBuilderPutQueryParameters 

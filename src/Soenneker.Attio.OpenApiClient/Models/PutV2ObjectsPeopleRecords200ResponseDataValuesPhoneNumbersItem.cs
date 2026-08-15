@@ -19,7 +19,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType? AttributeType { get; set; }
         /// <summary>The ISO 3166-1 alpha-2 country code representing the country that this phone number belongs to.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCountryCode? CountryCode { get; set; }
         /// <summary>The actor that created this value.</summary>
@@ -73,7 +73,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "active_from", n => { ActiveFrom = n.GetDateTimeOffsetValue(); } },
                 { "active_until", n => { ActiveUntil = n.GetDateTimeOffsetValue(); } },
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemAttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType>(); } },
                 { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCountryCode>(); } },
                 { "created_by_actor", n => { CreatedByActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor>(global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor.CreateFromDiscriminatorValue); } },
                 { "original_phone_number", n => { OriginalPhoneNumber = n.GetStringValue(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemAttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType>("attribute_type", AttributeType);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCountryCode>("country_code", CountryCode);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteStringValue("original_phone_number", OriginalPhoneNumber);

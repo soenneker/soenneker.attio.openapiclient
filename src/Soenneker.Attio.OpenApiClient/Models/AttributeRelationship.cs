@@ -31,7 +31,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationshipId Id { get; set; }
 #endif
-        /// <summary>&quot;Whether the related attribute supports selecting multiple values. Combined with the parent attribute&apos;s `is_multiselect`, this determines the relationship type: both `false` = one-to-one, parent `true` + related `false` = many-to-one, parent `false` + related `true` = one-to-many, both `true` = many-to-many.&quot;</summary>
+        /// <summary>Whether the related attribute supports selecting multiple values. Combined with the parent attribute&apos;s `is_multiselect`, this determines the relationship type: both `false` = one-to-one, parent `true` + related `false` = many-to-one, parent `false` + related `true` = one-to-many, both `true` = many-to-many.</summary>
         public bool? IsMultiselect { get; set; }
         /// <summary>The slug of the object that the related attribute belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

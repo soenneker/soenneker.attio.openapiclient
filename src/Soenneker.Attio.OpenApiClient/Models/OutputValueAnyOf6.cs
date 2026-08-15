@@ -15,7 +15,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf6AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType? AttributeType { get; set; }
         /// <summary>The email_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +81,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf6AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType>(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
                 { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
                 { "email_local_specifier", n => { EmailLocalSpecifier = n.GetStringValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf6AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType>("attribute_type", AttributeType);
             writer.WriteStringValue("email_address", EmailAddress);
             writer.WriteStringValue("email_domain", EmailDomain);
             writer.WriteStringValue("email_local_specifier", EmailLocalSpecifier);

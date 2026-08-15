@@ -22,7 +22,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsQueryRequestFilter Filter { get; set; }
 #endif
-        /// <summary>&quot;UUID of a saved view on this object or list. When set, results are filtered using that view&apos;s filter configuration. Cannot be used together with `filter`. Note: sorts, limits, and offsets are applied independently and are not taken from the view. All attributes are returned regardless of which attributes are visible in the view.&quot;</summary>
+        /// <summary>UUID of a saved view on this object or list. When set, results are filtered using that view&apos;s filter configuration. Cannot be used together with `filter`. Note: sorts, limits, and offsets are applied independently and are not taken from the view. All attributes are returned regardless of which attributes are visible in the view.</summary>
         public Guid? FilterViewId { get; set; }
         /// <summary>The maximum number of results to return. Defaults to 500. See the [full guide to pagination here](/rest-api/guides/pagination).</summary>
         public double? Limit { get; set; }

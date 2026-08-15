@@ -39,7 +39,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public string DeadlineAt { get; set; }
 #endif
         /// <summary>The format of the task content to be created. Rich text formatting, links and @references are not supported.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataFormat? Format { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat? Format { get; set; }
         /// <summary>Whether the task has been completed.</summary>
         public bool? IsCompleted { get; set; }
         /// <summary>Records linked to the task. Records can be linked by domain (for companies), email address (for people), record ID (for all objects) or by a unique matching attribute (for all objects). Creating record links within task content text is not possible via the API at present.</summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
                 { "assignees", n => { Assignees = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem>(global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "deadline_at", n => { DeadlineAt = n.GetStringValue(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataFormat>(); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat>(); } },
                 { "is_completed", n => { IsCompleted = n.GetBoolValue(); } },
                 { "linked_records", n => { LinkedRecords = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords>(global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords.CreateFromDiscriminatorValue); } },
             };
@@ -93,7 +93,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem>("assignees", Assignees);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("deadline_at", DeadlineAt);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataFormat>("format", Format);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat>("format", Format);
             writer.WriteBoolValue("is_completed", IsCompleted);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords>("linked_records", LinkedRecords);
             writer.WriteAdditionalData(AdditionalData);

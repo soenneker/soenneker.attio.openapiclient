@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType? AttributeType { get; set; }
         /// <summary>The ISO4217 currency code representing the currency that the value is stored in.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3CurrencyCode? CurrencyCode { get; set; }
         /// <summary>A numerical representation of the currency value. A decimal with a max of 4 decimal places.</summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType>(); } },
                 { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3CurrencyCode>(); } },
                 { "currency_value", n => { CurrencyValue = n.GetDoubleValue(); } },
             };
@@ -48,7 +48,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType>("attribute_type", AttributeType);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3CurrencyCode>("currency_code", CurrencyCode);
             writer.WriteDoubleValue("currency_value", CurrencyValue);
         }

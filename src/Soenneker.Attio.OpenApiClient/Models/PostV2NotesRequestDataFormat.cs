@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
-    /// <summary>&quot;Specify the format for the note&apos;s content. Choose from:- `plaintext`: Standard text format where `\n` signifies a new line.- `markdown`: Enables rich text formatting using a subset of Markdown syntax:  - **Headings**: Levels 1-3 (`#`, `##`, `###`).  - **Lists**: Unordered (`-`, `*`, `+`) and ordered (`1.`, `2.`).  - **Text styles**: Bold (`**bold**` or `__bold__`), italic (`*italic*` or `_italic_`), strikethrough (`~~strikethrough~~`), and highlight (`==highlighted==`).  - **Links**: Standard Markdown links (`[link text](https://example.com)`).  *Note: While the Attio interface supports image embeds, they cannot currently be added or retrieved via the API&apos;s markdown format.*&quot;</summary>
+    /// <summary>Specify the format for the note&apos;s content. Choose from:- `plaintext`: Standard text format where `\n` signifies a new line.- `markdown`: Enables rich text formatting using a subset of Markdown syntax:  - **Headings**: Levels 1-3 (`#`, `##`, `###`).  - **Lists**: Unordered (`-`, `*`, `+`) and ordered (`1.`, `2.`).  - **Text styles**: Bold (`**bold**` or `__bold__`), italic (`*italic*` or `_italic_`), strikethrough (`~~strikethrough~~`), and highlight (`==highlighted==`).  - **Links**: Standard Markdown links (`[link text](https://example.com)`).  *Note: While the Attio interface supports image embeds, they cannot currently be added or retrieved via the API&apos;s markdown format.*</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PostV2NotesRequestDataFormat
     {

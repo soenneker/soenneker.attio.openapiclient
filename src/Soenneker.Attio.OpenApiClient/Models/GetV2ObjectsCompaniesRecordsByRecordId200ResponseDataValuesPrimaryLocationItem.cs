@@ -17,7 +17,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
         public DateTimeOffset? ActiveUntil { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.LocationAttributeType? AttributeType { get; set; }
         /// <summary>The ISO 3166-1 alpha-2 country code for the country this location is in.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemCountryCode? CountryCode { get; set; }
         /// <summary>The actor that created this value.</summary>
@@ -120,7 +120,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "active_from", n => { ActiveFrom = n.GetDateTimeOffsetValue(); } },
                 { "active_until", n => { ActiveUntil = n.GetDateTimeOffsetValue(); } },
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemAttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.LocationAttributeType>(); } },
                 { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemCountryCode>(); } },
                 { "created_by_actor", n => { CreatedByActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemCreatedByActor>(global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemCreatedByActor.CreateFromDiscriminatorValue); } },
                 { "latitude", n => { Latitude = n.GetStringValue(); } },
@@ -143,7 +143,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemAttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.LocationAttributeType>("attribute_type", AttributeType);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemCountryCode>("country_code", CountryCode);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesPrimaryLocationItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteStringValue("latitude", Latitude);

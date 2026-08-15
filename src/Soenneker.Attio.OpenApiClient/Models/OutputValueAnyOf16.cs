@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf16AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.SelectAttributeType? AttributeType { get; set; }
         /// <summary>The UUID identifying the selected select option.</summary>
         public Guid? Option { get; set; }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf16AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.SelectAttributeType>(); } },
                 { "option", n => { Option = n.GetGuidValue(); } },
             };
         }
@@ -45,7 +45,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf16AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.SelectAttributeType>("attribute_type", AttributeType);
             writer.WriteGuidValue("option", Option);
         }
     }

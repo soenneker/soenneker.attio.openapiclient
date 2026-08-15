@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item
         {
         }
         /// <summary>
-        /// &quot;Gets a single list in your workspace that your access token has access to.Required scopes: `list_configuration:read`.&quot;
+        /// Gets a single list in your workspace that your access token has access to.Required scopes: `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByList200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates an existing list. Permissions for the list are controlled with the `workspace_access` and `workspace_member_access` parameters. Please note that lists must have either `workspace_access` set to `\&quot;full-access\&quot;` or one or more element of `workspace_member_access` with a `\&quot;full-access\&quot;` level. It is also possible to receive a `403` billing error if your workspace is not on a plan that supports either advanced workspace or workspace member level access for lists. Changing the parent object of a list is not possible through the API as it can have unintended side-effects that should be considered carefully. If you wish to carry out a parent object change you should do so through the UI.Required scopes: `list_configuration:read-write`.&quot;
+        /// Updates an existing list. Permissions for the list are controlled with the `workspace_access` and `workspace_member_access` parameters. Please note that lists must have either `workspace_access` set to `&quot;full-access&quot;` or one or more element of `workspace_member_access` with a `&quot;full-access&quot;` level. It is also possible to receive a `403` billing error if your workspace is not on a plan that supports either advanced workspace or workspace member level access for lists. Changing the parent object of a list is not possible through the API as it can have unintended side-effects that should be considered carefully. If you wish to carry out a parent object change you should do so through the UI.Required scopes: `list_configuration:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByList200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByList200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Gets a single list in your workspace that your access token has access to.Required scopes: `list_configuration:read`.&quot;
+        /// Gets a single list in your workspace that your access token has access to.Required scopes: `list_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +115,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates an existing list. Permissions for the list are controlled with the `workspace_access` and `workspace_member_access` parameters. Please note that lists must have either `workspace_access` set to `\&quot;full-access\&quot;` or one or more element of `workspace_member_access` with a `\&quot;full-access\&quot;` level. It is also possible to receive a `403` billing error if your workspace is not on a plan that supports either advanced workspace or workspace member level access for lists. Changing the parent object of a list is not possible through the API as it can have unintended side-effects that should be considered carefully. If you wish to carry out a parent object change you should do so through the UI.Required scopes: `list_configuration:read-write`.&quot;
+        /// Updates an existing list. Permissions for the list are controlled with the `workspace_access` and `workspace_member_access` parameters. Please note that lists must have either `workspace_access` set to `&quot;full-access&quot;` or one or more element of `workspace_member_access` with a `&quot;full-access&quot;` level. It is also possible to receive a `403` billing error if your workspace is not on a plan that supports either advanced workspace or workspace member level access for lists. Changing the parent object of a list is not possible through the API as it can have unintended side-effects that should be considered carefully. If you wish to carry out a parent object change you should do so through the UI.Required scopes: `list_configuration:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

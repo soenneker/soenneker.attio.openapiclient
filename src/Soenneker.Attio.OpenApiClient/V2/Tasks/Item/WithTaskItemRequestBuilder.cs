@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
         {
         }
         /// <summary>
-        /// &quot;Delete a task by ID.Required scopes: `task:read-write`.&quot;
+        /// Delete a task by ID.Required scopes: `task:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2TasksByTaskId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2TasksByTaskId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2TasksByTaskId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a single task by ID.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// Get a single task by ID.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2TasksByTaskId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2TasksByTaskId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2TasksByTaskId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates an existing task by `task_id`. At present, only the `deadline_at`, `is_completed`, `linked_records`, and `assignees` fields can be updated.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// Updates an existing task by `task_id`. At present, only the `deadline_at`, `is_completed`, `linked_records`, and `assignees` fields can be updated.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete a task by ID.Required scopes: `task:read-write`.&quot;
+        /// Delete a task by ID.Required scopes: `task:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a single task by ID.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// Get a single task by ID.Required scopes: `task:read`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates an existing task by `task_id`. At present, only the `deadline_at`, `is_completed`, `linked_records`, and `assignees` fields can be updated.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.&quot;
+        /// Updates an existing task by `task_id`. At present, only the `deadline_at`, `is_completed`, `linked_records`, and `assignees` fields can be updated.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

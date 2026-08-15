@@ -15,7 +15,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>For actor reference attributes, you may pass a dynamic value of `&quot;current-user&quot;`. When creating new records or entries, this will cause the actor reference value to be populated with either the workspace member or API token that created the record/entry.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapperValue? Value { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CurrentUserValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapper"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapperValue>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CurrentUserValue>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapperValue>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CurrentUserValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

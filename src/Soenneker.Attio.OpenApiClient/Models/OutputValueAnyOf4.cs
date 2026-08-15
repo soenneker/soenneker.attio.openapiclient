@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf4AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.DateAttributeType? AttributeType { get; set; }
         /// <summary>A date represents a single calendar year, month and day, independent of timezone. If hours, months, seconds or timezones are provided, they will be trimmed. For example, &quot;2023&quot; and &quot;2023-01&quot; will be coerced into &quot;2023-01-01&quot;, and &quot;2023-01-02&quot;, &quot;2023-01-02T13:00&quot;, &quot;2023-01-02T14:00:00&quot;, &quot;2023-01-02T15:00:00.000000000&quot;, and &quot;2023-01-02T15:00:00.000000000+02:00&quot; will all be coerced to &quot;2023-01-02&quot;. If a timezone is provided that would result in a different calendar date in UTC, the date will be coerced to UTC and then the timezone component will be trimmed. For example, the value &quot;2023-01-02T23:00:00-10:00&quot; will be returned as &quot;2023-01-03&quot;. The maximum date is &quot;9999-12-31&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf4AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.DateAttributeType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf4AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.DateAttributeType>("attribute_type", AttributeType);
             writer.WriteStringValue("value", Value);
         }
     }

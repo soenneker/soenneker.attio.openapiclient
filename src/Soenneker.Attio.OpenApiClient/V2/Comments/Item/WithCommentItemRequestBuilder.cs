@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
         {
         }
         /// <summary>
-        /// &quot;Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.Required scopes: `comment:read-write`.&quot;
+        /// Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.Required scopes: `comment:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2CommentsByCommentId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2CommentsByCommentId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2CommentsByCommentId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.&quot;
+        /// Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2CommentsByCommentId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2CommentsByCommentId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2CommentsByCommentId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.Required scopes: `comment:read-write`.&quot;
+        /// Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.Required scopes: `comment:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +99,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.&quot;
+        /// Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

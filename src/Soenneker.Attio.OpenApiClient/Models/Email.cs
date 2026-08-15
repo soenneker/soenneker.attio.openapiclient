@@ -24,7 +24,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public global::Soenneker.Attio.OpenApiClient.Models.EmailId Id { get; set; }
 #endif
-        /// <summary>&quot;The person and company records whose email addresses or domains match this email&apos;s participants. Unlike meetings, this link is derived when you make the request rather than stored, so it reflects your records as they are now: creating a person record today will make older emails start reporting it.&quot;</summary>
+        /// <summary>The person and company records whose email addresses or domains match this email&apos;s participants. Unlike meetings, this link is derived when you make the request rather than stored, so it reflects your records as they are now: creating a person record today will make older emails start reporting it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem>? LinkedRecords { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem> LinkedRecords { get; set; }
 #endif
-        /// <summary>&quot;The participants on the email. Note that `bcc` participants are realistically only present on outbound email: inbound messages do not disclose the other recipients&apos; blind copies, so an absent `bcc` participant is not evidence that there was none.&quot;</summary>
+        /// <summary>The participants on the email. Note that `bcc` participants are realistically only present on outbound email: inbound messages do not disclose the other recipients&apos; blind copies, so an absent `bcc` participant is not evidence that there was none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem>? Participants { get; set; }

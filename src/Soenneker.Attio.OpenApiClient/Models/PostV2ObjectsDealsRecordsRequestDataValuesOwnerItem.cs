@@ -17,7 +17,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The ID of the referenced Actor.</summary>
         public Guid? ReferencedActorId { get; set; }
         /// <summary>The type of the referenced actor. Currently, only workspace members can be written into actor reference attributes. [Read more information on actor types here](/docs/actors).</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemReferencedActorType? ReferencedActorType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType? ReferencedActorType { get; set; }
         /// <summary>Workspace member actors can be referenced by email address as well as actor ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,7 +52,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "referenced_actor_id", n => { ReferencedActorId = n.GetGuidValue(); } },
-                { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemReferencedActorType>(); } },
+                { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>(); } },
                 { "workspace_member_email_address", n => { WorkspaceMemberEmailAddress = n.GetStringValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("referenced_actor_id", ReferencedActorId);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemReferencedActorType>("referenced_actor_type", ReferencedActorType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>("referenced_actor_type", ReferencedActorType);
             writer.WriteStringValue("workspace_member_email_address", WorkspaceMemberEmailAddress);
             writer.WriteAdditionalData(AdditionalData);
         }

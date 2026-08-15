@@ -17,7 +17,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
         public DateTimeOffset? ActiveUntil { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType? AttributeType { get; set; }
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "active_from", n => { ActiveFrom = n.GetDateTimeOffsetValue(); } },
                 { "active_until", n => { ActiveUntil = n.GetDateTimeOffsetValue(); } },
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemAttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType>(); } },
                 { "created_by_actor", n => { CreatedByActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemCreatedByActor>(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemCreatedByActor.CreateFromDiscriminatorValue); } },
                 { "interacted_at", n => { InteractedAt = n.GetDateTimeOffsetValue(); } },
                 { "interaction_type", n => { InteractionType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType>(); } },
@@ -74,7 +74,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemAttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType>("attribute_type", AttributeType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteDateTimeOffsetValue("interacted_at", InteractedAt);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType>("interaction_type", InteractionType);

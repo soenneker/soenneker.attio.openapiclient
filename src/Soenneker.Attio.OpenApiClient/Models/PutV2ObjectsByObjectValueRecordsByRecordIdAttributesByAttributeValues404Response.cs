@@ -31,7 +31,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The status_code property</summary>
         public double? StatusCode { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404ResponseType? Type { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.InvalidRequestErrorType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404Response"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404ResponseCode>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status_code", n => { StatusCode = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404ResponseType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InvalidRequestErrorType>(); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404ResponseCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteDoubleValue("status_code", StatusCode);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404ResponseType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InvalidRequestErrorType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

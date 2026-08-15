@@ -15,7 +15,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf12AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType? AttributeType { get; set; }
         /// <summary>The ISO 3166-1 alpha-2 country code representing the country that this phone number belongs to.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf12CountryCode? CountryCode { get; set; }
         /// <summary>The raw, original phone number, as inputted.</summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf12AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType>(); } },
                 { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf12CountryCode>(); } },
                 { "original_phone_number", n => { OriginalPhoneNumber = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
@@ -72,7 +72,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf12AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType>("attribute_type", AttributeType);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf12CountryCode>("country_code", CountryCode);
             writer.WriteStringValue("original_phone_number", OriginalPhoneNumber);
             writer.WriteStringValue("phone_number", PhoneNumber);

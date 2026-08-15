@@ -23,7 +23,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Template Template { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Type? Type { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.DynamicType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "template", n => { Template = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Template>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Template.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.DynamicType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Template>("template", Template);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.DynamicType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

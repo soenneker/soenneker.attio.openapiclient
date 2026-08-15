@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
         {
         }
         /// <summary>
-        /// &quot;List all call recordings for a meeting.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.&quot;
+        /// List all call recordings for a meeting.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` should always be provided — it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.&quot;
+        /// Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` should always be provided — it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -94,7 +94,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all call recordings for a meeting.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.&quot;
+        /// List all call recordings for a meeting.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` should always be provided — it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.&quot;
+        /// Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` should always be provided — it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -144,7 +144,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
             return new global::Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings.Call_recordingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all call recordings for a meeting.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.&quot;
+        /// List all call recordings for a meeting.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Call_recordingsRequestBuilderGetQueryParameters 

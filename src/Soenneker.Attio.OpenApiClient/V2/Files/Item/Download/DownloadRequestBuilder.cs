@@ -33,7 +33,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files.Item.Download
         {
         }
         /// <summary>
-        /// &quot;Downloads a file by redirecting to a signed URL.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `object_configuration:read`, `record_permission:read`, `file:read`.&quot;
+        /// Downloads a file by redirecting to a signed URL.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `object_configuration:read`, `record_permission:read`, `file:read`.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files.Item.Download
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Downloads a file by redirecting to a signed URL.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `object_configuration:read`, `record_permission:read`, `file:read`.&quot;
+        /// Downloads a file by redirecting to a signed URL.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `object_configuration:read`, `record_permission:read`, `file:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

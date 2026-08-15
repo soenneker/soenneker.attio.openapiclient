@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
         {
         }
         /// <summary>
-        /// &quot;Deletes a single record (e.g. a company or person) by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.&quot;
+        /// Deletes a single record (e.g. a company or person) by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValueRecordsByRecordId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValueRecordsByRecordId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValueRecordsByRecordId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Gets a single person, company or other record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Gets a single person, company or other record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValueRecordsByRecordId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +119,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValueRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValueRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to append multiselect values without removing those that already exist.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to append multiselect values without removing those that already exist.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +146,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes a single record (e.g. a company or person) by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.&quot;
+        /// Deletes a single record (e.g. a company or person) by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Gets a single person, company or other record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.&quot;
+        /// Gets a single person, company or other record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +184,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the `PUT` endpoint to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -206,7 +206,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to append multiselect values without removing those that already exist.Required scopes: `record_permission:read-write`, `object_configuration:read`.&quot;
+        /// Use this endpoint to update people, companies, and other records by `record_id`. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the `PATCH` endpoint to append multiselect values without removing those that already exist.Required scopes: `record_permission:read-write`, `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

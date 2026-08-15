@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf15AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.RatingAttributeType? AttributeType { get; set; }
         /// <summary>A number between 0 and 5 (inclusive) to represent a star rating.</summary>
         public double? Value { get; set; }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf15AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.RatingAttributeType>(); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
@@ -45,7 +45,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf15AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.RatingAttributeType>("attribute_type", AttributeType);
             writer.WriteDoubleValue("value", Value);
         }
     }

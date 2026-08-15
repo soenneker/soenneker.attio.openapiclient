@@ -14,7 +14,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The markdown representation of the note content. Supports a subset of markdown features including:- Headings (levels 1-3 only with `#`, `##`, `###`)- Unordered lists (`-`, `*`, `+`)- Ordered lists (`1.`, `2.`, etc.)- Text styling: `**bold**`, `*italic*`, `~~strikethrough~~`, `==highlighted==`- Links: `[link text](https://example.com)`Note that note images are not returned as part of the markdown API representation.&quot;</summary>
+        /// <summary>The markdown representation of the note content. Supports a subset of markdown features including:- Headings (levels 1-3 only with `#`, `##`, `###`)- Unordered lists (`-`, `*`, `+`)- Ordered lists (`1.`, `2.`, etc.)- Text styling: `**bold**`, `*italic*`, `~~strikethrough~~`, `==highlighted==`- Links: `[link text](https://example.com)`Note that note images are not returned as part of the markdown API representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentMarkdown { get; set; }

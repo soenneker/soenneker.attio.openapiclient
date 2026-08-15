@@ -17,7 +17,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
         public DateTimeOffset? ActiveUntil { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType? AttributeType { get; set; }
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "active_from", n => { ActiveFrom = n.GetDateTimeOffsetValue(); } },
                 { "active_until", n => { ActiveUntil = n.GetDateTimeOffsetValue(); } },
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemAttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType>(); } },
                 { "created_by_actor", n => { CreatedByActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemCreatedByActor>(global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemCreatedByActor.CreateFromDiscriminatorValue); } },
                 { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemCurrencyCode>(); } },
                 { "currency_value", n => { CurrencyValue = n.GetDoubleValue(); } },
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemAttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType>("attribute_type", AttributeType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200ResponseDataValuesValueItemCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteDoubleValue("currency_value", CurrencyValue);

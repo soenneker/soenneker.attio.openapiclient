@@ -7,36 +7,60 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFile"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFolder"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFolder"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostV2FilesRequest : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class PostV2FilesRequest : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFile"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ID of the file or folder in the external storage provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFile? PostV2FilesRequestConnectedFile { get; set; }
+        public string? ExternalProviderFileId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFile PostV2FilesRequestConnectedFile { get; set; }
+        public string ExternalProviderFileId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFolder"/></summary>
+        /// <summary>Creates a native Attio folder entry.</summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFileType? FileType { get; set; }
+        /// <summary>Microsoft drive ID. Only used when `storage_provider` is `microsoft-onedrive`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFolder? PostV2FilesRequestConnectedFolder { get; set; }
+        public string? MicrosoftDriveId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFolder PostV2FilesRequestConnectedFolder { get; set; }
+        public string MicrosoftDriveId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFolder"/></summary>
+        /// <summary>The folder name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFolder? PostV2FilesRequestFolder { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFolder PostV2FilesRequestFolder { get; set; }
+        public string Name { get; set; }
 #endif
+        /// <summary>The object slug or ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
+        /// <summary>Optional parent folder ID. Omit to create a top-level folder.</summary>
+        public Guid? ParentFolderId { get; set; }
+        /// <summary>The ID of the record to create the file entry on.</summary>
+        public Guid? RecordId { get; set; }
+        /// <summary>The external storage provider.</summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestStorageProvider? StorageProvider { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequest"/> and sets the default values.
+        /// </summary>
+        public PostV2FilesRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +69,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequest();
-            if("PostV2FilesRequestConnectedFile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PostV2FilesRequestConnectedFile = new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFile();
-            }
-            else if("PostV2FilesRequestConnectedFolder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PostV2FilesRequestConnectedFolder = new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFolder();
-            }
-            else if("PostV2FilesRequestFolder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PostV2FilesRequestFolder = new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFolder();
-            }
-            return result;
+            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +77,17 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PostV2FilesRequestConnectedFile != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return PostV2FilesRequestConnectedFile.GetFieldDeserializers();
-            }
-            else if(PostV2FilesRequestConnectedFolder != null)
-            {
-                return PostV2FilesRequestConnectedFolder.GetFieldDeserializers();
-            }
-            else if(PostV2FilesRequestFolder != null)
-            {
-                return PostV2FilesRequestFolder.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "external_provider_file_id", n => { ExternalProviderFileId = n.GetStringValue(); } },
+                { "file_type", n => { FileType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFileType>(); } },
+                { "microsoft_drive_id", n => { MicrosoftDriveId = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
+                { "parent_folder_id", n => { ParentFolderId = n.GetGuidValue(); } },
+                { "record_id", n => { RecordId = n.GetGuidValue(); } },
+                { "storage_provider", n => { StorageProvider = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestStorageProvider>(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +96,15 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PostV2FilesRequestConnectedFile != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFile>(null, PostV2FilesRequestConnectedFile);
-            }
-            else if(PostV2FilesRequestConnectedFolder != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFolder>(null, PostV2FilesRequestConnectedFolder);
-            }
-            else if(PostV2FilesRequestFolder != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFolder>(null, PostV2FilesRequestFolder);
-            }
+            writer.WriteStringValue("external_provider_file_id", ExternalProviderFileId);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFileType>("file_type", FileType);
+            writer.WriteStringValue("microsoft_drive_id", MicrosoftDriveId);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("object", Object);
+            writer.WriteGuidValue("parent_folder_id", ParentFolderId);
+            writer.WriteGuidValue("record_id", RecordId);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestStorageProvider>("storage_provider", StorageProvider);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

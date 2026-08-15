@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.&quot;
+        /// Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.&quot;
+        /// Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

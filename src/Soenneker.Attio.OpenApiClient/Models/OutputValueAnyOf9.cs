@@ -13,7 +13,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf9AttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.LocationAttributeType? AttributeType { get; set; }
         /// <summary>The ISO 3166-1 alpha-2 country code for the country this location is in.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf9CountryCode? CountryCode { get; set; }
         /// <summary>The latitude of the location. Validated by the regular expression `/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)$/`. Values are stored with up to 9 decimal places of precision. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.}</summary>
@@ -106,7 +106,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf9AttributeType>(); } },
+                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.LocationAttributeType>(); } },
                 { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf9CountryCode>(); } },
                 { "latitude", n => { Latitude = n.GetStringValue(); } },
                 { "line_1", n => { Line1 = n.GetStringValue(); } },
@@ -126,7 +126,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf9AttributeType>("attribute_type", AttributeType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.LocationAttributeType>("attribute_type", AttributeType);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf9CountryCode>("country_code", CountryCode);
             writer.WriteStringValue("latitude", Latitude);
             writer.WriteStringValue("line_1", Line1);

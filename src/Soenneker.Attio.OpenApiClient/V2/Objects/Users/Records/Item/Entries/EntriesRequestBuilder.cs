@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item.Entries
         {
         }
         /// <summary>
-        /// &quot;List all entries, across all lists, for which this user record is the parent.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.&quot;
+        /// List all entries, across all lists, for which this user record is the parent.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordIdEntries200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item.Entries
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordIdEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordIdEntries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all entries, across all lists, for which this user record is the parent.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.&quot;
+        /// List all entries, across all lists, for which this user record is the parent.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item.Entries
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item.Entries.EntriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all entries, across all lists, for which this user record is the parent.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.&quot;
+        /// List all entries, across all lists, for which this user record is the parent.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntriesRequestBuilderGetQueryParameters 
