@@ -8843,7 +8843,7 @@
           "api_slug": {
             "type": "string",
             "description": "A human-readable slug for use in URLs and responses.",
-            "example": "hiring-engineering"
+            "example": "enterprise_sales"
           },
           "name": {
             "type": "string",
@@ -12172,7 +12172,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12233,7 +12233,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12258,7 +12258,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12319,7 +12319,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12405,7 +12405,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12455,7 +12455,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12516,7 +12516,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12602,7 +12602,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -12843,7 +12843,7 @@
           },
           "message": {
             "type": "string",
-            "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+            "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
           }
         },
         "description": "Bad Request"
@@ -13255,7 +13255,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -13374,7 +13374,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -15817,7 +15817,7 @@
           },
           "message": {
             "type": "string",
-            "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+            "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
           }
         },
         "description": "Bad Request"
@@ -16062,7 +16062,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -16288,7 +16288,7 @@
           },
           "message": {
             "type": "string",
-            "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+            "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
           }
         },
         "description": "Bad Request"
@@ -16532,7 +16532,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -16758,7 +16758,7 @@
           },
           "message": {
             "type": "string",
-            "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+            "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
           }
         },
         "description": "Bad Request"
@@ -17002,7 +17002,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -17065,7 +17065,7 @@
           },
           "message": {
             "type": "string",
-            "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+            "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
           }
         },
         "description": "Bad Request"
@@ -17382,7 +17382,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -17535,7 +17535,7 @@
           },
           "message": {
             "type": "string",
-            "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+            "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
           }
         },
         "description": "Bad Request"
@@ -17851,7 +17851,7 @@
           },
           "message": {
             "type": "string",
-            "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+            "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
           }
         },
         "description": "Not Found"
@@ -21141,7 +21141,7 @@
           "api_slug": {
             "type": "string",
             "description": "A unique, human-readable slug to access the attribute through URLs and API calls. Formatted in snake case.",
-            "example": "my-attribute"
+            "example": "my_attribute"
           },
           "type": {
             "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributesRequestDataType"
@@ -21192,7 +21192,7 @@
           "api_slug": {
             "type": "string",
             "description": "A unique, human-readable slug to access the attribute through URLs and API calls. Formatted in snake case.",
-            "example": "my-attribute"
+            "example": "my_attribute"
           },
           "is_required": {
             "type": "boolean",
@@ -22081,7 +22081,7 @@
           "list_api_slug": {
             "type": "string",
             "description": "A human-readable slug for the list for use in URLs and responses.",
-            "example": "hiring-engineering"
+            "example": "enterprise_sales"
           },
           "entry_id": {
             "type": "string",
@@ -24151,7 +24151,7 @@
           "list_api_slug": {
             "type": "string",
             "description": "A human-readable slug for the list for use in URLs and responses.",
-            "example": "hiring-engineering"
+            "example": "enterprise_sales"
           },
           "entry_id": {
             "type": "string",
@@ -24628,7 +24628,7 @@
           "list_api_slug": {
             "type": "string",
             "description": "A human-readable slug for the list for use in URLs and responses.",
-            "example": "sales-prospects"
+            "example": "enterprise_sales"
           },
           "entry_id": {
             "type": "string",
@@ -25098,7 +25098,7 @@
           "list_api_slug": {
             "type": "string",
             "description": "A human-readable slug for the list for use in URLs and responses.",
-            "example": "hiring-engineering"
+            "example": "enterprise_sales"
           },
           "entry_id": {
             "type": "string",
@@ -25494,7 +25494,7 @@
           "list_api_slug": {
             "type": "string",
             "description": "A human-readable slug for the list for use in URLs and responses.",
-            "example": "hiring-engineering"
+            "example": "enterprise_sales"
           },
           "entry_id": {
             "type": "string",
@@ -25972,7 +25972,7 @@
           "list_api_slug": {
             "type": "string",
             "description": "A human-readable slug for the list for use in URLs and responses.",
-            "example": "hiring-engineering"
+            "example": "enterprise_sales"
           },
           "entry_id": {
             "type": "string",

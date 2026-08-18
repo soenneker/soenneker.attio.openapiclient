@@ -3264,7 +3264,7 @@
           "api_slug": {
             "type": "string",
             "description": "A human-readable slug for use in URLs and responses.",
-            "example": "hiring-engineering"
+            "example": "enterprise_sales"
           },
           "name": {
             "type": "string",
@@ -5746,7 +5746,7 @@
                       "api_slug": {
                         "type": "string",
                         "description": "A unique, human-readable slug to access the attribute through URLs and API calls. Formatted in snake case.",
-                        "example": "my-attribute"
+                        "example": "my_attribute"
                       },
                       "type": {
                         "type": "string",
@@ -6262,7 +6262,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -6351,7 +6351,7 @@
                       "api_slug": {
                         "type": "string",
                         "description": "A unique, human-readable slug to access the attribute through URLs and API calls. Formatted in snake case.",
-                        "example": "my-attribute"
+                        "example": "my_attribute"
                       },
                       "is_required": {
                         "type": "boolean",
@@ -6647,7 +6647,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -6772,7 +6772,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -6952,7 +6952,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -7187,7 +7187,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -7354,7 +7354,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -7549,7 +7549,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -7799,7 +7799,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -14303,7 +14303,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+                      "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
                     }
                   },
                   "required": [
@@ -23133,7 +23133,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -25336,7 +25336,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -25434,7 +25434,7 @@
                           "list_api_slug": {
                             "type": "string",
                             "description": "A human-readable slug for the list for use in URLs and responses.",
-                            "example": "hiring-engineering"
+                            "example": "enterprise_sales"
                           },
                           "entry_id": {
                             "type": "string",
@@ -60647,7 +60647,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+                      "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
                     }
                   },
                   "required": [
@@ -68477,7 +68477,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -68564,7 +68564,7 @@
                           "list_api_slug": {
                             "type": "string",
                             "description": "A human-readable slug for the list for use in URLs and responses.",
-                            "example": "hiring-engineering"
+                            "example": "enterprise_sales"
                           },
                           "entry_id": {
                             "type": "string",
@@ -79788,7 +79788,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+                      "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
                     }
                   },
                   "required": [
@@ -89283,7 +89283,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -89370,7 +89370,7 @@
                           "list_api_slug": {
                             "type": "string",
                             "description": "A human-readable slug for the list for use in URLs and responses.",
-                            "example": "sales-prospects"
+                            "example": "enterprise_sales"
                           },
                           "entry_id": {
                             "type": "string",
@@ -92754,7 +92754,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+                      "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
                     }
                   },
                   "required": [
@@ -96867,7 +96867,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -96954,7 +96954,7 @@
                           "list_api_slug": {
                             "type": "string",
                             "description": "A human-readable slug for the list for use in URLs and responses.",
-                            "example": "hiring-engineering"
+                            "example": "enterprise_sales"
                           },
                           "entry_id": {
                             "type": "string",
@@ -98616,7 +98616,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+                      "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
                     }
                   },
                   "required": [
@@ -104920,7 +104920,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -105007,7 +105007,7 @@
                           "list_api_slug": {
                             "type": "string",
                             "description": "A human-readable slug for the list for use in URLs and responses.",
-                            "example": "hiring-engineering"
+                            "example": "enterprise_sales"
                           },
                           "entry_id": {
                             "type": "string",
@@ -107348,7 +107348,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "No attribute was found for matching_attribute slug/ID \u0022my-attribute\u0022."
+                      "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
                     }
                   },
                   "required": [
@@ -113043,7 +113043,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Attribute with slug/ID \u0022my-attribute\u0022 not found."
+                      "example": "Attribute with slug/ID \u0022my_attribute\u0022 not found."
                     }
                   },
                   "required": [
@@ -113130,7 +113130,7 @@
                           "list_api_slug": {
                             "type": "string",
                             "description": "A human-readable slug for the list for use in URLs and responses.",
-                            "example": "hiring-engineering"
+                            "example": "enterprise_sales"
                           },
                           "entry_id": {
                             "type": "string",
