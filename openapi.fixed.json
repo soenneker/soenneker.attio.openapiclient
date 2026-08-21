@@ -314,6 +314,235 @@
         ]
       }
     },
+    "/v2/activities": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "List activities",
+        "description": "Lists all system-defined and user-defined activities in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.",
+        "operationId": "GetV2Activities",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "description": "The maximum number of activities to return. Must be between 1 and 1000. Defaults to 100.",
+              "default": 100,
+              "example": 100
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "description": "A pagination cursor used to fetch the next page of activities. Responses with more activities will include a cursor for you to use here. If not provided, the first page will be returned.",
+              "example": "eyJkZXNjcmlwdGlvbiI6ICJ0aGlzIGlzIGEgY3Vyc29yIn0=.eM56CGbqZ6G1NHiJchTIkH4vKDr"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetV2Activities200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Create an activity",
+        "description": "Creates a new custom activity in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "operationId": "PostV2Activities",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostV2ActivitiesRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2Activities200Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2Activities409Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read-write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v2/activities/{activity}": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Get an activity",
+        "description": "Gets a single activity by its \u0060activity_id\u0060 or slug.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.",
+        "operationId": "GetV2ActivitiesByActivity",
+        "parameters": [
+          {
+            "name": "activity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetV2ActivitiesByActivity200Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetV2ActivitiesByActivity404Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read"
+            ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Update an activity",
+        "description": "Updates a single activity by its \u0060activity_id\u0060 or slug. The schema an activity extends is fixed after creation, so \u0060extends\u0060 cannot be changed.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "operationId": "PatchV2ActivitiesByActivity",
+        "parameters": [
+          {
+            "name": "activity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchV2ActivitiesByActivityRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ActivitiesByActivity200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ActivitiesByActivity400Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ActivitiesByActivity404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ActivitiesByActivity409Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read-write"
+            ]
+          }
+        ]
+      }
+    },
     "/v2/{target}/{identifier}/attributes": {
       "get": {
         "tags": [
@@ -4297,6 +4526,55 @@
         ]
       }
     },
+    "/v2/sequences/unsubscribed_emails": {
+      "post": {
+        "tags": [
+          "Sequences"
+        ],
+        "summary": "Add emails to the unsubscribe list",
+        "description": "Adds email addresses to the workspace\u0027s sequence unsubscribe list. Email addresses on the unsubscribe list cannot be enrolled in any sequence, and any of their active sequence runs are exited. Email addresses that are already on the unsubscribe list are ignored, so this endpoint is safe to retry.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060sequence_unsubscribe:read-write\u0060.",
+        "operationId": "PostV2SequencesUnsubscribedEmails",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostV2SequencesUnsubscribedEmailsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2SequencesUnsubscribedEmails200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2SequencesUnsubscribedEmails400Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "sequence_unsubscribe:read-write"
+            ]
+          }
+        ]
+      }
+    },
     "/v2/meetings": {
       "get": {
         "tags": [
@@ -8138,6 +8416,55 @@
   },
   "components": {
     "schemas": {
+      "Activity": {
+        "required": [
+          "id",
+          "api_slug",
+          "singular_noun",
+          "plural_noun",
+          "extends",
+          "is_system_activity",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ActivityId"
+          },
+          "api_slug": {
+            "type": "string",
+            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Formatted in snake case.",
+            "example": "phone_calls"
+          },
+          "singular_noun": {
+            "type": "string",
+            "description": "The singular form of the activity\u0027s name.",
+            "example": "Phone call"
+          },
+          "plural_noun": {
+            "type": "string",
+            "description": "The plural form of the activity\u0027s name.",
+            "example": "Phone calls"
+          },
+          "extends": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityExtendsItem"
+            },
+            "description": "The schemas this activity directly extends, which supply its inherited attributes."
+          },
+          "is_system_activity": {
+            "type": "boolean",
+            "description": "\u0060true\u0060 when Attio defines the activity, \u0060false\u0060 when it\u0027s a custom activity.",
+            "example": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the activity was created.",
+            "example": "2022-11-21T13:22:49.061281000Z"
+          }
+        }
+      },
       "Status": {
         "required": [
           "id",
@@ -10832,6 +11159,47 @@
           }
         ]
       },
+      "ActivityId": {
+        "required": [
+          "workspace_id",
+          "activity_id"
+        ],
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string",
+            "description": "A UUID to identify the workspace this activity belongs to.",
+            "format": "uuid",
+            "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
+          },
+          "activity_id": {
+            "type": "string",
+            "description": "A UUID to identify the activity.",
+            "format": "uuid",
+            "example": "97052eb9-e65e-443f-a297-f2d9a4a7f795"
+          }
+        }
+      },
+      "ActivityExtendsItem": {
+        "required": [
+          "schema_id",
+          "schema_slug"
+        ],
+        "type": "object",
+        "properties": {
+          "schema_id": {
+            "type": "string",
+            "description": "A UUID to identify the schema.",
+            "format": "uuid",
+            "example": "b1d6a29e-6f6f-4a0a-9b0e-59f0a3e3f7a1"
+          },
+          "schema_slug": {
+            "type": "string",
+            "description": "The human-readable slug of the schema.",
+            "example": "calls"
+          }
+        }
+      },
       "StatusId": {
         "required": [
           "workspace_id",
@@ -12065,6 +12433,172 @@
           }
         },
         "description": "Not Found"
+      },
+      "GetV2Activities200Response": {
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/GetV2Activities200ResponsePagination"
+          }
+        },
+        "description": "Success"
+      },
+      "PostV2ActivitiesRequest": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PostV2ActivitiesRequestData"
+          }
+        }
+      },
+      "PostV2Activities409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2Activities409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/SlugConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Failed to create activity. Please ensure your api_slug and names are unique."
+          }
+        },
+        "description": "Conflict"
+      },
+      "GetV2ActivitiesByActivity404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/GetV2ActivitiesByActivity404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Activity with slug/ID \u0022phone_calls\u0022 not found."
+          }
+        },
+        "description": "Not Found"
+      },
+      "PatchV2ActivitiesByActivityRequest": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivityRequestData"
+          }
+        }
+      },
+      "PatchV2ActivitiesByActivity400Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivity400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ValidationTypeCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You passed an empty payload. Please ensure you are updating at least one property in your request."
+          }
+        },
+        "description": "Bad Request"
+      },
+      "PatchV2ActivitiesByActivity404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivity404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Activity with slug/ID \u0022phone_calls\u0022 not found."
+          }
+        },
+        "description": "Not Found"
+      },
+      "PatchV2ActivitiesByActivity409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivity409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/SlugConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Failed to update activity. Please ensure your api_slug is unique."
+          }
+        },
+        "description": "Conflict"
       },
       "PostV2ByTargetByIdentifierAttributesRequest": {
         "required": [
@@ -14822,6 +15356,58 @@
           }
         },
         "description": "Success"
+      },
+      "PostV2SequencesUnsubscribedEmailsRequest": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PostV2SequencesUnsubscribedEmailsRequestData"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostV2SequencesUnsubscribedEmails200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PostV2SequencesUnsubscribedEmails200ResponseDataItem"
+            }
+          }
+        },
+        "description": "Success"
+      },
+      "PostV2SequencesUnsubscribedEmails400Response": {
+        "required": [
+          "statusCode",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "$ref": "#/components/schemas/PostV2SequencesUnsubscribedEmails400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ValidationTypeCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Body payload validation error."
+          }
+        },
+        "description": "Bad Request"
       },
       "GetV2Meetings200Response": {
         "required": [
@@ -19222,6 +19808,42 @@
         },
         "description": "Success"
       },
+      "PostV2Activities200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Activity"
+          }
+        },
+        "description": "Success"
+      },
+      "GetV2ActivitiesByActivity200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Activity"
+          }
+        },
+        "description": "Success"
+      },
+      "PatchV2ActivitiesByActivity200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Activity"
+          }
+        },
+        "description": "Success"
+      },
       "GetV2ByTargetByIdentifierAttributes200Response": {
         "required": [
           "data"
@@ -21111,6 +21733,74 @@
             ]
           }
         }
+      },
+      "GetV2Activities200ResponsePagination": {
+        "required": [
+          "next_cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "next_cursor": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "PostV2ActivitiesRequestData": {
+        "required": [
+          "api_slug",
+          "singular_noun",
+          "plural_noun",
+          "extends"
+        ],
+        "type": "object",
+        "properties": {
+          "api_slug": {
+            "type": "string",
+            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Should be formatted in snake case.",
+            "example": "site_visits"
+          },
+          "singular_noun": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The singular form of the activity\u0027s name.",
+            "example": "Site visit"
+          },
+          "plural_noun": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The plural form of the activity\u0027s name.",
+            "example": "Site visits"
+          },
+          "extends": {
+            "$ref": "#/components/schemas/PostV2ActivitiesRequestDataExtends"
+          }
+        }
+      },
+      "PatchV2ActivitiesByActivityRequestData": {
+        "type": "object",
+        "properties": {
+          "api_slug": {
+            "type": "string",
+            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Should be formatted in snake case.",
+            "example": "site_visits"
+          },
+          "singular_noun": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The singular form of the activity\u0027s name.",
+            "example": "Site visit"
+          },
+          "plural_noun": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The plural form of the activity\u0027s name.",
+            "example": "Site visits"
+          }
+        },
+        "additionalProperties": false
       },
       "PostV2ByTargetByIdentifierAttributesRequestData": {
         "required": [
@@ -23219,6 +23909,46 @@
               "null",
               "string"
             ]
+          }
+        }
+      },
+      "PostV2SequencesUnsubscribedEmailsRequestData": {
+        "required": [
+          "email_addresses"
+        ],
+        "type": "object",
+        "properties": {
+          "email_addresses": {
+            "maxItems": 1000,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "email",
+              "example": "person@example.com"
+            },
+            "description": "The email addresses to add to the unsubscribe list. A maximum of 1000 email addresses can be provided per request. Email addresses are normalized before they are stored."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostV2SequencesUnsubscribedEmails200ResponseDataItem": {
+        "required": [
+          "email_address",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "email_address": {
+            "type": "string",
+            "description": "The normalized email address on the unsubscribe list.",
+            "example": "person@example.com"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the email address was added to the unsubscribe list.",
+            "format": "date-time",
+            "example": "2026-01-02T15:04:05.000Z"
           }
         }
       },
@@ -72990,6 +73720,41 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2Activities409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "GetV2ActivitiesByActivity404ResponseStatusCode": {
+        "enum": [
+          404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ActivitiesByActivity400ResponseStatusCode": {
+        "enum": [
+          400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ActivitiesByActivity404ResponseStatusCode": {
+        "enum": [
+          404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ActivitiesByActivity409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ByTargetByIdentifierAttributes400ResponseStatusCode": {
         "enum": [
           400
@@ -73825,6 +74590,13 @@
       "DeleteV2CommentsByCommentId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PostV2SequencesUnsubscribedEmails400ResponseStatusCode": {
+        "enum": [
+          400
         ],
         "type": "number",
         "additionalProperties": false
@@ -75479,6 +76251,35 @@
             {
               "value": "current-user",
               "name": "CurrentUser"
+            }
+          ]
+        }
+      },
+      "PostV2ActivitiesRequestDataExtends": {
+        "enum": [
+          "activities",
+          "interactions",
+          "calls"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The schema the new activity extends, which supplies its inherited attributes. One of \u0060activities\u0060, \u0060interactions\u0060 or \u0060calls\u0060.",
+        "example": "interactions",
+        "x-ms-enum": {
+          "name": "PostV2ActivitiesRequestDataExtends",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "activities",
+              "name": "Activities"
+            },
+            {
+              "value": "interactions",
+              "name": "Interactions"
+            },
+            {
+              "value": "calls",
+              "name": "Calls"
             }
           ]
         }
@@ -195462,7 +196263,13 @@
               "file:read": "View, and upload files.",
               "file:read-write": "View, and upload files.",
               "email:read": "View email metadata. Email content is never exposed.",
-              "email:read-write": "View email metadata. Email content is never exposed."
+              "email:read-write": "View email metadata. Email content is never exposed.",
+              "activity_configuration:read": "View, and optionally write, the configuration and attributes of activities.",
+              "activity_configuration:read-write": "View, and optionally write, the configuration and attributes of activities.",
+              "activity_record:read": "View, and optionally write, activity records.",
+              "activity_record:read-write": "View, and optionally write, activity records.",
+              "sequence_unsubscribe:read": "View, and optionally add to, the sequence unsubscribe list.",
+              "sequence_unsubscribe:read-write": "View, and optionally add to, the sequence unsubscribe list."
             }
           }
         }
@@ -195537,7 +196344,11 @@
     },
     {
       "name": "Emails",
-      "description": "Emails are messages synced from connected mailboxes. This API exposes their metadata \u2014 participants, subject line and timestamps \u2014 and never their content."
+      "description": "Emails are messages synced from connected mailboxes."
+    },
+    {
+      "name": "Sequences",
+      "description": "Sequences are automated email campaigns sent from Attio."
     },
     {
       "name": "Call recordings",

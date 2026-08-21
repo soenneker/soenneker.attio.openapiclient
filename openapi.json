@@ -72,7 +72,11 @@
     },
     {
       "name": "Emails",
-      "description": "Emails are messages synced from connected mailboxes. This API exposes their metadata \u2014 participants, subject line and timestamps \u2014 and never their content."
+      "description": "Emails are messages synced from connected mailboxes."
+    },
+    {
+      "name": "Sequences",
+      "description": "Sequences are automated email campaigns sent from Attio."
     },
     {
       "name": "Call recordings",
@@ -173,13 +177,103 @@
               "file:read": "View, and upload files.",
               "file:read-write": "View, and upload files.",
               "email:read": "View email metadata. Email content is never exposed.",
-              "email:read-write": "View email metadata. Email content is never exposed."
+              "email:read-write": "View email metadata. Email content is never exposed.",
+              "activity_configuration:read": "View, and optionally write, the configuration and attributes of activities.",
+              "activity_configuration:read-write": "View, and optionally write, the configuration and attributes of activities.",
+              "activity_record:read": "View, and optionally write, activity records.",
+              "activity_record:read-write": "View, and optionally write, activity records.",
+              "sequence_unsubscribe:read": "View, and optionally add to, the sequence unsubscribe list.",
+              "sequence_unsubscribe:read-write": "View, and optionally add to, the sequence unsubscribe list."
             }
           }
         }
       }
     },
     "schemas": {
+      "activity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "object",
+            "properties": {
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "A UUID to identify the workspace this activity belongs to.",
+                "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
+              },
+              "activity_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "A UUID to identify the activity.",
+                "example": "97052eb9-e65e-443f-a297-f2d9a4a7f795"
+              }
+            },
+            "required": [
+              "workspace_id",
+              "activity_id"
+            ]
+          },
+          "api_slug": {
+            "type": "string",
+            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Formatted in snake case.",
+            "example": "phone_calls"
+          },
+          "singular_noun": {
+            "type": "string",
+            "description": "The singular form of the activity\u0027s name.",
+            "example": "Phone call"
+          },
+          "plural_noun": {
+            "type": "string",
+            "description": "The plural form of the activity\u0027s name.",
+            "example": "Phone calls"
+          },
+          "extends": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "schema_id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "description": "A UUID to identify the schema.",
+                  "example": "b1d6a29e-6f6f-4a0a-9b0e-59f0a3e3f7a1"
+                },
+                "schema_slug": {
+                  "type": "string",
+                  "description": "The human-readable slug of the schema.",
+                  "example": "calls"
+                }
+              },
+              "required": [
+                "schema_id",
+                "schema_slug"
+              ]
+            },
+            "description": "The schemas this activity directly extends, which supply its inherited attributes."
+          },
+          "is_system_activity": {
+            "type": "boolean",
+            "description": "\u0060true\u0060 when Attio defines the activity, \u0060false\u0060 when it\u0027s a custom activity.",
+            "example": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the activity was created.",
+            "example": "2022-11-21T13:22:49.061281000Z"
+          }
+        },
+        "required": [
+          "id",
+          "api_slug",
+          "singular_noun",
+          "plural_noun",
+          "extends",
+          "is_system_activity",
+          "created_at"
+        ]
+      },
       "status": {
         "type": "object",
         "properties": {
@@ -5583,6 +5677,537 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/activities": {
+      "get": {
+        "summary": "List activities",
+        "description": "Lists all system-defined and user-defined activities in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read"
+            ]
+          }
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
+              "default": 100,
+              "description": "The maximum number of activities to return. Must be between 1 and 1000. Defaults to 100.",
+              "example": 100
+            },
+            "required": false,
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "A pagination cursor used to fetch the next page of activities. Responses with more activities will include a cursor for you to use here. If not provided, the first page will be returned.",
+              "example": "eyJkZXNjcmlwdGlvbiI6ICJ0aGlzIGlzIGEgY3Vyc29yIn0=.eM56CGbqZ6G1NHiJchTIkH4vKDr"
+            },
+            "required": false,
+            "name": "cursor",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/activity"
+                      }
+                    },
+                    "pagination": {
+                      "type": "object",
+                      "properties": {
+                        "next_cursor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "next_cursor"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "pagination"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create an activity",
+        "description": "Creates a new custom activity in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read-write"
+            ]
+          }
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "api_slug": {
+                        "type": "string",
+                        "description": "A unique, human-readable slug to access the activity through URLs and API calls. Should be formatted in snake case.",
+                        "example": "site_visits"
+                      },
+                      "singular_noun": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The singular form of the activity\u0027s name.",
+                        "example": "Site visit"
+                      },
+                      "plural_noun": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The plural form of the activity\u0027s name.",
+                        "example": "Site visits"
+                      },
+                      "extends": {
+                        "type": "string",
+                        "enum": [
+                          "activities",
+                          "interactions",
+                          "calls"
+                        ],
+                        "description": "The schema the new activity extends, which supplies its inherited attributes. One of \u0060activities\u0060, \u0060interactions\u0060 or \u0060calls\u0060.",
+                        "example": "interactions"
+                      }
+                    },
+                    "required": [
+                      "api_slug",
+                      "singular_noun",
+                      "plural_noun",
+                      "extends"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/activity"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "slug_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Failed to create activity. Please ensure your api_slug and names are unique."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/activities/{activity}": {
+      "get": {
+        "summary": "Get an activity",
+        "description": "Gets a single activity by its \u0060activity_id\u0060 or slug.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read"
+            ]
+          }
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            },
+            "required": true,
+            "name": "activity",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/activity"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Activity with slug/ID \u0022phone_calls\u0022 not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update an activity",
+        "description": "Updates a single activity by its \u0060activity_id\u0060 or slug. The schema an activity extends is fixed after creation, so \u0060extends\u0060 cannot be changed.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read-write"
+            ]
+          }
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            },
+            "required": true,
+            "name": "activity",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "api_slug": {
+                        "type": "string",
+                        "description": "A unique, human-readable slug to access the activity through URLs and API calls. Should be formatted in snake case.",
+                        "example": "site_visits"
+                      },
+                      "singular_noun": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The singular form of the activity\u0027s name.",
+                        "example": "Site visit"
+                      },
+                      "plural_noun": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The plural form of the activity\u0027s name.",
+                        "example": "Site visits"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/activity"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "validation_type"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You passed an empty payload. Please ensure you are updating at least one property in your request."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Activity with slug/ID \u0022phone_calls\u0022 not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "slug_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Failed to update activity. Please ensure your api_slug is unique."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -47217,6 +47842,145 @@
                     "pagination"
                   ],
                   "description": "Success"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/sequences/unsubscribed_emails": {
+      "post": {
+        "summary": "Add emails to the unsubscribe list",
+        "description": "Adds email addresses to the workspace\u0027s sequence unsubscribe list. Email addresses on the unsubscribe list cannot be enrolled in any sequence, and any of their active sequence runs are exited. Email addresses that are already on the unsubscribe list are ignored, so this endpoint is safe to retry.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060sequence_unsubscribe:read-write\u0060.",
+        "tags": [
+          "Sequences"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "sequence_unsubscribe:read-write"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "email_addresses": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "format": "email",
+                          "example": "person@example.com"
+                        },
+                        "minItems": 1,
+                        "maxItems": 1000,
+                        "description": "The email addresses to add to the unsubscribe list. A maximum of 1000 email addresses can be provided per request. Email addresses are normalized before they are stored."
+                      }
+                    },
+                    "required": [
+                      "email_addresses"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "data"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "email_address": {
+                            "type": "string",
+                            "description": "The normalized email address on the unsubscribe list.",
+                            "example": "person@example.com"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "When the email address was added to the unsubscribe list.",
+                            "example": "2026-01-02T15:04:05.000Z"
+                          }
+                        },
+                        "required": [
+                          "email_address",
+                          "created_at"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "validation_type"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Body payload validation error."
+                    }
+                  },
+                  "required": [
+                    "statusCode",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Bad Request"
                 }
               }
             }

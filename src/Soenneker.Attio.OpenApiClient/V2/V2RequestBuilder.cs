@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Attio.OpenApiClient.V2.Activities;
 using Soenneker.Attio.OpenApiClient.V2.Comments;
 using Soenneker.Attio.OpenApiClient.V2.Emails;
 using Soenneker.Attio.OpenApiClient.V2.Files;
@@ -11,6 +12,7 @@ using Soenneker.Attio.OpenApiClient.V2.Meetings;
 using Soenneker.Attio.OpenApiClient.V2.Notes;
 using Soenneker.Attio.OpenApiClient.V2.Objects;
 using Soenneker.Attio.OpenApiClient.V2.Self;
+using Soenneker.Attio.OpenApiClient.V2.Sequences;
 using Soenneker.Attio.OpenApiClient.V2.Sql;
 using Soenneker.Attio.OpenApiClient.V2.Tasks;
 using Soenneker.Attio.OpenApiClient.V2.Threads;
@@ -28,6 +30,11 @@ namespace Soenneker.Attio.OpenApiClient.V2
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V2RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The activities property</summary>
+        public global::Soenneker.Attio.OpenApiClient.V2.Activities.ActivitiesRequestBuilder Activities
+        {
+            get => new global::Soenneker.Attio.OpenApiClient.V2.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The comments property</summary>
         public global::Soenneker.Attio.OpenApiClient.V2.Comments.CommentsRequestBuilder Comments
         {
@@ -67,6 +74,11 @@ namespace Soenneker.Attio.OpenApiClient.V2
         public global::Soenneker.Attio.OpenApiClient.V2.Self.SelfRequestBuilder Self
         {
             get => new global::Soenneker.Attio.OpenApiClient.V2.Self.SelfRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sequences property</summary>
+        public global::Soenneker.Attio.OpenApiClient.V2.Sequences.SequencesRequestBuilder Sequences
+        {
+            get => new global::Soenneker.Attio.OpenApiClient.V2.Sequences.SequencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sql property</summary>
         public global::Soenneker.Attio.OpenApiClient.V2.Sql.SqlRequestBuilder Sql
