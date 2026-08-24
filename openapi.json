@@ -114659,7 +114659,7 @@
     "call-recording.created": {
       "post": {
         "operationId": "webhooks-call-recording.created",
-        "description": "This event fires after a call recording has finished and its media upload is complete.",
+        "description": "This event fires once a call recording has finished processing and its transcript and summary are available, or have permanently failed.",
         "tags": [
           "Call recording events"
         ],
@@ -114748,7 +114748,7 @@
                         "id",
                         "actor"
                       ],
-                      "description": "This event fires after a call recording has finished and its media upload is complete.",
+                      "description": "This event fires once a call recording has finished processing and its transcript and summary are available, or have permanently failed.",
                       "example": {
                         "event_type": "call-recording.created",
                         "id": {
@@ -114769,7 +114769,7 @@
                   "webhook_id",
                   "events"
                 ],
-                "description": "This event fires after a call recording has finished and its media upload is complete.",
+                "description": "This event fires once a call recording has finished processing and its transcript and summary are available, or have permanently failed.",
                 "example": {
                   "webhook_id": "23e42eaf-323a-41da-b5bb-fd67eebda553",
                   "events": [

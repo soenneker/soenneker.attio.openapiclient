@@ -18568,7 +18568,7 @@
             "description": "An array of webhook events. Currently, each delivery contains exactly one event, but this may change in the future to support batching."
           }
         },
-        "description": "This event fires after a call recording has finished and its media upload is complete.",
+        "description": "This event fires once a call recording has finished processing and its transcript and summary are available, or have permanently failed.",
         "example": {
           "webhook_id": "23e42eaf-323a-41da-b5bb-fd67eebda553",
           "events": [
@@ -26809,7 +26809,7 @@
             "$ref": "#/components/schemas/WebhooksCallRecordingCreatedRequestEventsItemActor"
           }
         },
-        "description": "This event fires after a call recording has finished and its media upload is complete.",
+        "description": "This event fires once a call recording has finished processing and its transcript and summary are available, or have permanently failed.",
         "example": {
           "event_type": "call-recording.created",
           "id": {
@@ -196406,7 +196406,7 @@
           "Call recording events"
         ],
         "summary": "call-recording.created",
-        "description": "This event fires after a call recording has finished and its media upload is complete.",
+        "description": "This event fires once a call recording has finished processing and its transcript and summary are available, or have permanently failed.",
         "operationId": "WebhooksCallRecordingCreated",
         "requestBody": {
           "content": {
