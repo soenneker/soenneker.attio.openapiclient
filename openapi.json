@@ -45418,6 +45418,177 @@
           }
         }
       },
+      "patch": {
+        "summary": "Update a note",
+        "description": "Updates an existing note\u0027s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing \u0060content\u0060 replaces the note\u0027s entire content. A note\u0027s parent record cannot be changed.\n\nRequired scopes: \u0060note:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "tags": [
+          "Notes"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "note:read-write",
+              "object_configuration:read",
+              "record_permission:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID which identifies the note to update.",
+              "example": "ff3f3bd4-40f4-4f80-8187-cd02385af424"
+            },
+            "required": true,
+            "name": "note_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "description": "The note title. The title is plaintext only and has no formatting.",
+                        "example": "Initial Prospecting Call Summary"
+                      },
+                      "format": {
+                        "type": "string",
+                        "enum": [
+                          "plaintext",
+                          "markdown"
+                        ],
+                        "description": "Specify the format for the note\u0027s content. Choose from:\n- \u0060plaintext\u0060: Standard text format where \u0060\\n\u0060 signifies a new line.\n- \u0060markdown\u0060: Enables rich text formatting using a subset of Markdown syntax:\n  - **Headings**: Levels 1-3 (\u0060#\u0060, \u0060##\u0060, \u0060###\u0060).\n  - **Lists**: Unordered (\u0060-\u0060, \u0060*\u0060, \u0060\u002B\u0060) and ordered (\u00601.\u0060, \u00602.\u0060).\n  - **Text styles**: Bold (\u0060**bold**\u0060 or \u0060__bold__\u0060), italic (\u0060*italic*\u0060 or \u0060_italic_\u0060), strikethrough (\u0060~~strikethrough~~\u0060), and highlight (\u0060==highlighted==\u0060).\n  - **Links**: Standard Markdown links (\u0060[link text](https://example.com)\u0060).\n\n  *Note: While the Attio interface supports image embeds, they cannot currently be added or retrieved via the API\u0027s markdown format.*",
+                        "example": "markdown"
+                      },
+                      "content": {
+                        "type": "string",
+                        "description": "The main content of the note, formatted according to the value provided in the \u0060format\u0060 field. Use \u0060\\n\u0060 for line breaks in \u0060plaintext\u0060. For \u0060markdown\u0060, utilize the supported syntax elements to structure and style your note.",
+                        "example": "# Meeting Recap: Q4 Planning\n\n**Date:** 2023-10-26\n**Attendees:** Alex, Jamie, Casey\n\n## Key Discussion Points\n\n- Reviewed Q3 performance metrics.\n- Brainstormed key initiatives for Q4.\n- Discussed budget allocation for ==Project Phoenix==.\n\n## Action Items\n\n1. Alex to finalize Q4 roadmap by EOD Friday.\n2. Jamie to schedule follow-up with [Marketing Team](https://app.attio.com/teams/marketing).\n3. Casey to draft initial budget for ~~Project Chimera~~ (now deferred).\n\n*Next steps: Review draft roadmap next week.*"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/note"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Note with ID \u0022ff3f3bd4-40f4-4f80-8187-cd02385af424\u0022 was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Content Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        413
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "validation_type"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Content Too Large"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "summary": "Delete a note",
         "description": "Delete a single note by ID.\n\nRequired scopes: \u0060note:read-write\u0060.",

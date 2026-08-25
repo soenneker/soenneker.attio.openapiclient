@@ -80,6 +80,33 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Updates an existing note&apos;s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing `content` replaces the note&apos;s entire content. A note&apos;s parent record cannot be changed.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId413Response">When receiving a 413 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response?> PatchAsync(global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response> PatchAsync(global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId404Response.CreateFromDiscriminatorValue },
+                { "413", global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId413Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Delete a single note by ID.Required scopes: `note:read-write`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -115,6 +142,28 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Updates an existing note&apos;s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing `content` replaces the note&apos;s entire content. A note&apos;s parent record cannot be changed.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
