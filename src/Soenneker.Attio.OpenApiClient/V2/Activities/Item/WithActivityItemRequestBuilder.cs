@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Attio.OpenApiClient.Models;
+using Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithActivityItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The records property</summary>
+        public global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder Records
+        {
+            get => new global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.WithActivityItemRequestBuilder"/> and sets the default values.
         /// </summary>
