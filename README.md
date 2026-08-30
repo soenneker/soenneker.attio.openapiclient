@@ -1,6 +1,7 @@
 [![](https://img.shields.io/nuget/v/soenneker.attio.openapiclient.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.attio.openapiclient/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.attio.openapiclient/publish-package.yml?style=for-the-badge)](https://github.com/soenneker/soenneker.attio.openapiclient/actions/workflows/publish-package.yml)
 [![](https://img.shields.io/nuget/dt/soenneker.attio.openapiclient.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.attio.openapiclient/)
+[![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.attio.openapiclient/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.attio.openapiclient/actions/workflows/codeql.yml)
 
 # Soenneker.Attio.OpenApiClient
 
