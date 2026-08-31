@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
-    /// <summary>The schema the new activity extends, which supplies its inherited attributes. One of `activities`, `interactions` or `calls`.</summary>
+    /// <summary>The schema the new activity extends, which supplies its inherited attributes. One of `activities`, `interactions`, `calls` or `emails`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PostV2ActivitiesRequestDataExtends
     {
@@ -18,6 +18,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         [EnumMember(Value = "calls")]
         #pragma warning disable CS1591
         Calls,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "emails")]
+        #pragma warning disable CS1591
+        Emails,
         #pragma warning restore CS1591
     }
 }

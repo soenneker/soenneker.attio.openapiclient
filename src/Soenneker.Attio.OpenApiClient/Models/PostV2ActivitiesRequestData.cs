@@ -22,7 +22,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public string ApiSlug { get; set; }
 #endif
-        /// <summary>The schema the new activity extends, which supplies its inherited attributes. One of `activities`, `interactions` or `calls`.</summary>
+        /// <summary>The schema the new activity extends, which supplies its inherited attributes. One of `activities`, `interactions`, `calls` or `emails`.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesRequestDataExtends? Extends { get; set; }
         /// <summary>The plural form of the activity&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

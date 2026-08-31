@@ -78914,11 +78914,12 @@
         "enum": [
           "activities",
           "interactions",
-          "calls"
+          "calls",
+          "emails"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The schema the new activity extends, which supplies its inherited attributes. One of \u0060activities\u0060, \u0060interactions\u0060 or \u0060calls\u0060.",
+        "description": "The schema the new activity extends, which supplies its inherited attributes. One of \u0060activities\u0060, \u0060interactions\u0060, \u0060calls\u0060 or \u0060emails\u0060.",
         "example": "interactions",
         "x-ms-enum": {
           "name": "PostV2ActivitiesRequestDataExtends",
@@ -78935,6 +78936,10 @@
             {
               "value": "calls",
               "name": "Calls"
+            },
+            {
+              "value": "emails",
+              "name": "Emails"
             }
           ]
         }
