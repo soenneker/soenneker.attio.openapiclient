@@ -22,7 +22,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithThreadItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/threads/{threadId}", pathParameters)
+        public WithThreadItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/threads/{threadId}{?created_after*,cursor*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithThreadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/threads/{threadId}", rawUrl)
+        public WithThreadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/threads/{threadId}{?created_after*,cursor*,limit*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get all comments in a thread.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
+        /// Get a thread and page through its comments, oldest first, starting with the comment that opened it.Comments are paginated: at most `250` are returned per request. Keep paginating for as long as a `next_cursor` is returned.Supply `created_after` to return only the comments created after a timestamp, which is useful when polling a thread for new replies. The comment that opened the thread is returned only when it also satisfies the filter.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -42,11 +42,11 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads.Item
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Threads.Item.WithThreadItemRequestBuilder.WithThreadItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Threads.Item.WithThreadItemRequestBuilder.WithThreadItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -57,17 +57,17 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all comments in a thread.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
+        /// Get a thread and page through its comments, oldest first, starting with the comment that opened it.Comments are paginated: at most `250` are returned per request. Keep paginating for as long as a `next_cursor` is returned.Supply `created_after` to return only the comments created after a timestamp, which is useful when polling a thread for new replies. The comment that opened the thread is returned only when it also satisfies the filter.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Threads.Item.WithThreadItemRequestBuilder.WithThreadItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Threads.Item.WithThreadItemRequestBuilder.WithThreadItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,6 +83,33 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads.Item
         public global::Soenneker.Attio.OpenApiClient.V2.Threads.Item.WithThreadItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Attio.OpenApiClient.V2.Threads.Item.WithThreadItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Get a thread and page through its comments, oldest first, starting with the comment that opened it.Comments are paginated: at most `250` are returned per request. Keep paginating for as long as a `next_cursor` is returned.Supply `created_after` to return only the comments created after a timestamp, which is useful when polling a thread for new replies. The comment that opened the thread is returned only when it also satisfies the filter.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithThreadItemRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("created_after")]
+            public string? CreatedAfter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("created_after")]
+            public string CreatedAfter { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
         }
     }
 }

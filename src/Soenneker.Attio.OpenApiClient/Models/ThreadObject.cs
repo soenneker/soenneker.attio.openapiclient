@@ -14,7 +14,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An array of comments in the thread, sorted by `created_at`.</summary>
+        /// <summary>The requested page of comments in the thread, sorted by `created_at`, oldest first. Keep paginating for as long as a `next_cursor` is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Attio.OpenApiClient.Models.Comment>? Comments { get; set; }

@@ -23,6 +23,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public global::Soenneker.Attio.OpenApiClient.Models.ThreadObject Data { get; set; }
 #endif
+        /// <summary>The pagination property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200ResponsePagination? Pagination { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200ResponsePagination Pagination { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200Response"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.ThreadObject>(global::Soenneker.Attio.OpenApiClient.Models.ThreadObject.CreateFromDiscriminatorValue); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200ResponsePagination>(global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200ResponsePagination.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.ThreadObject>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ThreadsByThreadId200ResponsePagination>("pagination", Pagination);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

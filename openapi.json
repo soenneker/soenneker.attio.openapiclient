@@ -5022,24 +5022,73 @@
               "thread_id"
             ]
           },
+          "created_at": {
+            "type": "string",
+            "description": "When the thread was created.",
+            "example": "2023-01-01T15:00:00.000000000Z"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/comment"
+            },
+            "description": "The requested page of comments in the thread, sorted by \u0060created_at\u0060, oldest first. Keep paginating for as long as a \u0060next_cursor\u0060 is returned."
+          }
+        },
+        "required": [
+          "id",
+          "created_at",
+          "comments"
+        ]
+      },
+      "thread_summary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "object",
+            "properties": {
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "The ID of the workspace the thread belongs to.",
+                "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
+              },
+              "thread_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "The ID of the thread.",
+                "example": "a649e4d9-435c-43fb-83ba-847b4876f27a"
+              }
+            },
+            "required": [
+              "workspace_id",
+              "thread_id"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the thread was created.",
+            "example": "2023-01-01T15:00:00.000000000Z"
+          },
           "comments": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/comment"
             },
             "minItems": 1,
-            "description": "An array of comments in the thread, sorted by \u0060created_at\u0060."
+            "description": "An array of comments in the thread, sorted by \u0060created_at\u0060. This array may be truncated: check \u0060has_more_comments\u0060."
           },
-          "created_at": {
-            "type": "string",
-            "description": "When the thread was created.",
-            "example": "2023-01-01T15:00:00.000000000Z"
+          "has_more_comments": {
+            "type": "boolean",
+            "description": "Whether the thread holds comments beyond those returned in \u0060comments\u0060. When \u0060true\u0060, use [Get a thread and its comments](/rest-api/endpoint-reference/threads/get-a-thread-and-its-comments) to page through every comment in the thread.",
+            "example": false
           }
         },
         "required": [
           "id",
+          "created_at",
           "comments",
-          "created_at"
+          "has_more_comments"
         ]
       }
     },
@@ -5197,6 +5246,47 @@
                     "message"
                   ],
                   "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to create objects in this workspace."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
                 }
               }
             }
@@ -5453,6 +5543,47 @@
                     "message"
                   ],
                   "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to update this object."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
                 }
               }
             }
@@ -6209,6 +6340,135 @@
                     "message"
                   ],
                   "description": "Conflict"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an activity",
+        "description": "Deletes a single activity by its \u0060activity_id\u0060 or slug, along with all of its records. Archived activities can also be deleted.\n\nThis endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060, \u0060activity_record:read-write\u0060.",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read-write",
+              "activity_record:read-write"
+            ]
+          }
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            },
+            "required": true,
+            "name": "activity",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "system_edit_unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Only deleting custom activities is allowed."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Activity with slug/ID \u0022phone_calls\u0022 not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
                 }
               }
             }
@@ -57861,7 +58121,7 @@
     "/v2/threads": {
       "get": {
         "summary": "List threads",
-        "description": "List threads of comments on a record or list entry.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
+        "description": "List threads of comments on a record or list entry.\n\nEach thread in the response includes at most \u006080\u0060 replies, starting with the oldest. When a thread holds more, its \u0060has_more_comments\u0060 is \u0060true\u0060; use [Get a thread and its comments](/rest-api/endpoint-reference/threads/get-a-thread-and-its-comments) to page through every comment in that thread.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
         "tags": [
           "Threads"
         ],
@@ -57964,8 +58224,8 @@
     },
     "/v2/threads/{thread_id}": {
       "get": {
-        "summary": "Get a thread",
-        "description": "Get all comments in a thread.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
+        "summary": "Get a thread and its comments",
+        "description": "Get a thread and page through its comments, oldest first, starting with the comment that opened it.\n\nComments are paginated: at most \u0060250\u0060 are returned per request. Keep paginating for as long as a \u0060next_cursor\u0060 is returned.\n\nSupply \u0060created_after\u0060 to return only the comments created after a timestamp, which is useful when polling a thread for new replies. The comment that opened the thread is returned only when it also satisfies the filter.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
         "tags": [
           "Threads"
         ],
@@ -57987,6 +58247,40 @@
             "required": true,
             "name": "thread_id",
             "in": "path"
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "description": "The maximum number of comments to return. Defaults to \u0060250\u0060, which is also the maximum.",
+              "example": 250
+            },
+            "required": false,
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "description": "A cursor for pagination. Use the \u0060next_cursor\u0060 from the previous response to get the next page of comments.",
+              "example": "eyJkZXNjcmlwdGlvbiI6ICJ0aGlzIGlzIGEgY3Vyc29yIn0=.eM56CGbqZ6G1NHiJchTIkH4vKDr"
+            },
+            "required": false,
+            "name": "cursor",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Only return comments created after this timestamp.",
+              "example": "2023-01-01T15:00:00.000000000Z"
+            },
+            "required": false,
+            "name": "created_after",
+            "in": "query"
           }
         ],
         "responses": {
@@ -57999,10 +58293,25 @@
                   "properties": {
                     "data": {
                       "$ref": "#/components/schemas/thread"
+                    },
+                    "pagination": {
+                      "type": "object",
+                      "properties": {
+                        "next_cursor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "next_cursor"
+                      ]
                     }
                   },
                   "required": [
-                    "data"
+                    "data",
+                    "pagination"
                   ],
                   "description": "Success"
                 }

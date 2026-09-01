@@ -76,6 +76,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue404Response">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue409Response">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,6 +93,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue409Response.CreateFromDiscriminatorValue },
             };

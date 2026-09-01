@@ -82,6 +82,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2Objects403Response"
+                }
+              }
+            }
+          },
           "409": {
             "description": "Conflict",
             "content": {
@@ -198,6 +208,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsByObjectValue400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsByObjectValue403Response"
                 }
               }
             }
@@ -538,6 +558,66 @@
           {
             "oauth2": [
               "activity_configuration:read-write"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Delete an activity",
+        "description": "Deletes a single activity by its \u0060activity_id\u0060 or slug, along with all of its records. Archived activities can also be deleted.\n\nThis endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060, \u0060activity_record:read-write\u0060.",
+        "operationId": "DeleteV2ActivitiesByActivity",
+        "parameters": [
+          {
+            "name": "activity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ActivitiesByActivity200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ActivitiesByActivity400Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ActivitiesByActivity404Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "activity_configuration:read-write",
+              "activity_record:read-write"
             ]
           }
         ]
@@ -4590,7 +4670,7 @@
           "Threads"
         ],
         "summary": "List threads",
-        "description": "List threads of comments on a record or list entry.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
+        "description": "List threads of comments on a record or list entry.\n\nEach thread in the response includes at most \u006080\u0060 replies, starting with the oldest. When a thread holds more, its \u0060has_more_comments\u0060 is \u0060true\u0060; use [Get a thread and its comments](/rest-api/endpoint-reference/threads/get-a-thread-and-its-comments) to page through every comment in that thread.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
         "operationId": "GetV2Threads",
         "parameters": [
           {
@@ -4676,8 +4756,8 @@
         "tags": [
           "Threads"
         ],
-        "summary": "Get a thread",
-        "description": "Get all comments in a thread.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
+        "summary": "Get a thread and its comments",
+        "description": "Get a thread and page through its comments, oldest first, starting with the comment that opened it.\n\nComments are paginated: at most \u0060250\u0060 are returned per request. Keep paginating for as long as a \u0060next_cursor\u0060 is returned.\n\nSupply \u0060created_after\u0060 to return only the comments created after a timestamp, which is useful when polling a thread for new replies. The comment that opened the thread is returned only when it also satisfies the filter.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
         "operationId": "GetV2ThreadsByThreadId",
         "parameters": [
           {
@@ -4689,6 +4769,37 @@
               "description": "A UUID which identifies the thread.",
               "format": "uuid",
               "example": "a649e4d9-435c-43fb-83ba-847b4876f27a"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "description": "The maximum number of comments to return. Defaults to \u0060250\u0060, which is also the maximum.",
+              "example": 250
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "minLength": 1,
+              "type": "string",
+              "description": "A cursor for pagination. Use the \u0060next_cursor\u0060 from the previous response to get the next page of comments.",
+              "example": "eyJkZXNjcmlwdGlvbiI6ICJ0aGlzIGlzIGEgY3Vyc29yIn0=.eM56CGbqZ6G1NHiJchTIkH4vKDr"
+            }
+          },
+          {
+            "name": "created_after",
+            "in": "query",
+            "schema": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Only return comments created after this timestamp.",
+              "example": "2023-01-01T15:00:00.000000000Z"
             }
           }
         ],
@@ -10361,13 +10472,44 @@
       "Thread": {
         "required": [
           "id",
-          "comments",
-          "created_at"
+          "created_at",
+          "comments"
         ],
         "type": "object",
         "properties": {
           "id": {
             "$ref": "#/components/schemas/ThreadId"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the thread was created.",
+            "example": "2023-01-01T15:00:00.000000000Z"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            },
+            "description": "The requested page of comments in the thread, sorted by \u0060created_at\u0060, oldest first. Keep paginating for as long as a \u0060next_cursor\u0060 is returned."
+          }
+        }
+      },
+      "ThreadSummary": {
+        "required": [
+          "id",
+          "created_at",
+          "comments",
+          "has_more_comments"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ThreadSummaryId"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the thread was created.",
+            "example": "2023-01-01T15:00:00.000000000Z"
           },
           "comments": {
             "minItems": 1,
@@ -10375,12 +10517,12 @@
             "items": {
               "$ref": "#/components/schemas/Comment"
             },
-            "description": "An array of comments in the thread, sorted by \u0060created_at\u0060."
+            "description": "An array of comments in the thread, sorted by \u0060created_at\u0060. This array may be truncated: check \u0060has_more_comments\u0060."
           },
-          "created_at": {
-            "type": "string",
-            "description": "When the thread was created.",
-            "example": "2023-01-01T15:00:00.000000000Z"
+          "has_more_comments": {
+            "type": "boolean",
+            "description": "Whether the thread holds comments beyond those returned in \u0060comments\u0060. When \u0060true\u0060, use [Get a thread and its comments](/rest-api/endpoint-reference/threads/get-a-thread-and-its-comments) to page through every comment in the thread.",
+            "example": false
           }
         }
       },
@@ -12572,6 +12714,27 @@
           }
         }
       },
+      "ThreadSummaryId": {
+        "required": [
+          "workspace_id",
+          "thread_id"
+        ],
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string",
+            "description": "The ID of the workspace the thread belongs to.",
+            "format": "uuid",
+            "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
+          },
+          "thread_id": {
+            "type": "string",
+            "description": "The ID of the thread.",
+            "format": "uuid",
+            "example": "a649e4d9-435c-43fb-83ba-847b4876f27a"
+          }
+        }
+      },
       "InputValueAnyOf10OwnerActor": {
         "type": "object",
         "properties": {
@@ -12713,6 +12876,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2Objects403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2Objects403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create objects in this workspace."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2Objects409Response": {
         "required": [
           "status_code",
@@ -12798,6 +12986,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PatchV2ObjectsByObjectValue403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsByObjectValue403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this object."
+          }
+        },
+        "description": "Forbidden"
       },
       "PatchV2ObjectsByObjectValue404Response": {
         "required": [
@@ -13058,6 +13271,60 @@
           }
         },
         "description": "Conflict"
+      },
+      "DeleteV2ActivitiesByActivity200Response": {
+        "type": "object",
+        "description": "Success"
+      },
+      "DeleteV2ActivitiesByActivity400Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ActivitiesByActivity400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/SystemEditUnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Only deleting custom activities is allowed."
+          }
+        },
+        "description": "Bad Request"
+      },
+      "DeleteV2ActivitiesByActivity404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ActivitiesByActivity404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Activity with slug/ID \u0022phone_calls\u0022 not found."
+          }
+        },
+        "description": "Not Found"
       },
       "PostV2ActivitiesByActivityRecordsQueryRequest": {
         "type": "object",
@@ -16087,6 +16354,22 @@
           }
         },
         "description": "Not Found"
+      },
+      "GetV2ThreadsByThreadId200Response": {
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Thread"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/GetV2ThreadsByThreadId200ResponsePagination"
+          }
+        },
+        "description": "Success"
       },
       "GetV2ThreadsByThreadId404Response": {
         "required": [
@@ -20709,6 +20992,10 @@
         },
         "description": "Success"
       },
+      "DeleteV2ActivitiesByActivity200ResponseSchema": {
+        "type": "object",
+        "description": "Success"
+      },
       "GetV2ByTargetByIdentifierAttributes200Response": {
         "required": [
           "data"
@@ -21045,18 +21332,6 @@
             "items": {
               "$ref": "#/components/schemas/Thread"
             }
-          }
-        },
-        "description": "Success"
-      },
-      "GetV2ThreadsByThreadId200Response": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/Thread"
           }
         },
         "description": "Success"
@@ -24946,6 +25221,20 @@
           }
         },
         "additionalProperties": false
+      },
+      "GetV2ThreadsByThreadId200ResponsePagination": {
+        "required": [
+          "next_cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "next_cursor": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
       },
       "PostV2CommentsRequestData": {
         "required": [
@@ -76188,6 +76477,47 @@
           ]
         }
       },
+      "PostV2Objects403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "AuthErrorType": {
+        "enum": [
+          "auth_error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AuthErrorType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auth_error",
+              "name": "AuthError"
+            }
+          ]
+        }
+      },
+      "UnauthorizedCode": {
+        "enum": [
+          "unauthorized"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UnauthorizedCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unauthorized",
+              "name": "Unauthorized"
+            }
+          ]
+        }
+      },
       "PostV2Objects409ResponseStatusCode": {
         "enum": [
           409
@@ -76260,6 +76590,13 @@
           ]
         }
       },
+      "PatchV2ObjectsByObjectValue403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PatchV2ObjectsByObjectValue404ResponseStatusCode": {
         "enum": [
           404
@@ -76312,6 +76649,37 @@
       "PatchV2ActivitiesByActivity409ResponseStatusCode": {
         "enum": [
           409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ActivitiesByActivity400ResponseStatusCode": {
+        "enum": [
+          400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "SystemEditUnauthorizedCode": {
+        "enum": [
+          "system_edit_unauthorized"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SystemEditUnauthorizedCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "system_edit_unauthorized",
+              "name": "SystemEditUnauthorized"
+            }
+          ]
+        }
+      },
+      "DeleteV2ActivitiesByActivity404ResponseStatusCode": {
+        "enum": [
+          404
         ],
         "type": "number",
         "additionalProperties": false
@@ -76464,23 +76832,6 @@
         ],
         "type": "number",
         "additionalProperties": false
-      },
-      "SystemEditUnauthorizedCode": {
-        "enum": [
-          "system_edit_unauthorized"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "SystemEditUnauthorizedCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "system_edit_unauthorized",
-              "name": "SystemEditUnauthorized"
-            }
-          ]
-        }
       },
       "PatchV2ByTargetByIdentifierAttributesByAttribute404ResponseStatusCode": {
         "enum": [
@@ -76701,40 +77052,6 @@
         ],
         "type": "number",
         "additionalProperties": false
-      },
-      "AuthErrorType": {
-        "enum": [
-          "auth_error"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "AuthErrorType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "auth_error",
-              "name": "AuthError"
-            }
-          ]
-        }
-      },
-      "UnauthorizedCode": {
-        "enum": [
-          "unauthorized"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UnauthorizedCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "unauthorized",
-              "name": "Unauthorized"
-            }
-          ]
-        }
       },
       "PostV2ObjectsByObjectValueRecordsMerge404ResponseStatusCode": {
         "enum": [
