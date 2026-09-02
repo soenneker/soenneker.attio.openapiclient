@@ -1008,6 +1008,77 @@
             ]
           }
         ]
+      },
+      "delete": {
+        "tags": [
+          "Activity records"
+        ],
+        "summary": "Delete an activity record",
+        "description": "Deletes a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "operationId": "DeleteV2ActivitiesByActivityRecordsByRecordId",
+        "parameters": [
+          {
+            "name": "activity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            }
+          },
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID identifying the activity record to delete.",
+              "format": "uuid",
+              "example": "5f4f2d9c-2b3e-4a83-9c76-1de3a3f14f26"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ActivitiesByActivityRecordsByRecordId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ActivitiesByActivityRecordsByRecordId403Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ActivitiesByActivityRecordsByRecordId404Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "activity_record:read-write",
+              "activity_configuration:read"
+            ]
+          }
+        ]
       }
     },
     "/v2/{target}/{identifier}/attributes": {
@@ -1137,6 +1208,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributes400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributes403Response"
                 }
               }
             }
@@ -1303,6 +1384,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttribute403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -1464,6 +1555,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributesByAttributeOptions403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -1567,6 +1668,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption403Response"
                 }
               }
             }
@@ -1743,6 +1854,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributesByAttributeStatuses403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -1846,6 +1967,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus403Response"
                 }
               }
             }
@@ -2035,6 +2166,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -2111,6 +2252,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords403Response"
                 }
               }
             }
@@ -2258,6 +2409,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsByObjectValueRecordsByRecordId403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -2338,6 +2499,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecordsByRecordId403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -2395,6 +2566,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2ObjectsByObjectValueRecordsByRecordId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ObjectsByObjectValueRecordsByRecordId403Response"
                 }
               }
             }
@@ -4015,7 +4196,7 @@
           "Notes"
         ],
         "summary": "List notes",
-        "description": "List notes for all records or for a specific record.\n\nRequired scopes: \u0060note:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "List notes for all records or for a specific record.\n\nThis endpoint is temporarily rate limited to 10 requests per second.\n\nRequired scopes: \u0060note:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "operationId": "GetV2Notes",
         "parameters": [
           {
@@ -6467,6 +6648,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsPeopleRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -6533,6 +6724,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords403Response"
                 }
               }
             }
@@ -6659,6 +6860,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsPeopleRecordsByRecordId403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -6705,6 +6916,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2ObjectsPeopleRecordsByRecordId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ObjectsPeopleRecordsByRecordId403Response"
                 }
               }
             }
@@ -6990,6 +7211,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -7056,6 +7287,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords403Response"
                 }
               }
             }
@@ -7182,6 +7423,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsCompaniesRecordsByRecordId403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -7228,6 +7479,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2ObjectsCompaniesRecordsByRecordId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ObjectsCompaniesRecordsByRecordId403Response"
                 }
               }
             }
@@ -7513,6 +7774,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsUsersRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -7579,6 +7850,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsUsersRecords400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsUsersRecords403Response"
                 }
               }
             }
@@ -7705,6 +7986,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsUsersRecordsByRecordId403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -7751,6 +8042,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2ObjectsUsersRecordsByRecordId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ObjectsUsersRecordsByRecordId403Response"
                 }
               }
             }
@@ -7988,6 +8289,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsDealsRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -8046,6 +8357,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsDealsRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -8094,6 +8415,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2ObjectsDealsRecordsByRecordId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ObjectsDealsRecordsByRecordId403Response"
                 }
               }
             }
@@ -8214,6 +8545,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId403Response"
                 }
               }
             }
@@ -8511,6 +8852,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsWorkspacesRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -8569,6 +8920,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -8617,6 +8978,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2ObjectsWorkspacesRecordsByRecordId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ObjectsWorkspacesRecordsByRecordId403Response"
                 }
               }
             }
@@ -8737,6 +9108,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId403Response"
                 }
               }
             }
@@ -13672,6 +14053,60 @@
         },
         "description": "Not Found"
       },
+      "DeleteV2ActivitiesByActivityRecordsByRecordId200Response": {
+        "type": "object",
+        "description": "Success"
+      },
+      "DeleteV2ActivitiesByActivityRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ActivitiesByActivityRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this activity record."
+          }
+        },
+        "description": "Forbidden"
+      },
+      "DeleteV2ActivitiesByActivityRecordsByRecordId404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ActivitiesByActivityRecordsByRecordId404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Activity record with ID \u00225f4f2d9c-2b3e-4a83-9c76-1de3a3f14f26\u0022 not found."
+          }
+        },
+        "description": "Not Found"
+      },
       "PostV2ByTargetByIdentifierAttributesRequest": {
         "required": [
           "data"
@@ -13707,6 +14142,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PostV2ByTargetByIdentifierAttributes403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributes403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this attribute."
+          }
+        },
+        "description": "Forbidden"
       },
       "PostV2ByTargetByIdentifierAttributes404Response": {
         "required": [
@@ -13819,6 +14279,31 @@
         },
         "description": "Bad Request"
       },
+      "PatchV2ByTargetByIdentifierAttributesByAttribute403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttribute403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this attribute."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PatchV2ByTargetByIdentifierAttributesByAttribute404Response": {
         "required": [
           "status_code",
@@ -13905,6 +14390,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ByTargetByIdentifierAttributesByAttributeOptions403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributesByAttributeOptions403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this select option."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ByTargetByIdentifierAttributesByAttributeOptions404Response": {
         "required": [
           "status_code",
@@ -13990,6 +14500,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this select option."
+          }
+        },
+        "description": "Forbidden"
       },
       "PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption404Response": {
         "required": [
@@ -14102,6 +14637,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ByTargetByIdentifierAttributesByAttributeStatuses403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributesByAttributeStatuses403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this status."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ByTargetByIdentifierAttributesByAttributeStatuses404Response": {
         "required": [
           "status_code",
@@ -14187,6 +14747,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this status."
+          }
+        },
+        "description": "Forbidden"
       },
       "PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus404Response": {
         "required": [
@@ -14381,6 +14966,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ObjectsByObjectValueRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ObjectsByObjectValueRecords404Response": {
         "required": [
           "status_code",
@@ -14453,6 +15063,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PutV2ObjectsByObjectValueRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update records of this object."
+          }
+        },
+        "description": "Forbidden"
       },
       "PutV2ObjectsByObjectValueRecords404Response": {
         "required": [
@@ -14564,6 +15199,31 @@
         },
         "description": "Bad Request"
       },
+      "PatchV2ObjectsByObjectValueRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsByObjectValueRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PatchV2ObjectsByObjectValueRecordsByRecordId404Response": {
         "required": [
           "status_code",
@@ -14637,6 +15297,31 @@
         },
         "description": "Bad Request"
       },
+      "PutV2ObjectsByObjectValueRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PutV2ObjectsByObjectValueRecordsByRecordId404Response": {
         "required": [
           "status_code",
@@ -14665,6 +15350,31 @@
       "DeleteV2ObjectsByObjectValueRecordsByRecordId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2ObjectsByObjectValueRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ObjectsByObjectValueRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ObjectsByObjectValueRecordsByRecordId404Response": {
         "required": [
@@ -17483,6 +18193,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ObjectsPeopleRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsPeopleRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ObjectsPeopleRecords404Response": {
         "required": [
           "status_code",
@@ -17555,6 +18290,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PutV2ObjectsPeopleRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update records of this object."
+          }
+        },
+        "description": "Forbidden"
       },
       "PutV2ObjectsPeopleRecords404Response": {
         "required": [
@@ -17666,6 +18426,31 @@
         },
         "description": "Bad Request"
       },
+      "PatchV2ObjectsPeopleRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsPeopleRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PatchV2ObjectsPeopleRecordsByRecordId404Response": {
         "required": [
           "status_code",
@@ -17694,6 +18479,31 @@
       "DeleteV2ObjectsPeopleRecordsByRecordId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2ObjectsPeopleRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ObjectsPeopleRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ObjectsPeopleRecordsByRecordId404Response": {
         "required": [
@@ -17954,6 +18764,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ObjectsCompaniesRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ObjectsCompaniesRecords404Response": {
         "required": [
           "status_code",
@@ -18026,6 +18861,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PutV2ObjectsCompaniesRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update records of this object."
+          }
+        },
+        "description": "Forbidden"
       },
       "PutV2ObjectsCompaniesRecords404Response": {
         "required": [
@@ -18137,6 +18997,31 @@
         },
         "description": "Bad Request"
       },
+      "PatchV2ObjectsCompaniesRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsCompaniesRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PatchV2ObjectsCompaniesRecordsByRecordId404Response": {
         "required": [
           "status_code",
@@ -18165,6 +19050,31 @@
       "DeleteV2ObjectsCompaniesRecordsByRecordId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2ObjectsCompaniesRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ObjectsCompaniesRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ObjectsCompaniesRecordsByRecordId404Response": {
         "required": [
@@ -18424,6 +19334,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ObjectsUsersRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsUsersRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ObjectsUsersRecords404Response": {
         "required": [
           "status_code",
@@ -18496,6 +19431,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PutV2ObjectsUsersRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsUsersRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update records of this object."
+          }
+        },
+        "description": "Forbidden"
       },
       "PutV2ObjectsUsersRecords404Response": {
         "required": [
@@ -18607,6 +19567,31 @@
         },
         "description": "Bad Request"
       },
+      "PatchV2ObjectsUsersRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsUsersRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PatchV2ObjectsUsersRecordsByRecordId404Response": {
         "required": [
           "status_code",
@@ -18635,6 +19620,31 @@
       "DeleteV2ObjectsUsersRecordsByRecordId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2ObjectsUsersRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ObjectsUsersRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ObjectsUsersRecordsByRecordId404Response": {
         "required": [
@@ -18804,6 +19814,31 @@
         },
         "description": "Bad Request"
       },
+      "PutV2ObjectsDealsRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsDealsRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update records of this object."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PutV2ObjectsDealsRecords404Response": {
         "required": [
           "status_code",
@@ -18877,6 +19912,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ObjectsDealsRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsDealsRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ObjectsDealsRecords404Response": {
         "required": [
           "status_code",
@@ -18905,6 +19965,31 @@
       "DeleteV2ObjectsDealsRecordsByRecordId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2ObjectsDealsRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ObjectsDealsRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ObjectsDealsRecordsByRecordId404Response": {
         "required": [
@@ -19015,6 +20100,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PatchV2ObjectsDealsRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "PatchV2ObjectsDealsRecordsByRecordId404Response": {
         "required": [
@@ -19274,6 +20384,31 @@
         },
         "description": "Bad Request"
       },
+      "PutV2ObjectsWorkspacesRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsWorkspacesRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update records of this object."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PutV2ObjectsWorkspacesRecords404Response": {
         "required": [
           "status_code",
@@ -19347,6 +20482,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ObjectsWorkspacesRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create this record."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ObjectsWorkspacesRecords404Response": {
         "required": [
           "status_code",
@@ -19375,6 +20535,31 @@
       "DeleteV2ObjectsWorkspacesRecordsByRecordId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2ObjectsWorkspacesRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ObjectsWorkspacesRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ObjectsWorkspacesRecordsByRecordId404Response": {
         "required": [
@@ -19485,6 +20670,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PatchV2ObjectsWorkspacesRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update this record."
+          }
+        },
+        "description": "Forbidden"
       },
       "PatchV2ObjectsWorkspacesRecordsByRecordId404Response": {
         "required": [
@@ -20993,6 +22203,10 @@
         "description": "Success"
       },
       "DeleteV2ActivitiesByActivity200ResponseSchema": {
+        "type": "object",
+        "description": "Success"
+      },
+      "DeleteV2ActivitiesByActivityRecordsByRecordId200ResponseSchema": {
         "type": "object",
         "description": "Success"
       },
@@ -76798,9 +78012,30 @@
         "type": "number",
         "additionalProperties": false
       },
+      "DeleteV2ActivitiesByActivityRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ActivitiesByActivityRecordsByRecordId404ResponseStatusCode": {
+        "enum": [
+          404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ByTargetByIdentifierAttributes400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PostV2ByTargetByIdentifierAttributes403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -76833,6 +78068,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2ByTargetByIdentifierAttributesByAttribute403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PatchV2ByTargetByIdentifierAttributesByAttribute404ResponseStatusCode": {
         "enum": [
           404
@@ -76854,6 +78096,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ByTargetByIdentifierAttributesByAttributeOptions403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ByTargetByIdentifierAttributesByAttributeOptions404ResponseStatusCode": {
         "enum": [
           404
@@ -76871,6 +78120,13 @@
       "PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -76903,6 +78159,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ByTargetByIdentifierAttributesByAttributeStatuses403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ByTargetByIdentifierAttributesByAttributeStatuses404ResponseStatusCode": {
         "enum": [
           404
@@ -76920,6 +78183,13 @@
       "PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -76959,6 +78229,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsByObjectValueRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsByObjectValueRecords404ResponseStatusCode": {
         "enum": [
           404
@@ -76969,6 +78246,13 @@
       "PutV2ObjectsByObjectValueRecords400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsByObjectValueRecords403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -76994,6 +78278,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2ObjectsByObjectValueRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PatchV2ObjectsByObjectValueRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
@@ -77008,9 +78299,23 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PutV2ObjectsByObjectValueRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsByObjectValueRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ObjectsByObjectValueRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -77819,6 +79124,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsPeopleRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsPeopleRecords404ResponseStatusCode": {
         "enum": [
           404
@@ -77829,6 +79141,13 @@
       "PutV2ObjectsPeopleRecords400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsPeopleRecords403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -77854,9 +79173,23 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2ObjectsPeopleRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PatchV2ObjectsPeopleRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ObjectsPeopleRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -77903,6 +79236,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsCompaniesRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsCompaniesRecords404ResponseStatusCode": {
         "enum": [
           404
@@ -77913,6 +79253,13 @@
       "PutV2ObjectsCompaniesRecords400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsCompaniesRecords403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -77938,9 +79285,23 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2ObjectsCompaniesRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PatchV2ObjectsCompaniesRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ObjectsCompaniesRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -77987,6 +79348,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsUsersRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsUsersRecords404ResponseStatusCode": {
         "enum": [
           404
@@ -77997,6 +79365,13 @@
       "PutV2ObjectsUsersRecords400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsUsersRecords403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -78022,9 +79397,23 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2ObjectsUsersRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PatchV2ObjectsUsersRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ObjectsUsersRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -78057,6 +79446,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PutV2ObjectsDealsRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsDealsRecords404ResponseStatusCode": {
         "enum": [
           404
@@ -78071,9 +79467,23 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsDealsRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsDealsRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ObjectsDealsRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -78095,6 +79505,13 @@
       "PatchV2ObjectsDealsRecordsByRecordId400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ObjectsDealsRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -78141,6 +79558,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PutV2ObjectsWorkspacesRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsWorkspacesRecords404ResponseStatusCode": {
         "enum": [
           404
@@ -78155,9 +79579,23 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsWorkspacesRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsWorkspacesRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ObjectsWorkspacesRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -78179,6 +79617,13 @@
       "PatchV2ObjectsWorkspacesRecordsByRecordId400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ObjectsWorkspacesRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
