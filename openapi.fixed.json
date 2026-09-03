@@ -3532,6 +3532,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ListsByListEntries403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -3598,6 +3608,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ListsByListEntries400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ListsByListEntries403Response"
                 }
               }
             }
@@ -3745,6 +3765,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ListsByListEntriesByEntryId403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -3825,6 +3855,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ListsByListEntriesByEntryId403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -3882,6 +3922,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2ListsByListEntriesByEntryId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ListsByListEntriesByEntryId403Response"
                 }
               }
             }
@@ -5120,7 +5170,7 @@
           "Comments"
         ],
         "summary": "Delete a comment",
-        "description": "Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.\n\nRequired scopes: \u0060comment:read-write\u0060.",
+        "description": "Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.\n\nA workspace-level access token may delete any comment. A user-level access token may only delete comments authored by the member it acts for.\n\nRequired scopes: \u0060comment:read-write\u0060.",
         "operationId": "DeleteV2CommentsByCommentId",
         "parameters": [
           {
@@ -5142,6 +5192,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DeleteV2CommentsByCommentId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2CommentsByCommentId403Response"
                 }
               }
             }
@@ -5172,7 +5232,7 @@
           "Emails"
         ],
         "summary": "List emails",
-        "description": "Lists email metadata from your workspace\u0027s connected mailboxes. Email content is never returned.\n\nAt least one of \u0060linked_object\u0060 with \u0060linked_record_ids\u0060, \u0060participants\u0060, or \u0060domain\u0060 must be supplied; there is no way to list every email. When several are supplied they are combined with OR: emails matching any of the filters are returned.\n\n\u003E **Requesting access:** this endpoint is enabled per workspace and per app while it is in alpha. Contact [support@attio.com](mailto:support@attio.com) to request access.\n\n**Things to know**\n\n- Filters that identify your own workspace are ignored. This covers a member\u0027s or invited member\u0027s address, one of your mailboxes, and any of their domains. If every filter you supply is ignored, an empty page is returned.\n- A filter that names a protected recipient in your workspace is rejected rather than ignored. This covers an address, a domain, and a record that resolves to either.\n- Emails from a mailbox shared with your workspace as metadata only are returned without a subject line. An email is left out entirely when it has no participant you may see \u2014 that is, when every participant outside your workspace is a protected recipient.\n- An email that reached more than one of your mailboxes is returned once, and \u0060id.mailbox_id\u0060 identifies whichever copy was readable.\n- \u0060linked_records\u0060 is derived when you make the request rather than stored, so it reflects your records as they are now.\n- Emails are returned newest first, ordered by when they were sent. Each request scans a bounded number of emails, so a page can hold fewer emails than \u0060limit\u0060, or none at all, while more are still available. Keep paginating for as long as a \u0060next_cursor\u0060 is returned, rather than stopping on a short page.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060email:read\u0060, \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists email metadata from your workspace\u0027s connected mailboxes. Email content is never returned.\n\nAt least one of \u0060linked_object\u0060 with \u0060linked_record_ids\u0060, \u0060participants\u0060, or \u0060domain\u0060 must be supplied; there is no way to list every email. When several are supplied they are combined with OR: emails matching any of the filters are returned.\n\n\u003E **Requesting access:** this endpoint is enabled per workspace and per app while it is in alpha. Contact [support@attio.com](mailto:support@attio.com) to request access.\n\n**Things to know**\n\n- Filters that identify your own workspace are ignored. This covers a member\u0027s or invited member\u0027s address, one of your mailboxes, and any of their domains. If every filter you supply is ignored, an empty page is returned.\n- A filter that names a protected recipient in your workspace is rejected rather than ignored. This covers an address or a domain you supply directly. A record whose address or domain is a protected recipient is ignored instead, in the same way as the filters above.\n- Emails from a mailbox shared with your workspace as metadata only are returned without a subject line. An email is left out entirely when it has no participant you may see \u2014 that is, when every participant outside your workspace is a protected recipient.\n- An email that reached more than one of your mailboxes is returned once, and \u0060id.mailbox_id\u0060 identifies whichever copy was readable.\n- \u0060linked_records\u0060 is derived when you make the request rather than stored, so it reflects your records as they are now.\n- Emails are returned newest first, ordered by when they were sent. Each request scans a bounded number of emails, so a page can hold fewer emails than \u0060limit\u0060, or none at all, while more are still available. Keep paginating for as long as a \u0060next_cursor\u0060 is returned, rather than stopping on a short page.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060email:read\u0060, \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
         "operationId": "GetV2Emails",
         "parameters": [
           {
@@ -16196,6 +16256,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ListsByListEntries403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ListsByListEntries403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create entries in this list."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ListsByListEntries404Response": {
         "required": [
           "status_code",
@@ -16268,6 +16353,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "PutV2ListsByListEntries403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ListsByListEntries403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update entries in this list."
+          }
+        },
+        "description": "Forbidden"
       },
       "PutV2ListsByListEntries404Response": {
         "required": [
@@ -16379,6 +16489,31 @@
         },
         "description": "Bad Request"
       },
+      "PatchV2ListsByListEntriesByEntryId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ListsByListEntriesByEntryId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update entries in this list."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PatchV2ListsByListEntriesByEntryId404Response": {
         "required": [
           "status_code",
@@ -16452,6 +16587,31 @@
         },
         "description": "Bad Request"
       },
+      "PutV2ListsByListEntriesByEntryId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ListsByListEntriesByEntryId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to update entries in this list."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PutV2ListsByListEntriesByEntryId404Response": {
         "required": [
           "status_code",
@@ -16480,6 +16640,31 @@
       "DeleteV2ListsByListEntriesByEntryId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2ListsByListEntriesByEntryId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ListsByListEntriesByEntryId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete entries in this list."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ListsByListEntriesByEntryId404Response": {
         "required": [
@@ -17170,6 +17355,31 @@
       "DeleteV2CommentsByCommentId200Response": {
         "type": "object",
         "description": "Success"
+      },
+      "DeleteV2CommentsByCommentId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2CommentsByCommentId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You are not authorized to delete this comment."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2CommentsByCommentId404Response": {
         "required": [
@@ -78580,6 +78790,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ListsByListEntries403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ListsByListEntries404ResponseStatusCode": {
         "enum": [
           404
@@ -78590,6 +78807,13 @@
       "PutV2ListsByListEntries400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ListsByListEntries403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -78615,6 +78839,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2ListsByListEntriesByEntryId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PatchV2ListsByListEntriesByEntryId404ResponseStatusCode": {
         "enum": [
           404
@@ -78629,9 +78860,23 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PutV2ListsByListEntriesByEntryId403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ListsByListEntriesByEntryId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ListsByListEntriesByEntryId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
@@ -78860,6 +79105,13 @@
       "GetV2CommentsByCommentId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2CommentsByCommentId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
