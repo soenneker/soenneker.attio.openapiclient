@@ -156,8 +156,10 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Statuses
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatusesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("show_archived")]
             public bool? ShowArchived { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

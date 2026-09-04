@@ -46,6 +46,33 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
         {
         }
         /// <summary>
+        /// Deletes a single object by its `object_id` or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.Required scopes: `object_configuration:read-write`, `record_permission:read-write`.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue404Response">When receiving a 404 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue404Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValue200Response"/></returns>
@@ -98,6 +125,25 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue409Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes a single object by its `object_id` or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.Required scopes: `object_configuration:read-write`, `record_permission:read-write`.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.

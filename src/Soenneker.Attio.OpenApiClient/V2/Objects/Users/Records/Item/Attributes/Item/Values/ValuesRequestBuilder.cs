@@ -92,12 +92,18 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item.Attributes
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ValuesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("show_historic")]
             public bool? ShowHistoric { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

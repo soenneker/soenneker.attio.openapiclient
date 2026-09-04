@@ -151,12 +151,18 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttributesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("show_archived")]
             public bool? ShowArchived { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }
