@@ -692,6 +692,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2ActivitiesByActivity403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -13990,6 +14000,31 @@
           }
         },
         "description": "Bad Request"
+      },
+      "DeleteV2ActivitiesByActivity403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2ActivitiesByActivity403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to delete this activity."
+          }
+        },
+        "description": "Forbidden"
       },
       "DeleteV2ActivitiesByActivity404Response": {
         "required": [
@@ -78472,6 +78507,13 @@
       "DeleteV2ActivitiesByActivity400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2ActivitiesByActivity403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number",
         "additionalProperties": false
