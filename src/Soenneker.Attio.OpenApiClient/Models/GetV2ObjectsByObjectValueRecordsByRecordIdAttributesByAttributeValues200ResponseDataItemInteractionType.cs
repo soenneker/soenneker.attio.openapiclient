@@ -7,6 +7,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType
     {
+        [EnumMember(Value = "activity")]
+        #pragma warning disable CS1591
+        Activity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "calendar-event")]
         #pragma warning disable CS1591
         CalendarEvent,

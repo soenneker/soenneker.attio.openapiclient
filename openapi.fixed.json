@@ -3041,7 +3041,7 @@
           "Records"
         ],
         "summary": "List record entries",
-        "description": "List all entries, across all lists, for which this record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this record is the parent. The response includes metadata for each entry, including \u0060entry_id\u0060, \u0060list_id\u0060, and \u0060created_at\u0060, but does not include entry values. To retrieve the values, call [Get a list entry](/rest-api/endpoint-reference/entries/get-a-list-entry) separately for each entry.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
         "operationId": "GetV2ObjectsByObjectValueRecordsByRecordIdEntries",
         "parameters": [
           {
@@ -70229,6 +70229,7 @@
       },
       "InputValueAnyOf10InteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -70244,6 +70245,10 @@
           "name": "InputValueAnyOf10InteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -73246,6 +73251,7 @@
       },
       "OutputValueAnyOf8InteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -73261,6 +73267,10 @@
           "name": "OutputValueAnyOf8InteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -81918,6 +81928,7 @@
       },
       "GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -81933,6 +81944,10 @@
           "name": "GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -83632,6 +83647,7 @@
       },
       "PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -83647,6 +83663,10 @@
           "name": "PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -85447,6 +85467,7 @@
       },
       "GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -85462,6 +85483,10 @@
           "name": "GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -87161,6 +87186,7 @@
       },
       "PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -87176,6 +87202,10 @@
           "name": "PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -89159,6 +89189,7 @@
       },
       "GetV2ObjectsPeopleRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -89174,6 +89205,10 @@
           "name": "GetV2ObjectsPeopleRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -90888,6 +90923,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -90903,6 +90939,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -92617,6 +92657,7 @@
       },
       "GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -92632,6 +92673,10 @@
           "name": "GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -94323,6 +94368,7 @@
       },
       "GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -94338,6 +94384,10 @@
           "name": "GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -96052,6 +96102,7 @@
       },
       "GetV2ObjectsWorkspacesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -96067,6 +96118,10 @@
           "name": "GetV2ObjectsWorkspacesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -98540,6 +98595,7 @@
       },
       "PostV2ActivitiesByActivityRecordsQuery200ResponseDataItemValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -98555,6 +98611,10 @@
           "name": "PostV2ActivitiesByActivityRecordsQuery200ResponseDataItemValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -100318,6 +100378,7 @@
       },
       "PostV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -100333,6 +100394,10 @@
           "name": "PostV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -102096,6 +102161,7 @@
       },
       "GetV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -102111,6 +102177,10 @@
           "name": "GetV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -103874,6 +103944,7 @@
       },
       "PatchV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -103889,6 +103960,10 @@
           "name": "PatchV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -105652,6 +105727,7 @@
       },
       "PutV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -105667,6 +105743,10 @@
           "name": "PutV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -107430,6 +107510,7 @@
       },
       "PostV2ObjectsByObjectValueRecordsQuery200ResponseDataItemValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -107445,6 +107526,10 @@
           "name": "PostV2ObjectsByObjectValueRecordsQuery200ResponseDataItemValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -109208,6 +109293,7 @@
       },
       "PostV2ObjectsByObjectValueRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -109223,6 +109309,10 @@
           "name": "PostV2ObjectsByObjectValueRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -110986,6 +111076,7 @@
       },
       "PutV2ObjectsByObjectValueRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -111001,6 +111092,10 @@
           "name": "PutV2ObjectsByObjectValueRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -112764,6 +112859,7 @@
       },
       "GetV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -112779,6 +112875,10 @@
           "name": "GetV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -114542,6 +114642,7 @@
       },
       "PatchV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -114557,6 +114658,10 @@
           "name": "PatchV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -116320,6 +116425,7 @@
       },
       "PutV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -116335,6 +116441,10 @@
           "name": "PutV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -118300,6 +118410,7 @@
       },
       "PostV2ListsByListEntriesQuery200ResponseDataItemEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -118315,6 +118426,10 @@
           "name": "PostV2ListsByListEntriesQuery200ResponseDataItemEntryValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -120078,6 +120193,7 @@
       },
       "PostV2ListsByListEntries200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -120093,6 +120209,10 @@
           "name": "PostV2ListsByListEntries200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -121856,6 +121976,7 @@
       },
       "PutV2ListsByListEntries200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -121871,6 +121992,10 @@
           "name": "PutV2ListsByListEntries200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -123634,6 +123759,7 @@
       },
       "GetV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -123649,6 +123775,10 @@
           "name": "GetV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -125412,6 +125542,7 @@
       },
       "PatchV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -125427,6 +125558,10 @@
           "name": "PatchV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -127190,6 +127325,7 @@
       },
       "PutV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -127205,6 +127341,10 @@
           "name": "PutV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -155873,6 +156013,7 @@
       },
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -155888,6 +156029,10 @@
           "name": "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -155917,6 +156062,7 @@
       },
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -155932,6 +156078,10 @@
           "name": "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -155995,6 +156145,7 @@
       },
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -156010,6 +156161,10 @@
           "name": "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesNextCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -156039,6 +156194,7 @@
       },
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -156054,6 +156210,10 @@
           "name": "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -156083,6 +156243,7 @@
       },
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -156098,6 +156259,10 @@
           "name": "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -156127,6 +156292,7 @@
       },
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -156142,6 +156308,10 @@
           "name": "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -156171,6 +156341,7 @@
       },
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -156186,6 +156357,10 @@
           "name": "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -158769,6 +158944,7 @@
       },
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -158784,6 +158960,10 @@
           "name": "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -158813,6 +158993,7 @@
       },
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -158828,6 +159009,10 @@
           "name": "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -158891,6 +159076,7 @@
       },
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -158906,6 +159092,10 @@
           "name": "PostV2ObjectsCompaniesRecords200ResponseDataValuesNextCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -158935,6 +159125,7 @@
       },
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -158950,6 +159141,10 @@
           "name": "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -158979,6 +159174,7 @@
       },
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -158994,6 +159190,10 @@
           "name": "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -159023,6 +159223,7 @@
       },
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -159038,6 +159239,10 @@
           "name": "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -159067,6 +159272,7 @@
       },
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -159082,6 +159288,10 @@
           "name": "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -161665,6 +161875,7 @@
       },
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -161680,6 +161891,10 @@
           "name": "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -161709,6 +161924,7 @@
       },
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -161724,6 +161940,10 @@
           "name": "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -161787,6 +162007,7 @@
       },
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -161802,6 +162023,10 @@
           "name": "PutV2ObjectsCompaniesRecords200ResponseDataValuesNextCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -161831,6 +162056,7 @@
       },
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -161846,6 +162072,10 @@
           "name": "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -161875,6 +162105,7 @@
       },
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -161890,6 +162121,10 @@
           "name": "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -161919,6 +162154,7 @@
       },
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -161934,6 +162170,10 @@
           "name": "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -161963,6 +162203,7 @@
       },
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -161978,6 +162219,10 @@
           "name": "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -163284,6 +163529,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -163299,6 +163545,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -163328,6 +163578,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -163343,6 +163594,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -163406,6 +163661,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -163421,6 +163677,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesNextCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -163450,6 +163710,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -163465,6 +163726,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -163494,6 +163759,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -163509,6 +163775,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -163538,6 +163808,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -163553,6 +163824,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -163582,6 +163857,7 @@
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -163597,6 +163873,10 @@
           "name": "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -166180,6 +166460,7 @@
       },
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -166195,6 +166476,10 @@
           "name": "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -166224,6 +166509,7 @@
       },
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -166239,6 +166525,10 @@
           "name": "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -166302,6 +166592,7 @@
       },
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -166317,6 +166608,10 @@
           "name": "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesNextCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -166346,6 +166641,7 @@
       },
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -166361,6 +166657,10 @@
           "name": "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -166390,6 +166690,7 @@
       },
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -166405,6 +166706,10 @@
           "name": "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstEmailInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -166434,6 +166739,7 @@
       },
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -166449,6 +166755,10 @@
           "name": "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstCalendarInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"
@@ -166478,6 +166788,7 @@
       },
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
+          "activity",
           "calendar-event",
           "call",
           "chat-thread",
@@ -166493,6 +166804,10 @@
           "name": "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastInteractionItemInteractionType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
             {
               "value": "calendar-event",
               "name": "CalendarEvent"

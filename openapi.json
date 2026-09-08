@@ -869,6 +869,7 @@
               "interaction_type": {
                 "type": "string",
                 "enum": [
+                  "activity",
                   "calendar-event",
                   "call",
                   "chat-thread",
@@ -1929,6 +1930,7 @@
               "interaction_type": {
                 "type": "string",
                 "enum": [
+                  "activity",
                   "calendar-event",
                   "call",
                   "chat-thread",
@@ -7598,6 +7600,7 @@
                                       "interaction_type": {
                                         "type": "string",
                                         "enum": [
+                                          "activity",
                                           "calendar-event",
                                           "call",
                                           "chat-thread",
@@ -9720,6 +9723,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -11856,6 +11860,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -13946,6 +13951,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -16118,6 +16124,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -21051,6 +21058,7 @@
                                       "interaction_type": {
                                         "type": "string",
                                         "enum": [
+                                          "activity",
                                           "calendar-event",
                                           "call",
                                           "chat-thread",
@@ -23174,6 +23182,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -25346,6 +25355,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -27493,6 +27503,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -29593,6 +29604,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -31775,6 +31787,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -34319,6 +34332,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -36472,6 +36486,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -37899,7 +37914,7 @@
     "/v2/objects/{object}/records/{record_id}/entries": {
       "get": {
         "summary": "List record entries",
-        "description": "List all entries, across all lists, for which this record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this record is the parent. The response includes metadata for each entry, including \u0060entry_id\u0060, \u0060list_id\u0060, and \u0060created_at\u0060, but does not include entry values. To retrieve the values, call [Get a list entry](/rest-api/endpoint-reference/entries/get-a-list-entry) separately for each entry.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
         "tags": [
           "Records"
         ],
@@ -40171,6 +40186,7 @@
                                       "interaction_type": {
                                         "type": "string",
                                         "enum": [
+                                          "activity",
                                           "calendar-event",
                                           "call",
                                           "chat-thread",
@@ -42322,6 +42338,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -44552,6 +44569,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -46755,6 +46773,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -48901,6 +48920,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -51139,6 +51159,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -53468,6 +53489,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -55580,6 +55602,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -80416,6 +80439,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -82929,6 +82953,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -83248,6 +83273,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -83723,6 +83749,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -83903,6 +83930,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -84155,6 +84183,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -84335,6 +84364,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -84517,6 +84547,7 @@
                                     "interaction_type": {
                                       "type": "string",
                                       "enum": [
+                                        "activity",
                                         "calendar-event",
                                         "call",
                                         "chat-thread",
@@ -87077,6 +87108,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -87396,6 +87428,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -87871,6 +87904,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -88051,6 +88085,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -88303,6 +88338,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -88483,6 +88519,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -88665,6 +88702,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -90940,6 +90978,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -91259,6 +91298,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -91734,6 +91774,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -91914,6 +91955,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -92166,6 +92208,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -92346,6 +92389,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -92528,6 +92572,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -94140,6 +94185,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -94459,6 +94505,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -94934,6 +94981,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -95114,6 +95162,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -95366,6 +95415,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -95546,6 +95596,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -95728,6 +95779,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -98266,6 +98318,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -98585,6 +98638,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -99060,6 +99114,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -99240,6 +99295,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -99492,6 +99548,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -99672,6 +99729,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -99854,6 +99912,7 @@
                                   "interaction_type": {
                                     "type": "string",
                                     "enum": [
+                                      "activity",
                                       "calendar-event",
                                       "call",
                                       "chat-thread",
@@ -101387,6 +101446,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -109135,6 +109195,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -117352,6 +117413,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
@@ -125640,6 +125702,7 @@
                               "interaction_type": {
                                 "type": "string",
                                 "enum": [
+                                  "activity",
                                   "calendar-event",
                                   "call",
                                   "chat-thread",
