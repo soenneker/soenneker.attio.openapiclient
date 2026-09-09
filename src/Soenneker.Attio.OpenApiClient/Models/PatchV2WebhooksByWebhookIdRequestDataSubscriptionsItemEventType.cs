@@ -7,6 +7,34 @@ namespace Soenneker.Attio.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemEventType
     {
+        [EnumMember(Value = "activity.created")]
+        #pragma warning disable CS1591
+        ActivityCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "activity.updated")]
+        #pragma warning disable CS1591
+        ActivityUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "activity.deleted")]
+        #pragma warning disable CS1591
+        ActivityDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "activity-attribute.created")]
+        #pragma warning disable CS1591
+        ActivityAttributeCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "activity-attribute.updated")]
+        #pragma warning disable CS1591
+        ActivityAttributeUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "activity-record.created")]
+        #pragma warning disable CS1591
+        ActivityRecordCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "activity-record.deleted")]
+        #pragma warning disable CS1591
+        ActivityRecordDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "call-recording.created")]
         #pragma warning disable CS1591
         CallRecordingCreated,

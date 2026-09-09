@@ -128973,6 +128973,13 @@
       },
       "GetV2Webhooks200ResponseDataItemSubscriptionsItemEventType": {
         "enum": [
+          "activity.created",
+          "activity.updated",
+          "activity.deleted",
+          "activity-attribute.created",
+          "activity-attribute.updated",
+          "activity-record.created",
+          "activity-record.deleted",
           "call-recording.created",
           "comment.created",
           "comment.resolved",
@@ -129009,6 +129016,34 @@
           "name": "GetV2Webhooks200ResponseDataItemSubscriptionsItemEventType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity.created",
+              "name": "ActivityCreated"
+            },
+            {
+              "value": "activity.updated",
+              "name": "ActivityUpdated"
+            },
+            {
+              "value": "activity.deleted",
+              "name": "ActivityDeleted"
+            },
+            {
+              "value": "activity-attribute.created",
+              "name": "ActivityAttributeCreated"
+            },
+            {
+              "value": "activity-attribute.updated",
+              "name": "ActivityAttributeUpdated"
+            },
+            {
+              "value": "activity-record.created",
+              "name": "ActivityRecordCreated"
+            },
+            {
+              "value": "activity-record.deleted",
+              "name": "ActivityRecordDeleted"
+            },
             {
               "value": "call-recording.created",
               "name": "CallRecordingCreated"
@@ -129122,6 +129157,13 @@
       },
       "PostV2WebhooksRequestDataSubscriptionsItemEventType": {
         "enum": [
+          "activity.created",
+          "activity.updated",
+          "activity.deleted",
+          "activity-attribute.created",
+          "activity-attribute.updated",
+          "activity-record.created",
+          "activity-record.deleted",
           "call-recording.created",
           "comment.created",
           "comment.resolved",
@@ -129158,6 +129200,34 @@
           "name": "PostV2WebhooksRequestDataSubscriptionsItemEventType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity.created",
+              "name": "ActivityCreated"
+            },
+            {
+              "value": "activity.updated",
+              "name": "ActivityUpdated"
+            },
+            {
+              "value": "activity.deleted",
+              "name": "ActivityDeleted"
+            },
+            {
+              "value": "activity-attribute.created",
+              "name": "ActivityAttributeCreated"
+            },
+            {
+              "value": "activity-attribute.updated",
+              "name": "ActivityAttributeUpdated"
+            },
+            {
+              "value": "activity-record.created",
+              "name": "ActivityRecordCreated"
+            },
+            {
+              "value": "activity-record.deleted",
+              "name": "ActivityRecordDeleted"
+            },
             {
               "value": "call-recording.created",
               "name": "CallRecordingCreated"
@@ -129271,6 +129341,13 @@
       },
       "PostV2Webhooks200ResponseDataSubscriptionsItemEventType": {
         "enum": [
+          "activity.created",
+          "activity.updated",
+          "activity.deleted",
+          "activity-attribute.created",
+          "activity-attribute.updated",
+          "activity-record.created",
+          "activity-record.deleted",
           "call-recording.created",
           "comment.created",
           "comment.resolved",
@@ -129307,6 +129384,34 @@
           "name": "PostV2Webhooks200ResponseDataSubscriptionsItemEventType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity.created",
+              "name": "ActivityCreated"
+            },
+            {
+              "value": "activity.updated",
+              "name": "ActivityUpdated"
+            },
+            {
+              "value": "activity.deleted",
+              "name": "ActivityDeleted"
+            },
+            {
+              "value": "activity-attribute.created",
+              "name": "ActivityAttributeCreated"
+            },
+            {
+              "value": "activity-attribute.updated",
+              "name": "ActivityAttributeUpdated"
+            },
+            {
+              "value": "activity-record.created",
+              "name": "ActivityRecordCreated"
+            },
+            {
+              "value": "activity-record.deleted",
+              "name": "ActivityRecordDeleted"
+            },
             {
               "value": "call-recording.created",
               "name": "CallRecordingCreated"
@@ -129420,6 +129525,13 @@
       },
       "GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItemEventType": {
         "enum": [
+          "activity.created",
+          "activity.updated",
+          "activity.deleted",
+          "activity-attribute.created",
+          "activity-attribute.updated",
+          "activity-record.created",
+          "activity-record.deleted",
           "call-recording.created",
           "comment.created",
           "comment.resolved",
@@ -129456,6 +129568,34 @@
           "name": "GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItemEventType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity.created",
+              "name": "ActivityCreated"
+            },
+            {
+              "value": "activity.updated",
+              "name": "ActivityUpdated"
+            },
+            {
+              "value": "activity.deleted",
+              "name": "ActivityDeleted"
+            },
+            {
+              "value": "activity-attribute.created",
+              "name": "ActivityAttributeCreated"
+            },
+            {
+              "value": "activity-attribute.updated",
+              "name": "ActivityAttributeUpdated"
+            },
+            {
+              "value": "activity-record.created",
+              "name": "ActivityRecordCreated"
+            },
+            {
+              "value": "activity-record.deleted",
+              "name": "ActivityRecordDeleted"
+            },
             {
               "value": "call-recording.created",
               "name": "CallRecordingCreated"
@@ -129569,6 +129709,13 @@
       },
       "PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemEventType": {
         "enum": [
+          "activity.created",
+          "activity.updated",
+          "activity.deleted",
+          "activity-attribute.created",
+          "activity-attribute.updated",
+          "activity-record.created",
+          "activity-record.deleted",
           "call-recording.created",
           "comment.created",
           "comment.resolved",
@@ -129605,6 +129752,34 @@
           "name": "PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemEventType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity.created",
+              "name": "ActivityCreated"
+            },
+            {
+              "value": "activity.updated",
+              "name": "ActivityUpdated"
+            },
+            {
+              "value": "activity.deleted",
+              "name": "ActivityDeleted"
+            },
+            {
+              "value": "activity-attribute.created",
+              "name": "ActivityAttributeCreated"
+            },
+            {
+              "value": "activity-attribute.updated",
+              "name": "ActivityAttributeUpdated"
+            },
+            {
+              "value": "activity-record.created",
+              "name": "ActivityRecordCreated"
+            },
+            {
+              "value": "activity-record.deleted",
+              "name": "ActivityRecordDeleted"
+            },
             {
               "value": "call-recording.created",
               "name": "CallRecordingCreated"
@@ -129718,6 +129893,13 @@
       },
       "PatchV2WebhooksByWebhookId200ResponseDataSubscriptionsItemEventType": {
         "enum": [
+          "activity.created",
+          "activity.updated",
+          "activity.deleted",
+          "activity-attribute.created",
+          "activity-attribute.updated",
+          "activity-record.created",
+          "activity-record.deleted",
           "call-recording.created",
           "comment.created",
           "comment.resolved",
@@ -129754,6 +129936,34 @@
           "name": "PatchV2WebhooksByWebhookId200ResponseDataSubscriptionsItemEventType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "activity.created",
+              "name": "ActivityCreated"
+            },
+            {
+              "value": "activity.updated",
+              "name": "ActivityUpdated"
+            },
+            {
+              "value": "activity.deleted",
+              "name": "ActivityDeleted"
+            },
+            {
+              "value": "activity-attribute.created",
+              "name": "ActivityAttributeCreated"
+            },
+            {
+              "value": "activity-attribute.updated",
+              "name": "ActivityAttributeUpdated"
+            },
+            {
+              "value": "activity-record.created",
+              "name": "ActivityRecordCreated"
+            },
+            {
+              "value": "activity-record.deleted",
+              "name": "ActivityRecordDeleted"
+            },
             {
               "value": "call-recording.created",
               "name": "CallRecordingCreated"
