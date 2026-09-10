@@ -70230,12 +70230,9 @@
       "InputValueAnyOf10InteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -70250,28 +70247,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -73252,12 +73237,9 @@
       "OutputValueAnyOf8InteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -73272,28 +73254,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -81929,12 +81899,9 @@
       "GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -81949,28 +81916,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -83648,12 +83603,9 @@
       "PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -83668,28 +83620,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -85468,12 +85408,9 @@
       "GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -85488,28 +85425,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -87187,12 +87112,9 @@
       "PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -87207,28 +87129,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -89190,12 +89100,9 @@
       "GetV2ObjectsPeopleRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -89210,28 +89117,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -90924,12 +90819,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -90944,28 +90836,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -92658,12 +92538,9 @@
       "GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -92678,28 +92555,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -94369,12 +94234,9 @@
       "GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -94389,28 +94251,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -96103,12 +95953,9 @@
       "GetV2ObjectsWorkspacesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -96123,28 +95970,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -98596,12 +98431,9 @@
       "PostV2ActivitiesByActivityRecordsQuery200ResponseDataItemValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -98616,28 +98448,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -100379,12 +100199,9 @@
       "PostV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -100399,28 +100216,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -102162,12 +101967,9 @@
       "GetV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -102182,28 +101984,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -103945,12 +103735,9 @@
       "PatchV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -103965,28 +103752,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -105728,12 +105503,9 @@
       "PutV2ActivitiesByActivityRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -105748,28 +105520,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -107511,12 +107271,9 @@
       "PostV2ObjectsByObjectValueRecordsQuery200ResponseDataItemValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -107531,28 +107288,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -109294,12 +109039,9 @@
       "PostV2ObjectsByObjectValueRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -109314,28 +109056,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -111077,12 +110807,9 @@
       "PutV2ObjectsByObjectValueRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -111097,28 +110824,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -112860,12 +112575,9 @@
       "GetV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -112880,28 +112592,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -114643,12 +114343,9 @@
       "PatchV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -114663,28 +114360,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -116426,12 +116111,9 @@
       "PutV2ObjectsByObjectValueRecordsByRecordId200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -116446,28 +116128,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -118411,12 +118081,9 @@
       "PostV2ListsByListEntriesQuery200ResponseDataItemEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -118431,28 +118098,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -120194,12 +119849,9 @@
       "PostV2ListsByListEntries200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120214,28 +119866,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -121977,12 +121617,9 @@
       "PutV2ListsByListEntries200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -121997,28 +121634,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -123760,12 +123385,9 @@
       "GetV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123780,28 +123402,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -125543,12 +125153,9 @@
       "PatchV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -125563,28 +125170,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -127326,12 +126921,9 @@
       "PutV2ListsByListEntriesByEntryId200ResponseDataEntryValuesAdditionalPropertiesItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -127346,28 +126938,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -156224,12 +155804,9 @@
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -156244,28 +155821,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -156273,12 +155838,9 @@
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -156293,28 +155855,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -156356,12 +155906,9 @@
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -156376,28 +155923,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -156405,12 +155940,9 @@
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -156425,28 +155957,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -156454,12 +155974,9 @@
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -156474,28 +155991,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -156503,12 +156008,9 @@
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -156523,28 +156025,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -156552,12 +156042,9 @@
       "PostV2ObjectsCompaniesRecordsQuery200ResponseDataItemValuesLastInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -156572,28 +156059,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -159155,12 +158630,9 @@
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159175,28 +158647,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -159204,12 +158664,9 @@
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159224,28 +158681,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -159287,12 +158732,9 @@
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159307,28 +158749,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -159336,12 +158766,9 @@
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159356,28 +158783,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -159385,12 +158800,9 @@
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159405,28 +158817,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -159434,12 +158834,9 @@
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159454,28 +158851,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -159483,12 +158868,9 @@
       "PostV2ObjectsCompaniesRecords200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159503,28 +158885,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -162086,12 +161456,9 @@
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -162106,28 +161473,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -162135,12 +161490,9 @@
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -162155,28 +161507,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -162218,12 +161558,9 @@
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -162238,28 +161575,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -162267,12 +161592,9 @@
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -162287,28 +161609,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -162316,12 +161626,9 @@
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -162336,28 +161643,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -162365,12 +161660,9 @@
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -162385,28 +161677,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -162414,12 +161694,9 @@
       "PutV2ObjectsCompaniesRecords200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -162434,28 +161711,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -163740,12 +163005,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -163760,28 +163022,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -163789,12 +163039,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -163809,28 +163056,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -163872,12 +163107,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -163892,28 +163124,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -163921,12 +163141,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -163941,28 +163158,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -163970,12 +163175,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -163990,28 +163192,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -164019,12 +163209,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -164039,28 +163226,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -164068,12 +163243,9 @@
       "GetV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -164088,28 +163260,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -166671,12 +165831,9 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -166691,28 +165848,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -166720,12 +165865,9 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -166740,28 +165882,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -166803,12 +165933,9 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesNextCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -166823,28 +165950,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -166852,12 +165967,9 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -166872,28 +165984,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -166901,12 +166001,9 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstEmailInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -166921,28 +166018,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -166950,12 +166035,9 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesFirstCalendarInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -166970,28 +166052,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }
@@ -166999,12 +166069,9 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId200ResponseDataValuesLastInteractionItemInteractionType": {
         "enum": [
           "activity",
-          "calendar-event",
-          "call",
-          "chat-thread",
           "email",
-          "in-person-meeting",
-          "meeting"
+          "meeting",
+          "calendar-event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -167019,28 +166086,16 @@
               "name": "Activity"
             },
             {
-              "value": "calendar-event",
-              "name": "CalendarEvent"
-            },
-            {
-              "value": "call",
-              "name": "Call"
-            },
-            {
-              "value": "chat-thread",
-              "name": "ChatThread"
-            },
-            {
               "value": "email",
               "name": "Email"
             },
             {
-              "value": "in-person-meeting",
-              "name": "InPersonMeeting"
-            },
-            {
               "value": "meeting",
               "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
             }
           ]
         }

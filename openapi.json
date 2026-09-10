@@ -870,12 +870,9 @@
                 "type": "string",
                 "enum": [
                   "activity",
-                  "calendar-event",
-                  "call",
-                  "chat-thread",
                   "email",
-                  "in-person-meeting",
-                  "meeting"
+                  "meeting",
+                  "calendar-event"
                 ],
                 "description": "The type of interaction e.g. calendar or email.",
                 "example": "email"
@@ -1931,12 +1928,9 @@
                 "type": "string",
                 "enum": [
                   "activity",
-                  "calendar-event",
-                  "call",
-                  "chat-thread",
                   "email",
-                  "in-person-meeting",
-                  "meeting"
+                  "meeting",
+                  "calendar-event"
                 ],
                 "description": "The type of interaction e.g. calendar or email.",
                 "example": "email"
@@ -7601,12 +7595,9 @@
                                         "type": "string",
                                         "enum": [
                                           "activity",
-                                          "calendar-event",
-                                          "call",
-                                          "chat-thread",
                                           "email",
-                                          "in-person-meeting",
-                                          "meeting"
+                                          "meeting",
+                                          "calendar-event"
                                         ],
                                         "description": "The type of interaction e.g. calendar or email.",
                                         "example": "email"
@@ -9724,12 +9715,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -11861,12 +11849,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -13952,12 +13937,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -16125,12 +16107,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -21059,12 +21038,9 @@
                                         "type": "string",
                                         "enum": [
                                           "activity",
-                                          "calendar-event",
-                                          "call",
-                                          "chat-thread",
                                           "email",
-                                          "in-person-meeting",
-                                          "meeting"
+                                          "meeting",
+                                          "calendar-event"
                                         ],
                                         "description": "The type of interaction e.g. calendar or email.",
                                         "example": "email"
@@ -23183,12 +23159,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -25356,12 +25329,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -27504,12 +27474,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -29605,12 +29572,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -31788,12 +31752,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -34333,12 +34294,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -36487,12 +36445,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -40187,12 +40142,9 @@
                                         "type": "string",
                                         "enum": [
                                           "activity",
-                                          "calendar-event",
-                                          "call",
-                                          "chat-thread",
                                           "email",
-                                          "in-person-meeting",
-                                          "meeting"
+                                          "meeting",
+                                          "calendar-event"
                                         ],
                                         "description": "The type of interaction e.g. calendar or email.",
                                         "example": "email"
@@ -42339,12 +42291,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -44570,12 +44519,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -46774,12 +46720,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -48921,12 +48864,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -51160,12 +51100,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -53490,12 +53427,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -55603,12 +55537,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -80482,12 +80413,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -82996,12 +82924,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -83316,12 +83241,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -83792,12 +83714,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -83973,12 +83892,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -84226,12 +84142,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -84407,12 +84320,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -84590,12 +84500,9 @@
                                       "type": "string",
                                       "enum": [
                                         "activity",
-                                        "calendar-event",
-                                        "call",
-                                        "chat-thread",
                                         "email",
-                                        "in-person-meeting",
-                                        "meeting"
+                                        "meeting",
+                                        "calendar-event"
                                       ],
                                       "description": "The type of interaction e.g. calendar or email.",
                                       "example": "email"
@@ -87151,12 +87058,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -87471,12 +87375,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -87947,12 +87848,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -88128,12 +88026,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -88381,12 +88276,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -88562,12 +88454,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -88745,12 +88634,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -91021,12 +90907,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -91341,12 +91224,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -91817,12 +91697,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -91998,12 +91875,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -92251,12 +92125,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -92432,12 +92303,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -92615,12 +92483,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -94228,12 +94093,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -94548,12 +94410,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -95024,12 +94883,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -95205,12 +95061,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -95458,12 +95311,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -95639,12 +95489,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -95822,12 +95669,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -98361,12 +98205,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -98681,12 +98522,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -99157,12 +98995,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -99338,12 +99173,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -99591,12 +99423,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -99772,12 +99601,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -99955,12 +99781,9 @@
                                     "type": "string",
                                     "enum": [
                                       "activity",
-                                      "calendar-event",
-                                      "call",
-                                      "chat-thread",
                                       "email",
-                                      "in-person-meeting",
-                                      "meeting"
+                                      "meeting",
+                                      "calendar-event"
                                     ],
                                     "description": "The type of interaction e.g. calendar or email.",
                                     "example": "email"
@@ -101489,12 +101312,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -109238,12 +109058,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -117456,12 +117273,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
@@ -125745,12 +125559,9 @@
                                 "type": "string",
                                 "enum": [
                                   "activity",
-                                  "calendar-event",
-                                  "call",
-                                  "chat-thread",
                                   "email",
-                                  "in-person-meeting",
-                                  "meeting"
+                                  "meeting",
+                                  "calendar-event"
                                 ],
                                 "description": "The type of interaction e.g. calendar or email.",
                                 "example": "email"
