@@ -22,7 +22,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Emails
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/emails{?cursor*,domain*,limit*,linked_object*,linked_record_ids*,participants*,sent_after*,sent_before*}", pathParameters)
+        public EmailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/emails{?cursor*,domain*,exclude_automated_participants*,limit*,linked_object*,linked_record_ids*,participants*,sent_after*,sent_before*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Emails
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/emails{?cursor*,domain*,limit*,linked_object*,linked_record_ids*,participants*,sent_after*,sent_before*}", rawUrl)
+        public EmailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/emails{?cursor*,domain*,exclude_automated_participants*,limit*,linked_object*,linked_record_ids*,participants*,sent_after*,sent_before*}", rawUrl)
         {
         }
         /// <summary>
@@ -111,6 +111,10 @@ namespace Soenneker.Attio.OpenApiClient.V2.Emails
             public string Domain { get; set; }
             #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
+            [QueryParameter("exclude_automated_participants")]
+            public bool? ExcludeAutomatedParticipants { get; set; }
+            #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }

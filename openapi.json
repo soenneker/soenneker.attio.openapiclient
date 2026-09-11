@@ -60144,6 +60144,17 @@
             "required": false,
             "name": "sent_before",
             "in": "query"
+          },
+          {
+            "schema": {
+              "type": "boolean",
+              "description": "If \u0060true\u0060, an email is only returned when at least one participant outside your workspace looks like a person rather than an automated sender (\u0060notifications@\u0060, \u0060no-reply@\u0060, meeting notetakers, \u2026). Defaults to \u0060false\u0060, which returns every email regardless of who sent it.",
+              "example": false,
+              "default": false
+            },
+            "required": false,
+            "name": "exclude_automated_participants",
+            "in": "query"
           }
         ],
         "responses": {
