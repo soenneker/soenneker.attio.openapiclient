@@ -40,6 +40,31 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
         {
         }
         /// <summary>
+        /// Deletes a single meeting by ID.Meetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId404Response">When receiving a 404 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId404Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Get a single meeting by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response"/></returns>
@@ -61,6 +86,25 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId404Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes a single meeting by ID.Meetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Get a single meeting by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `record_permission:read`.

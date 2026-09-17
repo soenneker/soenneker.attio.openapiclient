@@ -460,7 +460,7 @@
           "Activities"
         ],
         "summary": "Create an activity",
-        "description": "Creates a new custom activity in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
         "operationId": "PostV2Activities",
         "requestBody": {
           "content": {
@@ -729,7 +729,7 @@
           "Activity records"
         ],
         "summary": "List activity records",
-        "description": "Lists activity records, with the option to filter and sort results.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Lists activity records, with the option to filter and sort results.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "operationId": "PostV2ActivitiesByActivityRecordsQuery",
         "parameters": [
           {
@@ -807,7 +807,9 @@
           {
             "oauth2": [
               "activity_record:read",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ]
@@ -819,7 +821,7 @@
           "Activity records"
         ],
         "summary": "Create an activity record",
-        "description": "Creates a new activity record, for example one specific phone call.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Creates a new activity record, for example one specific phone call.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "operationId": "PostV2ActivitiesByActivityRecords",
         "parameters": [
           {
@@ -889,7 +891,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ]
@@ -901,7 +905,7 @@
           "Activity records"
         ],
         "summary": "Get an activity record",
-        "description": "Gets a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Gets a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "operationId": "GetV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -952,7 +956,9 @@
           {
             "oauth2": [
               "activity_record:read",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ]
@@ -962,7 +968,7 @@
           "Activity records"
         ],
         "summary": "Update an activity record (append multiselect values)",
-        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "operationId": "PatchV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -1043,7 +1049,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ]
@@ -1053,7 +1061,7 @@
           "Activity records"
         ],
         "summary": "Update an activity record (overwrite multiselect values)",
-        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "operationId": "PutV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -1134,7 +1142,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ]
@@ -1144,7 +1154,7 @@
           "Activity records"
         ],
         "summary": "Delete an activity record",
-        "description": "Deletes a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Deletes a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "operationId": "DeleteV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -1205,7 +1215,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ]
@@ -5739,6 +5751,66 @@
             "oauth2": [
               "meeting:read",
               "record_permission:read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Meetings"
+        ],
+        "summary": "Delete a meeting",
+        "description": "Deletes a single meeting by ID.\n\nMeetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060.",
+        "operationId": "DeleteV2MeetingsByMeetingId",
+        "parameters": [
+          {
+            "name": "meetingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID which identifies the meeting to delete.",
+              "format": "uuid",
+              "example": "cb59ab17-ad15-460c-a126-0715617c0853"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2MeetingsByMeetingId200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2MeetingsByMeetingId400Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2MeetingsByMeetingId404Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "meeting:read-write"
             ]
           }
         ]
@@ -13812,11 +13884,11 @@
             "$ref": "#/components/schemas/AuthErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/UnauthorizedCode"
+            "$ref": "#/components/schemas/PostV2Activities403ResponseCode"
           },
           "message": {
             "type": "string",
-            "example": "You do not have the necessary permissions to create activities in this workspace."
+            "example": "Custom activities are not supported on your plan. Please upgrade or contact sales to gain access."
           }
         },
         "description": "Forbidden"
@@ -14215,7 +14287,7 @@
             "$ref": "#/components/schemas/AuthErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/UnauthorizedCode"
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords403ResponseCode"
           },
           "message": {
             "type": "string",
@@ -17912,6 +17984,60 @@
         "properties": {
           "status_code": {
             "$ref": "#/components/schemas/GetV2MeetingsByMeetingId404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Meeting with ID \u0022cb59ab17-ad15-460c-a126-0715617c0853\u0022 was not found."
+          }
+        },
+        "description": "Not Found"
+      },
+      "DeleteV2MeetingsByMeetingId200Response": {
+        "type": "object",
+        "description": "Success"
+      },
+      "DeleteV2MeetingsByMeetingId400Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2MeetingsByMeetingId400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/SystemEditUnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Cannot delete a meeting which was created by calendar sync."
+          }
+        },
+        "description": "Bad Request"
+      },
+      "DeleteV2MeetingsByMeetingId404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/DeleteV2MeetingsByMeetingId404ResponseStatusCode"
           },
           "type": {
             "$ref": "#/components/schemas/InvalidRequestErrorType"
@@ -23185,6 +23311,10 @@
         },
         "description": "Success"
       },
+      "DeleteV2MeetingsByMeetingId200ResponseSchema": {
+        "type": "object",
+        "description": "Success"
+      },
       "DeleteV2MeetingsByMeetingIdCallRecordingsByCallRecordingId204ResponseSchema": {
         "type": "object",
         "description": "Success"
@@ -23233,6 +23363,17 @@
         "type": "object",
         "description": "Success"
       },
+      "PostV2Activities403ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2Activities403ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2Activities403ResponseCodeAnyOf2"
+          }
+        ]
+      },
       "PostV2ActivitiesByActivityRecordsQueryRequestSortsItemPathItemItem": {
         "type": "object",
         "anyOf": [
@@ -23243,6 +23384,17 @@
           {
             "type": "string",
             "description": "A slug or ID to identify the attribute to sort by."
+          }
+        ]
+      },
+      "PostV2ActivitiesByActivityRecords403ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf2"
           }
         ]
       },
@@ -79572,6 +79724,20 @@
         "type": "number",
         "additionalProperties": false
       },
+      "DeleteV2MeetingsByMeetingId400ResponseStatusCode": {
+        "enum": [
+          400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "DeleteV2MeetingsByMeetingId404ResponseStatusCode": {
+        "enum": [
+          404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2MeetingsByMeetingIdCallRecordings400ResponseStatusCode": {
         "enum": [
           400
@@ -80358,6 +80524,74 @@
             {
               "value": "current-user",
               "name": "CurrentUser"
+            }
+          ]
+        }
+      },
+      "PostV2Activities403ResponseCodeAnyOf1": {
+        "enum": [
+          "billing_error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2Activities403ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "billing_error",
+              "name": "BillingError"
+            }
+          ]
+        }
+      },
+      "PostV2Activities403ResponseCodeAnyOf2": {
+        "enum": [
+          "unauthorized"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2Activities403ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unauthorized",
+              "name": "Unauthorized"
+            }
+          ]
+        }
+      },
+      "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf1": {
+        "enum": [
+          "unauthorized"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unauthorized",
+              "name": "Unauthorized"
+            }
+          ]
+        }
+      },
+      "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf2": {
+        "enum": [
+          "billing_error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "billing_error",
+              "name": "BillingError"
             }
           ]
         }

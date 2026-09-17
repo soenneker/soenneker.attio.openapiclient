@@ -6062,7 +6062,7 @@
       },
       "post": {
         "summary": "Create an activity",
-        "description": "Creates a new custom activity in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
         "tags": [
           "Activities"
         ],
@@ -6173,14 +6173,24 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "unauthorized"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "billing_error"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "unauthorized"
+                          ]
+                        }
                       ]
                     },
                     "message": {
                       "type": "string",
-                      "example": "You do not have the necessary permissions to create activities in this workspace."
+                      "example": "Custom activities are not supported on your plan. Please upgrade or contact sales to gain access."
                     }
                   },
                   "required": [
@@ -6762,7 +6772,7 @@
     "/v2/activities/{activity}/records/query": {
       "post": {
         "summary": "List activity records",
-        "description": "Lists activity records, with the option to filter and sort results.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Lists activity records, with the option to filter and sort results.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "tags": [
           "Activity records"
         ],
@@ -6770,7 +6780,9 @@
           {
             "oauth2": [
               "activity_record:read",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ],
@@ -8979,7 +8991,7 @@
     "/v2/activities/{activity}/records": {
       "post": {
         "summary": "Create an activity record",
-        "description": "Creates a new activity record, for example one specific phone call.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Creates a new activity record, for example one specific phone call.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "tags": [
           "Activity records"
         ],
@@ -8987,7 +8999,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ],
@@ -11071,9 +11085,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "unauthorized"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "unauthorized"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "billing_error"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -11139,7 +11163,7 @@
     "/v2/activities/{activity}/records/{record_id}": {
       "get": {
         "summary": "Get an activity record",
-        "description": "Gets a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Gets a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "tags": [
           "Activity records"
         ],
@@ -11147,7 +11171,9 @@
           {
             "oauth2": [
               "activity_record:read",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ],
@@ -13189,7 +13215,7 @@
       },
       "patch": {
         "summary": "Update an activity record (append multiselect values)",
-        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "tags": [
           "Activity records"
         ],
@@ -13197,7 +13223,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ],
@@ -15359,7 +15387,7 @@
       },
       "put": {
         "summary": "Update an activity record (overwrite multiselect values)",
-        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "tags": [
           "Activity records"
         ],
@@ -15367,7 +15395,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ],
@@ -17529,7 +17559,7 @@
       },
       "delete": {
         "summary": "Delete an activity record",
-        "description": "Deletes a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060.",
+        "description": "Deletes a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
         "tags": [
           "Activity records"
         ],
@@ -17537,7 +17567,9 @@
           {
             "oauth2": [
               "activity_record:read-write",
-              "activity_configuration:read"
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
             ]
           }
         ],
@@ -60841,6 +60873,134 @@
                     "data"
                   ],
                   "description": "Success"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Meeting with ID \u0022cb59ab17-ad15-460c-a126-0715617c0853\u0022 was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a meeting",
+        "description": "Deletes a single meeting by ID.\n\nMeetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060.",
+        "tags": [
+          "Meetings"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "meeting:read-write"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID which identifies the meeting to delete.",
+              "example": "cb59ab17-ad15-460c-a126-0715617c0853"
+            },
+            "required": true,
+            "name": "meeting_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "system_edit_unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Cannot delete a meeting which was created by calendar sync."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Bad Request"
                 }
               }
             }

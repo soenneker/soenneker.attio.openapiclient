@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records
         {
         }
         /// <summary>
-        /// Creates a new activity record, for example one specific phone call.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`.
+        /// Creates a new activity record, for example one specific phone call.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new activity record, for example one specific phone call.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`.
+        /// Creates a new activity record, for example one specific phone call.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
