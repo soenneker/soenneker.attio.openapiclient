@@ -453,7 +453,13 @@
               "activity_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       },
       "post": {
         "tags": [
@@ -510,7 +516,13 @@
               "activity_configuration:read-write"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       }
     },
     "/v2/activities/{activity}": {
@@ -561,7 +573,13 @@
               "activity_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       },
       "patch": {
         "tags": [
@@ -650,7 +668,13 @@
               "activity_configuration:read-write"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -720,7 +744,13 @@
               "activity_record:read-write"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       }
     },
     "/v2/activities/{activity}/records/query": {
@@ -812,7 +842,13 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       }
     },
     "/v2/activities/{activity}/records": {
@@ -896,7 +932,13 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       }
     },
     "/v2/activities/{activity}/records/{recordId}": {
@@ -961,7 +1003,13 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       },
       "patch": {
         "tags": [
@@ -1054,7 +1102,13 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -1147,7 +1201,13 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -1220,7 +1280,13 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       }
     },
     "/v2/{target}/{identifier}/attributes": {
@@ -2832,7 +2898,12 @@
               "object_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/objects/{objectValue}/records/{recordId}/attributes/{attribute}/values": {
@@ -3044,7 +3115,12 @@
               "object_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/objects/{objectValue}/records/{recordId}/entries": {
@@ -3166,7 +3242,12 @@
               "object_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/sql": {
@@ -3216,7 +3297,12 @@
               "object_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/lists": {
@@ -4298,7 +4384,12 @@
               "list_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/workspace_members": {
@@ -5486,7 +5577,12 @@
               "object_configuration:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       }
     },
     "/v2/sequences/unsubscribed_emails": {
@@ -5535,7 +5631,12 @@
               "sequence_unsubscribe:read-write"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/meetings": {
@@ -5652,7 +5753,12 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       },
       "post": {
         "tags": [
@@ -5700,7 +5806,12 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/meetings/{meetingId}": {
@@ -5753,7 +5864,164 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Meetings"
+        ],
+        "summary": "Update a meeting (append linked records)",
+        "description": "Links records to a meeting. The records supplied are added to the meeting\u0027s existing linked records, and records which are already linked are ignored. Use the \u0060PUT\u0060 endpoint to replace or remove linked records.\n\nNo other meeting fields can be updated. Attio automatically links the meeting participants\u0027 companies to the meeting; this behavior is asynchronous.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.",
+        "operationId": "PatchV2MeetingsByMeetingId",
+        "parameters": [
+          {
+            "name": "meetingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID which identifies the meeting to update.",
+              "format": "uuid",
+              "example": "cb59ab17-ad15-460c-a126-0715617c0853"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchV2MeetingsByMeetingIdRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId400Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId404Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "meeting:read-write",
+              "record_permission:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Meetings"
+        ],
+        "summary": "Update a meeting (overwrite linked records)",
+        "description": "Replaces a meeting\u0027s linked records with the records supplied. Any record which is currently linked and is not in the request is unlinked, including records which Attio linked automatically from the meeting\u0027s participants. Passing an empty array unlinks every record. Use the \u0060PATCH\u0060 endpoint to add linked records without removing the records which already exist.\n\nNo other meeting fields can be updated. Attio automatically links the meeting participants\u0027 companies to the meeting; this behavior is asynchronous, so a company which is linked after this request completes is not removed by it.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.",
+        "operationId": "PutV2MeetingsByMeetingId",
+        "parameters": [
+          {
+            "name": "meetingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID which identifies the meeting to update.",
+              "format": "uuid",
+              "example": "cb59ab17-ad15-460c-a126-0715617c0853"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutV2MeetingsByMeetingIdRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2MeetingsByMeetingId200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2MeetingsByMeetingId400Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2MeetingsByMeetingId404Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "meeting:read-write",
+              "record_permission:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -5813,7 +6081,12 @@
               "meeting:read-write"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/meetings/{meetingId}/call_recordings": {
@@ -5875,7 +6148,12 @@
               "call_recording:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       },
       "post": {
         "tags": [
@@ -5956,7 +6234,12 @@
               "call_recording:read-write"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/meetings/{meetingId}/call_recordings/{callRecordingId}": {
@@ -6020,7 +6303,12 @@
               "call_recording:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -6082,7 +6370,12 @@
               "call_recording:read-write"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/meetings/{meetingId}/call_recordings/{callRecordingId}/transcript": {
@@ -6145,7 +6438,13 @@
               "call_recording:read"
             ]
           }
-        ]
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/files": {
@@ -6234,7 +6533,12 @@
               "file:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       },
       "post": {
         "tags": [
@@ -6273,7 +6577,12 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/files/upload": {
@@ -6324,7 +6633,12 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/files/{fileId}": {
@@ -6378,7 +6692,12 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -6430,7 +6749,12 @@
               "record_permission:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/files/{fileId}/download": {
@@ -6472,7 +6796,12 @@
               "file:read"
             ]
           }
-        ]
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        }
       }
     },
     "/v2/webhooks": {
@@ -17998,6 +18327,128 @@
         },
         "description": "Not Found"
       },
+      "PatchV2MeetingsByMeetingIdRequest": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PatchV2MeetingsByMeetingIdRequestData"
+          }
+        }
+      },
+      "PatchV2MeetingsByMeetingId400Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId400ResponseCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Could not find record for values passed to the linked_records field. Please ensure that all values you are trying to set have a corresponding record that already exists in Attio."
+          }
+        },
+        "description": "Bad Request"
+      },
+      "PatchV2MeetingsByMeetingId404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Meeting with ID \u0022cb59ab17-ad15-460c-a126-0715617c0853\u0022 was not found."
+          }
+        },
+        "description": "Not Found"
+      },
+      "PutV2MeetingsByMeetingIdRequest": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PutV2MeetingsByMeetingIdRequestData"
+          }
+        }
+      },
+      "PutV2MeetingsByMeetingId400Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2MeetingsByMeetingId400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/PutV2MeetingsByMeetingId400ResponseCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Could not find record for values passed to the linked_records field. Please ensure that all values you are trying to set have a corresponding record that already exists in Attio."
+          }
+        },
+        "description": "Bad Request"
+      },
+      "PutV2MeetingsByMeetingId404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2MeetingsByMeetingId404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Meeting with ID \u0022cb59ab17-ad15-460c-a126-0715617c0853\u0022 was not found."
+          }
+        },
+        "description": "Not Found"
+      },
       "DeleteV2MeetingsByMeetingId200Response": {
         "type": "object",
         "description": "Success"
@@ -23311,6 +23762,30 @@
         },
         "description": "Success"
       },
+      "PatchV2MeetingsByMeetingId200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Meeting"
+          }
+        },
+        "description": "Success"
+      },
+      "PutV2MeetingsByMeetingId200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Meeting"
+          }
+        },
+        "description": "Success"
+      },
       "DeleteV2MeetingsByMeetingId200ResponseSchema": {
         "type": "object",
         "description": "Success"
@@ -23689,6 +24164,28 @@
         ],
         "description": "Whether or not the participant is the organizer of the meeting.",
         "example": true
+      },
+      "PatchV2MeetingsByMeetingId400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2MeetingsByMeetingId400ResponseCodeAnyOf2"
+          }
+        ]
+      },
+      "PutV2MeetingsByMeetingId400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PutV2MeetingsByMeetingId400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2MeetingsByMeetingId400ResponseCodeAnyOf2"
+          }
+        ]
       },
       "PostV2MeetingsByMeetingIdCallRecordings403ResponseCode": {
         "type": "object",
@@ -27353,6 +27850,38 @@
             "description": "A list of records to link to the meeting. Each record is specified by its object (slug or UUID) and record ID (UUID). Attio will automatically link the meeting participants\u0027 companies to the meeting; this behavior is asynchronous."
           }
         }
+      },
+      "PatchV2MeetingsByMeetingIdRequestData": {
+        "required": [
+          "linked_records"
+        ],
+        "type": "object",
+        "properties": {
+          "linked_records": {
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PatchV2MeetingsByMeetingIdRequestDataLinkedRecordsItem"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "PutV2MeetingsByMeetingIdRequestData": {
+        "required": [
+          "linked_records"
+        ],
+        "type": "object",
+        "properties": {
+          "linked_records": {
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PutV2MeetingsByMeetingIdRequestDataLinkedRecordsItem"
+            }
+          }
+        },
+        "additionalProperties": false
       },
       "GetV2MeetingsByMeetingIdCallRecordings200ResponseDataItem": {
         "required": [
@@ -37379,6 +37908,46 @@
         }
       },
       "PostV2MeetingsRequestDataLinkedRecordsItem": {
+        "required": [
+          "object",
+          "record_id"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "description": "The slug or UUID of the object that the record being linked belongs to.",
+            "example": "people"
+          },
+          "record_id": {
+            "type": "string",
+            "description": "The UUID of the record being linked.",
+            "format": "uuid",
+            "example": "891dcbfc-9141-415d-9b2a-2238a6cc012d"
+          }
+        }
+      },
+      "PatchV2MeetingsByMeetingIdRequestDataLinkedRecordsItem": {
+        "required": [
+          "object",
+          "record_id"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "description": "The slug or UUID of the object that the record being linked belongs to.",
+            "example": "people"
+          },
+          "record_id": {
+            "type": "string",
+            "description": "The UUID of the record being linked.",
+            "format": "uuid",
+            "example": "891dcbfc-9141-415d-9b2a-2238a6cc012d"
+          }
+        }
+      },
+      "PutV2MeetingsByMeetingIdRequestDataLinkedRecordsItem": {
         "required": [
           "object",
           "record_id"
@@ -79724,6 +80293,34 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2MeetingsByMeetingId400ResponseStatusCode": {
+        "enum": [
+          400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2MeetingsByMeetingId404ResponseStatusCode": {
+        "enum": [
+          404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2MeetingsByMeetingId400ResponseStatusCode": {
+        "enum": [
+          400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2MeetingsByMeetingId404ResponseStatusCode": {
+        "enum": [
+          404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "DeleteV2MeetingsByMeetingId400ResponseStatusCode": {
         "enum": [
           400
@@ -80966,6 +81563,74 @@
             {
               "value": "false",
               "name": "FalseValue"
+            }
+          ]
+        }
+      },
+      "PatchV2MeetingsByMeetingId400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2MeetingsByMeetingId400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PatchV2MeetingsByMeetingId400ResponseCodeAnyOf2": {
+        "enum": [
+          "validation_type"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2MeetingsByMeetingId400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "validation_type",
+              "name": "ValidationType"
+            }
+          ]
+        }
+      },
+      "PutV2MeetingsByMeetingId400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2MeetingsByMeetingId400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PutV2MeetingsByMeetingId400ResponseCodeAnyOf2": {
+        "enum": [
+          "validation_type"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2MeetingsByMeetingId400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "validation_type",
+              "name": "ValidationType"
             }
           ]
         }
@@ -210294,6 +210959,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Call recording created"
+          }
         }
       }
     },
@@ -210317,6 +210987,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Comment created"
           }
         }
       }
@@ -210342,6 +211017,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Comment resolved"
+          }
         }
       }
     },
@@ -210365,6 +211045,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Comment unresolved"
           }
         }
       }
@@ -210390,6 +211075,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Comment deleted"
+          }
         }
       }
     },
@@ -210413,6 +211103,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List created"
           }
         }
       }
@@ -210438,6 +211133,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List updated"
+          }
         }
       }
     },
@@ -210461,6 +211161,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List deleted"
           }
         }
       }
@@ -210486,6 +211191,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List attribute created"
+          }
         }
       }
     },
@@ -210509,6 +211219,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List attribute updated"
           }
         }
       }
@@ -210534,6 +211249,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List entry created"
+          }
         }
       }
     },
@@ -210557,6 +211277,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List entry updated"
           }
         }
       }
@@ -210582,6 +211307,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List entry deleted"
+          }
         }
       }
     },
@@ -210605,6 +211335,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Object attribute created"
           }
         }
       }
@@ -210630,6 +211365,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Object attribute updated"
+          }
         }
       }
     },
@@ -210653,6 +211393,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Note created"
           }
         }
       }
@@ -210678,6 +211423,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Note content updated"
+          }
         }
       }
     },
@@ -210701,6 +211451,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Note updated"
           }
         }
       }
@@ -210726,6 +211481,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Note deleted"
+          }
         }
       }
     },
@@ -210749,6 +211509,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Record created"
           }
         }
       }
@@ -210774,6 +211539,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Record merged"
+          }
         }
       }
     },
@@ -210797,6 +211567,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Record updated"
           }
         }
       }
@@ -210822,6 +211597,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Record deleted"
+          }
         }
       }
     },
@@ -210845,6 +211625,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Task created"
           }
         }
       }
@@ -210870,6 +211655,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Task updated"
+          }
         }
       }
     },
@@ -210894,6 +211684,11 @@
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
           }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Task deleted"
+          }
         }
       }
     },
@@ -210917,6 +211712,11 @@
         "responses": {
           "200": {
             "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Workspace member created"
           }
         }
       }
