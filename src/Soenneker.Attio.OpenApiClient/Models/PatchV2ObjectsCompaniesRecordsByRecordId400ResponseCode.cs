@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCode : IComposedTypeWrapper, IParsable
@@ -17,6 +17,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf1? PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2"/></summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2? PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3? PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,6 +35,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2 patchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2Value)
             {
                 result.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2 = patchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3 patchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3Value)
+            {
+                result.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3 = patchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3Value;
             }
             return result;
         }
@@ -58,6 +64,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2 != null)
             {
                 writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2>(null, PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2);
+            }
+            else if(PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3>(null, PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3);
             }
         }
     }

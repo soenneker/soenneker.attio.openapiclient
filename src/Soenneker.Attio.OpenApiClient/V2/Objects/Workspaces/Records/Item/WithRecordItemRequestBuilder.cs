@@ -103,6 +103,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records.Item
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId409Response">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId200Response?> PatchAsync(global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -119,6 +120,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records.Item
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId404Response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId409Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -5,12 +5,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum MissingValueCode
+    public enum PatchV2ObjectsWorkspacesRecordsByRecordId400ResponseCodeAnyOf3
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "missing_value")]
+        [EnumMember(Value = "particle_gate_violation")]
         #pragma warning disable CS1591
-        MissingValue,
+        ParticleGateViolation,
         #pragma warning restore CS1591
     }
 }

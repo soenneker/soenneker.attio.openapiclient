@@ -921,6 +921,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -1091,6 +1101,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ActivitiesByActivityRecordsByRecordId409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -1187,6 +1207,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsByRecordId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsByRecordId409Response"
                 }
               }
             }
@@ -2393,6 +2423,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecords409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -2480,6 +2520,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords409Response"
                 }
               }
             }
@@ -2636,6 +2686,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsByObjectValueRecordsByRecordId409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -2723,6 +2783,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecordsByRecordId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecordsByRecordId409Response"
                 }
               }
             }
@@ -7268,6 +7338,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsPeopleRecords409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -7345,6 +7425,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords409Response"
                 }
               }
             }
@@ -7477,6 +7567,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsPeopleRecordsByRecordId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsPeopleRecordsByRecordId409Response"
                 }
               }
             }
@@ -7831,6 +7931,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecords409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -7908,6 +8018,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords409Response"
                 }
               }
             }
@@ -8040,6 +8160,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsCompaniesRecordsByRecordId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsCompaniesRecordsByRecordId409Response"
                 }
               }
             }
@@ -8394,6 +8524,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsUsersRecords409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -8471,6 +8611,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PutV2ObjectsUsersRecords404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsUsersRecords409Response"
                 }
               }
             }
@@ -8603,6 +8753,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsUsersRecordsByRecordId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsUsersRecordsByRecordId409Response"
                 }
               }
             }
@@ -8909,6 +9069,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsDealsRecords409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -8974,6 +9144,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PostV2ObjectsDealsRecords404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsDealsRecords409Response"
                 }
               }
             }
@@ -9166,6 +9346,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId409Response"
                 }
               }
             }
@@ -9472,6 +9662,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ObjectsWorkspacesRecords409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -9537,6 +9737,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords409Response"
                 }
               }
             }
@@ -9729,6 +9939,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId409Response"
                 }
               }
             }
@@ -9968,55 +10188,6 @@
   },
   "components": {
     "schemas": {
-      "Activity": {
-        "required": [
-          "id",
-          "api_slug",
-          "singular_noun",
-          "plural_noun",
-          "extends",
-          "is_system_activity",
-          "created_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/schemas/ActivityId"
-          },
-          "api_slug": {
-            "type": "string",
-            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Formatted in snake case.",
-            "example": "phone_calls"
-          },
-          "singular_noun": {
-            "type": "string",
-            "description": "The singular form of the activity\u0027s name.",
-            "example": "Phone call"
-          },
-          "plural_noun": {
-            "type": "string",
-            "description": "The plural form of the activity\u0027s name.",
-            "example": "Phone calls"
-          },
-          "extends": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ActivityExtendsItem"
-            },
-            "description": "The schemas this activity directly extends, which supply its inherited attributes."
-          },
-          "is_system_activity": {
-            "type": "boolean",
-            "description": "\u0060true\u0060 when Attio defines the activity, \u0060false\u0060 when it\u0027s a custom activity.",
-            "example": true
-          },
-          "created_at": {
-            "type": "string",
-            "description": "When the activity was created.",
-            "example": "2022-11-21T13:22:49.061281000Z"
-          }
-        }
-      },
       "Status": {
         "required": [
           "id",
@@ -10541,6 +10712,55 @@
           }
         },
         "description": "A union of possible value types, as returned in response bodies."
+      },
+      "Activity": {
+        "required": [
+          "id",
+          "api_slug",
+          "singular_noun",
+          "plural_noun",
+          "extends",
+          "is_system_activity",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ActivityId"
+          },
+          "api_slug": {
+            "type": "string",
+            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Formatted in snake case.",
+            "example": "phone_calls"
+          },
+          "singular_noun": {
+            "type": "string",
+            "description": "The singular form of the activity\u0027s name.",
+            "example": "Phone call"
+          },
+          "plural_noun": {
+            "type": "string",
+            "description": "The plural form of the activity\u0027s name.",
+            "example": "Phone calls"
+          },
+          "extends": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityExtendsItem"
+            },
+            "description": "The schemas this activity directly extends, which supply its inherited attributes."
+          },
+          "is_system_activity": {
+            "type": "boolean",
+            "description": "\u0060true\u0060 when Attio defines the activity, \u0060false\u0060 when it\u0027s a custom activity.",
+            "example": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the activity was created.",
+            "example": "2022-11-21T13:22:49.061281000Z"
+          }
+        }
       },
       "Attribute": {
         "required": [
@@ -12742,47 +12962,6 @@
           }
         ]
       },
-      "ActivityId": {
-        "required": [
-          "workspace_id",
-          "activity_id"
-        ],
-        "type": "object",
-        "properties": {
-          "workspace_id": {
-            "type": "string",
-            "description": "A UUID to identify the workspace this activity belongs to.",
-            "format": "uuid",
-            "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
-          },
-          "activity_id": {
-            "type": "string",
-            "description": "A UUID to identify the activity.",
-            "format": "uuid",
-            "example": "97052eb9-e65e-443f-a297-f2d9a4a7f795"
-          }
-        }
-      },
-      "ActivityExtendsItem": {
-        "required": [
-          "schema_id",
-          "schema_slug"
-        ],
-        "type": "object",
-        "properties": {
-          "schema_id": {
-            "type": "string",
-            "description": "A UUID to identify the schema.",
-            "format": "uuid",
-            "example": "b1d6a29e-6f6f-4a0a-9b0e-59f0a3e3f7a1"
-          },
-          "schema_slug": {
-            "type": "string",
-            "description": "The human-readable slug of the schema.",
-            "example": "calls"
-          }
-        }
-      },
       "StatusId": {
         "required": [
           "workspace_id",
@@ -12850,6 +13029,47 @@
             "description": "The ID of the select option",
             "format": "uuid",
             "example": "08c2c59a-c18e-40c6-8dc4-95415313b2ea"
+          }
+        }
+      },
+      "ActivityId": {
+        "required": [
+          "workspace_id",
+          "activity_id"
+        ],
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string",
+            "description": "A UUID to identify the workspace this activity belongs to.",
+            "format": "uuid",
+            "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
+          },
+          "activity_id": {
+            "type": "string",
+            "description": "A UUID to identify the activity.",
+            "format": "uuid",
+            "example": "97052eb9-e65e-443f-a297-f2d9a4a7f795"
+          }
+        }
+      },
+      "ActivityExtendsItem": {
+        "required": [
+          "schema_id",
+          "schema_slug"
+        ],
+        "type": "object",
+        "properties": {
+          "schema_id": {
+            "type": "string",
+            "description": "A UUID to identify the schema.",
+            "format": "uuid",
+            "example": "b1d6a29e-6f6f-4a0a-9b0e-59f0a3e3f7a1"
+          },
+          "schema_slug": {
+            "type": "string",
+            "description": "The human-readable slug of the schema.",
+            "example": "calls"
           }
         }
       },
@@ -14591,7 +14811,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/ValueNotFoundCode"
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -14649,6 +14869,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PostV2ActivitiesByActivityRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "GetV2ActivitiesByActivityRecordsByRecordId200Response": {
         "required": [
@@ -14726,7 +14971,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/MissingValueCode"
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -14785,6 +15030,31 @@
         },
         "description": "Not Found"
       },
+      "PatchV2ActivitiesByActivityRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivityRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
+      },
       "PutV2ActivitiesByActivityRecordsByRecordIdRequest": {
         "required": [
           "data"
@@ -14824,7 +15094,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/MissingValueCode"
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsByRecordId400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -14882,6 +15152,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PutV2ActivitiesByActivityRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2ActivitiesByActivityRecordsByRecordId200Response": {
         "type": "object",
@@ -15787,7 +16082,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/ValueNotFoundCode"
+            "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecords400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -15845,6 +16140,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PostV2ObjectsByObjectValueRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "PutV2ObjectsByObjectValueRecordsRequest": {
         "required": [
@@ -15943,6 +16263,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PutV2ObjectsByObjectValueRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "GetV2ObjectsByObjectValueRecordsByRecordId200Response": {
         "required": [
@@ -16079,6 +16424,31 @@
         },
         "description": "Not Found"
       },
+      "PatchV2ObjectsByObjectValueRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsByObjectValueRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
+      },
       "PutV2ObjectsByObjectValueRecordsByRecordIdRequest": {
         "required": [
           "data"
@@ -16176,6 +16546,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PutV2ObjectsByObjectValueRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2ObjectsByObjectValueRecordsByRecordId200Response": {
         "type": "object",
@@ -19340,7 +19735,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/ValueNotFoundCode"
+            "$ref": "#/components/schemas/PostV2ObjectsPeopleRecords400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -19398,6 +19793,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PostV2ObjectsPeopleRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsPeopleRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "PutV2ObjectsPeopleRecordsRequest": {
         "required": [
@@ -19496,6 +19916,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PutV2ObjectsPeopleRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "GetV2ObjectsPeopleRecordsByRecordId200Response": {
         "required": [
@@ -19631,6 +20076,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PatchV2ObjectsPeopleRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsPeopleRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2ObjectsPeopleRecordsByRecordId200Response": {
         "type": "object",
@@ -19911,7 +20381,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/ValueNotFoundCode"
+            "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecords400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -19969,6 +20439,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PostV2ObjectsCompaniesRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "PutV2ObjectsCompaniesRecordsRequest": {
         "required": [
@@ -20067,6 +20562,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PutV2ObjectsCompaniesRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "GetV2ObjectsCompaniesRecordsByRecordId200Response": {
         "required": [
@@ -20202,6 +20722,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PatchV2ObjectsCompaniesRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsCompaniesRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2ObjectsCompaniesRecordsByRecordId200Response": {
         "type": "object",
@@ -20481,7 +21026,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/ValueNotFoundCode"
+            "$ref": "#/components/schemas/PostV2ObjectsUsersRecords400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -20539,6 +21084,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PostV2ObjectsUsersRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsUsersRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "PutV2ObjectsUsersRecordsRequest": {
         "required": [
@@ -20637,6 +21207,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PutV2ObjectsUsersRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsUsersRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "GetV2ObjectsUsersRecordsByRecordId200Response": {
         "required": [
@@ -20772,6 +21367,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PatchV2ObjectsUsersRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsUsersRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2ObjectsUsersRecordsByRecordId200Response": {
         "type": "object",
@@ -21020,6 +21640,31 @@
         },
         "description": "Not Found"
       },
+      "PutV2ObjectsDealsRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsDealsRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
+      },
       "PostV2ObjectsDealsRecordsRequest": {
         "required": [
           "data"
@@ -21059,7 +21704,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/ValueNotFoundCode"
+            "$ref": "#/components/schemas/PostV2ObjectsDealsRecords400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -21117,6 +21762,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PostV2ObjectsDealsRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsDealsRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2ObjectsDealsRecordsByRecordId200Response": {
         "type": "object",
@@ -21306,6 +21976,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PatchV2ObjectsDealsRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues200Response": {
         "required": [
@@ -21590,6 +22285,31 @@
         },
         "description": "Not Found"
       },
+      "PutV2ObjectsWorkspacesRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ObjectsWorkspacesRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
+      },
       "PostV2ObjectsWorkspacesRecordsRequest": {
         "required": [
           "data"
@@ -21629,7 +22349,7 @@
             "$ref": "#/components/schemas/InvalidRequestErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/ValueNotFoundCode"
+            "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords400ResponseCode"
           },
           "message": {
             "type": "string",
@@ -21687,6 +22407,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PostV2ObjectsWorkspacesRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "DeleteV2ObjectsWorkspacesRecordsByRecordId200Response": {
         "type": "object",
@@ -21876,6 +22621,31 @@
           }
         },
         "description": "Not Found"
+      },
+      "PatchV2ObjectsWorkspacesRecordsByRecordId409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
       },
       "GetV2ObjectsWorkspacesRecordsByRecordIdAttributesByAttributeValues200Response": {
         "required": [
@@ -23862,6 +24632,17 @@
           }
         ]
       },
+      "PostV2ActivitiesByActivityRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords400ResponseCodeAnyOf2"
+          }
+        ]
+      },
       "PostV2ActivitiesByActivityRecords403ResponseCode": {
         "type": "object",
         "anyOf": [
@@ -23870,6 +24651,28 @@
           },
           {
             "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf2"
+          }
+        ]
+      },
+      "PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2"
+          }
+        ]
+      },
+      "PutV2ActivitiesByActivityRecordsByRecordId400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2"
           }
         ]
       },
@@ -23932,6 +24735,17 @@
           }
         ]
       },
+      "PostV2ObjectsByObjectValueRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecords400ResponseCodeAnyOf2"
+          }
+        ]
+      },
       "PutV2ObjectsByObjectValueRecords400ResponseCode": {
         "type": "object",
         "anyOf": [
@@ -23940,6 +24754,9 @@
           },
           {
             "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecords400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -23962,6 +24779,9 @@
           },
           {
             "$ref": "#/components/schemas/PatchV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -23973,6 +24793,9 @@
           },
           {
             "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24714,6 +25537,17 @@
           }
         ]
       },
+      "PostV2ObjectsPeopleRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsPeopleRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsPeopleRecords400ResponseCodeAnyOf2"
+          }
+        ]
+      },
       "PutV2ObjectsPeopleRecords400ResponseCode": {
         "type": "object",
         "anyOf": [
@@ -24722,6 +25556,9 @@
           },
           {
             "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ObjectsPeopleRecords400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24744,6 +25581,9 @@
           },
           {
             "$ref": "#/components/schemas/PatchV2ObjectsPeopleRecordsByRecordId400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2ObjectsPeopleRecordsByRecordId400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24760,6 +25600,17 @@
           }
         ]
       },
+      "PostV2ObjectsCompaniesRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecords400ResponseCodeAnyOf2"
+          }
+        ]
+      },
       "PutV2ObjectsCompaniesRecords400ResponseCode": {
         "type": "object",
         "anyOf": [
@@ -24768,6 +25619,9 @@
           },
           {
             "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ObjectsCompaniesRecords400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24790,6 +25644,9 @@
           },
           {
             "$ref": "#/components/schemas/PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24806,6 +25663,17 @@
           }
         ]
       },
+      "PostV2ObjectsUsersRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsUsersRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsUsersRecords400ResponseCodeAnyOf2"
+          }
+        ]
+      },
       "PutV2ObjectsUsersRecords400ResponseCode": {
         "type": "object",
         "anyOf": [
@@ -24814,6 +25682,9 @@
           },
           {
             "$ref": "#/components/schemas/PutV2ObjectsUsersRecords400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ObjectsUsersRecords400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24836,6 +25707,9 @@
           },
           {
             "$ref": "#/components/schemas/PatchV2ObjectsUsersRecordsByRecordId400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2ObjectsUsersRecordsByRecordId400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24847,6 +25721,20 @@
           },
           {
             "$ref": "#/components/schemas/PutV2ObjectsDealsRecords400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ObjectsDealsRecords400ResponseCodeAnyOf3"
+          }
+        ]
+      },
+      "PostV2ObjectsDealsRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsDealsRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsDealsRecords400ResponseCodeAnyOf2"
           }
         ]
       },
@@ -24869,6 +25757,9 @@
           },
           {
             "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2ObjectsDealsRecordsByRecordId400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -24893,6 +25784,20 @@
           },
           {
             "$ref": "#/components/schemas/PutV2ObjectsWorkspacesRecords400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ObjectsWorkspacesRecords400ResponseCodeAnyOf3"
+          }
+        ]
+      },
+      "PostV2ObjectsWorkspacesRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecords400ResponseCodeAnyOf2"
           }
         ]
       },
@@ -24915,6 +25820,9 @@
           },
           {
             "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PatchV2ObjectsWorkspacesRecordsByRecordId400ResponseCodeAnyOf3"
           }
         ]
       },
@@ -79274,23 +80182,6 @@
         "type": "number",
         "additionalProperties": false
       },
-      "ValueNotFoundCode": {
-        "enum": [
-          "value_not_found"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ValueNotFoundCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "value_not_found",
-              "name": "ValueNotFound"
-            }
-          ]
-        }
-      },
       "PostV2ActivitiesByActivityRecords403ResponseStatusCode": {
         "enum": [
           403
@@ -79304,6 +80195,30 @@
         ],
         "type": "number",
         "additionalProperties": false
+      },
+      "PostV2ActivitiesByActivityRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "ConcurrentWriteConflictCode": {
+        "enum": [
+          "concurrent_write_conflict"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ConcurrentWriteConflictCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "concurrent_write_conflict",
+              "name": "ConcurrentWriteConflict"
+            }
+          ]
+        }
       },
       "GetV2ActivitiesByActivityRecordsByRecordId404ResponseStatusCode": {
         "enum": [
@@ -79319,23 +80234,6 @@
         "type": "number",
         "additionalProperties": false
       },
-      "MissingValueCode": {
-        "enum": [
-          "missing_value"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "MissingValueCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "missing_value",
-              "name": "MissingValue"
-            }
-          ]
-        }
-      },
       "PatchV2ActivitiesByActivityRecordsByRecordId403ResponseStatusCode": {
         "enum": [
           403
@@ -79346,6 +80244,13 @@
       "PatchV2ActivitiesByActivityRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ActivitiesByActivityRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -79367,6 +80272,13 @@
       "PutV2ActivitiesByActivityRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ActivitiesByActivityRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -79482,6 +80394,23 @@
         ],
         "type": "number",
         "additionalProperties": false
+      },
+      "ValueNotFoundCode": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ValueNotFoundCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
       },
       "PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption403ResponseStatusCode": {
         "enum": [
@@ -79602,6 +80531,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsByObjectValueRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsByObjectValueRecords400ResponseStatusCode": {
         "enum": [
           400
@@ -79619,6 +80555,13 @@
       "PutV2ObjectsByObjectValueRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsByObjectValueRecords409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -79651,6 +80594,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PatchV2ObjectsByObjectValueRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsByObjectValueRecordsByRecordId400ResponseStatusCode": {
         "enum": [
           400
@@ -79668,6 +80618,13 @@
       "PutV2ObjectsByObjectValueRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsByObjectValueRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80581,6 +81538,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsPeopleRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsPeopleRecords400ResponseStatusCode": {
         "enum": [
           400
@@ -80598,6 +81562,13 @@
       "PutV2ObjectsPeopleRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsPeopleRecords409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80626,6 +81597,13 @@
       "PatchV2ObjectsPeopleRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ObjectsPeopleRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80693,6 +81671,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsCompaniesRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsCompaniesRecords400ResponseStatusCode": {
         "enum": [
           400
@@ -80710,6 +81695,13 @@
       "PutV2ObjectsCompaniesRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsCompaniesRecords409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80738,6 +81730,13 @@
       "PatchV2ObjectsCompaniesRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ObjectsCompaniesRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80805,6 +81804,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PostV2ObjectsUsersRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PutV2ObjectsUsersRecords400ResponseStatusCode": {
         "enum": [
           400
@@ -80822,6 +81828,13 @@
       "PutV2ObjectsUsersRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ObjectsUsersRecords409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80850,6 +81863,13 @@
       "PatchV2ObjectsUsersRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ObjectsUsersRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80903,6 +81923,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PutV2ObjectsDealsRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsDealsRecords400ResponseStatusCode": {
         "enum": [
           400
@@ -80920,6 +81947,13 @@
       "PostV2ObjectsDealsRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PostV2ObjectsDealsRecords409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -80962,6 +81996,13 @@
       "PatchV2ObjectsDealsRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ObjectsDealsRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -81015,6 +82056,13 @@
         "type": "number",
         "additionalProperties": false
       },
+      "PutV2ObjectsWorkspacesRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "PostV2ObjectsWorkspacesRecords400ResponseStatusCode": {
         "enum": [
           400
@@ -81032,6 +82080,13 @@
       "PostV2ObjectsWorkspacesRecords404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PostV2ObjectsWorkspacesRecords409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -81074,6 +82129,13 @@
       "PatchV2ObjectsWorkspacesRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PatchV2ObjectsWorkspacesRecordsByRecordId409ResponseStatusCode": {
+        "enum": [
+          409
         ],
         "type": "number",
         "additionalProperties": false
@@ -81159,6 +82221,40 @@
           ]
         }
       },
+      "PostV2ActivitiesByActivityRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ActivitiesByActivityRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PostV2ActivitiesByActivityRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ActivitiesByActivityRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf1": {
         "enum": [
           "unauthorized"
@@ -81193,6 +82289,108 @@
           ]
         }
       },
+      "PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1": {
+        "enum": [
+          "missing_value"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "missing_value",
+              "name": "MissingValue"
+            }
+          ]
+        }
+      },
+      "PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1": {
+        "enum": [
+          "missing_value"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "missing_value",
+              "name": "MissingValue"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsByObjectValueRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsByObjectValueRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsByObjectValueRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsByObjectValueRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PutV2ObjectsByObjectValueRecords400ResponseCodeAnyOf1": {
         "enum": [
           "value_not_found"
@@ -81223,6 +82421,23 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PutV2ObjectsByObjectValueRecords400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ObjectsByObjectValueRecords400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -81295,6 +82510,23 @@
           ]
         }
       },
+      "PatchV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf1": {
         "enum": [
           "missing_value"
@@ -81325,6 +82557,23 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -81703,6 +82952,40 @@
           ]
         }
       },
+      "PostV2ObjectsPeopleRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsPeopleRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsPeopleRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsPeopleRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PutV2ObjectsPeopleRecords400ResponseCodeAnyOf1": {
         "enum": [
           "value_not_found"
@@ -81733,6 +83016,23 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PutV2ObjectsPeopleRecords400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ObjectsPeopleRecords400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -81805,6 +83105,57 @@
           ]
         }
       },
+      "PatchV2ObjectsPeopleRecordsByRecordId400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ObjectsPeopleRecordsByRecordId400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsCompaniesRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsCompaniesRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsCompaniesRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsCompaniesRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PutV2ObjectsCompaniesRecords400ResponseCodeAnyOf1": {
         "enum": [
           "value_not_found"
@@ -81835,6 +83186,23 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PutV2ObjectsCompaniesRecords400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ObjectsCompaniesRecords400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -81907,6 +83275,57 @@
           ]
         }
       },
+      "PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsUsersRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsUsersRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsUsersRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsUsersRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PutV2ObjectsUsersRecords400ResponseCodeAnyOf1": {
         "enum": [
           "value_not_found"
@@ -81937,6 +83356,23 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PutV2ObjectsUsersRecords400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ObjectsUsersRecords400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -82009,6 +83445,23 @@
           ]
         }
       },
+      "PatchV2ObjectsUsersRecordsByRecordId400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ObjectsUsersRecordsByRecordId400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PutV2ObjectsDealsRecords400ResponseCodeAnyOf1": {
         "enum": [
           "value_not_found"
@@ -82039,6 +83492,57 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PutV2ObjectsDealsRecords400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ObjectsDealsRecords400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsDealsRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsDealsRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsDealsRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsDealsRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -82111,6 +83615,23 @@
           ]
         }
       },
+      "PatchV2ObjectsDealsRecordsByRecordId400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ObjectsDealsRecordsByRecordId400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
       "PutV2ObjectsWorkspacesRecords400ResponseCodeAnyOf1": {
         "enum": [
           "value_not_found"
@@ -82141,6 +83662,57 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PutV2ObjectsWorkspacesRecords400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ObjectsWorkspacesRecords400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsWorkspacesRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsWorkspacesRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PostV2ObjectsWorkspacesRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PostV2ObjectsWorkspacesRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -82209,6 +83781,23 @@
             {
               "value": "merge_in_progress",
               "name": "MergeInProgress"
+            }
+          ]
+        }
+      },
+      "PatchV2ObjectsWorkspacesRecordsByRecordId400ResponseCodeAnyOf3": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchV2ObjectsWorkspacesRecordsByRecordId400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }

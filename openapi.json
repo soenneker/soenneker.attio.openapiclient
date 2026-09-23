@@ -190,90 +190,6 @@
       }
     },
     "schemas": {
-      "activity": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "object",
-            "properties": {
-              "workspace_id": {
-                "type": "string",
-                "format": "uuid",
-                "description": "A UUID to identify the workspace this activity belongs to.",
-                "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
-              },
-              "activity_id": {
-                "type": "string",
-                "format": "uuid",
-                "description": "A UUID to identify the activity.",
-                "example": "97052eb9-e65e-443f-a297-f2d9a4a7f795"
-              }
-            },
-            "required": [
-              "workspace_id",
-              "activity_id"
-            ]
-          },
-          "api_slug": {
-            "type": "string",
-            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Formatted in snake case.",
-            "example": "phone_calls"
-          },
-          "singular_noun": {
-            "type": "string",
-            "description": "The singular form of the activity\u0027s name.",
-            "example": "Phone call"
-          },
-          "plural_noun": {
-            "type": "string",
-            "description": "The plural form of the activity\u0027s name.",
-            "example": "Phone calls"
-          },
-          "extends": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "schema_id": {
-                  "type": "string",
-                  "format": "uuid",
-                  "description": "A UUID to identify the schema.",
-                  "example": "b1d6a29e-6f6f-4a0a-9b0e-59f0a3e3f7a1"
-                },
-                "schema_slug": {
-                  "type": "string",
-                  "description": "The human-readable slug of the schema.",
-                  "example": "calls"
-                }
-              },
-              "required": [
-                "schema_id",
-                "schema_slug"
-              ]
-            },
-            "description": "The schemas this activity directly extends, which supply its inherited attributes."
-          },
-          "is_system_activity": {
-            "type": "boolean",
-            "description": "\u0060true\u0060 when Attio defines the activity, \u0060false\u0060 when it\u0027s a custom activity.",
-            "example": true
-          },
-          "created_at": {
-            "type": "string",
-            "description": "When the activity was created.",
-            "example": "2022-11-21T13:22:49.061281000Z"
-          }
-        },
-        "required": [
-          "id",
-          "api_slug",
-          "singular_noun",
-          "plural_noun",
-          "extends",
-          "is_system_activity",
-          "created_at"
-        ]
-      },
       "status": {
         "type": "object",
         "properties": {
@@ -2853,6 +2769,90 @@
           }
         ],
         "description": "A union of possible value types, as returned in response bodies."
+      },
+      "activity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "object",
+            "properties": {
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "A UUID to identify the workspace this activity belongs to.",
+                "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
+              },
+              "activity_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "A UUID to identify the activity.",
+                "example": "97052eb9-e65e-443f-a297-f2d9a4a7f795"
+              }
+            },
+            "required": [
+              "workspace_id",
+              "activity_id"
+            ]
+          },
+          "api_slug": {
+            "type": "string",
+            "description": "A unique, human-readable slug to access the activity through URLs and API calls. Formatted in snake case.",
+            "example": "phone_calls"
+          },
+          "singular_noun": {
+            "type": "string",
+            "description": "The singular form of the activity\u0027s name.",
+            "example": "Phone call"
+          },
+          "plural_noun": {
+            "type": "string",
+            "description": "The plural form of the activity\u0027s name.",
+            "example": "Phone calls"
+          },
+          "extends": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "schema_id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "description": "A UUID to identify the schema.",
+                  "example": "b1d6a29e-6f6f-4a0a-9b0e-59f0a3e3f7a1"
+                },
+                "schema_slug": {
+                  "type": "string",
+                  "description": "The human-readable slug of the schema.",
+                  "example": "calls"
+                }
+              },
+              "required": [
+                "schema_id",
+                "schema_slug"
+              ]
+            },
+            "description": "The schemas this activity directly extends, which supply its inherited attributes."
+          },
+          "is_system_activity": {
+            "type": "boolean",
+            "description": "\u0060true\u0060 when Attio defines the activity, \u0060false\u0060 when it\u0027s a custom activity.",
+            "example": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the activity was created.",
+            "example": "2022-11-21T13:22:49.061281000Z"
+          }
+        },
+        "required": [
+          "id",
+          "api_slug",
+          "singular_noun",
+          "plural_noun",
+          "extends",
+          "is_system_activity",
+          "created_at"
+        ]
       },
       "attribute": {
         "type": "object",
@@ -11044,9 +11044,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "value_not_found"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "value_not_found"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -11153,6 +11163,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -15280,9 +15331,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "missing_value"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "missing_value"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -15379,6 +15440,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -17452,9 +17554,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "missing_value"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "missing_value"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -17551,6 +17663,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -24507,9 +24660,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "value_not_found"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "value_not_found"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -24606,6 +24769,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -26689,6 +26893,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -26786,6 +26996,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -30932,6 +31183,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -31029,6 +31286,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -33112,6 +33410,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -33209,6 +33513,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -70876,9 +71221,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "value_not_found"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "value_not_found"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -70975,6 +71330,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -74386,6 +74782,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -74483,6 +74885,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -80046,6 +80489,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -80143,6 +80592,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -89451,9 +89941,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "value_not_found"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "value_not_found"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -89550,6 +90050,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -93647,6 +94188,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -93744,6 +94291,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -100945,6 +101533,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -101042,6 +101636,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -105323,9 +105958,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "value_not_found"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "value_not_found"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -105422,6 +106067,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -106747,6 +107433,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -106844,6 +107536,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -108691,6 +109424,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -108788,6 +109527,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -112730,6 +113510,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -112827,6 +113613,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -114431,9 +115258,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "value_not_found"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "value_not_found"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -114530,6 +115367,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -117029,6 +117907,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -117126,6 +118010,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -121624,6 +122549,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -121721,6 +122652,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -123104,9 +124076,19 @@
                       ]
                     },
                     "code": {
-                      "type": "string",
-                      "enum": [
-                        "value_not_found"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "value_not_found"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
+                        }
                       ]
                     },
                     "message": {
@@ -123203,6 +124185,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }
@@ -125315,6 +126338,12 @@
                           "enum": [
                             "merge_in_progress"
                           ]
+                        },
+                        {
+                          "type": "string",
+                          "enum": [
+                            "particle_gate_violation"
+                          ]
                         }
                       ]
                     },
@@ -125412,6 +126441,47 @@
                     "message"
                   ],
                   "description": "Not Found"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        409
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "concurrent_write_conflict"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The record was modified by another request while this write was being validated. Please try again."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Conflict"
                 }
               }
             }

@@ -62,6 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords409Response">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response?> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,6 +79,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords404Response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords409Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

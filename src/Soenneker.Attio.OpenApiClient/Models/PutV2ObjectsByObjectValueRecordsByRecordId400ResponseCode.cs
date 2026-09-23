@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCode : IComposedTypeWrapper, IParsable
@@ -17,6 +17,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf1? PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2"/></summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2? PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3? PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,6 +35,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2>() is global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2 putV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2Value)
             {
                 result.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2 = putV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3>() is global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3 putV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3Value)
+            {
+                result.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3 = putV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3Value;
             }
             return result;
         }
@@ -58,6 +64,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2 != null)
             {
                 writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2>(null, PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf2);
+            }
+            else if(PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3>(null, PutV2ObjectsByObjectValueRecordsByRecordId400ResponseCodeAnyOf3);
             }
         }
     }
