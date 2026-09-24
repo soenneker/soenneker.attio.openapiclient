@@ -44,5 +44,9 @@ namespace Soenneker.Attio.OpenApiClient.Models
         #pragma warning disable CS1591
         StandardObjectDisabled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "particle_gate_violation")]
+        #pragma warning disable CS1591
+        ParticleGateViolation,
+        #pragma warning restore CS1591
     }
 }

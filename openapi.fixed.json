@@ -949,6 +949,114 @@
             "tag": "ALPHA"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Activity records"
+        ],
+        "summary": "Upsert an activity record",
+        "description": "Use this endpoint to create or update an activity record. A matching attribute is used to search for existing activity records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the create activity record endpoint.\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "operationId": "PutV2ActivitiesByActivityRecords",
+        "parameters": [
+          {
+            "name": "activity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the activity.",
+              "example": "phone_calls"
+            }
+          },
+          {
+            "name": "matching_attribute",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID or slug of the attribute to use to check if an activity record already exists. The attribute must be unique.",
+              "example": "41252299-f8c7-4b5e-99c9-4ff8321d2f96"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords403Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords404Response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords409Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "activity_record:read-write",
+              "activity_configuration:read",
+              "object_configuration:read",
+              "record_permission:read"
+            ]
+          }
+        ],
+        "x-hidden": true,
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
       }
     },
     "/v2/activities/{activity}/records/{recordId}": {
@@ -14895,6 +15003,129 @@
         },
         "description": "Conflict"
       },
+      "PutV2ActivitiesByActivityRecordsRequest": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsRequestData"
+          }
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseData"
+          }
+        },
+        "description": "Success"
+      },
+      "PutV2ActivitiesByActivityRecords400Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords400ResponseCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "No attribute was found for matching_attribute slug/ID \u0022my_attribute\u0022."
+          }
+        },
+        "description": "Bad Request"
+      },
+      "PutV2ActivitiesByActivityRecords403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords403ResponseCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "You do not have the necessary permissions to create or update records of this activity."
+          }
+        },
+        "description": "Forbidden"
+      },
+      "PutV2ActivitiesByActivityRecords404Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords404ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/NotFoundCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Activity with slug/ID \u0022phone_calls\u0022 not found."
+          }
+        },
+        "description": "Not Found"
+      },
+      "PutV2ActivitiesByActivityRecords409Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords409ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ConcurrentWriteConflictCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "The record was modified by another request while this write was being validated. Please try again."
+          }
+        },
+        "description": "Conflict"
+      },
       "GetV2ActivitiesByActivityRecordsByRecordId200Response": {
         "required": [
           "data"
@@ -24654,6 +24885,34 @@
           }
         ]
       },
+      "PutV2ActivitiesByActivityRecords400ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf4"
+          }
+        ]
+      },
+      "PutV2ActivitiesByActivityRecords403ResponseCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf2"
+          }
+        ]
+      },
       "PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCode": {
         "type": "object",
         "anyOf": [
@@ -26421,6 +26680,39 @@
           },
           "values": {
             "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords200ResponseDataValues"
+          }
+        }
+      },
+      "PutV2ActivitiesByActivityRecordsRequestData": {
+        "required": [
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "values": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecordsRequestDataValues"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseData": {
+        "required": [
+          "id",
+          "created_at",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataId"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When this activity record was created.",
+            "example": "2022-11-21T13:22:49.061281000Z"
+          },
+          "values": {
+            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValues"
           }
         }
       },
@@ -33504,6 +33796,308 @@
               },
               "country_code": {
                 "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCountryCode"
+              },
+              "latitude": {
+                "pattern": "^[-\u002B]?([1-8]?\\d(\\.\\d\u002B)?|90(\\.0\u002B)?)$",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The latitude of the location. Validated by the regular expression \u0060/^[-\u002B]?([1-8]?\\d(\\.\\d\u002B)?|90(\\.0\u002B)?)$/\u0060. Values are stored with up to 9 decimal places of precision. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.}",
+                "example": "37.331741"
+              },
+              "longitude": {
+                "pattern": "^[-\u002B]?(180(\\.0\u002B)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d\u002B)?)$",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The longitude of the location. Validated by the regular expression \u0060/^[-\u002B]?(180(\\.0\u002B)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d\u002B)?)$/\u0060. Values are stored with up to 9 decimal places of precision. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.}",
+                "example": "-122.030333"
+              },
+              "first_name": {
+                "type": "string",
+                "description": "The first name.",
+                "example": "Ada"
+              },
+              "last_name": {
+                "type": "string",
+                "description": "The last name.",
+                "example": "Lovelace"
+              },
+              "full_name": {
+                "type": "string",
+                "description": "The full name.",
+                "example": "Ada Lovelace"
+              },
+              "original_phone_number": {
+                "type": "string",
+                "description": "The raw, original phone number, as inputted.",
+                "example": "5558675309"
+              },
+              "phone_number": {
+                "type": "string",
+                "example": "\u002B15558675309"
+              },
+              "status": {
+                "$ref": "#/components/schemas/Status"
+              },
+              "option": {
+                "$ref": "#/components/schemas/SelectOption"
+              }
+            }
+          }
+        },
+        "description": "A record type with an attribute \u0060api_slug\u0060 as the key, and an array of value objects as the values."
+      },
+      "PutV2ActivitiesByActivityRecordsRequestDataValues": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Fallback array item schema"
+          }
+        },
+        "description": "An object with an attribute \u0060api_slug\u0060 or \u0060attribute_id\u0060 as the key, and a single value (for single-select attributes), or an array of values (for single or multi-select attributes) as the values. For complete documentation on values for all attribute types, please see our [attribute type docs](/docs/attribute-types).",
+        "example": {
+          "41252299-f8c7-4b5e-99c9-4ff8321d2f96": "Text value",
+          "multiselect_attribute": [
+            "Select option 1",
+            "Select option 2"
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataId": {
+        "required": [
+          "workspace_id",
+          "activity_id",
+          "record_id"
+        ],
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string",
+            "description": "A UUID identifying the workspace this activity record belongs to.",
+            "format": "uuid",
+            "example": "14beef7a-99f7-4534-a87e-70b564330a4c"
+          },
+          "activity_id": {
+            "type": "string",
+            "description": "A UUID identifying the activity this record belongs to.",
+            "format": "uuid",
+            "example": "97052eb9-e65e-443f-a297-f2d9a4a7f795"
+          },
+          "record_id": {
+            "type": "string",
+            "description": "A UUID identifying this activity record.",
+            "format": "uuid",
+            "example": "5f4f2d9c-2b3e-4a83-9c76-1de3a3f14f26"
+          }
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValues": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "required": [
+              "active_from",
+              "active_until",
+              "created_by_actor",
+              "attribute_type"
+            ],
+            "type": "object",
+            "properties": {
+              "active_from": {
+                "type": "string",
+                "description": "The point in time at which this value was made \u0022active\u0022. \u0060active_from\u0060 can be considered roughly analogous to \u0060created_at\u0060.",
+                "format": "date-time",
+                "example": "2023-01-01T15:00:00.000000000Z"
+              },
+              "active_until": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The point in time at which this value was deactivated. If \u0060null\u0060, the value is active.",
+                "format": "date-time",
+                "example": "2023-01-01T15:00:00.000000000Z"
+              },
+              "created_by_actor": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "An ID to identify the actor."
+                  },
+                  "type": {
+                    "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCreatedByActorType"
+                  }
+                },
+                "description": "The actor that created this value.",
+                "example": {
+                  "type": "workspace-member",
+                  "id": "50cf242c-7fa3-4cad-87d0-75b1af71c57b"
+                }
+              },
+              "referenced_actor_type": {
+                "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemReferencedActorType"
+              },
+              "referenced_actor_id": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The ID of the referenced actor.",
+                "format": "uuid",
+                "example": "50cf242c-7fa3-4cad-87d0-75b1af71c57b"
+              },
+              "attribute_type": {
+                "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemAttributeType"
+              },
+              "value": {
+                "type": "boolean",
+                "description": "A boolean representing whether the checkbox is checked or not. The string values \u0027true\u0027 and \u0027false\u0027 are also accepted.",
+                "example": true
+              },
+              "currency_value": {
+                "type": "number",
+                "description": "A numerical representation of the currency value. A decimal with a max of 4 decimal places.",
+                "example": 99
+              },
+              "currency_code": {
+                "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCurrencyCode"
+              },
+              "domain": {
+                "type": "string",
+                "example": "app.attio.com"
+              },
+              "root_domain": {
+                "type": "string",
+                "example": "attio.com"
+              },
+              "original_email_address": {
+                "type": "string",
+                "example": "alice@app.attio.com"
+              },
+              "email_address": {
+                "type": "string",
+                "example": "alice@app.attio.com"
+              },
+              "email_domain": {
+                "type": "string",
+                "example": "app.attio.com"
+              },
+              "email_root_domain": {
+                "type": "string",
+                "example": "attio.com"
+              },
+              "email_local_specifier": {
+                "type": "string",
+                "example": "alice"
+              },
+              "target_object": {
+                "type": "string",
+                "description": "A slug identifying the object that the referenced record belongs to.",
+                "example": "people"
+              },
+              "target_record_id": {
+                "type": "string",
+                "description": "A UUID to identify the referenced record.",
+                "format": "uuid",
+                "example": "891dcbfc-9141-415d-9b2a-2238a6cc012d"
+              },
+              "interaction_type": {
+                "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType"
+              },
+              "interacted_at": {
+                "type": "string",
+                "description": "When the interaction occurred.",
+                "format": "date-time",
+                "example": "2023-01-01T15:00:00.000000000Z"
+              },
+              "owner_actor": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "An ID to identify the actor."
+                  },
+                  "type": {
+                    "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemOwnerActorType"
+                  }
+                },
+                "description": "The actor that created this value.",
+                "example": {
+                  "type": "workspace-member",
+                  "id": "50cf242c-7fa3-4cad-87d0-75b1af71c57b"
+                }
+              },
+              "line_1": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The first line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.",
+                "example": "1 Infinite Loop"
+              },
+              "line_2": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The second line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.",
+                "example": "Block 1"
+              },
+              "line_3": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The third line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.",
+                "example": "Hilldrop Estate"
+              },
+              "line_4": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The fourth line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.",
+                "example": "Westborough"
+              },
+              "locality": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The town, neighborhood or area the location is in.",
+                "example": "Cupertino"
+              },
+              "region": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The state, county, province or region that the location is in.",
+                "example": "CA"
+              },
+              "postcode": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The postcode or zip code for the location. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.}",
+                "example": "95014"
+              },
+              "country_code": {
+                "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCountryCode"
               },
               "latitude": {
                 "pattern": "^[-\u002B]?([1-8]?\\d(\\.\\d\u002B)?|90(\\.0\u002B)?)$",
@@ -80220,6 +80814,34 @@
           ]
         }
       },
+      "PutV2ActivitiesByActivityRecords400ResponseStatusCode": {
+        "enum": [
+          400
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ActivitiesByActivityRecords403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ActivitiesByActivityRecords404ResponseStatusCode": {
+        "enum": [
+          404
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "PutV2ActivitiesByActivityRecords409ResponseStatusCode": {
+        "enum": [
+          409
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
       "GetV2ActivitiesByActivityRecordsByRecordId404ResponseStatusCode": {
         "enum": [
           404
@@ -80712,7 +81334,8 @@
           "multiple_values_for_single_value_attribute",
           "system_edit_unauthorized",
           "formula_edit_unauthorized",
-          "standard_object_disabled"
+          "standard_object_disabled",
+          "particle_gate_violation"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -80755,6 +81378,10 @@
             {
               "value": "standard_object_disabled",
               "name": "StandardObjectDisabled"
+            },
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -81017,7 +81644,8 @@
           "uniqueness_conflict",
           "multiple_values_for_single_value_attribute",
           "system_edit_unauthorized",
-          "formula_edit_unauthorized"
+          "formula_edit_unauthorized",
+          "particle_gate_violation"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -81056,6 +81684,10 @@
             {
               "value": "formula_edit_unauthorized",
               "name": "FormulaEditUnauthorized"
+            },
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
             }
           ]
         }
@@ -82280,6 +82912,108 @@
         "additionalProperties": false,
         "x-ms-enum": {
           "name": "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "billing_error",
+              "name": "BillingError"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf1": {
+        "enum": [
+          "value_not_found"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "value_not_found",
+              "name": "ValueNotFound"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf2": {
+        "enum": [
+          "matching_attribute_definition_not_unique"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "matching_attribute_definition_not_unique",
+              "name": "MatchingAttributeDefinitionNotUnique"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf3": {
+        "enum": [
+          "multiple_match_results"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf3",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "multiple_match_results",
+              "name": "MultipleMatchResults"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf4": {
+        "enum": [
+          "particle_gate_violation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords400ResponseCodeAnyOf4",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "particle_gate_violation",
+              "name": "ParticleGateViolation"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf1": {
+        "enum": [
+          "unauthorized"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unauthorized",
+              "name": "Unauthorized"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf2": {
+        "enum": [
+          "billing_error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf2",
           "modelAsString": false,
           "values": [
             {
@@ -103028,6 +103762,1774 @@
         "example": "US",
         "x-ms-enum": {
           "name": "PostV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCountryCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "AF",
+              "name": "Af"
+            },
+            {
+              "value": "AX",
+              "name": "Ax"
+            },
+            {
+              "value": "AL",
+              "name": "Al"
+            },
+            {
+              "value": "DZ",
+              "name": "Dz"
+            },
+            {
+              "value": "AS",
+              "name": "AsValue"
+            },
+            {
+              "value": "AD",
+              "name": "Ad"
+            },
+            {
+              "value": "AO",
+              "name": "Ao"
+            },
+            {
+              "value": "AI",
+              "name": "Ai"
+            },
+            {
+              "value": "AQ",
+              "name": "Aq"
+            },
+            {
+              "value": "AG",
+              "name": "Ag"
+            },
+            {
+              "value": "AR",
+              "name": "Ar"
+            },
+            {
+              "value": "AM",
+              "name": "Am"
+            },
+            {
+              "value": "AW",
+              "name": "Aw"
+            },
+            {
+              "value": "AU",
+              "name": "Au"
+            },
+            {
+              "value": "AT",
+              "name": "At"
+            },
+            {
+              "value": "AZ",
+              "name": "Az"
+            },
+            {
+              "value": "BS",
+              "name": "Bs"
+            },
+            {
+              "value": "BH",
+              "name": "Bh"
+            },
+            {
+              "value": "BD",
+              "name": "Bd"
+            },
+            {
+              "value": "BB",
+              "name": "Bb"
+            },
+            {
+              "value": "BY",
+              "name": "By"
+            },
+            {
+              "value": "BE",
+              "name": "Be"
+            },
+            {
+              "value": "BZ",
+              "name": "Bz"
+            },
+            {
+              "value": "BJ",
+              "name": "Bj"
+            },
+            {
+              "value": "BM",
+              "name": "Bm"
+            },
+            {
+              "value": "BT",
+              "name": "Bt"
+            },
+            {
+              "value": "BO",
+              "name": "Bo"
+            },
+            {
+              "value": "BA",
+              "name": "Ba"
+            },
+            {
+              "value": "BW",
+              "name": "Bw"
+            },
+            {
+              "value": "BV",
+              "name": "Bv"
+            },
+            {
+              "value": "BR",
+              "name": "Br"
+            },
+            {
+              "value": "IO",
+              "name": "Io"
+            },
+            {
+              "value": "BN",
+              "name": "Bn"
+            },
+            {
+              "value": "BG",
+              "name": "Bg"
+            },
+            {
+              "value": "BF",
+              "name": "Bf"
+            },
+            {
+              "value": "BI",
+              "name": "Bi"
+            },
+            {
+              "value": "KH",
+              "name": "Kh"
+            },
+            {
+              "value": "CM",
+              "name": "Cm"
+            },
+            {
+              "value": "CA",
+              "name": "Ca"
+            },
+            {
+              "value": "CV",
+              "name": "Cv"
+            },
+            {
+              "value": "KY",
+              "name": "Ky"
+            },
+            {
+              "value": "CF",
+              "name": "Cf"
+            },
+            {
+              "value": "TD",
+              "name": "Td"
+            },
+            {
+              "value": "CL",
+              "name": "Cl"
+            },
+            {
+              "value": "CN",
+              "name": "Cn"
+            },
+            {
+              "value": "CX",
+              "name": "Cx"
+            },
+            {
+              "value": "CC",
+              "name": "Cc"
+            },
+            {
+              "value": "CO",
+              "name": "Co"
+            },
+            {
+              "value": "KM",
+              "name": "Km"
+            },
+            {
+              "value": "CG",
+              "name": "Cg"
+            },
+            {
+              "value": "CD",
+              "name": "Cd"
+            },
+            {
+              "value": "CK",
+              "name": "Ck"
+            },
+            {
+              "value": "CR",
+              "name": "Cr"
+            },
+            {
+              "value": "CI",
+              "name": "Ci"
+            },
+            {
+              "value": "HR",
+              "name": "Hr"
+            },
+            {
+              "value": "CU",
+              "name": "Cu"
+            },
+            {
+              "value": "CW",
+              "name": "Cw"
+            },
+            {
+              "value": "CY",
+              "name": "Cy"
+            },
+            {
+              "value": "CZ",
+              "name": "Cz"
+            },
+            {
+              "value": "DK",
+              "name": "Dk"
+            },
+            {
+              "value": "DJ",
+              "name": "Dj"
+            },
+            {
+              "value": "DM",
+              "name": "Dm"
+            },
+            {
+              "value": "DO",
+              "name": "DoValue"
+            },
+            {
+              "value": "EC",
+              "name": "Ec"
+            },
+            {
+              "value": "EG",
+              "name": "Eg"
+            },
+            {
+              "value": "SV",
+              "name": "Sv"
+            },
+            {
+              "value": "GQ",
+              "name": "Gq"
+            },
+            {
+              "value": "ER",
+              "name": "Er"
+            },
+            {
+              "value": "EE",
+              "name": "Ee"
+            },
+            {
+              "value": "ET",
+              "name": "Et"
+            },
+            {
+              "value": "FK",
+              "name": "Fk"
+            },
+            {
+              "value": "FO",
+              "name": "Fo"
+            },
+            {
+              "value": "FJ",
+              "name": "Fj"
+            },
+            {
+              "value": "FI",
+              "name": "Fi"
+            },
+            {
+              "value": "FR",
+              "name": "Fr"
+            },
+            {
+              "value": "GF",
+              "name": "Gf"
+            },
+            {
+              "value": "PF",
+              "name": "Pf"
+            },
+            {
+              "value": "TF",
+              "name": "Tf"
+            },
+            {
+              "value": "GA",
+              "name": "Ga"
+            },
+            {
+              "value": "GM",
+              "name": "Gm"
+            },
+            {
+              "value": "GE",
+              "name": "Ge"
+            },
+            {
+              "value": "DE",
+              "name": "De"
+            },
+            {
+              "value": "GH",
+              "name": "Gh"
+            },
+            {
+              "value": "GI",
+              "name": "Gi"
+            },
+            {
+              "value": "GR",
+              "name": "Gr"
+            },
+            {
+              "value": "GL",
+              "name": "Gl"
+            },
+            {
+              "value": "GD",
+              "name": "Gd"
+            },
+            {
+              "value": "GP",
+              "name": "Gp"
+            },
+            {
+              "value": "GU",
+              "name": "Gu"
+            },
+            {
+              "value": "GT",
+              "name": "Gt"
+            },
+            {
+              "value": "GG",
+              "name": "Gg"
+            },
+            {
+              "value": "GN",
+              "name": "Gn"
+            },
+            {
+              "value": "GW",
+              "name": "Gw"
+            },
+            {
+              "value": "GY",
+              "name": "Gy"
+            },
+            {
+              "value": "HT",
+              "name": "Ht"
+            },
+            {
+              "value": "HM",
+              "name": "Hm"
+            },
+            {
+              "value": "VA",
+              "name": "Va"
+            },
+            {
+              "value": "HN",
+              "name": "Hn"
+            },
+            {
+              "value": "HK",
+              "name": "Hk"
+            },
+            {
+              "value": "HU",
+              "name": "Hu"
+            },
+            {
+              "value": "IS",
+              "name": "IsValue"
+            },
+            {
+              "value": "IN",
+              "name": "InValue"
+            },
+            {
+              "value": "ID",
+              "name": "Id"
+            },
+            {
+              "value": "IR",
+              "name": "Ir"
+            },
+            {
+              "value": "IQ",
+              "name": "Iq"
+            },
+            {
+              "value": "IE",
+              "name": "Ie"
+            },
+            {
+              "value": "IM",
+              "name": "Im"
+            },
+            {
+              "value": "IL",
+              "name": "Il"
+            },
+            {
+              "value": "IT",
+              "name": "It"
+            },
+            {
+              "value": "JM",
+              "name": "Jm"
+            },
+            {
+              "value": "JP",
+              "name": "Jp"
+            },
+            {
+              "value": "JE",
+              "name": "Je"
+            },
+            {
+              "value": "JO",
+              "name": "Jo"
+            },
+            {
+              "value": "KZ",
+              "name": "Kz"
+            },
+            {
+              "value": "KE",
+              "name": "Ke"
+            },
+            {
+              "value": "KI",
+              "name": "Ki"
+            },
+            {
+              "value": "KR",
+              "name": "Kr"
+            },
+            {
+              "value": "KW",
+              "name": "Kw"
+            },
+            {
+              "value": "KG",
+              "name": "Kg"
+            },
+            {
+              "value": "LA",
+              "name": "La"
+            },
+            {
+              "value": "LV",
+              "name": "Lv"
+            },
+            {
+              "value": "LB",
+              "name": "Lb"
+            },
+            {
+              "value": "LS",
+              "name": "Ls"
+            },
+            {
+              "value": "LR",
+              "name": "Lr"
+            },
+            {
+              "value": "LY",
+              "name": "Ly"
+            },
+            {
+              "value": "LI",
+              "name": "Li"
+            },
+            {
+              "value": "LT",
+              "name": "Lt"
+            },
+            {
+              "value": "LU",
+              "name": "Lu"
+            },
+            {
+              "value": "MO",
+              "name": "Mo"
+            },
+            {
+              "value": "MK",
+              "name": "Mk"
+            },
+            {
+              "value": "MG",
+              "name": "Mg"
+            },
+            {
+              "value": "MW",
+              "name": "Mw"
+            },
+            {
+              "value": "MY",
+              "name": "My"
+            },
+            {
+              "value": "MV",
+              "name": "Mv"
+            },
+            {
+              "value": "ML",
+              "name": "Ml"
+            },
+            {
+              "value": "MT",
+              "name": "Mt"
+            },
+            {
+              "value": "MH",
+              "name": "Mh"
+            },
+            {
+              "value": "MQ",
+              "name": "Mq"
+            },
+            {
+              "value": "MR",
+              "name": "Mr"
+            },
+            {
+              "value": "MU",
+              "name": "Mu"
+            },
+            {
+              "value": "YT",
+              "name": "Yt"
+            },
+            {
+              "value": "MX",
+              "name": "Mx"
+            },
+            {
+              "value": "FM",
+              "name": "Fm"
+            },
+            {
+              "value": "MD",
+              "name": "Md"
+            },
+            {
+              "value": "MC",
+              "name": "Mc"
+            },
+            {
+              "value": "MN",
+              "name": "Mn"
+            },
+            {
+              "value": "ME",
+              "name": "Me"
+            },
+            {
+              "value": "MS",
+              "name": "Ms"
+            },
+            {
+              "value": "MA",
+              "name": "Ma"
+            },
+            {
+              "value": "MZ",
+              "name": "Mz"
+            },
+            {
+              "value": "MM",
+              "name": "Mm"
+            },
+            {
+              "value": "NA",
+              "name": "Na"
+            },
+            {
+              "value": "NR",
+              "name": "Nr"
+            },
+            {
+              "value": "NP",
+              "name": "Np"
+            },
+            {
+              "value": "NL",
+              "name": "Nl"
+            },
+            {
+              "value": "AN",
+              "name": "An"
+            },
+            {
+              "value": "NC",
+              "name": "Nc"
+            },
+            {
+              "value": "NZ",
+              "name": "Nz"
+            },
+            {
+              "value": "NI",
+              "name": "Ni"
+            },
+            {
+              "value": "NE",
+              "name": "Ne"
+            },
+            {
+              "value": "NG",
+              "name": "Ng"
+            },
+            {
+              "value": "NU",
+              "name": "Nu"
+            },
+            {
+              "value": "NF",
+              "name": "Nf"
+            },
+            {
+              "value": "MP",
+              "name": "Mp"
+            },
+            {
+              "value": "NO",
+              "name": "No"
+            },
+            {
+              "value": "OM",
+              "name": "Om"
+            },
+            {
+              "value": "PK",
+              "name": "Pk"
+            },
+            {
+              "value": "PW",
+              "name": "Pw"
+            },
+            {
+              "value": "PS",
+              "name": "Ps"
+            },
+            {
+              "value": "PA",
+              "name": "Pa"
+            },
+            {
+              "value": "PG",
+              "name": "Pg"
+            },
+            {
+              "value": "PY",
+              "name": "Py"
+            },
+            {
+              "value": "PE",
+              "name": "Pe"
+            },
+            {
+              "value": "PH",
+              "name": "Ph"
+            },
+            {
+              "value": "PN",
+              "name": "Pn"
+            },
+            {
+              "value": "PL",
+              "name": "Pl"
+            },
+            {
+              "value": "PT",
+              "name": "Pt"
+            },
+            {
+              "value": "PR",
+              "name": "Pr"
+            },
+            {
+              "value": "QA",
+              "name": "Qa"
+            },
+            {
+              "value": "RE",
+              "name": "Re"
+            },
+            {
+              "value": "RO",
+              "name": "Ro"
+            },
+            {
+              "value": "RU",
+              "name": "Ru"
+            },
+            {
+              "value": "RW",
+              "name": "Rw"
+            },
+            {
+              "value": "BL",
+              "name": "Bl"
+            },
+            {
+              "value": "SH",
+              "name": "Sh"
+            },
+            {
+              "value": "KN",
+              "name": "Kn"
+            },
+            {
+              "value": "LC",
+              "name": "Lc"
+            },
+            {
+              "value": "MF",
+              "name": "Mf"
+            },
+            {
+              "value": "PM",
+              "name": "Pm"
+            },
+            {
+              "value": "VC",
+              "name": "Vc"
+            },
+            {
+              "value": "WS",
+              "name": "Ws"
+            },
+            {
+              "value": "SM",
+              "name": "Sm"
+            },
+            {
+              "value": "ST",
+              "name": "St"
+            },
+            {
+              "value": "SA",
+              "name": "Sa"
+            },
+            {
+              "value": "SN",
+              "name": "Sn"
+            },
+            {
+              "value": "SS",
+              "name": "Ss"
+            },
+            {
+              "value": "RS",
+              "name": "Rs"
+            },
+            {
+              "value": "SC",
+              "name": "Sc"
+            },
+            {
+              "value": "SL",
+              "name": "Sl"
+            },
+            {
+              "value": "SG",
+              "name": "Sg"
+            },
+            {
+              "value": "SK",
+              "name": "Sk"
+            },
+            {
+              "value": "SI",
+              "name": "Si"
+            },
+            {
+              "value": "SB",
+              "name": "Sb"
+            },
+            {
+              "value": "SO",
+              "name": "So"
+            },
+            {
+              "value": "ZA",
+              "name": "Za"
+            },
+            {
+              "value": "GS",
+              "name": "Gs"
+            },
+            {
+              "value": "ES",
+              "name": "Es"
+            },
+            {
+              "value": "LK",
+              "name": "Lk"
+            },
+            {
+              "value": "SD",
+              "name": "Sd"
+            },
+            {
+              "value": "SR",
+              "name": "Sr"
+            },
+            {
+              "value": "SJ",
+              "name": "Sj"
+            },
+            {
+              "value": "SZ",
+              "name": "Sz"
+            },
+            {
+              "value": "SE",
+              "name": "Se"
+            },
+            {
+              "value": "CH",
+              "name": "Ch"
+            },
+            {
+              "value": "SY",
+              "name": "Sy"
+            },
+            {
+              "value": "TW",
+              "name": "Tw"
+            },
+            {
+              "value": "TJ",
+              "name": "Tj"
+            },
+            {
+              "value": "TZ",
+              "name": "Tz"
+            },
+            {
+              "value": "TH",
+              "name": "Th"
+            },
+            {
+              "value": "TL",
+              "name": "Tl"
+            },
+            {
+              "value": "TG",
+              "name": "Tg"
+            },
+            {
+              "value": "TK",
+              "name": "Tk"
+            },
+            {
+              "value": "TO",
+              "name": "To"
+            },
+            {
+              "value": "TT",
+              "name": "Tt"
+            },
+            {
+              "value": "TN",
+              "name": "Tn"
+            },
+            {
+              "value": "TR",
+              "name": "Tr"
+            },
+            {
+              "value": "TM",
+              "name": "Tm"
+            },
+            {
+              "value": "TC",
+              "name": "Tc"
+            },
+            {
+              "value": "TV",
+              "name": "Tv"
+            },
+            {
+              "value": "UG",
+              "name": "Ug"
+            },
+            {
+              "value": "UA",
+              "name": "Ua"
+            },
+            {
+              "value": "AE",
+              "name": "Ae"
+            },
+            {
+              "value": "GB",
+              "name": "Gb"
+            },
+            {
+              "value": "US",
+              "name": "Us"
+            },
+            {
+              "value": "UM",
+              "name": "Um"
+            },
+            {
+              "value": "UY",
+              "name": "Uy"
+            },
+            {
+              "value": "UZ",
+              "name": "Uz"
+            },
+            {
+              "value": "VU",
+              "name": "Vu"
+            },
+            {
+              "value": "VE",
+              "name": "Ve"
+            },
+            {
+              "value": "VN",
+              "name": "Vn"
+            },
+            {
+              "value": "VG",
+              "name": "Vg"
+            },
+            {
+              "value": "VI",
+              "name": "Vi"
+            },
+            {
+              "value": "WF",
+              "name": "Wf"
+            },
+            {
+              "value": "EH",
+              "name": "Eh"
+            },
+            {
+              "value": "YE",
+              "name": "Ye"
+            },
+            {
+              "value": "ZM",
+              "name": "Zm"
+            },
+            {
+              "value": "ZW",
+              "name": "Zw"
+            },
+            {
+              "value": "BQ",
+              "name": "Bq"
+            },
+            {
+              "value": "KP",
+              "name": "Kp"
+            },
+            {
+              "value": "SX",
+              "name": "Sx"
+            },
+            {
+              "value": "XK",
+              "name": "Xk"
+            },
+            {
+              "value": "AC",
+              "name": "Ac"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCreatedByActorType": {
+        "enum": [
+          "api-token",
+          "workspace-member",
+          "system",
+          "app"
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "additionalProperties": false,
+        "description": "The type of actor. [Read more information on actor types here](/docs/actors).",
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCreatedByActorType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "api-token",
+              "name": "ApiToken"
+            },
+            {
+              "value": "workspace-member",
+              "name": "WorkspaceMember"
+            },
+            {
+              "value": "system",
+              "name": "System"
+            },
+            {
+              "value": "app",
+              "name": "App"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemReferencedActorType": {
+        "enum": [
+          "api-token",
+          "workspace-member",
+          "system",
+          "app"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of the referenced actor. [Read more information on actor types here](/docs/actors).",
+        "example": "workspace-member",
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemReferencedActorType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "api-token",
+              "name": "ApiToken"
+            },
+            {
+              "value": "workspace-member",
+              "name": "WorkspaceMember"
+            },
+            {
+              "value": "system",
+              "name": "System"
+            },
+            {
+              "value": "app",
+              "name": "App"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemAttributeType": {
+        "enum": [
+          "actor-reference",
+          "checkbox",
+          "currency",
+          "date",
+          "domain",
+          "email-address",
+          "record-reference",
+          "interaction",
+          "location",
+          "number",
+          "personal-name",
+          "phone-number",
+          "status",
+          "rating",
+          "select",
+          "text",
+          "timestamp"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The attribute type of the value.",
+        "example": "actor-reference",
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemAttributeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "actor-reference",
+              "name": "ActorReference"
+            },
+            {
+              "value": "checkbox",
+              "name": "Checkbox"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "domain",
+              "name": "Domain"
+            },
+            {
+              "value": "email-address",
+              "name": "EmailAddress"
+            },
+            {
+              "value": "record-reference",
+              "name": "RecordReference"
+            },
+            {
+              "value": "interaction",
+              "name": "Interaction"
+            },
+            {
+              "value": "location",
+              "name": "Location"
+            },
+            {
+              "value": "number",
+              "name": "Number"
+            },
+            {
+              "value": "personal-name",
+              "name": "PersonalName"
+            },
+            {
+              "value": "phone-number",
+              "name": "PhoneNumber"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "rating",
+              "name": "Rating"
+            },
+            {
+              "value": "select",
+              "name": "Select"
+            },
+            {
+              "value": "text",
+              "name": "Text"
+            },
+            {
+              "value": "timestamp",
+              "name": "Timestamp"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCurrencyCode": {
+        "enum": [
+          "ARS",
+          "AUD",
+          "BRL",
+          "BGN",
+          "CAD",
+          "CLP",
+          "CNY",
+          "COP",
+          "CZK",
+          "DKK",
+          "EGP",
+          "EUR",
+          "FJD",
+          "GHS",
+          "HKD",
+          "HUF",
+          "ISK",
+          "INR",
+          "IDR",
+          "ILS",
+          "JPY",
+          "KES",
+          "KRW",
+          "MYR",
+          "MXN",
+          "NTD",
+          "NZD",
+          "NGN",
+          "NOK",
+          "OMR",
+          "XPF",
+          "PEN",
+          "PHP",
+          "PLN",
+          "GBP",
+          "QAR",
+          "RWF",
+          "SAR",
+          "SGD",
+          "ZAR",
+          "SEK",
+          "CHF",
+          "THB",
+          "TRY",
+          "AED",
+          "UYU",
+          "USD"
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "additionalProperties": false,
+        "description": "The ISO4217 currency code representing the currency that the value is stored in.",
+        "example": "USD",
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCurrencyCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ARS",
+              "name": "Ars"
+            },
+            {
+              "value": "AUD",
+              "name": "Aud"
+            },
+            {
+              "value": "BRL",
+              "name": "Brl"
+            },
+            {
+              "value": "BGN",
+              "name": "Bgn"
+            },
+            {
+              "value": "CAD",
+              "name": "Cad"
+            },
+            {
+              "value": "CLP",
+              "name": "Clp"
+            },
+            {
+              "value": "CNY",
+              "name": "Cny"
+            },
+            {
+              "value": "COP",
+              "name": "Cop"
+            },
+            {
+              "value": "CZK",
+              "name": "Czk"
+            },
+            {
+              "value": "DKK",
+              "name": "Dkk"
+            },
+            {
+              "value": "EGP",
+              "name": "Egp"
+            },
+            {
+              "value": "EUR",
+              "name": "Eur"
+            },
+            {
+              "value": "FJD",
+              "name": "Fjd"
+            },
+            {
+              "value": "GHS",
+              "name": "Ghs"
+            },
+            {
+              "value": "HKD",
+              "name": "Hkd"
+            },
+            {
+              "value": "HUF",
+              "name": "Huf"
+            },
+            {
+              "value": "ISK",
+              "name": "Isk"
+            },
+            {
+              "value": "INR",
+              "name": "Inr"
+            },
+            {
+              "value": "IDR",
+              "name": "Idr"
+            },
+            {
+              "value": "ILS",
+              "name": "Ils"
+            },
+            {
+              "value": "JPY",
+              "name": "Jpy"
+            },
+            {
+              "value": "KES",
+              "name": "Kes"
+            },
+            {
+              "value": "KRW",
+              "name": "Krw"
+            },
+            {
+              "value": "MYR",
+              "name": "Myr"
+            },
+            {
+              "value": "MXN",
+              "name": "Mxn"
+            },
+            {
+              "value": "NTD",
+              "name": "Ntd"
+            },
+            {
+              "value": "NZD",
+              "name": "Nzd"
+            },
+            {
+              "value": "NGN",
+              "name": "Ngn"
+            },
+            {
+              "value": "NOK",
+              "name": "Nok"
+            },
+            {
+              "value": "OMR",
+              "name": "Omr"
+            },
+            {
+              "value": "XPF",
+              "name": "Xpf"
+            },
+            {
+              "value": "PEN",
+              "name": "Pen"
+            },
+            {
+              "value": "PHP",
+              "name": "Php"
+            },
+            {
+              "value": "PLN",
+              "name": "Pln"
+            },
+            {
+              "value": "GBP",
+              "name": "Gbp"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
+            },
+            {
+              "value": "RWF",
+              "name": "Rwf"
+            },
+            {
+              "value": "SAR",
+              "name": "Sar"
+            },
+            {
+              "value": "SGD",
+              "name": "Sgd"
+            },
+            {
+              "value": "ZAR",
+              "name": "Zar"
+            },
+            {
+              "value": "SEK",
+              "name": "Sek"
+            },
+            {
+              "value": "CHF",
+              "name": "Chf"
+            },
+            {
+              "value": "THB",
+              "name": "Thb"
+            },
+            {
+              "value": "TRY",
+              "name": "TryValue"
+            },
+            {
+              "value": "AED",
+              "name": "Aed"
+            },
+            {
+              "value": "UYU",
+              "name": "Uyu"
+            },
+            {
+              "value": "USD",
+              "name": "Usd"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType": {
+        "enum": [
+          "activity",
+          "email",
+          "meeting",
+          "calendar-event"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of interaction e.g. calendar or email.",
+        "example": "email",
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemInteractionType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "activity",
+              "name": "Activity"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "meeting",
+              "name": "Meeting"
+            },
+            {
+              "value": "calendar-event",
+              "name": "CalendarEvent"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemOwnerActorType": {
+        "enum": [
+          "api-token",
+          "workspace-member",
+          "system",
+          "app"
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "additionalProperties": false,
+        "description": "The type of actor. [Read more information on actor types here](/docs/actors).",
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemOwnerActorType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "api-token",
+              "name": "ApiToken"
+            },
+            {
+              "value": "workspace-member",
+              "name": "WorkspaceMember"
+            },
+            {
+              "value": "system",
+              "name": "System"
+            },
+            {
+              "value": "app",
+              "name": "App"
+            }
+          ]
+        }
+      },
+      "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCountryCode": {
+        "enum": [
+          "AF",
+          "AX",
+          "AL",
+          "DZ",
+          "AS",
+          "AD",
+          "AO",
+          "AI",
+          "AQ",
+          "AG",
+          "AR",
+          "AM",
+          "AW",
+          "AU",
+          "AT",
+          "AZ",
+          "BS",
+          "BH",
+          "BD",
+          "BB",
+          "BY",
+          "BE",
+          "BZ",
+          "BJ",
+          "BM",
+          "BT",
+          "BO",
+          "BA",
+          "BW",
+          "BV",
+          "BR",
+          "IO",
+          "BN",
+          "BG",
+          "BF",
+          "BI",
+          "KH",
+          "CM",
+          "CA",
+          "CV",
+          "KY",
+          "CF",
+          "TD",
+          "CL",
+          "CN",
+          "CX",
+          "CC",
+          "CO",
+          "KM",
+          "CG",
+          "CD",
+          "CK",
+          "CR",
+          "CI",
+          "HR",
+          "CU",
+          "CW",
+          "CY",
+          "CZ",
+          "DK",
+          "DJ",
+          "DM",
+          "DO",
+          "EC",
+          "EG",
+          "SV",
+          "GQ",
+          "ER",
+          "EE",
+          "ET",
+          "FK",
+          "FO",
+          "FJ",
+          "FI",
+          "FR",
+          "GF",
+          "PF",
+          "TF",
+          "GA",
+          "GM",
+          "GE",
+          "DE",
+          "GH",
+          "GI",
+          "GR",
+          "GL",
+          "GD",
+          "GP",
+          "GU",
+          "GT",
+          "GG",
+          "GN",
+          "GW",
+          "GY",
+          "HT",
+          "HM",
+          "VA",
+          "HN",
+          "HK",
+          "HU",
+          "IS",
+          "IN",
+          "ID",
+          "IR",
+          "IQ",
+          "IE",
+          "IM",
+          "IL",
+          "IT",
+          "JM",
+          "JP",
+          "JE",
+          "JO",
+          "KZ",
+          "KE",
+          "KI",
+          "KR",
+          "KW",
+          "KG",
+          "LA",
+          "LV",
+          "LB",
+          "LS",
+          "LR",
+          "LY",
+          "LI",
+          "LT",
+          "LU",
+          "MO",
+          "MK",
+          "MG",
+          "MW",
+          "MY",
+          "MV",
+          "ML",
+          "MT",
+          "MH",
+          "MQ",
+          "MR",
+          "MU",
+          "YT",
+          "MX",
+          "FM",
+          "MD",
+          "MC",
+          "MN",
+          "ME",
+          "MS",
+          "MA",
+          "MZ",
+          "MM",
+          "NA",
+          "NR",
+          "NP",
+          "NL",
+          "AN",
+          "NC",
+          "NZ",
+          "NI",
+          "NE",
+          "NG",
+          "NU",
+          "NF",
+          "MP",
+          "NO",
+          "OM",
+          "PK",
+          "PW",
+          "PS",
+          "PA",
+          "PG",
+          "PY",
+          "PE",
+          "PH",
+          "PN",
+          "PL",
+          "PT",
+          "PR",
+          "QA",
+          "RE",
+          "RO",
+          "RU",
+          "RW",
+          "BL",
+          "SH",
+          "KN",
+          "LC",
+          "MF",
+          "PM",
+          "VC",
+          "WS",
+          "SM",
+          "ST",
+          "SA",
+          "SN",
+          "SS",
+          "RS",
+          "SC",
+          "SL",
+          "SG",
+          "SK",
+          "SI",
+          "SB",
+          "SO",
+          "ZA",
+          "GS",
+          "ES",
+          "LK",
+          "SD",
+          "SR",
+          "SJ",
+          "SZ",
+          "SE",
+          "CH",
+          "SY",
+          "TW",
+          "TJ",
+          "TZ",
+          "TH",
+          "TL",
+          "TG",
+          "TK",
+          "TO",
+          "TT",
+          "TN",
+          "TR",
+          "TM",
+          "TC",
+          "TV",
+          "UG",
+          "UA",
+          "AE",
+          "GB",
+          "US",
+          "UM",
+          "UY",
+          "UZ",
+          "VU",
+          "VE",
+          "VN",
+          "VG",
+          "VI",
+          "WF",
+          "EH",
+          "YE",
+          "ZM",
+          "ZW",
+          "BQ",
+          "KP",
+          "SX",
+          "XK",
+          "AC"
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "additionalProperties": false,
+        "description": "The ISO 3166-1 alpha-2 country code for the country this location is in.",
+        "example": "US",
+        "x-ms-enum": {
+          "name": "PutV2ActivitiesByActivityRecords200ResponseDataValuesAdditionalPropertiesItemCountryCode",
           "modelAsString": false,
           "values": [
             {

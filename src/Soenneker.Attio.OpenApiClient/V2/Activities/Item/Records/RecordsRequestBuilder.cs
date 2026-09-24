@@ -84,6 +84,37 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Use this endpoint to create or update an activity record. A matching attribute is used to search for existing activity records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the create activity record endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`, `object_configuration:read`, `record_permission:read`.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords200Response"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords409Response">When receiving a 409 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords200Response?> PutAsync(global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords200Response> PutAsync(global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords404Response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords409Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Creates a new activity record, for example one specific phone call.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`, `object_configuration:read`, `record_permission:read`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -106,6 +137,28 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records
             return requestInfo;
         }
         /// <summary>
+        /// Use this endpoint to create or update an activity record. A matching attribute is used to search for existing activity records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the create activity record endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`, `object_configuration:read`, `record_permission:read`.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PutV2ActivitiesByActivityRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/v2/activities/{activity}/records?matching_attribute={matching_attribute}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder"/></returns>
@@ -113,6 +166,26 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records
         public global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.RecordsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Use this endpoint to create or update an activity record. A matching attribute is used to search for existing activity records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the create activity record endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_record:read-write`, `activity_configuration:read`, `object_configuration:read`, `record_permission:read`.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class RecordsRequestBuilderPutQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("matching_attribute")]
+            public string? MatchingAttribute { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("matching_attribute")]
+            public string MatchingAttribute { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }
