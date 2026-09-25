@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records
         {
         }
         /// <summary>
-        /// Creates a new deal record. This endpoint will throw on conflicts of unique attributes, if defined. If you would prefer to update deal records on conflicts, please use the Assert deal record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Creates a new deal record. This endpoint will throw on conflicts of unique attributes, if defined. If you would prefer to update deal records on conflicts, please use the Assert deal record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +115,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new deal record. This endpoint will throw on conflicts of unique attributes, if defined. If you would prefer to update deal records on conflicts, please use the Assert deal record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Creates a new deal record. This endpoint will throw on conflicts of unique attributes, if defined. If you would prefer to update deal records on conflicts, please use the Assert deal record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -137,7 +137,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records
             return requestInfo;
         }
         /// <summary>
-        /// Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -168,7 +168,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.RecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordsRequestBuilderPutQueryParameters 

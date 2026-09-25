@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views
         {
         }
         /// <summary>
-        /// Lists saved views for an object. Results are ordered by view ID (`id.view_id` ascending).Required scopes: `object_configuration:read`.
+        /// Lists saved views for an object. Results are ordered by view ID (`id.view_id` ascending).Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists saved views for an object. Results are ordered by view ID (`id.view_id` ascending).Required scopes: `object_configuration:read`.
+        /// Lists saved views for an object. Results are ordered by view ID (`id.view_id` ascending).Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views.ViewsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists saved views for an object. Results are ordered by view ID (`id.view_id` ascending).Required scopes: `object_configuration:read`.
+        /// Lists saved views for an object. Results are ordered by view ID (`id.view_id` ascending).Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ViewsRequestBuilderGetQueryParameters 

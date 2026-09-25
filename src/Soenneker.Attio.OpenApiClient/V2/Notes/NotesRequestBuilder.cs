@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes
         {
         }
         /// <summary>
-        /// List notes for all records or for a specific record.This endpoint is temporarily rate limited to 10 requests per second.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.
+        /// List notes for all records or for a specific record.This endpoint is temporarily rate limited to 10 requests per second.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Notes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Notes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Notes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new note for a given record.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.
+        /// Creates a new note for a given record.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Notes200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -97,7 +97,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Notes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Notes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List notes for all records or for a specific record.This endpoint is temporarily rate limited to 10 requests per second.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.
+        /// List notes for all records or for a specific record.This endpoint is temporarily rate limited to 10 requests per second.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new note for a given record.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.
+        /// Creates a new note for a given record.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes
             return new global::Soenneker.Attio.OpenApiClient.V2.Notes.NotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List notes for all records or for a specific record.This endpoint is temporarily rate limited to 10 requests per second.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.
+        /// List notes for all records or for a specific record.This endpoint is temporarily rate limited to 10 requests per second.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NotesRequestBuilderGetQueryParameters 

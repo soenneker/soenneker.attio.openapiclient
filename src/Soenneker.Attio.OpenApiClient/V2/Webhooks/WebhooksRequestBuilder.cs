@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
         {
         }
         /// <summary>
-        /// Get all of the webhooks in your workspace.Required scopes: `webhook:read`.
+        /// Get all of the webhooks in your workspace.Required scopes: `webhook:read`.Supported token levels: `workspace`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a webhook and associated subscriptions.Each combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.Required scopes: `webhook:read-write`.
+        /// Create a webhook and associated subscriptions.Each combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.Required scopes: `webhook:read-write`.Supported token levels: `workspace`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all of the webhooks in your workspace.Required scopes: `webhook:read`.
+        /// Get all of the webhooks in your workspace.Required scopes: `webhook:read`.Supported token levels: `workspace`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             return requestInfo;
         }
         /// <summary>
-        /// Create a webhook and associated subscriptions.Each combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.Required scopes: `webhook:read-write`.
+        /// Create a webhook and associated subscriptions.Each combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.Required scopes: `webhook:read-write`.Supported token levels: `workspace`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -142,7 +142,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             return new global::Soenneker.Attio.OpenApiClient.V2.Webhooks.WebhooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all of the webhooks in your workspace.Required scopes: `webhook:read`.
+        /// Get all of the webhooks in your workspace.Required scopes: `webhook:read`.Supported token levels: `workspace`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebhooksRequestBuilderGetQueryParameters 

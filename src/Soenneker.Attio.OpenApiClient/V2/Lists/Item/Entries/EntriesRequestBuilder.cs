@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries
         {
         }
         /// <summary>
-        /// Adds a record to a list as a new list entry. This endpoint will throw on conflicts of unique attributes. Multiple list entries are allowed for the same parent recordRequired scopes: `list_entry:read-write`, `list_configuration:read`.
+        /// Adds a record to a list as a new list entry. This endpoint will throw on conflicts of unique attributes. Multiple list entries are allowed for the same parent recordRequired scopes: `list_entry:read-write`, `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this endpoint to create or update a list entry for a given parent record. If an entry with the specified parent record is found, that entry will be updated. If no such entry is found, a new entry will be created instead. If there are multiple entries with the same parent record, this endpoint with return the &quot;MULTIPLE_MATCH_RESULTS&quot; error. When writing to multi-select attributes, all values will be either created or deleted as necessary to match the list of values supplied in the request body.Required scopes: `list_entry:read-write`, `list_configuration:read`.
+        /// Use this endpoint to create or update a list entry for a given parent record. If an entry with the specified parent record is found, that entry will be updated. If no such entry is found, a new entry will be created instead. If there are multiple entries with the same parent record, this endpoint with return the &quot;MULTIPLE_MATCH_RESULTS&quot; error. When writing to multi-select attributes, all values will be either created or deleted as necessary to match the list of values supplied in the request body.Required scopes: `list_entry:read-write`, `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a record to a list as a new list entry. This endpoint will throw on conflicts of unique attributes. Multiple list entries are allowed for the same parent recordRequired scopes: `list_entry:read-write`, `list_configuration:read`.
+        /// Adds a record to a list as a new list entry. This endpoint will throw on conflicts of unique attributes. Multiple list entries are allowed for the same parent recordRequired scopes: `list_entry:read-write`, `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -133,7 +133,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries
             return requestInfo;
         }
         /// <summary>
-        /// Use this endpoint to create or update a list entry for a given parent record. If an entry with the specified parent record is found, that entry will be updated. If no such entry is found, a new entry will be created instead. If there are multiple entries with the same parent record, this endpoint with return the &quot;MULTIPLE_MATCH_RESULTS&quot; error. When writing to multi-select attributes, all values will be either created or deleted as necessary to match the list of values supplied in the request body.Required scopes: `list_entry:read-write`, `list_configuration:read`.
+        /// Use this endpoint to create or update a list entry for a given parent record. If an entry with the specified parent record is found, that entry will be updated. If no such entry is found, a new entry will be created instead. If there are multiple entries with the same parent record, this endpoint with return the &quot;MULTIPLE_MATCH_RESULTS&quot; error. When writing to multi-select attributes, all values will be either created or deleted as necessary to match the list of values supplied in the request body.Required scopes: `list_entry:read-write`, `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

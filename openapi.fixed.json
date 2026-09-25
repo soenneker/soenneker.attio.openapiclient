@@ -22,7 +22,7 @@
           "Objects"
         ],
         "summary": "List objects",
-        "description": "Lists all system-defined and user-defined objects in your workspace.\n\nRequired scopes: \u0060object_configuration:read\u0060.",
+        "description": "Lists all system-defined and user-defined objects in your workspace.\n\nRequired scopes: \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2Objects",
         "responses": {
           "200": {
@@ -49,7 +49,7 @@
           "Objects"
         ],
         "summary": "Create an object",
-        "description": "Creates a new custom object in your workspace.\n\nRequired scopes: \u0060object_configuration:read-write\u0060.",
+        "description": "Creates a new custom object in your workspace.\n\nRequired scopes: \u0060object_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Objects",
         "requestBody": {
           "content": {
@@ -118,7 +118,7 @@
           "Objects"
         ],
         "summary": "Get an object",
-        "description": "Gets a single object by its \u0060object_id\u0060 or slug.\n\nRequired scopes: \u0060object_configuration:read\u0060.",
+        "description": "Gets a single object by its \u0060object_id\u0060 or slug.\n\nRequired scopes: \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsByObjectValue",
         "parameters": [
           {
@@ -167,7 +167,7 @@
           "Objects"
         ],
         "summary": "Update an object",
-        "description": "Updates a single object. The object to be updated is identified by its \u0060object_id\u0060.\n\nRequired scopes: \u0060object_configuration:read-write\u0060.",
+        "description": "Updates a single object. The object to be updated is identified by its \u0060object_id\u0060.\n\nRequired scopes: \u0060object_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsByObjectValue",
         "parameters": [
           {
@@ -256,7 +256,7 @@
           "Objects"
         ],
         "summary": "Delete an object",
-        "description": "Deletes a single object by its \u0060object_id\u0060 or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.\n\nThis endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.\n\nRequired scopes: \u0060object_configuration:read-write\u0060, \u0060record_permission:read-write\u0060.",
+        "description": "Deletes a single object by its \u0060object_id\u0060 or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.\n\nThis endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.\n\nRequired scopes: \u0060object_configuration:read-write\u0060, \u0060record_permission:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ObjectsByObjectValue",
         "parameters": [
           {
@@ -328,7 +328,7 @@
           "Objects"
         ],
         "summary": "List views for object",
-        "description": "Lists saved views for an object. Results are ordered by view ID (\u0060id.view_id\u0060 ascending).\n\nRequired scopes: \u0060object_configuration:read\u0060.",
+        "description": "Lists saved views for an object. Results are ordered by view ID (\u0060id.view_id\u0060 ascending).\n\nRequired scopes: \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsByObjectValueViews",
         "parameters": [
           {
@@ -410,7 +410,7 @@
           "Activities"
         ],
         "summary": "List activities",
-        "description": "Lists all system-defined and user-defined activities in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.",
+        "description": "Lists all system-defined and user-defined activities in your workspace.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2Activities",
         "parameters": [
           {
@@ -466,7 +466,7 @@
           "Activities"
         ],
         "summary": "Create an activity",
-        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Activities",
         "requestBody": {
           "content": {
@@ -531,7 +531,7 @@
           "Activities"
         ],
         "summary": "Get an activity",
-        "description": "Gets a single activity by its \u0060activity_id\u0060 or slug.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.",
+        "description": "Gets a single activity by its \u0060activity_id\u0060 or slug.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ActivitiesByActivity",
         "parameters": [
           {
@@ -586,7 +586,7 @@
           "Activities"
         ],
         "summary": "Update an activity",
-        "description": "Updates a single activity by its \u0060activity_id\u0060 or slug. The schema an activity extends is fixed after creation, so \u0060extends\u0060 cannot be changed.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.",
+        "description": "Updates a single activity by its \u0060activity_id\u0060 or slug. The schema an activity extends is fixed after creation, so \u0060extends\u0060 cannot be changed.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ActivitiesByActivity",
         "parameters": [
           {
@@ -681,7 +681,7 @@
           "Activities"
         ],
         "summary": "Delete an activity",
-        "description": "Deletes a single activity by its \u0060activity_id\u0060 or slug, along with all of its records. Archived activities can also be deleted.\n\nThis endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060, \u0060activity_record:read-write\u0060.",
+        "description": "Deletes a single activity by its \u0060activity_id\u0060 or slug, along with all of its records. Archived activities can also be deleted.\n\nThis endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060, \u0060activity_record:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ActivitiesByActivity",
         "parameters": [
           {
@@ -759,7 +759,7 @@
           "Activity records"
         ],
         "summary": "List activity records",
-        "description": "Lists activity records, with the option to filter and sort results.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Lists activity records, with the option to filter and sort results.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ActivitiesByActivityRecordsQuery",
         "parameters": [
           {
@@ -857,7 +857,7 @@
           "Activity records"
         ],
         "summary": "Create an activity record",
-        "description": "Creates a new activity record, for example one specific phone call.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Creates a new activity record, for example one specific phone call.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ActivitiesByActivityRecords",
         "parameters": [
           {
@@ -955,7 +955,7 @@
           "Activity records"
         ],
         "summary": "Upsert an activity record",
-        "description": "Use this endpoint to create or update an activity record. A matching attribute is used to search for existing activity records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the create activity record endpoint.\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Use this endpoint to create or update an activity record. A matching attribute is used to search for existing activity records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the create activity record endpoint.\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ActivitiesByActivityRecords",
         "parameters": [
           {
@@ -1065,7 +1065,7 @@
           "Activity records"
         ],
         "summary": "Get an activity record",
-        "description": "Gets a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Gets a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -1134,7 +1134,7 @@
           "Activity records"
         ],
         "summary": "Update an activity record (append multiselect values)",
-        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -1243,7 +1243,7 @@
           "Activity records"
         ],
         "summary": "Update an activity record (overwrite multiselect values)",
-        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Use this endpoint to update activity records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -1352,7 +1352,7 @@
           "Activity records"
         ],
         "summary": "Delete an activity record",
-        "description": "Deletes a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Deletes a single activity record by its \u0060record_id\u0060.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060activity_record:read-write\u0060, \u0060activity_configuration:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ActivitiesByActivityRecordsByRecordId",
         "parameters": [
           {
@@ -1433,7 +1433,7 @@
           "Attributes"
         ],
         "summary": "List attributes",
-        "description": "Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.",
+        "description": "Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ByTargetByIdentifierAttributes",
         "parameters": [
           {
@@ -1505,7 +1505,7 @@
           "Attributes"
         ],
         "summary": "Create an attribute",
-        "description": "Creates a new attribute on either an object or a list.\n\nFor record-reference attributes, you can optionally create a bidirectional relationship by providing a \u0060relationship\u0060 object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.\n\nTo create an attribute on an object, you must also have the \u0060object_configuration:read-write\u0060 scope.\n\nTo create an attribute on a list, you must also have the \u0060list_configuration:read-write\u0060 scope.",
+        "description": "Creates a new attribute on either an object or a list.\n\nFor record-reference attributes, you can optionally create a bidirectional relationship by providing a \u0060relationship\u0060 object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.\n\nTo create an attribute on an object, you must also have the \u0060object_configuration:read-write\u0060 scope.\n\nTo create an attribute on a list, you must also have the \u0060list_configuration:read-write\u0060 scope.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ByTargetByIdentifierAttributes",
         "parameters": [
           {
@@ -1602,7 +1602,7 @@
           "Attributes"
         ],
         "summary": "Get an attribute",
-        "description": "Gets information about a single attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.",
+        "description": "Gets information about a single attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ByTargetByIdentifierAttributesByAttribute",
         "parameters": [
           {
@@ -1667,7 +1667,7 @@
           "Attributes"
         ],
         "summary": "Update an attribute",
-        "description": "Updates a single attribute on a given object or list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.",
+        "description": "Updates a single attribute on a given object or list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ByTargetByIdentifierAttributesByAttribute",
         "parameters": [
           {
@@ -1764,7 +1764,7 @@
           "Attributes"
         ],
         "summary": "List select options",
-        "description": "Lists all select options for a particular attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.",
+        "description": "Lists all select options for a particular attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ByTargetByIdentifierAttributesByAttributeOptions",
         "parameters": [
           {
@@ -1838,7 +1838,7 @@
           "Attributes"
         ],
         "summary": "Create a select option",
-        "description": "Adds a select option to a select attribute on an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.",
+        "description": "Adds a select option to a select attribute on an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ByTargetByIdentifierAttributesByAttributeOptions",
         "parameters": [
           {
@@ -1945,7 +1945,7 @@
           "Attributes"
         ],
         "summary": "Update a select option",
-        "description": "Updates a select option on an attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.",
+        "description": "Updates a select option on an attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ByTargetByIdentifierAttributesByAttributeOptionsByOption",
         "parameters": [
           {
@@ -2062,7 +2062,7 @@
           "Attributes"
         ],
         "summary": "List statuses",
-        "description": "Lists all statuses for a particular status attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.",
+        "description": "Lists all statuses for a particular status attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ByTargetByIdentifierAttributesByAttributeStatuses",
         "parameters": [
           {
@@ -2137,7 +2137,7 @@
           "Attributes"
         ],
         "summary": "Create a status",
-        "description": "Add a new status to a status attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.",
+        "description": "Add a new status to a status attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ByTargetByIdentifierAttributesByAttributeStatuses",
         "parameters": [
           {
@@ -2244,7 +2244,7 @@
           "Attributes"
         ],
         "summary": "Update a status",
-        "description": "Update a status on an status attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.",
+        "description": "Update a status on an status attribute on either an object or a list.\n\nWhen \u0060target\u0060 is \u0060objects\u0060, the required scopes are \u0060object_configuration:read-write\u0060. When \u0060target\u0060 is \u0060lists\u0060, the required scopes are \u0060list_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ByTargetByIdentifierAttributesByAttributeStatusesByStatus",
         "parameters": [
           {
@@ -2361,7 +2361,7 @@
           "Records"
         ],
         "summary": "List records",
-        "description": "Lists people, company or other records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists people, company or other records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsByObjectValueRecordsQuery",
         "parameters": [
           {
@@ -2467,7 +2467,7 @@
           "Records"
         ],
         "summary": "Create a record",
-        "description": "Creates a new person, company or other record. This endpoint will throw on conflicts of unique attributes. If you would prefer to update records on conflicts, please use the [Upsert record endpoint](/rest-api/endpoint-reference/records/upsert-a-record) instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Creates a new person, company or other record. This endpoint will throw on conflicts of unique attributes. If you would prefer to update records on conflicts, please use the [Upsert record endpoint](/rest-api/endpoint-reference/records/upsert-a-record) instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsByObjectValueRecords",
         "parameters": [
           {
@@ -2557,7 +2557,7 @@
           "Records"
         ],
         "summary": "Upsert a record",
-        "description": "Use this endpoint to create or update people, companies and other records. A matching attribute is used to search for existing records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the [Create record endpoint](/rest-api/endpoint-reference/records/create-a-record).\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to create or update people, companies and other records. A matching attribute is used to search for existing records. If a record is found with the same value for the matching attribute, that record will be updated. If no record with the same value for the matching attribute is found, a new record will be created instead. If you would like to avoid matching, please use the [Create record endpoint](/rest-api/endpoint-reference/records/create-a-record).\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsByObjectValueRecords",
         "parameters": [
           {
@@ -2659,7 +2659,7 @@
           "Records"
         ],
         "summary": "Get a record",
-        "description": "Gets a single person, company or other record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets a single person, company or other record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsByObjectValueRecordsByRecordId",
         "parameters": [
           {
@@ -2720,7 +2720,7 @@
           "Records"
         ],
         "summary": "Update a record (append multiselect values)",
-        "description": "Use this endpoint to update people, companies, and other records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to update people, companies, and other records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsByObjectValueRecordsByRecordId",
         "parameters": [
           {
@@ -2820,7 +2820,7 @@
           "Records"
         ],
         "summary": "Update a record (overwrite multiselect values)",
-        "description": "Use this endpoint to update people, companies, and other records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to update people, companies, and other records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to append multiselect values without removing those that already exist.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsByObjectValueRecordsByRecordId",
         "parameters": [
           {
@@ -2920,7 +2920,7 @@
           "Records"
         ],
         "summary": "Delete a record",
-        "description": "Deletes a single record (e.g. a company or person) by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.",
+        "description": "Deletes a single record (e.g. a company or person) by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ObjectsByObjectValueRecordsByRecordId",
         "parameters": [
           {
@@ -2993,7 +2993,7 @@
           "Records"
         ],
         "summary": "Merge two records",
-        "description": "Merges two records of the same object together. Where both records have a value for the same attribute, the primary record\u0027s value takes precedence.\n\nMerging produces a **new** record, so the \u0060new_record_id\u0060 returned will match neither of the records supplied in the request. Both of the original records are marked as merged and can no longer be read or written.\n\nLarge merges are completed asynchronously. A \u0060200\u0060 response means the merged record is readable immediately. A \u0060202\u0060 response means the merge has been accepted but is still being applied, and reading the merged record will return a \u0060404\u0060 with the \u0060merge_in_progress\u0060 error code until it completes.\n\nThis endpoint is not idempotent. Because both original records are marked as merged, repeating the same request returns \u0060404\u0060.\n\nThis endpoint is rate limited to 5 requests per second.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Merges two records of the same object together. Where both records have a value for the same attribute, the primary record\u0027s value takes precedence.\n\nMerging produces a **new** record, so the \u0060new_record_id\u0060 returned will match neither of the records supplied in the request. Both of the original records are marked as merged and can no longer be read or written.\n\nLarge merges are completed asynchronously. A \u0060200\u0060 response means the merged record is readable immediately. A \u0060202\u0060 response means the merge has been accepted but is still being applied, and reading the merged record will return a \u0060404\u0060 with the \u0060merge_in_progress\u0060 error code until it completes.\n\nThis endpoint is not idempotent. Because both original records are marked as merged, repeating the same request returns \u0060404\u0060.\n\nThis endpoint is rate limited to 5 requests per second.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsByObjectValueRecordsMerge",
         "parameters": [
           {
@@ -3090,7 +3090,7 @@
           "Records"
         ],
         "summary": "List record attribute values",
-        "description": "Gets all values for a given attribute on a record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values cannot be queried on COMINT (Communication Intelligence) or enriched attributes and the endpoint will return a 400 error if this is attempted. Historic values are sorted from oldest to newest (by \u0060active_from\u0060). Some attributes are subject to billing status and will return an empty array of values if theworkspace being queried does not have the required billing flag enabled.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets all values for a given attribute on a record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values cannot be queried on COMINT (Communication Intelligence) or enriched attributes and the endpoint will return a 400 error if this is attempted. Historic values are sorted from oldest to newest (by \u0060active_from\u0060). Some attributes are subject to billing status and will return an empty array of values if theworkspace being queried does not have the required billing flag enabled.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -3199,7 +3199,7 @@
           "Records"
         ],
         "summary": "Write record attribute values",
-        "description": "Replaces the entire value history of a single attribute on a record, primarily to migrate historic data from an external source. Every value the attribute currently has is destroyed, including values not present in the request, and the supplied values are written with the \u0060active_from\u0060 and \u0060active_until\u0060 timestamps given.\n\nValues may be supplied in any order and gaps between intervals are allowed. For attributes that accept a single value, at most one value may be active at a time, so intervals may not overlap and at most one may have a \u0060null\u0060 \u0060active_until\u0060. At least one value is required.\n\nWebhooks and workflow triggers do not fire for these writes, so migrating history does not replay automations. Search indexes and caches are still updated, and formula attributes that depend on this attribute are still recalculated.\n\nValue history cannot be written for relationship attributes, formula attributes, enriched attributes, or immutable system attributes such as the entry\u0027s parent record.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Replaces the entire value history of a single attribute on a record, primarily to migrate historic data from an external source. Every value the attribute currently has is destroyed, including values not present in the request, and the supplied values are written with the \u0060active_from\u0060 and \u0060active_until\u0060 timestamps given.\n\nValues may be supplied in any order and gaps between intervals are allowed. For attributes that accept a single value, at most one value may be active at a time, so intervals may not overlap and at most one may have a \u0060null\u0060 \u0060active_until\u0060. At least one value is required.\n\nWebhooks and workflow triggers do not fire for these writes, so migrating history does not replay automations. Search indexes and caches are still updated, and formula attributes that depend on this attribute are still recalculated.\n\nValue history cannot be written for relationship attributes, formula attributes, enriched attributes, or immutable system attributes such as the entry\u0027s parent record.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -3307,7 +3307,7 @@
           "Records"
         ],
         "summary": "List record entries",
-        "description": "List all entries, across all lists, for which this record is the parent. The response includes metadata for each entry, including \u0060entry_id\u0060, \u0060list_id\u0060, and \u0060created_at\u0060, but does not include entry values. To retrieve the values, call [Get a list entry](/rest-api/endpoint-reference/entries/get-a-list-entry) separately for each entry.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this record is the parent. The response includes metadata for each entry, including \u0060entry_id\u0060, \u0060list_id\u0060, and \u0060created_at\u0060, but does not include entry values. To retrieve the values, call [Get a list entry](/rest-api/endpoint-reference/entries/get-a-list-entry) separately for each entry.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsByObjectValueRecordsByRecordIdEntries",
         "parameters": [
           {
@@ -3379,7 +3379,7 @@
           "Records"
         ],
         "summary": "Search records",
-        "description": "The search records endpoint provides a convenient way to fuzzy search for records across one or more objects.\nThe matching strategy employed in this endpoint follows the in-product strategy and will match names, domains, emails, phone numbers and social handles on people and companies, and labels on all other objects.\nPlease note, results returned from this endpoint are eventually consistent. For results which are guaranteed to be up to date, please use the record query endpoint instead.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "The search records endpoint provides a convenient way to fuzzy search for records across one or more objects.\nThe matching strategy employed in this endpoint follows the in-product strategy and will match names, domains, emails, phone numbers and social handles on people and companies, and labels on all other objects.\nPlease note, results returned from this endpoint are eventually consistent. For results which are guaranteed to be up to date, please use the record query endpoint instead.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsRecordsSearch",
         "requestBody": {
           "content": {
@@ -3434,7 +3434,7 @@
           "SQL"
         ],
         "summary": "Query SQL",
-        "description": "Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Sql",
         "requestBody": {
           "content": {
@@ -3489,7 +3489,7 @@
           "Lists"
         ],
         "summary": "List all lists",
-        "description": "List all lists that your access token has access to. lists are returned in the order that they are sorted in the sidebar.\n\nRequired scopes: \u0060list_configuration:read\u0060.",
+        "description": "List all lists that your access token has access to. lists are returned in the order that they are sorted in the sidebar.\n\nRequired scopes: \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2Lists",
         "responses": {
           "200": {
@@ -3516,7 +3516,7 @@
           "Lists"
         ],
         "summary": "Create a list",
-        "description": "Creates a new list.\n\nOnce you have your list, add attributes to it using the [Create attribute](/rest-api/endpoint-reference/attributes/create-an-attribute) API, and add records to it using the [Add records to list](/rest-api/endpoint-reference/entries/create-an-entry-add-record-to-list) API. \n\nNew lists must specify which records can be added with the \u0060parent_object\u0060 parameter which accepts either an object slug or an object ID. Permissions for the list are controlled with the \u0060workspace_access\u0060 and \u0060workspace_member_access\u0060 parameters.\n\nPlease note that new lists must have either \u0060workspace_access\u0060 set to \u0060\u0022full-access\u0022\u0060 or one or more element of \u0060workspace_member_access\u0060 with a \u0060\u0022full-access\u0022\u0060 level. It is also possible to receive a \u0060403\u0060 billing error if your workspace is not on a plan that supports either advanced workspace or workspace member-level access for lists.\n\nRequired scopes: \u0060list_configuration:read-write\u0060.",
+        "description": "Creates a new list.\n\nOnce you have your list, add attributes to it using the [Create attribute](/rest-api/endpoint-reference/attributes/create-an-attribute) API, and add records to it using the [Add records to list](/rest-api/endpoint-reference/entries/create-an-entry-add-record-to-list) API. \n\nNew lists must specify which records can be added with the \u0060parent_object\u0060 parameter which accepts either an object slug or an object ID. Permissions for the list are controlled with the \u0060workspace_access\u0060 and \u0060workspace_member_access\u0060 parameters.\n\nPlease note that new lists must have either \u0060workspace_access\u0060 set to \u0060\u0022full-access\u0022\u0060 or one or more element of \u0060workspace_member_access\u0060 with a \u0060\u0022full-access\u0022\u0060 level. It is also possible to receive a \u0060403\u0060 billing error if your workspace is not on a plan that supports either advanced workspace or workspace member-level access for lists.\n\nRequired scopes: \u0060list_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Lists",
         "requestBody": {
           "content": {
@@ -3595,7 +3595,7 @@
           "Lists"
         ],
         "summary": "Get a list",
-        "description": "Gets a single list in your workspace that your access token has access to.\n\nRequired scopes: \u0060list_configuration:read\u0060.",
+        "description": "Gets a single list in your workspace that your access token has access to.\n\nRequired scopes: \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ListsByList",
         "parameters": [
           {
@@ -3644,7 +3644,7 @@
           "Lists"
         ],
         "summary": "Update a list",
-        "description": "Updates an existing list. Permissions for the list are controlled with the \u0060workspace_access\u0060 and \u0060workspace_member_access\u0060 parameters. Please note that lists must have either \u0060workspace_access\u0060 set to \u0060\u0022full-access\u0022\u0060 or one or more element of \u0060workspace_member_access\u0060 with a \u0060\u0022full-access\u0022\u0060 level. It is also possible to receive a \u0060403\u0060 billing error if your workspace is not on a plan that supports either advanced workspace or workspace member level access for lists. Changing the parent object of a list is not possible through the API as it can have unintended side-effects that should be considered carefully. If you wish to carry out a parent object change you should do so through the UI.\n\nRequired scopes: \u0060list_configuration:read-write\u0060.",
+        "description": "Updates an existing list. Permissions for the list are controlled with the \u0060workspace_access\u0060 and \u0060workspace_member_access\u0060 parameters. Please note that lists must have either \u0060workspace_access\u0060 set to \u0060\u0022full-access\u0022\u0060 or one or more element of \u0060workspace_member_access\u0060 with a \u0060\u0022full-access\u0022\u0060 level. It is also possible to receive a \u0060403\u0060 billing error if your workspace is not on a plan that supports either advanced workspace or workspace member level access for lists. Changing the parent object of a list is not possible through the API as it can have unintended side-effects that should be considered carefully. If you wish to carry out a parent object change you should do so through the UI.\n\nRequired scopes: \u0060list_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ListsByList",
         "parameters": [
           {
@@ -3715,7 +3715,7 @@
           "Lists"
         ],
         "summary": "List views for list",
-        "description": "Lists saved views for a list. Results are ordered by view ID (\u0060id.view_id\u0060 ascending).\n\nRequired scopes: \u0060list_configuration:read\u0060.",
+        "description": "Lists saved views for a list. Results are ordered by view ID (\u0060id.view_id\u0060 ascending).\n\nRequired scopes: \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ListsByListViews",
         "parameters": [
           {
@@ -3797,7 +3797,7 @@
           "Entries"
         ],
         "summary": "List entries",
-        "description": "Lists entries in a given list, with the option to filter and sort results.\n\nRequired scopes: \u0060list_entry:read\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Lists entries in a given list, with the option to filter and sort results.\n\nRequired scopes: \u0060list_entry:read\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ListsByListEntriesQuery",
         "parameters": [
           {
@@ -3893,7 +3893,7 @@
           "Entries"
         ],
         "summary": "Create an entry (add record to list)",
-        "description": "Adds a record to a list as a new list entry. This endpoint will throw on conflicts of unique attributes. Multiple list entries are allowed for the same parent record\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Adds a record to a list as a new list entry. This endpoint will throw on conflicts of unique attributes. Multiple list entries are allowed for the same parent record\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ListsByListEntries",
         "parameters": [
           {
@@ -3973,7 +3973,7 @@
           "Entries"
         ],
         "summary": "Upsert a list entry by parent",
-        "description": "Use this endpoint to create or update a list entry for a given parent record. If an entry with the specified parent record is found, that entry will be updated. If no such entry is found, a new entry will be created instead. If there are multiple entries with the same parent record, this endpoint with return the \u0022MULTIPLE_MATCH_RESULTS\u0022 error. When writing to multi-select attributes, all values will be either created or deleted as necessary to match the list of values supplied in the request body.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Use this endpoint to create or update a list entry for a given parent record. If an entry with the specified parent record is found, that entry will be updated. If no such entry is found, a new entry will be created instead. If there are multiple entries with the same parent record, this endpoint with return the \u0022MULTIPLE_MATCH_RESULTS\u0022 error. When writing to multi-select attributes, all values will be either created or deleted as necessary to match the list of values supplied in the request body.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ListsByListEntries",
         "parameters": [
           {
@@ -4055,7 +4055,7 @@
           "Entries"
         ],
         "summary": "Get a list entry",
-        "description": "Gets a single list entry by its \u0060entry_id\u0060.\n\nRequired scopes: \u0060list_entry:read\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Gets a single list entry by its \u0060entry_id\u0060.\n\nRequired scopes: \u0060list_entry:read\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ListsByListEntriesByEntryId",
         "parameters": [
           {
@@ -4116,7 +4116,7 @@
           "Entries"
         ],
         "summary": "Update a list entry (append multiselect values)",
-        "description": "Use this endpoint to update list entries by \u0060entry_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Use this endpoint to update list entries by \u0060entry_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the \u0060PUT\u0060 endpoint to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ListsByListEntriesByEntryId",
         "parameters": [
           {
@@ -4206,7 +4206,7 @@
           "Entries"
         ],
         "summary": "Update a list entry (overwrite multiselect values)",
-        "description": "Use this endpoint to update list entries by \u0060entry_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to add multiselect attribute values without removing those value that already exist.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Use this endpoint to update list entries by \u0060entry_id\u0060. If the update payload includes multiselect attributes, the values supplied will overwrite/remove the list of values that already exist (if any). Use the \u0060PATCH\u0060 endpoint to add multiselect attribute values without removing those value that already exist.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ListsByListEntriesByEntryId",
         "parameters": [
           {
@@ -4296,7 +4296,7 @@
           "Entries"
         ],
         "summary": "Delete a list entry",
-        "description": "Deletes a single list entry by its \u0060entry_id\u0060.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Deletes a single list entry by its \u0060entry_id\u0060.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ListsByListEntriesByEntryId",
         "parameters": [
           {
@@ -4369,7 +4369,7 @@
           "Entries"
         ],
         "summary": "List attribute values for a list entry",
-        "description": "Gets all values for a given attribute on a list entry. This endpoint has the ability to return all historic values using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060list_entry:read\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Gets all values for a given attribute on a list entry. This endpoint has the ability to return all historic values using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060list_entry:read\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -4468,7 +4468,7 @@
           "Entries"
         ],
         "summary": "Write list entry attribute values",
-        "description": "Replaces the entire value history of a single attribute on a list entry, primarily to migrate historic data from an external source. Every value the attribute currently has is destroyed, including values not present in the request, and the supplied values are written with the \u0060active_from\u0060 and \u0060active_until\u0060 timestamps given.\n\nValues may be supplied in any order and gaps between intervals are allowed. For attributes that accept a single value, at most one value may be active at a time, so intervals may not overlap and at most one may have a \u0060null\u0060 \u0060active_until\u0060. At least one value is required.\n\nWebhooks and workflow triggers do not fire for these writes, so migrating history does not replay automations. Search indexes and caches are still updated, and formula attributes that depend on this attribute are still recalculated.\n\nValue history cannot be written for relationship attributes, formula attributes, enriched attributes, or immutable system attributes such as the entry\u0027s parent record.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.",
+        "description": "Replaces the entire value history of a single attribute on a list entry, primarily to migrate historic data from an external source. Every value the attribute currently has is destroyed, including values not present in the request, and the supplied values are written with the \u0060active_from\u0060 and \u0060active_until\u0060 timestamps given.\n\nValues may be supplied in any order and gaps between intervals are allowed. For attributes that accept a single value, at most one value may be active at a time, so intervals may not overlap and at most one may have a \u0060null\u0060 \u0060active_until\u0060. At least one value is required.\n\nWebhooks and workflow triggers do not fire for these writes, so migrating history does not replay automations. Search indexes and caches are still updated, and formula attributes that depend on this attribute are still recalculated.\n\nValue history cannot be written for relationship attributes, formula attributes, enriched attributes, or immutable system attributes such as the entry\u0027s parent record.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060list_entry:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -4576,7 +4576,7 @@
           "Workspace members"
         ],
         "summary": "List workspace members",
-        "description": "Lists all workspace members in the workspace.\n\nRequired scopes: \u0060user_management:read\u0060.",
+        "description": "Lists all workspace members in the workspace.\n\nRequired scopes: \u0060user_management:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2WorkspaceMembers",
         "responses": {
           "200": {
@@ -4605,7 +4605,7 @@
           "Workspace members"
         ],
         "summary": "Get a workspace member",
-        "description": "Gets a single workspace member by ID.\n\nRequired scopes: \u0060user_management:read\u0060.",
+        "description": "Gets a single workspace member by ID.\n\nRequired scopes: \u0060user_management:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2WorkspaceMembersByWorkspaceMemberId",
         "parameters": [
           {
@@ -4657,7 +4657,7 @@
           "Notes"
         ],
         "summary": "List notes",
-        "description": "List notes for all records or for a specific record.\n\nThis endpoint is temporarily rate limited to 10 requests per second.\n\nRequired scopes: \u0060note:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "List notes for all records or for a specific record.\n\nThis endpoint is temporarily rate limited to 10 requests per second.\n\nRequired scopes: \u0060note:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2Notes",
         "parameters": [
           {
@@ -4735,7 +4735,7 @@
           "Notes"
         ],
         "summary": "Create a note",
-        "description": "Creates a new note for a given record.\n\nRequired scopes: \u0060note:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Creates a new note for a given record.\n\nRequired scopes: \u0060note:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Notes",
         "requestBody": {
           "content": {
@@ -4796,7 +4796,7 @@
           "Notes"
         ],
         "summary": "Get a note",
-        "description": "Get a single note by ID.\n\nRequired scopes: \u0060note:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Get a single note by ID.\n\nRequired scopes: \u0060note:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2NotesByNoteId",
         "parameters": [
           {
@@ -4848,7 +4848,7 @@
           "Notes"
         ],
         "summary": "Update a note",
-        "description": "Updates an existing note\u0027s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing \u0060content\u0060 replaces the note\u0027s entire content. A note\u0027s parent record cannot be changed.\n\nRequired scopes: \u0060note:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Updates an existing note\u0027s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing \u0060content\u0060 replaces the note\u0027s entire content. A note\u0027s parent record cannot be changed.\n\nRequired scopes: \u0060note:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2NotesByNoteId",
         "parameters": [
           {
@@ -4920,7 +4920,7 @@
           "Notes"
         ],
         "summary": "Delete a note",
-        "description": "Delete a single note by ID.\n\nRequired scopes: \u0060note:read-write\u0060.",
+        "description": "Delete a single note by ID.\n\nRequired scopes: \u0060note:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2NotesByNoteId",
         "parameters": [
           {
@@ -4972,7 +4972,7 @@
           "Tasks"
         ],
         "summary": "List tasks",
-        "description": "List all tasks. Results are sorted by creation date, from oldest to newest.\n\nRequired scopes: \u0060task:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.",
+        "description": "List all tasks. Results are sorted by creation date, from oldest to newest.\n\nRequired scopes: \u0060task:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2Tasks",
         "parameters": [
           {
@@ -5072,7 +5072,7 @@
           "Tasks"
         ],
         "summary": "Create a task",
-        "description": "Creates a new task.\n\nAt present, tasks can only be created from plaintext without record reference formatting.\n\nRequired scopes: \u0060task:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.",
+        "description": "Creates a new task.\n\nAt present, tasks can only be created from plaintext without record reference formatting.\n\nRequired scopes: \u0060task:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Tasks",
         "requestBody": {
           "content": {
@@ -5134,7 +5134,7 @@
           "Tasks"
         ],
         "summary": "Get a task",
-        "description": "Get a single task by ID.\n\nRequired scopes: \u0060task:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.",
+        "description": "Get a single task by ID.\n\nRequired scopes: \u0060task:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2TasksByTaskId",
         "parameters": [
           {
@@ -5187,7 +5187,7 @@
           "Tasks"
         ],
         "summary": "Update a task",
-        "description": "Updates an existing task by \u0060task_id\u0060. At present, only the \u0060deadline_at\u0060, \u0060is_completed\u0060, \u0060linked_records\u0060, and \u0060assignees\u0060 fields can be updated.\n\nRequired scopes: \u0060task:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.",
+        "description": "Updates an existing task by \u0060task_id\u0060. At present, only the \u0060deadline_at\u0060, \u0060is_completed\u0060, \u0060linked_records\u0060, and \u0060assignees\u0060 fields can be updated.\n\nRequired scopes: \u0060task:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060user_management:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2TasksByTaskId",
         "parameters": [
           {
@@ -5260,7 +5260,7 @@
           "Tasks"
         ],
         "summary": "Delete a task",
-        "description": "Delete a task by ID.\n\nRequired scopes: \u0060task:read-write\u0060.",
+        "description": "Delete a task by ID.\n\nRequired scopes: \u0060task:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2TasksByTaskId",
         "parameters": [
           {
@@ -5312,7 +5312,7 @@
           "Threads"
         ],
         "summary": "List threads",
-        "description": "List threads of comments on a record or list entry.\n\nEach thread in the response includes at most \u006080\u0060 replies, starting with the oldest. When a thread holds more, its \u0060has_more_comments\u0060 is \u0060true\u0060; use [Get a thread and its comments](/rest-api/endpoint-reference/threads/get-a-thread-and-its-comments) to page through every comment in that thread.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
+        "description": "List threads of comments on a record or list entry.\n\nEach thread in the response includes at most \u006080\u0060 replies, starting with the oldest. When a thread holds more, its \u0060has_more_comments\u0060 is \u0060true\u0060; use [Get a thread and its comments](/rest-api/endpoint-reference/threads/get-a-thread-and-its-comments) to page through every comment in that thread.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2Threads",
         "parameters": [
           {
@@ -5399,7 +5399,7 @@
           "Threads"
         ],
         "summary": "Get a thread and its comments",
-        "description": "Get a thread and page through its comments, oldest first, starting with the comment that opened it.\n\nComments are paginated: at most \u0060250\u0060 are returned per request. Keep paginating for as long as a \u0060next_cursor\u0060 is returned.\n\nSupply \u0060created_after\u0060 to return only the comments created after a timestamp, which is useful when polling a thread for new replies. The comment that opened the thread is returned only when it also satisfies the filter.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
+        "description": "Get a thread and page through its comments, oldest first, starting with the comment that opened it.\n\nComments are paginated: at most \u0060250\u0060 are returned per request. Keep paginating for as long as a \u0060next_cursor\u0060 is returned.\n\nSupply \u0060created_after\u0060 to return only the comments created after a timestamp, which is useful when polling a thread for new replies. The comment that opened the thread is returned only when it also satisfies the filter.\n\nTo view threads on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view threads on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ThreadsByThreadId",
         "parameters": [
           {
@@ -5482,7 +5482,7 @@
           "Comments"
         ],
         "summary": "Create a comment",
-        "description": "Creates a new comment related to an existing thread, record or entry.\n\nTo create comments on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo create comments on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read-write\u0060.",
+        "description": "Creates a new comment related to an existing thread, record or entry.\n\nTo create comments on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo create comments on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Comments",
         "requestBody": {
           "content": {
@@ -5531,7 +5531,7 @@
           "Comments"
         ],
         "summary": "Get a comment",
-        "description": "Get a single comment by ID.\n\nTo view comments on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view comments on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.",
+        "description": "Get a single comment by ID.\n\nTo view comments on records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo view comments on list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nRequired scopes: \u0060comment:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2CommentsByCommentId",
         "parameters": [
           {
@@ -5581,7 +5581,7 @@
           "Comments"
         ],
         "summary": "Delete a comment",
-        "description": "Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.\n\nA workspace-level access token may delete any comment. A user-level access token may only delete comments authored by the member it acts for.\n\nRequired scopes: \u0060comment:read-write\u0060.",
+        "description": "Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.\n\nA workspace-level access token may delete any comment. A user-level access token may only delete comments authored by the member it acts for.\n\nRequired scopes: \u0060comment:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2CommentsByCommentId",
         "parameters": [
           {
@@ -5643,7 +5643,7 @@
           "Emails"
         ],
         "summary": "List emails",
-        "description": "Lists email metadata from your workspace\u0027s connected mailboxes. Email content is never returned.\n\nAt least one of \u0060linked_object\u0060 with \u0060linked_record_ids\u0060, \u0060participants\u0060, or \u0060domain\u0060 must be supplied; there is no way to list every email. When several are supplied they are combined with OR: emails matching any of the filters are returned.\n\n\u003E **Requesting access:** this endpoint is enabled per workspace and per app while it is in alpha. Contact [support@attio.com](mailto:support@attio.com) to request access.\n\n**Things to know**\n\n- Filters that identify your own workspace are ignored. This covers a member\u0027s or invited member\u0027s address, one of your mailboxes, and any of their domains. If every filter you supply is ignored, an empty page is returned.\n- A filter that names a protected recipient in your workspace is rejected rather than ignored. This covers an address or a domain you supply directly. A record whose address or domain is a protected recipient is ignored instead, in the same way as the filters above.\n- Emails from a mailbox shared with your workspace as metadata only are returned without a subject line. An email is left out entirely when it has no participant you may see \u2014 that is, when every participant outside your workspace is a protected recipient.\n- An email that reached more than one of your mailboxes is returned once, and \u0060id.mailbox_id\u0060 identifies whichever copy was readable.\n- \u0060linked_records\u0060 is derived when you make the request rather than stored, so it reflects your records as they are now.\n- Emails are returned newest first, ordered by when they were sent. Each request scans a bounded number of emails, so a page can hold fewer emails than \u0060limit\u0060, or none at all, while more are still available. Keep paginating for as long as a \u0060next_cursor\u0060 is returned, rather than stopping on a short page.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060email:read\u0060, \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists email metadata from your workspace\u0027s connected mailboxes. Email content is never returned.\n\nAt least one of \u0060linked_object\u0060 with \u0060linked_record_ids\u0060, \u0060participants\u0060, or \u0060domain\u0060 must be supplied; there is no way to list every email. When several are supplied they are combined with OR: emails matching any of the filters are returned.\n\n\u003E **Requesting access:** this endpoint is enabled per workspace and per app while it is in alpha. Contact [support@attio.com](mailto:support@attio.com) to request access.\n\n**Things to know**\n\n- Filters that identify your own workspace are ignored. This covers a member\u0027s or invited member\u0027s address, one of your mailboxes, and any of their domains. If every filter you supply is ignored, an empty page is returned.\n- A filter that names a protected recipient in your workspace is rejected rather than ignored. This covers an address or a domain you supply directly. A record whose address or domain is a protected recipient is ignored instead, in the same way as the filters above.\n- Emails from a mailbox shared with your workspace as metadata only are returned without a subject line. An email is left out entirely when it has no participant you may see \u2014 that is, when every participant outside your workspace is a protected recipient.\n- An email that reached more than one of your mailboxes is returned once, and \u0060id.mailbox_id\u0060 identifies whichever copy was readable.\n- \u0060linked_records\u0060 is derived when you make the request rather than stored, so it reflects your records as they are now.\n- Emails are returned newest first, ordered by when they were sent. Each request scans a bounded number of emails, so a page can hold fewer emails than \u0060limit\u0060, or none at all, while more are still available. Keep paginating for as long as a \u0060next_cursor\u0060 is returned, rather than stopping on a short page.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060email:read\u0060, \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "GetV2Emails",
         "parameters": [
           {
@@ -5769,7 +5769,7 @@
           "Sequences"
         ],
         "summary": "Add emails to the unsubscribe list",
-        "description": "Adds email addresses to the workspace\u0027s sequence unsubscribe list. Email addresses on the unsubscribe list cannot be enrolled in any sequence, and any of their active sequence runs are exited. Email addresses that are already on the unsubscribe list are ignored, so this endpoint is safe to retry.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060sequence_unsubscribe:read-write\u0060.",
+        "description": "Adds email addresses to the workspace\u0027s sequence unsubscribe list. Email addresses on the unsubscribe list cannot be enrolled in any sequence, and any of their active sequence runs are exited. Email addresses that are already on the unsubscribe list are ignored, so this endpoint is safe to retry.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060sequence_unsubscribe:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2SequencesUnsubscribedEmails",
         "requestBody": {
           "content": {
@@ -5823,7 +5823,7 @@
           "Meetings"
         ],
         "summary": "List meetings",
-        "description": "Lists all meetings in the workspace using a deterministic sort order. When both the \u0060participants\u0060 and \u0060linked_record_id\u0060 filters are supplied, they are combined with OR: meetings that match either filter are returned.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Lists all meetings in the workspace using a deterministic sort order. When both the \u0060participants\u0060 and \u0060linked_record_id\u0060 filters are supplied, they are combined with OR: meetings that match either filter are returned.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "GetV2Meetings",
         "parameters": [
           {
@@ -5943,7 +5943,7 @@
           "Meetings"
         ],
         "summary": "Create a meeting",
-        "description": "Creates a new meeting. [See here](/rest-api/guides/syncing-meetings) for guidance on avoiding duplicate meetings.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.",
+        "description": "Creates a new meeting. [See here](/rest-api/guides/syncing-meetings) for guidance on avoiding duplicate meetings.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Meetings",
         "requestBody": {
           "content": {
@@ -5998,7 +5998,7 @@
           "Meetings"
         ],
         "summary": "Get a meeting",
-        "description": "Get a single meeting by ID.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Get a single meeting by ID.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2MeetingsByMeetingId",
         "parameters": [
           {
@@ -6054,7 +6054,7 @@
           "Meetings"
         ],
         "summary": "Update a meeting (append linked records)",
-        "description": "Links records to a meeting. The records supplied are added to the meeting\u0027s existing linked records, and records which are already linked are ignored. Use the \u0060PUT\u0060 endpoint to replace or remove linked records.\n\nNo other meeting fields can be updated. Attio automatically links the meeting participants\u0027 companies to the meeting; this behavior is asynchronous.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.",
+        "description": "Links records to a meeting. The records supplied are added to the meeting\u0027s existing linked records, and records which are already linked are ignored. Use the \u0060PUT\u0060 endpoint to replace or remove linked records.\n\nNo other meeting fields can be updated. Attio automatically links the meeting participants\u0027 companies to the meeting; this behavior is asynchronous.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2MeetingsByMeetingId",
         "parameters": [
           {
@@ -6130,7 +6130,7 @@
           "Meetings"
         ],
         "summary": "Update a meeting (overwrite linked records)",
-        "description": "Replaces a meeting\u0027s linked records with the records supplied. Any record which is currently linked and is not in the request is unlinked, including records which Attio linked automatically from the meeting\u0027s participants. Passing an empty array unlinks every record. Use the \u0060PATCH\u0060 endpoint to add linked records without removing the records which already exist.\n\nNo other meeting fields can be updated. Attio automatically links the meeting participants\u0027 companies to the meeting; this behavior is asynchronous, so a company which is linked after this request completes is not removed by it.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.",
+        "description": "Replaces a meeting\u0027s linked records with the records supplied. Any record which is currently linked and is not in the request is unlinked, including records which Attio linked automatically from the meeting\u0027s participants. Passing an empty array unlinks every record. Use the \u0060PATCH\u0060 endpoint to add linked records without removing the records which already exist.\n\nNo other meeting fields can be updated. Attio automatically links the meeting participants\u0027 companies to the meeting; this behavior is asynchronous, so a company which is linked after this request completes is not removed by it.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2MeetingsByMeetingId",
         "parameters": [
           {
@@ -6206,7 +6206,7 @@
           "Meetings"
         ],
         "summary": "Delete a meeting",
-        "description": "Deletes a single meeting by ID.\n\nMeetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060.",
+        "description": "Deletes a single meeting by ID.\n\nMeetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2MeetingsByMeetingId",
         "parameters": [
           {
@@ -6273,7 +6273,7 @@
           "Call recordings"
         ],
         "summary": "List call recordings",
-        "description": "List all call recordings for a meeting.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read\u0060.",
+        "description": "List all call recordings for a meeting.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2MeetingsByMeetingIdCallRecordings",
         "parameters": [
           {
@@ -6338,7 +6338,7 @@
           "Call recordings"
         ],
         "summary": "Create call recording",
-        "description": "Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.\n\nA \u0060transcript\u0060 should always be provided \u2014 it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. \u0060video_url\u0060 is optional, and a transcript-only call recording (with no video) is fully supported.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read-write\u0060.",
+        "description": "Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.\n\nA \u0060transcript\u0060 should always be provided \u2014 it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. \u0060video_url\u0060 is optional, and a transcript-only call recording (with no video) is fully supported.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2MeetingsByMeetingIdCallRecordings",
         "parameters": [
           {
@@ -6426,7 +6426,7 @@
           "Call recordings"
         ],
         "summary": "Get call recording",
-        "description": "Get a single call recording by ID.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read\u0060.",
+        "description": "Get a single call recording by ID.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingId",
         "parameters": [
           {
@@ -6493,7 +6493,7 @@
           "Call recordings"
         ],
         "summary": "Delete call recording",
-        "description": "Deletes the specified call recording. This will remove the call recording and all associated data.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read-write\u0060.",
+        "description": "Deletes the specified call recording. This will remove the call recording and all associated data.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2MeetingsByMeetingIdCallRecordingsByCallRecordingId",
         "parameters": [
           {
@@ -6562,7 +6562,7 @@
           "Transcripts"
         ],
         "summary": "Deprecated: Get call transcript",
-        "description": "Deprecated: prefer using \u0060GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id\u0060 to get the transcript for a call recording.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read\u0060.",
+        "description": "Deprecated: prefer using \u0060GET /v2/meetings/:meeting_id/call_recordings/:call_recording_id\u0060 to get the transcript for a call recording.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript",
         "parameters": [
           {
@@ -6631,7 +6631,7 @@
           "Files"
         ],
         "summary": "List files",
-        "description": "Lists internal files, externally connected files and folders for a specific record. Use the \u0060object\u0060 and \u0060record_id\u0060 query parameters to specify the record. Optional query parameters may be provided to filter results by storage provider or parent folder.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060file:read\u0060.",
+        "description": "Lists internal files, externally connected files and folders for a specific record. Use the \u0060object\u0060 and \u0060record_id\u0060 query parameters to specify the record. Optional query parameters may be provided to filter results by storage provider or parent folder.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060file:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2Files",
         "parameters": [
           {
@@ -6723,7 +6723,7 @@
           "Files"
         ],
         "summary": "Create a folder",
-        "description": "Creates a native folder entry or a connected file/folder entry on an object record.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Creates a native folder entry or a connected file/folder entry on an object record.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Files",
         "requestBody": {
           "content": {
@@ -6769,7 +6769,7 @@
           "Files"
         ],
         "summary": "Upload a file",
-        "description": "Uploads a file to native Attio storage for a record. Send multipart/form-data with a single binary field named \u0060file\u0060 together with the body fields \u0060object\u0060, \u0060record_id\u0060, and optional \u0060parent_folder_id\u0060. Maximum file size is 50 MB.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Uploads a file to native Attio storage for a record. Send multipart/form-data with a single binary field named \u0060file\u0060 together with the body fields \u0060object\u0060, \u0060record_id\u0060, and optional \u0060parent_folder_id\u0060. Maximum file size is 50 MB.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2FilesUpload",
         "requestBody": {
           "content": {
@@ -6825,7 +6825,7 @@
           "Files"
         ],
         "summary": "Get a file",
-        "description": "Get a single file entry by ID.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Get a single file entry by ID.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2FilesByFileId",
         "parameters": [
           {
@@ -6882,7 +6882,7 @@
           "Files"
         ],
         "summary": "Delete a file",
-        "description": "Delete a single file by ID. Deleting a folder will delete all of its descendants.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.",
+        "description": "Delete a single file by ID. Deleting a folder will delete all of its descendants.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2FilesByFileId",
         "parameters": [
           {
@@ -6941,7 +6941,7 @@
           "Files"
         ],
         "summary": "Download a file",
-        "description": "Downloads a file by redirecting to a signed URL.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060file:read\u0060.",
+        "description": "Downloads a file by redirecting to a signed URL.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060, \u0060file:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2FilesByFileIdDownload",
         "parameters": [
           {
@@ -6988,7 +6988,7 @@
           "Webhooks"
         ],
         "summary": "List webhooks",
-        "description": "Get all of the webhooks in your workspace.\n\nRequired scopes: \u0060webhook:read\u0060.",
+        "description": "Get all of the webhooks in your workspace.\n\nRequired scopes: \u0060webhook:read\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "GetV2Webhooks",
         "parameters": [
           {
@@ -7035,7 +7035,7 @@
           "Webhooks"
         ],
         "summary": "Create a webhook",
-        "description": "Create a webhook and associated subscriptions.\n\nEach combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.\n\nRequired scopes: \u0060webhook:read-write\u0060.",
+        "description": "Create a webhook and associated subscriptions.\n\nEach combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.\n\nRequired scopes: \u0060webhook:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "PostV2Webhooks",
         "requestBody": {
           "content": {
@@ -7094,7 +7094,7 @@
           "Webhooks"
         ],
         "summary": "Get a webhook",
-        "description": "Get a single webhook.\n\nRequired scopes: \u0060webhook:read\u0060.",
+        "description": "Get a single webhook.\n\nRequired scopes: \u0060webhook:read\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "GetV2WebhooksByWebhookId",
         "parameters": [
           {
@@ -7144,7 +7144,7 @@
           "Webhooks"
         ],
         "summary": "Update a webhook",
-        "description": "Update a webhook and associated subscriptions.\n\nEach combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409. Changing the target URL re-checks the webhook\u0027s existing subscriptions against the new URL.\n\nRequired scopes: \u0060webhook:read-write\u0060.",
+        "description": "Update a webhook and associated subscriptions.\n\nEach combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409. Changing the target URL re-checks the webhook\u0027s existing subscriptions against the new URL.\n\nRequired scopes: \u0060webhook:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "PatchV2WebhooksByWebhookId",
         "parameters": [
           {
@@ -7214,7 +7214,7 @@
           "Webhooks"
         ],
         "summary": "Delete a webhook",
-        "description": "Delete a webhook by ID.\n\nRequired scopes: \u0060webhook:read-write\u0060.",
+        "description": "Delete a webhook by ID.\n\nRequired scopes: \u0060webhook:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060.",
         "operationId": "DeleteV2WebhooksByWebhookId",
         "parameters": [
           {
@@ -7289,6 +7289,7 @@
                       "sub": "14beef7a-99f7-4534-a87e-70b564330a4c",
                       "aud": "3b9d6c14-72af-4e08-8d5b-0a7f2e91c463",
                       "iss": "attio.com",
+                      "token_level": "workspace",
                       "authorized_by_workspace_member_id": "50cf242c-7fa3-4cad-87d0-75b1af71c57b",
                       "workspace_id": "14beef7a-99f7-4534-a87e-70b564330a4c",
                       "workspace_name": "Salarya",
@@ -7308,6 +7309,27 @@
                       "sub": "14beef7a-99f7-4534-a87e-70b564330a4c",
                       "aud": "1e4a3f7c-8d29-4b51-9e0f-6c3a5d8b21e7",
                       "iss": "attio.com",
+                      "token_level": "workspace",
+                      "authorized_by_workspace_member_id": "50cf242c-7fa3-4cad-87d0-75b1af71c57b",
+                      "workspace_id": "14beef7a-99f7-4534-a87e-70b564330a4c",
+                      "workspace_name": "Salarya",
+                      "workspace_slug": "salarya",
+                      "workspace_logo_url": null
+                    }
+                  },
+                  "User-level app access token": {
+                    "summary": "An OAuth access token granted by a single workspace member",
+                    "value": {
+                      "active": true,
+                      "scope": "note:read-write record_permission:read-write",
+                      "client_id": "1e4a3f7c-8d29-4b51-9e0f-6c3a5d8b21e7",
+                      "token_type": "Bearer",
+                      "exp": null,
+                      "iat": 1672585200,
+                      "sub": "14beef7a-99f7-4534-a87e-70b564330a4c",
+                      "aud": "1e4a3f7c-8d29-4b51-9e0f-6c3a5d8b21e7",
+                      "iss": "attio.com",
+                      "token_level": "user",
                       "authorized_by_workspace_member_id": "50cf242c-7fa3-4cad-87d0-75b1af71c57b",
                       "workspace_id": "14beef7a-99f7-4534-a87e-70b564330a4c",
                       "workspace_name": "Salarya",
@@ -7334,7 +7356,7 @@
           "People"
         ],
         "summary": "List person records ",
-        "description": "Lists person records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists person records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsPeopleRecordsQuery",
         "requestBody": {
           "content": {
@@ -7394,7 +7416,7 @@
           "People"
         ],
         "summary": "Create a person Record",
-        "description": "Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like \u0060email_addresses\u0060. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the \u0060avatar_url\u0060 attribute cannot currently be set via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like \u0060email_addresses\u0060. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the \u0060avatar_url\u0060 attribute cannot currently be set via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsPeopleRecords",
         "requestBody": {
           "content": {
@@ -7472,7 +7494,7 @@
           "People"
         ],
         "summary": "Upsert a person record",
-        "description": "Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the \u0060email_addresses\u0060 attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.\n\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to create or update person records, using a unique attribute to search for existing People (for example the \u0060email_addresses\u0060 attribute). If a person is found with the same value for the matching attribute, that person will be updated. If no person with the same value for the matching attribute is found, a new person will be created instead. If you would like to avoid matching, please use the Create person endpoint.\n\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsPeopleRecords",
         "parameters": [
           {
@@ -7564,7 +7586,7 @@
           "People"
         ],
         "summary": "Get a person Record",
-        "description": "Gets a single person record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets a single person record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsPeopleRecordsByRecordId",
         "parameters": [
           {
@@ -7614,7 +7636,7 @@
           "People"
         ],
         "summary": "Update a person Record",
-        "description": "Use this endpoint to update person records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert person endpoint](/reference/put_v2-objects-people-records) to overwrite or remove multiselect attribute values. Please note, the \u0060avatar_url\u0060 attribute cannot currently be updated via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to update person records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert person endpoint](/reference/put_v2-objects-people-records) to overwrite or remove multiselect attribute values. Please note, the \u0060avatar_url\u0060 attribute cannot currently be updated via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsPeopleRecordsByRecordId",
         "parameters": [
           {
@@ -7704,7 +7726,7 @@
           "People"
         ],
         "summary": "Delete a person Record",
-        "description": "Deletes a single person record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.",
+        "description": "Deletes a single person record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ObjectsPeopleRecordsByRecordId",
         "parameters": [
           {
@@ -7766,7 +7788,7 @@
           "People"
         ],
         "summary": "List person record attribute values",
-        "description": "Gets all values for a given attribute on a person record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values cannot be queried on COMINT (Communication Intelligence) or enriched attributes and the endpoint will return a 400 error if this is attempted. Historic values are sorted from oldest to newest (by \u0060active_from\u0060). Some attributes are subject to billing status and will return an empty array of values if theworkspace being queried does not have the required billing flag enabled.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets all values for a given attribute on a person record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values cannot be queried on COMINT (Communication Intelligence) or enriched attributes and the endpoint will return a 400 error if this is attempted. Historic values are sorted from oldest to newest (by \u0060active_from\u0060). Some attributes are subject to billing status and will return an empty array of values if theworkspace being queried does not have the required billing flag enabled.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsPeopleRecordsByRecordIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -7866,7 +7888,7 @@
           "People"
         ],
         "summary": "List person record entries",
-        "description": "List all entries, across all lists, for which this person record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this person record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsPeopleRecordsByRecordIdEntries",
         "parameters": [
           {
@@ -7927,7 +7949,7 @@
           "Companies"
         ],
         "summary": "List company records",
-        "description": "Lists company records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists company records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsCompaniesRecordsQuery",
         "requestBody": {
           "content": {
@@ -7987,7 +8009,7 @@
           "Companies"
         ],
         "summary": "Create a company record",
-        "description": "Creates a new company record. This endpoint will throw on conflicts of unique attributes, like \u0060domains\u0060. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead. Please note, the \u0060logo_url\u0060 attribute cannot currently be set via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Creates a new company record. This endpoint will throw on conflicts of unique attributes, like \u0060domains\u0060. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead. Please note, the \u0060logo_url\u0060 attribute cannot currently be set via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsCompaniesRecords",
         "requestBody": {
           "content": {
@@ -8065,7 +8087,7 @@
           "Companies"
         ],
         "summary": "Upsert a company record",
-        "description": "Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the \u0060domains\u0060 attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.\n\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the \u0060domains\u0060 attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.\n\n\nIf the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsCompaniesRecords",
         "parameters": [
           {
@@ -8157,7 +8179,7 @@
           "Companies"
         ],
         "summary": "Get a company record",
-        "description": "Gets a single company record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets a single company record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsCompaniesRecordsByRecordId",
         "parameters": [
           {
@@ -8207,7 +8229,7 @@
           "Companies"
         ],
         "summary": "Update a company record",
-        "description": "Use this endpoint to update company records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values. Please note, the \u0060logo_url\u0060 attribute cannot currently be updated via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to update company records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values. Please note, the \u0060logo_url\u0060 attribute cannot currently be updated via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsCompaniesRecordsByRecordId",
         "parameters": [
           {
@@ -8297,7 +8319,7 @@
           "Companies"
         ],
         "summary": "Delete a company record",
-        "description": "Deletes a single company record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.",
+        "description": "Deletes a single company record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ObjectsCompaniesRecordsByRecordId",
         "parameters": [
           {
@@ -8359,7 +8381,7 @@
           "Companies"
         ],
         "summary": "List company record attribute values",
-        "description": "Gets all values for a given attribute on a company record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values cannot be queried on COMINT (Communication Intelligence) or enriched attributes and the endpoint will return a 400 error if this is attempted. Historic values are sorted from oldest to newest (by \u0060active_from\u0060). Some attributes are subject to billing status and will return an empty array of values if theworkspace being queried does not have the required billing flag enabled.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets all values for a given attribute on a company record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values cannot be queried on COMINT (Communication Intelligence) or enriched attributes and the endpoint will return a 400 error if this is attempted. Historic values are sorted from oldest to newest (by \u0060active_from\u0060). Some attributes are subject to billing status and will return an empty array of values if theworkspace being queried does not have the required billing flag enabled.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -8459,7 +8481,7 @@
           "Companies"
         ],
         "summary": "List company record entries",
-        "description": "List all entries, across all lists, for which this company record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this company record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsCompaniesRecordsByRecordIdEntries",
         "parameters": [
           {
@@ -8520,7 +8542,7 @@
           "Users"
         ],
         "summary": "List user records",
-        "description": "Lists user records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists user records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsUsersRecordsQuery",
         "requestBody": {
           "content": {
@@ -8580,7 +8602,7 @@
           "Users"
         ],
         "summary": "Create a user record",
-        "description": "Creates a new user record. This endpoint will throw on conflicts of unique attributes, like \u0060primary_email_address\u0060. If you would prefer to update user records on conflicts, please use the Assert user record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Creates a new user record. This endpoint will throw on conflicts of unique attributes, like \u0060primary_email_address\u0060. If you would prefer to update user records on conflicts, please use the Assert user record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsUsersRecords",
         "requestBody": {
           "content": {
@@ -8658,7 +8680,7 @@
           "Users"
         ],
         "summary": "Upsert a user record",
-        "description": "Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the \u0060primary_email_address\u0060 attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to create or update user records, using a unique attribute to search for existing users (for example the \u0060primary_email_address\u0060 attribute). If a user is found with the same value for the matching attribute, that user will be updated, otherwise a new user will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsUsersRecords",
         "parameters": [
           {
@@ -8750,7 +8772,7 @@
           "Users"
         ],
         "summary": "Get a user record",
-        "description": "Gets a single user record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets a single user record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsUsersRecordsByRecordId",
         "parameters": [
           {
@@ -8800,7 +8822,7 @@
           "Users"
         ],
         "summary": "Update a user Record",
-        "description": "Use this endpoint to update user records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert user endpoint](/rest-api/endpoint-reference/users/upsert-a-user-record) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to update user records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert user endpoint](/rest-api/endpoint-reference/users/upsert-a-user-record) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsUsersRecordsByRecordId",
         "parameters": [
           {
@@ -8890,7 +8912,7 @@
           "Users"
         ],
         "summary": "Delete a user record",
-        "description": "Deletes a single user record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.",
+        "description": "Deletes a single user record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ObjectsUsersRecordsByRecordId",
         "parameters": [
           {
@@ -8952,7 +8974,7 @@
           "Users"
         ],
         "summary": "List user record attribute values",
-        "description": "Gets all values for a given attribute on a user record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets all values for a given attribute on a user record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -9052,7 +9074,7 @@
           "Users"
         ],
         "summary": "List user record entries",
-        "description": "List all entries, across all lists, for which this user record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this user record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsUsersRecordsByRecordIdEntries",
         "parameters": [
           {
@@ -9113,7 +9135,7 @@
           "Deals"
         ],
         "summary": "Upsert a deal record",
-        "description": "Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to create or update deal records, using a unique attribute to search for existing deals. By default, deals do not have a unique attribute, so you should add your own attribute with a unique constraint to use this API. If a deal is found with the same value for the matching attribute, that deal will be updated, otherwise a new deal will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsDealsRecords",
         "parameters": [
           {
@@ -9203,7 +9225,7 @@
           "Deals"
         ],
         "summary": "Create a deal record",
-        "description": "Creates a new deal record. This endpoint will throw on conflicts of unique attributes, if defined. If you would prefer to update deal records on conflicts, please use the Assert deal record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Creates a new deal record. This endpoint will throw on conflicts of unique attributes, if defined. If you would prefer to update deal records on conflicts, please use the Assert deal record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsDealsRecords",
         "requestBody": {
           "content": {
@@ -9283,7 +9305,7 @@
           "Deals"
         ],
         "summary": "Delete a deal record",
-        "description": "Deletes a single deal record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.",
+        "description": "Deletes a single deal record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ObjectsDealsRecordsByRecordId",
         "parameters": [
           {
@@ -9343,7 +9365,7 @@
           "Deals"
         ],
         "summary": "Get a deal record",
-        "description": "Gets a single deal record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets a single deal record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsDealsRecordsByRecordId",
         "parameters": [
           {
@@ -9393,7 +9415,7 @@
           "Deals"
         ],
         "summary": "Update a deal record",
-        "description": "Use this endpoint to update deal records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert deal endpoint](/rest-api/endpoint-reference/standard-objects/deals/upsert-a-deal-record) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to update deal records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert deal endpoint](/rest-api/endpoint-reference/standard-objects/deals/upsert-a-deal-record) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsDealsRecordsByRecordId",
         "parameters": [
           {
@@ -9485,7 +9507,7 @@
           "Deals"
         ],
         "summary": "List deal record attribute values",
-        "description": "Gets all values for a given attribute on a deal record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets all values for a given attribute on a deal record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsDealsRecordsByRecordIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -9585,7 +9607,7 @@
           "Deals"
         ],
         "summary": "List deal record entries",
-        "description": "List all entries, across all lists, for which this deal record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this deal record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsDealsRecordsByRecordIdEntries",
         "parameters": [
           {
@@ -9646,7 +9668,7 @@
           "Deals"
         ],
         "summary": "List deal records",
-        "description": "Lists deal records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists deal records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsDealsRecordsQuery",
         "requestBody": {
           "content": {
@@ -9706,7 +9728,7 @@
           "Workspaces"
         ],
         "summary": "Upsert a workspace record",
-        "description": "Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the \u0060workspace_id\u0060 attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to create or update workspace records, using a unique attribute to search for existing workspaces (for example the \u0060workspace_id\u0060 attribute). If a workspace is found with the same value for the matching attribute, that workspace will be updated, otherwise a new workspace will be created instead. If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PutV2ObjectsWorkspacesRecords",
         "parameters": [
           {
@@ -9796,7 +9818,7 @@
           "Workspaces"
         ],
         "summary": "Create a workspace record",
-        "description": "Creates a new workspace record. This endpoint will throw on conflicts of unique attributes, like \u0060workspace_id\u0060. If you would prefer to update workspace records on conflicts, please use the Assert workspace record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Creates a new workspace record. This endpoint will throw on conflicts of unique attributes, like \u0060workspace_id\u0060. If you would prefer to update workspace records on conflicts, please use the Assert workspace record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsWorkspacesRecords",
         "requestBody": {
           "content": {
@@ -9876,7 +9898,7 @@
           "Workspaces"
         ],
         "summary": "Delete a workspace record",
-        "description": "Deletes a single workspace record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.",
+        "description": "Deletes a single workspace record by ID.\n\nRequired scopes: \u0060object_configuration:read\u0060, \u0060record_permission:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "DeleteV2ObjectsWorkspacesRecordsByRecordId",
         "parameters": [
           {
@@ -9936,7 +9958,7 @@
           "Workspaces"
         ],
         "summary": "Get a workspace record",
-        "description": "Gets a single workspace record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets a single workspace record by its \u0060record_id\u0060.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsWorkspacesRecordsByRecordId",
         "parameters": [
           {
@@ -9986,7 +10008,7 @@
           "Workspaces"
         ],
         "summary": "Update a workspace Record",
-        "description": "Use this endpoint to update workspace records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert workspace endpoint](/rest-api/endpoint-reference/standard-objects/workspaces/upsert-a-workspace-record) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Use this endpoint to update workspace records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert workspace endpoint](/rest-api/endpoint-reference/standard-objects/workspaces/upsert-a-workspace-record) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsWorkspacesRecordsByRecordId",
         "parameters": [
           {
@@ -10078,7 +10100,7 @@
           "Workspaces"
         ],
         "summary": "List workspace record attribute values",
-        "description": "Gets all values for a given attribute on a workspace record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Gets all values for a given attribute on a workspace record. Historic values can be queried using the \u0060show_historic\u0060 query param. Historic values are sorted from oldest to newest (by \u0060active_from\u0060).\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsWorkspacesRecordsByRecordIdAttributesByAttributeValues",
         "parameters": [
           {
@@ -10178,7 +10200,7 @@
           "Workspaces"
         ],
         "summary": "List workspace record entries",
-        "description": "List all entries, across all lists, for which this workspace record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.",
+        "description": "List all entries, across all lists, for which this workspace record is the parent.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060, \u0060list_entry:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "GetV2ObjectsWorkspacesRecordsByRecordIdEntries",
         "parameters": [
           {
@@ -10239,7 +10261,7 @@
           "Workspaces"
         ],
         "summary": "List workspace records",
-        "description": "Lists workspace records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.",
+        "description": "Lists workspace records, with the option to filter and sort results.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsWorkspacesRecordsQuery",
         "requestBody": {
           "content": {
@@ -19808,6 +19830,9 @@
           },
           "iss": {
             "$ref": "#/components/schemas/AttioComIss"
+          },
+          "token_level": {
+            "$ref": "#/components/schemas/GetV2Self200ResponseTokenLevel"
           },
           "authorized_by_workspace_member_id": {
             "type": "string",
@@ -82131,6 +82156,29 @@
             {
               "value": "attio.com",
               "name": "AttioCom"
+            }
+          ]
+        }
+      },
+      "GetV2Self200ResponseTokenLevel": {
+        "enum": [
+          "workspace",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the token acts for the whole workspace or for a single workspace member.",
+        "x-ms-enum": {
+          "name": "GetV2Self200ResponseTokenLevel",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "workspace",
+              "name": "Workspace"
+            },
+            {
+              "value": "user",
+              "name": "User"
             }
           ]
         }

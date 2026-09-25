@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
         {
         }
         /// <summary>
-        /// Deletes a single object by its `object_id` or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.Required scopes: `object_configuration:read-write`, `record_permission:read-write`.
+        /// Deletes a single object by its `object_id` or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.Required scopes: `object_configuration:read-write`, `record_permission:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsByObjectValue200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.
+        /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValue200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValue200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValue200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.
+        /// Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +127,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsByObjectValue200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a single object by its `object_id` or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.Required scopes: `object_configuration:read-write`, `record_permission:read-write`.
+        /// Deletes a single object by its `object_id` or slug, along with all of its records. Only custom objects can be deleted; system objects, such as people and companies, cannot.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.Required scopes: `object_configuration:read-write`, `record_permission:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +146,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return requestInfo;
         }
         /// <summary>
-        /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.
+        /// Gets a single object by its `object_id` or slug.Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.
+        /// Updates a single object. The object to be updated is identified by its `object_id`.Required scopes: `object_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

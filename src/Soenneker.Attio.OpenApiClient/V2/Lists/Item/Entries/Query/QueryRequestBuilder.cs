@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Query
         {
         }
         /// <summary>
-        /// Lists entries in a given list, with the option to filter and sort results.Required scopes: `list_entry:read`, `list_configuration:read`.
+        /// Lists entries in a given list, with the option to filter and sort results.Required scopes: `list_entry:read`, `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntriesQuery200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Query
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntriesQuery200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntriesQuery200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists entries in a given list, with the option to filter and sort results.Required scopes: `list_entry:read`, `list_configuration:read`.
+        /// Lists entries in a given list, with the option to filter and sort results.Required scopes: `list_entry:read`, `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

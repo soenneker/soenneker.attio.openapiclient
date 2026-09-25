@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments
         {
         }
         /// <summary>
-        /// Creates a new comment related to an existing thread, record or entry.To create comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To create comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read-write`.
+        /// Creates a new comment related to an existing thread, record or entry.To create comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To create comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Comments200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Comments200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Comments200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new comment related to an existing thread, record or entry.To create comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To create comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read-write`.
+        /// Creates a new comment related to an existing thread, record or entry.To create comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To create comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
         {
         }
         /// <summary>
-        /// Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.
+        /// Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.
+        /// Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.
+        /// Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +115,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.
+        /// Creates a new attribute on either an object or a list.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +146,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
             return new global::Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.AttributesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.
+        /// Lists all attributes defined on a specific object or list. Attributes are returned in the order that they are sorted by in the UI.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttributesRequestBuilderGetQueryParameters 

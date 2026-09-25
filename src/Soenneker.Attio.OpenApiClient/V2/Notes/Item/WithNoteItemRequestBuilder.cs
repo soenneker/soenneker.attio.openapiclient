@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
         {
         }
         /// <summary>
-        /// Delete a single note by ID.Required scopes: `note:read-write`.
+        /// Delete a single note by ID.Required scopes: `note:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2NotesByNoteId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2NotesByNoteId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2NotesByNoteId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.
+        /// Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2NotesByNoteId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing note&apos;s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing `content` replaces the note&apos;s entire content. A note&apos;s parent record cannot be changed.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.
+        /// Updates an existing note&apos;s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing `content` replaces the note&apos;s entire content. A note&apos;s parent record cannot be changed.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2NotesByNoteId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a single note by ID.Required scopes: `note:read-write`.
+        /// Delete a single note by ID.Required scopes: `note:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.
+        /// Get a single note by ID.Required scopes: `note:read`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Notes.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing note&apos;s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing `content` replaces the note&apos;s entire content. A note&apos;s parent record cannot be changed.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.
+        /// Updates an existing note&apos;s title and/or content. Only the fields you provide are changed, and any field you omit is left untouched. Providing `content` replaces the note&apos;s entire content. A note&apos;s parent record cannot be changed.Required scopes: `note:read-write`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

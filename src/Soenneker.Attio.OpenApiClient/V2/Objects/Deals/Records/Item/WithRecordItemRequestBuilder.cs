@@ -46,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item
         {
         }
         /// <summary>
-        /// Deletes a single deal record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.
+        /// Deletes a single deal record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsDealsRecordsByRecordId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsDealsRecordsByRecordId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ObjectsDealsRecordsByRecordId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a single deal record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.
+        /// Gets a single deal record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this endpoint to update deal records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert deal endpoint](/rest-api/endpoint-reference/standard-objects/deals/upsert-a-deal-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to update deal records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert deal endpoint](/rest-api/endpoint-reference/standard-objects/deals/upsert-a-deal-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +125,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a single deal record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.
+        /// Deletes a single deal record by ID.Required scopes: `object_configuration:read`, `record_permission:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// Gets a single deal record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.
+        /// Gets a single deal record by its `record_id`.Required scopes: `record_permission:read`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +163,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// Use this endpoint to update deal records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert deal endpoint](/rest-api/endpoint-reference/standard-objects/deals/upsert-a-deal-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to update deal records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert deal endpoint](/rest-api/endpoint-reference/standard-objects/deals/upsert-a-deal-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

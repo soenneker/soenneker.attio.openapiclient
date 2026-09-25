@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records
         {
         }
         /// <summary>
-        /// Creates a new company record. This endpoint will throw on conflicts of unique attributes, like `domains`. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead. Please note, the `logo_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Creates a new company record. This endpoint will throw on conflicts of unique attributes, like `domains`. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead. Please note, the `logo_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the `domains` attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the `domains` attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +115,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new company record. This endpoint will throw on conflicts of unique attributes, like `domains`. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead. Please note, the `logo_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Creates a new company record. This endpoint will throw on conflicts of unique attributes, like `domains`. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead. Please note, the `logo_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -137,7 +137,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records
             return requestInfo;
         }
         /// <summary>
-        /// Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the `domains` attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the `domains` attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -168,7 +168,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records
             return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records.RecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the `domains` attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.
+        /// Use this endpoint to create or update company records, using a unique attribute to search for existing companies (for example, the `domains` attribute). If a company is found with the same value for the matching attribute, that company will be updated. If no company with the same value for the matching attribute is found, a new company will be created instead. If you would like to avoid matching, please use the Create company endpoint.If the matching attribute is a multiselect attribute, new values will be added and existing values will not be deleted. For any other multiselect attribute, all values will be either created or deleted as necessary to match the list of supplied values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordsRequestBuilderPutQueryParameters 

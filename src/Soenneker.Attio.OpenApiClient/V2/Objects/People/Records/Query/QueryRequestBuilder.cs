@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records.Query
         {
         }
         /// <summary>
-        /// Lists person records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.
+        /// Lists person records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records.Query
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecordsQuery200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists person records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.
+        /// Lists person records, with the option to filter and sort results.Required scopes: `record_permission:read`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

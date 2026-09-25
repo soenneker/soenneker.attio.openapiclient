@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Options
         {
         }
         /// <summary>
-        /// Lists all select options for a particular attribute on either an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.
+        /// Lists all select options for a particular attribute on either an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttributeOptions200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Options
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttributeOptions200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttributeOptions200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a select option to a select attribute on an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read-write`. When `target` is `lists`, the required scopes are `list_configuration:read-write`.
+        /// Adds a select option to a select attribute on an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read-write`. When `target` is `lists`, the required scopes are `list_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeOptions200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Options
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeOptions200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeOptions200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all select options for a particular attribute on either an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.
+        /// Lists all select options for a particular attribute on either an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Options
             return requestInfo;
         }
         /// <summary>
-        /// Adds a select option to a select attribute on an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read-write`. When `target` is `lists`, the required scopes are `list_configuration:read-write`.
+        /// Adds a select option to a select attribute on an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read-write`. When `target` is `lists`, the required scopes are `list_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +151,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Options
             return new global::Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Options.OptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all select options for a particular attribute on either an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.
+        /// Lists all select options for a particular attribute on either an object or a list.When `target` is `objects`, the required scopes are `object_configuration:read`. When `target` is `lists`, the required scopes are `list_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OptionsRequestBuilderGetQueryParameters 

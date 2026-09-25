@@ -40,7 +40,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
         {
         }
         /// <summary>
-        /// Deletes a single activity by its `activity_id` or slug, along with all of its records. Archived activities can also be deleted.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`, `activity_record:read-write`.
+        /// Deletes a single activity by its `activity_id` or slug, along with all of its records. Archived activities can also be deleted.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`, `activity_record:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a single activity by its `activity_id` or slug.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.
+        /// Gets a single activity by its `activity_id` or slug.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ActivitiesByActivity200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ActivitiesByActivity200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ActivitiesByActivity200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a single activity by its `activity_id` or slug. The schema an activity extends is fixed after creation, so `extends` cannot be changed.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.
+        /// Updates a single activity by its `activity_id` or slug. The schema an activity extends is fixed after creation, so `extends` cannot be changed.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +121,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a single activity by its `activity_id` or slug, along with all of its records. Archived activities can also be deleted.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`, `activity_record:read-write`.
+        /// Deletes a single activity by its `activity_id` or slug, along with all of its records. Archived activities can also be deleted.This endpoint should be used with caution as it has the potential to remove a large amount of potentially valuable data.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`, `activity_record:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
             return requestInfo;
         }
         /// <summary>
-        /// Gets a single activity by its `activity_id` or slug.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.
+        /// Gets a single activity by its `activity_id` or slug.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a single activity by its `activity_id` or slug. The schema an activity extends is fixed after creation, so `extends` cannot be changed.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.
+        /// Updates a single activity by its `activity_id` or slug. The schema an activity extends is fixed after creation, so `extends` cannot be changed.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

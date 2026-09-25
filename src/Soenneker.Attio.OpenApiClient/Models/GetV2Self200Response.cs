@@ -50,6 +50,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #endif
         /// <summary>Since Bearer tokens grant Workspace-level permissions, this property contains the workspace_id.</summary>
         public Guid? Sub { get; set; }
+        /// <summary>Whether the token acts for the whole workspace or for a single workspace member.</summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseTokenLevel? TokenLevel { get; set; }
         /// <summary>The type of token, always Bearer.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType? TokenType { get; set; }
         /// <summary>The ID of the workspace the token is scoped to.</summary>
@@ -112,6 +114,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
                 { "iss", n => { Iss = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttioComIss>(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "sub", n => { Sub = n.GetGuidValue(); } },
+                { "token_level", n => { TokenLevel = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseTokenLevel>(); } },
                 { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType>(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
                 { "workspace_logo_url", n => { WorkspaceLogoUrl = n.GetStringValue(); } },
@@ -135,6 +138,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttioComIss>("iss", Iss);
             writer.WriteStringValue("scope", Scope);
             writer.WriteGuidValue("sub", Sub);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseTokenLevel>("token_level", TokenLevel);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType>("token_type", TokenType);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteStringValue("workspace_logo_url", WorkspaceLogoUrl);

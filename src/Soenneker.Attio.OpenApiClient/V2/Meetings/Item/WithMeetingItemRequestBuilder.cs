@@ -40,7 +40,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
         {
         }
         /// <summary>
-        /// Deletes a single meeting by ID.Meetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`.
+        /// Deletes a single meeting by ID.Meetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a single meeting by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `record_permission:read`.
+        /// Get a single meeting by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Links records to a meeting. The records supplied are added to the meeting&apos;s existing linked records, and records which are already linked are ignored. Use the `PUT` endpoint to replace or remove linked records.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.
+        /// Links records to a meeting. The records supplied are added to the meeting&apos;s existing linked records, and records which are already linked are ignored. Use the `PUT` endpoint to replace or remove linked records.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2MeetingsByMeetingId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +115,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2MeetingsByMeetingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2MeetingsByMeetingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replaces a meeting&apos;s linked records with the records supplied. Any record which is currently linked and is not in the request is unlinked, including records which Attio linked automatically from the meeting&apos;s participants. Passing an empty array unlinks every record. Use the `PATCH` endpoint to add linked records without removing the records which already exist.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous, so a company which is linked after this request completes is not removed by it.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.
+        /// Replaces a meeting&apos;s linked records with the records supplied. Any record which is currently linked and is not in the request is unlinked, including records which Attio linked automatically from the meeting&apos;s participants. Passing an empty array unlinks every record. Use the `PATCH` endpoint to add linked records without removing the records which already exist.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous, so a company which is linked after this request completes is not removed by it.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2MeetingsByMeetingId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -142,7 +142,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2MeetingsByMeetingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2MeetingsByMeetingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a single meeting by ID.Meetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`.
+        /// Deletes a single meeting by ID.Meetings created by calendar sync cannot be deleted through the API. Delete the underlying calendar event, or disconnect the calendar, instead.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a single meeting by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `record_permission:read`.
+        /// Get a single meeting by ID.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             return requestInfo;
         }
         /// <summary>
-        /// Links records to a meeting. The records supplied are added to the meeting&apos;s existing linked records, and records which are already linked are ignored. Use the `PUT` endpoint to replace or remove linked records.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.
+        /// Links records to a meeting. The records supplied are added to the meeting&apos;s existing linked records, and records which are already linked are ignored. Use the `PUT` endpoint to replace or remove linked records.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -202,7 +202,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             return requestInfo;
         }
         /// <summary>
-        /// Replaces a meeting&apos;s linked records with the records supplied. Any record which is currently linked and is not in the request is unlinked, including records which Attio linked automatically from the meeting&apos;s participants. Passing an empty array unlinks every record. Use the `PATCH` endpoint to add linked records without removing the records which already exist.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous, so a company which is linked after this request completes is not removed by it.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.
+        /// Replaces a meeting&apos;s linked records with the records supplied. Any record which is currently linked and is not in the request is unlinked, including records which Attio linked automatically from the meeting&apos;s participants. Passing an empty array unlinks every record. Use the `PATCH` endpoint to add linked records without removing the records which already exist.No other meeting fields can be updated. Attio automatically links the meeting participants&apos; companies to the meeting; this behavior is asynchronous, so a company which is linked after this request completes is not removed by it.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read-write`, `record_permission:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

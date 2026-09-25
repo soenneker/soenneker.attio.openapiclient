@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
         {
         }
         /// <summary>
-        /// Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.A workspace-level access token may delete any comment. A user-level access token may only delete comments authored by the member it acts for.Required scopes: `comment:read-write`.
+        /// Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.A workspace-level access token may delete any comment. A user-level access token may only delete comments authored by the member it acts for.Required scopes: `comment:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.DeleteV2CommentsByCommentId200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2CommentsByCommentId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2CommentsByCommentId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
+        /// Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2CommentsByCommentId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2CommentsByCommentId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2CommentsByCommentId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.A workspace-level access token may delete any comment. A user-level access token may only delete comments authored by the member it acts for.Required scopes: `comment:read-write`.
+        /// Deletes a comment by ID. If deleting a comment at the head of a thread, all messages in the thread are also deleted.A workspace-level access token may delete any comment. A user-level access token may only delete comments authored by the member it acts for.Required scopes: `comment:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Comments.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.
+        /// Get a single comment by ID.To view comments on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view comments on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
         {
         }
         /// <summary>
-        /// Lists all system-defined and user-defined activities in your workspace.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.
+        /// Lists all system-defined and user-defined activities in your workspace.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.
+        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all system-defined and user-defined activities in your workspace.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.
+        /// Lists all system-defined and user-defined activities in your workspace.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.
+        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -142,7 +142,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
             return new global::Soenneker.Attio.OpenApiClient.V2.Activities.ActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all system-defined and user-defined activities in your workspace.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.
+        /// Lists all system-defined and user-defined activities in your workspace.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `activity_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivitiesRequestBuilderGetQueryParameters 

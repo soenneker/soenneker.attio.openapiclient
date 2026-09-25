@@ -83,7 +83,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects
         {
         }
         /// <summary>
-        /// Lists all system-defined and user-defined objects in your workspace.Required scopes: `object_configuration:read`.
+        /// Lists all system-defined and user-defined objects in your workspace.Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Objects200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Objects200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Objects200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new custom object in your workspace.Required scopes: `object_configuration:read-write`.
+        /// Creates a new custom object in your workspace.Required scopes: `object_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -130,7 +130,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all system-defined and user-defined objects in your workspace.Required scopes: `object_configuration:read`.
+        /// Lists all system-defined and user-defined objects in your workspace.Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new custom object in your workspace.Required scopes: `object_configuration:read-write`.
+        /// Creates a new custom object in your workspace.Required scopes: `object_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
