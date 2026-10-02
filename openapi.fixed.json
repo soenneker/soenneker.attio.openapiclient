@@ -3434,7 +3434,7 @@
           "SQL"
         ],
         "summary": "Query SQL",
-        "description": "Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.\n\nThis endpoint is rate limited to 2 requests per second.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Sql",
         "requestBody": {
           "content": {
@@ -6769,7 +6769,7 @@
           "Files"
         ],
         "summary": "Upload a file",
-        "description": "Uploads a file to native Attio storage for a record. Send multipart/form-data with a single binary field named \u0060file\u0060 together with the body fields \u0060object\u0060, \u0060record_id\u0060, and optional \u0060parent_folder_id\u0060. Maximum file size is 50 MB.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Uploads a file to native Attio storage for a record. Send multipart/form-data with a single binary field named \u0060file\u0060 together with the body fields \u0060object\u0060, \u0060record_id\u0060, and optional \u0060parent_folder_id\u0060. Maximum file size is 50 MB.\n\nThis endpoint is rate limited to 1 request per second.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060file:read-write\u0060, \u0060object_configuration:read\u0060, \u0060record_permission:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2FilesUpload",
         "requestBody": {
           "content": {
