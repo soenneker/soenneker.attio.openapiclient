@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCode : IComposedTypeWrapper, IParsable
@@ -17,6 +17,16 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1? PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2"/></summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2? PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3? PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4? PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5? PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6? PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7? PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,6 +43,26 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2 patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2Value)
             {
                 result.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2 = patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3 patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3Value)
+            {
+                result.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3 = patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4 patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4Value)
+            {
+                result.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4 = patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5 patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5Value)
+            {
+                result.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5 = patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6 patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6Value)
+            {
+                result.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6 = patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7>() is global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7 patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7Value)
+            {
+                result.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7 = patchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7Value;
             }
             return result;
         }
@@ -58,6 +88,26 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2 != null)
             {
                 writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2>(null, PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf2);
+            }
+            else if(PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3>(null, PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf3);
+            }
+            else if(PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4>(null, PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf4);
+            }
+            else if(PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5>(null, PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf5);
+            }
+            else if(PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6>(null, PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf6);
+            }
+            else if(PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7>(null, PatchV2ActivitiesByActivityRecordsByRecordId400ResponseCodeAnyOf7);
             }
         }
     }

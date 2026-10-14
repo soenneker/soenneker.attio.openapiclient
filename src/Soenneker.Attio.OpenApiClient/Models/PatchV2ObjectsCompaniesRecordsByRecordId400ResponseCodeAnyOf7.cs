@@ -5,12 +5,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ConcurrentWriteConflictCode
+    public enum PatchV2ObjectsCompaniesRecordsByRecordId400ResponseCodeAnyOf7
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "concurrent_write_conflict")]
+        [EnumMember(Value = "limit_reached")]
         #pragma warning disable CS1591
-        ConcurrentWriteConflict,
+        LimitReached,
         #pragma warning restore CS1591
     }
 }

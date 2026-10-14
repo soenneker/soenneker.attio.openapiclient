@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf3"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf4"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf5"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf6"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostV2ObjectsDealsRecords400ResponseCode : IComposedTypeWrapper, IParsable
@@ -17,6 +17,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf1? PostV2ObjectsDealsRecords400ResponseCodeAnyOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2"/></summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2? PostV2ObjectsDealsRecords400ResponseCodeAnyOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf3"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf3? PostV2ObjectsDealsRecords400ResponseCodeAnyOf3 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf4"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf4? PostV2ObjectsDealsRecords400ResponseCodeAnyOf4 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf5"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf5? PostV2ObjectsDealsRecords400ResponseCodeAnyOf5 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf6"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf6? PostV2ObjectsDealsRecords400ResponseCodeAnyOf6 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,6 +41,22 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2>() is global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2 postV2ObjectsDealsRecords400ResponseCodeAnyOf2Value)
             {
                 result.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2 = postV2ObjectsDealsRecords400ResponseCodeAnyOf2Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf3>() is global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf3 postV2ObjectsDealsRecords400ResponseCodeAnyOf3Value)
+            {
+                result.PostV2ObjectsDealsRecords400ResponseCodeAnyOf3 = postV2ObjectsDealsRecords400ResponseCodeAnyOf3Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf4>() is global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf4 postV2ObjectsDealsRecords400ResponseCodeAnyOf4Value)
+            {
+                result.PostV2ObjectsDealsRecords400ResponseCodeAnyOf4 = postV2ObjectsDealsRecords400ResponseCodeAnyOf4Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf5>() is global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf5 postV2ObjectsDealsRecords400ResponseCodeAnyOf5Value)
+            {
+                result.PostV2ObjectsDealsRecords400ResponseCodeAnyOf5 = postV2ObjectsDealsRecords400ResponseCodeAnyOf5Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf6>() is global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf6 postV2ObjectsDealsRecords400ResponseCodeAnyOf6Value)
+            {
+                result.PostV2ObjectsDealsRecords400ResponseCodeAnyOf6 = postV2ObjectsDealsRecords400ResponseCodeAnyOf6Value;
             }
             return result;
         }
@@ -58,6 +82,22 @@ namespace Soenneker.Attio.OpenApiClient.Models
             else if(PostV2ObjectsDealsRecords400ResponseCodeAnyOf2 != null)
             {
                 writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf2>(null, PostV2ObjectsDealsRecords400ResponseCodeAnyOf2);
+            }
+            else if(PostV2ObjectsDealsRecords400ResponseCodeAnyOf3 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf3>(null, PostV2ObjectsDealsRecords400ResponseCodeAnyOf3);
+            }
+            else if(PostV2ObjectsDealsRecords400ResponseCodeAnyOf4 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf4>(null, PostV2ObjectsDealsRecords400ResponseCodeAnyOf4);
+            }
+            else if(PostV2ObjectsDealsRecords400ResponseCodeAnyOf5 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf5>(null, PostV2ObjectsDealsRecords400ResponseCodeAnyOf5);
+            }
+            else if(PostV2ObjectsDealsRecords400ResponseCodeAnyOf6 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords400ResponseCodeAnyOf6>(null, PostV2ObjectsDealsRecords400ResponseCodeAnyOf6);
             }
         }
     }

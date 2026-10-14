@@ -14,7 +14,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>In addition to referencing records directly by record ID, you may also reference by a matching attribute of your choice. For example, if you want to add a reference to the person record with email &quot;alice@website.com&quot;, you should pass a value with `target_object` set to `&quot;people&quot;` and `email_addresses` set to `[{email_address:&quot;alice@website.com&quot;}]`. The key should be the slug or ID of the matching attribute you would like to use and the value should be an array containing a single value of the appropriate attribute type (as specified below). Matching on multiple values is not currently supported. Matching attributes must be unique. This process is similar to how you use the `matching_attribute` query param in Attio&apos;s [assert endpoints](/rest-api/endpoint-reference/records/assert-a-record).</summary>
+        /// <summary>In addition to referencing records directly by record ID, you may also reference by a matching attribute of your choice. For example, if you want to add a reference to the person record with email &quot;alice@website.com&quot;, you should pass a value with `target_object` set to `&quot;people&quot;` and `email_addresses` set to `[{email_address:&quot;alice@website.com&quot;}]`. The key should be the slug or ID of the matching attribute you would like to use and the value should be an array containing a single value of the appropriate attribute type (as specified below). Matching on multiple values is not currently supported. The matching attribute does not have to be unique, but a value that matches no record or more than one record is rejected. We recommend a unique attribute, such as a domain, an email address or an ID from your own system. This process is similar to how you use the `matching_attribute` query param in Attio&apos;s [assert endpoints](/rest-api/endpoint-reference/records/assert-a-record).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemSlugOrIdOfMatchingAttributeItem>? SlugOrIdOfMatchingAttribute { get; set; }
@@ -32,6 +32,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #endif
         /// <summary>A UUID to identify the referenced record.</summary>
         public Guid? TargetRecordId { get; set; }
+        /// <summary>References a record by a matching attribute, and optionally creates that record when nothing matches. Use this instead of `target_record_id` when you only know an attribute value, such as an email address or a domain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemTargetRecordReference? TargetRecordReference { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemTargetRecordReference TargetRecordReference { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItem"/> and sets the default values.
         /// </summary>
@@ -60,6 +68,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
                 { "[slug_or_id_of_matching_attribute]", n => { SlugOrIdOfMatchingAttribute = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemSlugOrIdOfMatchingAttributeItem>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemSlugOrIdOfMatchingAttributeItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "target_object", n => { TargetObject = n.GetStringValue(); } },
                 { "target_record_id", n => { TargetRecordId = n.GetGuidValue(); } },
+                { "target_record_reference", n => { TargetRecordReference = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemTargetRecordReference>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemTargetRecordReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,6 +81,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemSlugOrIdOfMatchingAttributeItem>("[slug_or_id_of_matching_attribute]", SlugOrIdOfMatchingAttribute);
             writer.WriteStringValue("target_object", TargetObject);
             writer.WriteGuidValue("target_record_id", TargetRecordId);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordIdRequestDataValuesTeamItemTargetRecordReference>("target_record_reference", TargetRecordReference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
