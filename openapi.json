@@ -41698,8 +41698,280 @@
                 "properties": {
                   "sql": {
                     "type": "string",
-                    "description": "The SQL query to be executed.",
-                    "example": "SELECT * FROM companies WHERE companies.name = \u0027Fundstack\u0027"
+                    "description": "The SQL query to be executed. Use \u0060$name\u0060 placeholders to reference values from \u0060parameters\u0060 instead of inlining them into the query.",
+                    "example": "SELECT * FROM companies WHERE (name = $name OR name = ANY($names)) AND created_at \u003E= $since"
+                  },
+                  "parameters": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "null"
+                              ],
+                              "description": "The type of the parameter."
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "boolean"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "boolean",
+                              "example": true
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "integer"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "integer",
+                              "minimum": -9007199254740991,
+                              "maximum": 9007199254740991,
+                              "description": "An integer between -(2^53 - 1) and 2^53 - 1.",
+                              "example": 100
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "double"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "number",
+                              "example": 3.14
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "string"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "string",
+                              "example": "Fundstack"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "timestamp"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "An ISO 8601 timestamp with a time zone, either \u0060Z\u0060 or an offset such as \u0060\u002B02:00\u0060 or \u0060\u002B0200\u0060, e.g. \u00602023-01-01T15:00:00.123456Z\u0060. Seconds and fractional seconds are optional. Truncated to microseconds.",
+                              "example": "2023-01-01T15:00:00.000000000Z"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "date"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "string",
+                              "format": "date",
+                              "description": "A calendar date in the format YYYY-MM-DD.",
+                              "example": "2023-01-01"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "decimal"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "string",
+                              "pattern": "^-?\\d{1,29}(\\.\\d{1,9})?$",
+                              "description": "A decimal number in plain notation, with at most 29 digits before and 9 digits after the decimal point.",
+                              "example": "-1234.56"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "list"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "item_type": {
+                              "type": "string",
+                              "enum": [
+                                "boolean",
+                                "integer",
+                                "double",
+                                "string",
+                                "timestamp",
+                                "date",
+                                "decimal"
+                              ],
+                              "description": "The type of every item in the list."
+                            },
+                            "value": {
+                              "type": "array",
+                              "items": {},
+                              "maxItems": 100,
+                              "description": "The items of the list, each a valid value for \u0060item_type\u0060. A maximum of 100 items can be provided.",
+                              "example": [
+                                "Fundstack",
+                                "Acme"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "item_type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "struct"
+                              ],
+                              "description": "The type of the parameter."
+                            },
+                            "value": {
+                              "type": "object",
+                              "description": "A map of field names to parameter objects, with at least one and a maximum of 25 fields. Names must start with a letter or underscore, only contain letters, digits and underscores, and be at most 64 characters long. Structs can contain other structs, up to 2 levels of structs in total.",
+                              "additionalProperties": {
+                                "type": "object"
+                              },
+                              "minProperties": 1,
+                              "maxProperties": 25,
+                              "example": {
+                                "name": {
+                                  "type": "string",
+                                  "value": "Fundstack"
+                                }
+                              }
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "description": "Named parameters referenced in the query using \u0060$name\u0060 syntax. A maximum of 25 parameters can be provided. Each parameter must declare its type explicitly. Names must start with a letter or underscore, only contain letters, digits and underscores, and be at most 64 characters long. Compare against a list parameter with \u0060= ANY($name)\u0060, not \u0060IN ($name)\u0060, which does not type check. Read a field of a struct parameter with \u0060get_field($name, \u0027field\u0027)\u0060.",
+                    "maxProperties": 25,
+                    "example": {
+                      "name": {
+                        "type": "string",
+                        "value": "Fundstack"
+                      },
+                      "since": {
+                        "type": "timestamp",
+                        "value": "2023-01-01T15:00:00.000000000Z"
+                      },
+                      "names": {
+                        "type": "list",
+                        "item_type": "string",
+                        "value": [
+                          "Fundstack",
+                          "Acme"
+                        ]
+                      }
+                    }
                   }
                 },
                 "required": [

@@ -17589,8 +17589,11 @@
         "properties": {
           "sql": {
             "type": "string",
-            "description": "The SQL query to be executed.",
-            "example": "SELECT * FROM companies WHERE companies.name = \u0027Fundstack\u0027"
+            "description": "The SQL query to be executed. Use \u0060$name\u0060 placeholders to reference values from \u0060parameters\u0060 instead of inlining them into the query.",
+            "example": "SELECT * FROM companies WHERE (name = $name OR name = ANY($names)) AND created_at \u003E= $since"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/PostV2SqlRequestParameters"
           }
         }
       },
@@ -29125,6 +29128,32 @@
           }
         }
       },
+      "PostV2SqlRequestParameters": {
+        "maxProperties": 25,
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/PostV2SqlRequestParametersAdditionalProperties"
+        },
+        "description": "Named parameters referenced in the query using \u0060$name\u0060 syntax. A maximum of 25 parameters can be provided. Each parameter must declare its type explicitly. Names must start with a letter or underscore, only contain letters, digits and underscores, and be at most 64 characters long. Compare against a list parameter with \u0060= ANY($name)\u0060, not \u0060IN ($name)\u0060, which does not type check. Read a field of a struct parameter with \u0060get_field($name, \u0027field\u0027)\u0060.",
+        "example": {
+          "name": {
+            "type": "string",
+            "value": "Fundstack"
+          },
+          "since": {
+            "type": "timestamp",
+            "value": "2023-01-01T15:00:00.000000000Z"
+          },
+          "names": {
+            "type": "list",
+            "item_type": "string",
+            "value": [
+              "Fundstack",
+              "Acme"
+            ]
+          }
+        }
+      },
       "PostV2Sql200ResponseData": {
         "required": [
           "rows"
@@ -38490,6 +38519,24 @@
           }
         },
         "description": "A record type with an attribute \u0060api_slug\u0060 as the key, and an array of value objects as the values."
+      },
+      "PostV2SqlRequestParametersAdditionalProperties": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PostV2SqlRequestParametersAdditionalPropertiesType"
+          },
+          "value": {
+            "type": "boolean",
+            "example": true
+          },
+          "item_type": {
+            "$ref": "#/components/schemas/PostV2SqlRequestParametersAdditionalPropertiesItemType"
+          }
+        }
       },
       "PostV2Sql200ResponseDataRowsItem": {
         "type": "object",
@@ -129177,6 +129224,117 @@
             {
               "value": "AC",
               "name": "Ac"
+            }
+          ]
+        }
+      },
+      "PostV2SqlRequestParametersAdditionalPropertiesType": {
+        "enum": [
+          "null",
+          "boolean",
+          "integer",
+          "double",
+          "string",
+          "timestamp",
+          "date",
+          "decimal",
+          "list",
+          "struct"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of the parameter.",
+        "x-ms-enum": {
+          "name": "PostV2SqlRequestParametersAdditionalPropertiesType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "null",
+              "name": "NullValue"
+            },
+            {
+              "value": "boolean",
+              "name": "Boolean"
+            },
+            {
+              "value": "integer",
+              "name": "Integer"
+            },
+            {
+              "value": "double",
+              "name": "DoubleValue"
+            },
+            {
+              "value": "string",
+              "name": "StringValue"
+            },
+            {
+              "value": "timestamp",
+              "name": "Timestamp"
+            },
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "decimal",
+              "name": "DecimalValue"
+            },
+            {
+              "value": "list",
+              "name": "List"
+            },
+            {
+              "value": "struct",
+              "name": "StructValue"
+            }
+          ]
+        }
+      },
+      "PostV2SqlRequestParametersAdditionalPropertiesItemType": {
+        "enum": [
+          "boolean",
+          "integer",
+          "double",
+          "string",
+          "timestamp",
+          "date",
+          "decimal"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of every item in the list.",
+        "x-ms-enum": {
+          "name": "PostV2SqlRequestParametersAdditionalPropertiesItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "boolean",
+              "name": "Boolean"
+            },
+            {
+              "value": "integer",
+              "name": "Integer"
+            },
+            {
+              "value": "double",
+              "name": "DoubleValue"
+            },
+            {
+              "value": "string",
+              "name": "StringValue"
+            },
+            {
+              "value": "timestamp",
+              "name": "Timestamp"
+            },
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "decimal",
+              "name": "DecimalValue"
             }
           ]
         }

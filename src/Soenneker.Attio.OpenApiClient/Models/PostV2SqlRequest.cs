@@ -14,7 +14,15 @@ namespace Soenneker.Attio.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The SQL query to be executed.</summary>
+        /// <summary>Named parameters referenced in the query using `$name` syntax. A maximum of 25 parameters can be provided. Each parameter must declare its type explicitly. Names must start with a letter or underscore, only contain letters, digits and underscores, and be at most 64 characters long. Compare against a list parameter with `= ANY($name)`, not `IN ($name)`, which does not type check. Read a field of a struct parameter with `get_field($name, &apos;field&apos;)`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2SqlRequestParameters? Parameters { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2SqlRequestParameters Parameters { get; set; }
+#endif
+        /// <summary>The SQL query to be executed. Use `$name` placeholders to reference values from `parameters` instead of inlining them into the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sql { get; set; }
@@ -47,6 +55,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2SqlRequestParameters>(global::Soenneker.Attio.OpenApiClient.Models.PostV2SqlRequestParameters.CreateFromDiscriminatorValue); } },
                 { "sql", n => { Sql = n.GetStringValue(); } },
             };
         }
@@ -57,6 +66,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2SqlRequestParameters>("parameters", Parameters);
             writer.WriteStringValue("sql", Sql);
             writer.WriteAdditionalData(AdditionalData);
         }
