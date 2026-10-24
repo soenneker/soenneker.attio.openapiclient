@@ -7,46 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>In addition to referencing records directly by record ID, you may also reference by a matching attribute of your choice. For example, if you want to add a reference to the person record with email &quot;alice@website.com&quot;, you should pass a value with `target_object` set to `&quot;people&quot;` and `email_addresses` set to `[{email_address:&quot;alice@website.com&quot;}]`. The key should be the slug or ID of the matching attribute you would like to use and the value should be an array containing a single value of the appropriate attribute type (as specified below). Matching on multiple values is not currently supported. The matching attribute does not have to be unique, but a value that matches no record or more than one record is rejected. We recommend a unique attribute, such as a domain, an email address or an ID from your own system. This process is similar to how you use the `matching_attribute` query param in Attio&apos;s [assert endpoints](/rest-api/endpoint-reference/records/assert-a-record).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemSlugOrIdOfMatchingAttributeItem>? SlugOrIdOfMatchingAttribute { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1? PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemSlugOrIdOfMatchingAttributeItem> SlugOrIdOfMatchingAttribute { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1 PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1 { get; set; }
 #endif
-        /// <summary>A UUID or slug to identify the object that the referenced record belongs to.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetObject { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2? PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string TargetObject { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2 PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2 { get; set; }
 #endif
-        /// <summary>A UUID to identify the referenced record.</summary>
-        public Guid? TargetRecordId { get; set; }
-        /// <summary>References a record by a matching attribute, and optionally creates that record when nothing matches. Use this instead of `target_record_id` when you only know an attribute value, such as an email address or a domain.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemTargetRecordReference? TargetRecordReference { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3? PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemTargetRecordReference TargetRecordReference { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3 PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem"/> and sets the default values.
-        /// </summary>
-        public PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +45,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem();
+            result.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1();
+            result.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2();
+            result.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +57,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1 != null || PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2 != null || PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3 != null)
             {
-                { "[slug_or_id_of_matching_attribute]", n => { SlugOrIdOfMatchingAttribute = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemSlugOrIdOfMatchingAttributeItem>(global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemSlugOrIdOfMatchingAttributeItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "target_object", n => { TargetObject = n.GetStringValue(); } },
-                { "target_record_id", n => { TargetRecordId = n.GetGuidValue(); } },
-                { "target_record_reference", n => { TargetRecordReference = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemTargetRecordReference>(global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemTargetRecordReference.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1, PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2, PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemSlugOrIdOfMatchingAttributeItem>("[slug_or_id_of_matching_attribute]", SlugOrIdOfMatchingAttribute);
-            writer.WriteStringValue("target_object", TargetObject);
-            writer.WriteGuidValue("target_record_id", TargetRecordId);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemTargetRecordReference>("target_record_reference", TargetRecordReference);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1>(null, PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1, PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf2, PutV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf3);
         }
     }
 }

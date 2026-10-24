@@ -53,21 +53,21 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.GetV2FilesByFileId200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("file_type")?.GetStringValue();
             var result = new global::Soenneker.Attio.OpenApiClient.Models.GetV2FilesByFileId200ResponseData();
-            if("ConnectedFile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("connected-file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ConnectedFile = new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile();
             }
-            else if("ConnectedFolder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("connected-folder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ConnectedFolder = new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFolder();
             }
-            else if("File".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.File = new global::Soenneker.Attio.OpenApiClient.Models.FileObject();
             }
-            else if("GetV2FilesByFileId200ResponseDataFolder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("folder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetV2FilesByFileId200ResponseDataFolder = new global::Soenneker.Attio.OpenApiClient.Models.GetV2FilesByFileId200ResponseDataFolder();
             }

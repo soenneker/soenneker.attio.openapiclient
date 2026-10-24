@@ -7,32 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the referenced Actor.</summary>
-        public Guid? ReferencedActorId { get; set; }
-        /// <summary>The type of the referenced actor. Currently, only workspace members can be written into actor reference attributes. [Read more information on actor types here](/docs/actors).</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType? ReferencedActorType { get; set; }
-        /// <summary>Workspace member actors can be referenced by email address as well as actor ID.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceMemberEmailAddress { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1? PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string WorkspaceMemberEmailAddress { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1 PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem"/> and sets the default values.
-        /// </summary>
-        public PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2? PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2 PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +37,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem();
+            result.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1();
+            result.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,12 +48,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1 != null || PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2 != null)
             {
-                { "referenced_actor_id", n => { ReferencedActorId = n.GetGuidValue(); } },
-                { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>(); } },
-                { "workspace_member_email_address", n => { WorkspaceMemberEmailAddress = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1, PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,10 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("referenced_actor_id", ReferencedActorId);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>("referenced_actor_type", ReferencedActorType);
-            writer.WriteStringValue("workspace_member_email_address", WorkspaceMemberEmailAddress);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1>(null, PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf1, PostV2ObjectsDealsRecordsRequestDataValuesOwnerItemAnyOf2);
         }
     }
 }

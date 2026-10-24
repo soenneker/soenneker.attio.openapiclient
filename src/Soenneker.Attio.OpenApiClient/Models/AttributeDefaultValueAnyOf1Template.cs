@@ -8,34 +8,20 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch3"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateAnyOf1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttributeDefaultValueAnyOf1Template : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateAnyOf1"/></summary>
+        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateAnyOf1? AttributeDefaultValueAnyOf1TemplateAnyOf1 { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch2? AttributeDefaultValueAnyOf1TemplateBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch2 AttributeDefaultValueAnyOf1TemplateBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch3? AttributeDefaultValueAnyOf1TemplateBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch3 AttributeDefaultValueAnyOf1TemplateBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapper? AttributeDefaultValueAnyOf1TemplateWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapper AttributeDefaultValueAnyOf1TemplateWrapper { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,9 +32,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1Template();
-            result.AttributeDefaultValueAnyOf1TemplateBranch2 = new global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch2();
-            result.AttributeDefaultValueAnyOf1TemplateBranch3 = new global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch3();
-            result.AttributeDefaultValueAnyOf1TemplateWrapper = new global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateWrapper();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateAnyOf1>() is global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateAnyOf1 attributeDefaultValueAnyOf1TemplateAnyOf1Value)
+            {
+                result.AttributeDefaultValueAnyOf1TemplateAnyOf1 = attributeDefaultValueAnyOf1TemplateAnyOf1Value;
+            }
             return result;
         }
         /// <summary>
@@ -57,10 +48,6 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AttributeDefaultValueAnyOf1TemplateBranch2 != null || AttributeDefaultValueAnyOf1TemplateBranch3 != null || AttributeDefaultValueAnyOf1TemplateWrapper != null)
-            {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AttributeDefaultValueAnyOf1TemplateBranch2, AttributeDefaultValueAnyOf1TemplateBranch3, AttributeDefaultValueAnyOf1TemplateWrapper);
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -70,7 +57,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateBranch2>(null, AttributeDefaultValueAnyOf1TemplateBranch2, AttributeDefaultValueAnyOf1TemplateBranch3, AttributeDefaultValueAnyOf1TemplateWrapper);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(AttributeDefaultValueAnyOf1TemplateAnyOf1 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttributeDefaultValueAnyOf1TemplateAnyOf1>(null, AttributeDefaultValueAnyOf1TemplateAnyOf1);
+            }
         }
     }
 }

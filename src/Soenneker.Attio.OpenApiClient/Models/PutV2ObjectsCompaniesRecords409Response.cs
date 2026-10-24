@@ -17,13 +17,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords409ResponseCode? Code { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords409ResponseCode Code { get; set; }
-#endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
         /// <summary>The message property</summary>
@@ -63,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords409ResponseCode>(global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords409ResponseCode.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords409ResponseCode>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status_code", n => { StatusCode = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InvalidRequestErrorType>(); } },
@@ -76,7 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords409ResponseCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords409ResponseCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteDoubleValue("status_code", StatusCode);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InvalidRequestErrorType>("type", Type);

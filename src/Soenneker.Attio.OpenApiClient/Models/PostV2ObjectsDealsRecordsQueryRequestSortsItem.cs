@@ -7,46 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostV2ObjectsDealsRecordsQueryRequestSortsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PostV2ObjectsDealsRecordsQueryRequestSortsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A slug or ID to identify the attribute to sort by.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Attribute { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1? PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Attribute { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1 PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The direction to sort the results by.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemDirection? Direction { get; set; }
-        /// <summary>Which field on the value to sort by e.g. &quot;last_name&quot; on a name value.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Field { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2? PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Field { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2 PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2 { get; set; }
 #endif
-        /// <summary>You may use the `path` property to traverse record reference attributes and parent records on list entries. `path` accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug &quot;sales&quot;, you would pass the value `[[&apos;sales&apos;, &apos;parent_record&apos;], [&apos;companies&apos;, &apos;name&apos;]]`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Path { get; set; }
-#nullable restore
-#else
-        public UntypedNode Path { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItem"/> and sets the default values.
-        /// </summary>
-        public PostV2ObjectsDealsRecordsQueryRequestSortsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +37,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItem();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItem();
+            result.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1();
+            result.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +48,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1 != null || PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2 != null)
             {
-                { "attribute", n => { Attribute = n.GetStringValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemDirection>(); } },
-                { "field", n => { Field = n.GetStringValue(); } },
-                { "path", n => { Path = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1, PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("attribute", Attribute);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemDirection>("direction", Direction);
-            writer.WriteStringValue("field", Field);
-            writer.WriteObjectValue<UntypedNode>("path", Path);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1>(null, PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf1, PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2);
         }
     }
 }

@@ -7,252 +7,148 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The point in time at which this value was made &quot;active&quot;. `active_from` can be considered roughly analogous to `created_at`.</summary>
-        public DateTimeOffset? ActiveFrom { get; set; }
-        /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
-        public DateTimeOffset? ActiveUntil { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemAttributeType? AttributeType { get; set; }
-        /// <summary>The ISO 3166-1 alpha-2 country code for the country this location is in.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCountryCode? CountryCode { get; set; }
-        /// <summary>The actor that created this value.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1 { get; set; }
 #endif
-        /// <summary>The ISO4217 currency code representing the currency that the value is stored in.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCurrencyCode? CurrencyCode { get; set; }
-        /// <summary>A numerical representation of the currency value. A decimal with a max of 4 decimal places.</summary>
-        public double? CurrencyValue { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10 { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10 { get; set; }
 #endif
-        /// <summary>The email_address property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailAddress { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11 { get; set; }
 #nullable restore
 #else
-        public string EmailAddress { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11 { get; set; }
 #endif
-        /// <summary>The email_domain property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailDomain { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12 { get; set; }
 #nullable restore
 #else
-        public string EmailDomain { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12 { get; set; }
 #endif
-        /// <summary>The email_local_specifier property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailLocalSpecifier { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13 { get; set; }
 #nullable restore
 #else
-        public string EmailLocalSpecifier { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13 { get; set; }
 #endif
-        /// <summary>The email_root_domain property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailRootDomain { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14 { get; set; }
 #nullable restore
 #else
-        public string EmailRootDomain { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14 { get; set; }
 #endif
-        /// <summary>The first name.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15 { get; set; }
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15 { get; set; }
 #endif
-        /// <summary>The full name.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16 { get; set; }
 #nullable restore
 #else
-        public string FullName { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16 { get; set; }
 #endif
-        /// <summary>When the interaction occurred.</summary>
-        public DateTimeOffset? InteractedAt { get; set; }
-        /// <summary>The type of interaction e.g. calendar or email.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType? InteractionType { get; set; }
-        /// <summary>The last name.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17 { get; set; }
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17 { get; set; }
 #endif
-        /// <summary>The latitude of the location. Validated by the regular expression `/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)$/`. Values are stored with up to 9 decimal places of precision. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.}</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Latitude { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Latitude { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2 { get; set; }
 #endif
-        /// <summary>The first line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Line1 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Line1 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3 { get; set; }
 #endif
-        /// <summary>The second line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Line2 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4 { get; set; }
 #nullable restore
 #else
-        public string Line2 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4 { get; set; }
 #endif
-        /// <summary>The third line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Line3 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5 { get; set; }
 #nullable restore
 #else
-        public string Line3 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5 { get; set; }
 #endif
-        /// <summary>The fourth line of the address. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Line4 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 { get; set; }
 #nullable restore
 #else
-        public string Line4 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 { get; set; }
 #endif
-        /// <summary>The town, neighborhood or area the location is in.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locality { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7 { get; set; }
 #nullable restore
 #else
-        public string Locality { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7 { get; set; }
 #endif
-        /// <summary>The longitude of the location. Validated by the regular expression `/^[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/`. Values are stored with up to 9 decimal places of precision. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.}</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Longitude { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8 { get; set; }
 #nullable restore
 #else
-        public string Longitude { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8 { get; set; }
 #endif
-        /// <summary>The option property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.SelectOption? Option { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9? GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.SelectOption Option { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9 GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9 { get; set; }
 #endif
-        /// <summary>The original_email_address property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginalEmailAddress { get; set; }
-#nullable restore
-#else
-        public string OriginalEmailAddress { get; set; }
-#endif
-        /// <summary>The raw, original phone number, as inputted.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginalPhoneNumber { get; set; }
-#nullable restore
-#else
-        public string OriginalPhoneNumber { get; set; }
-#endif
-        /// <summary>The actor that created this value.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOwnerActor? OwnerActor { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOwnerActor OwnerActor { get; set; }
-#endif
-        /// <summary>The phone_number property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PhoneNumber { get; set; }
-#nullable restore
-#else
-        public string PhoneNumber { get; set; }
-#endif
-        /// <summary>The postcode or zip code for the location. Note that this value is not currently represented in the UI but will be persisted and readable through API calls.}</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Postcode { get; set; }
-#nullable restore
-#else
-        public string Postcode { get; set; }
-#endif
-        /// <summary>The ID of the referenced actor.</summary>
-        public Guid? ReferencedActorId { get; set; }
-        /// <summary>The type of the referenced actor. [Read more information on actor types here](/docs/actors).</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemReferencedActorType? ReferencedActorType { get; set; }
-        /// <summary>The state, county, province or region that the location is in.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region { get; set; }
-#nullable restore
-#else
-        public string Region { get; set; }
-#endif
-        /// <summary>The root_domain property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RootDomain { get; set; }
-#nullable restore
-#else
-        public string RootDomain { get; set; }
-#endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.Status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.Status Status { get; set; }
-#endif
-        /// <summary>A slug identifying the object that the referenced record belongs to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetObject { get; set; }
-#nullable restore
-#else
-        public string TargetObject { get; set; }
-#endif
-        /// <summary>A UUID to identify the referenced record.</summary>
-        public Guid? TargetRecordId { get; set; }
-        /// <summary>A boolean representing whether the checkbox is checked or not. The string values &apos;true&apos; and &apos;false&apos; are also accepted.</summary>
-        public bool? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItem"/> and sets the default values.
-        /// </summary>
-        public GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -261,7 +157,77 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItem();
+            var mappingValue = parseNode.GetChildNode("attribute_type")?.GetStringValue();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItem();
+            if("actor-reference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1();
+            }
+            else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10();
+            }
+            else if("personal-name".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11();
+            }
+            else if("phone-number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12();
+            }
+            else if("status".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13();
+            }
+            else if("rating".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14();
+            }
+            else if("select".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15();
+            }
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16();
+            }
+            else if("timestamp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17();
+            }
+            else if("checkbox".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2();
+            }
+            else if("currency".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3();
+            }
+            else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4();
+            }
+            else if("domain".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5();
+            }
+            else if("email-address".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6();
+            }
+            else if("record-reference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7();
+            }
+            else if("interaction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8();
+            }
+            else if("location".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9 = new global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -269,47 +235,75 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1 != null)
             {
-                { "active_from", n => { ActiveFrom = n.GetDateTimeOffsetValue(); } },
-                { "active_until", n => { ActiveUntil = n.GetDateTimeOffsetValue(); } },
-                { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemAttributeType>(); } },
-                { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCountryCode>(); } },
-                { "created_by_actor", n => { CreatedByActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCreatedByActor>(global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCreatedByActor.CreateFromDiscriminatorValue); } },
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCurrencyCode>(); } },
-                { "currency_value", n => { CurrencyValue = n.GetDoubleValue(); } },
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "email_address", n => { EmailAddress = n.GetStringValue(); } },
-                { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
-                { "email_local_specifier", n => { EmailLocalSpecifier = n.GetStringValue(); } },
-                { "email_root_domain", n => { EmailRootDomain = n.GetStringValue(); } },
-                { "first_name", n => { FirstName = n.GetStringValue(); } },
-                { "full_name", n => { FullName = n.GetStringValue(); } },
-                { "interacted_at", n => { InteractedAt = n.GetDateTimeOffsetValue(); } },
-                { "interaction_type", n => { InteractionType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType>(); } },
-                { "last_name", n => { LastName = n.GetStringValue(); } },
-                { "latitude", n => { Latitude = n.GetStringValue(); } },
-                { "line_1", n => { Line1 = n.GetStringValue(); } },
-                { "line_2", n => { Line2 = n.GetStringValue(); } },
-                { "line_3", n => { Line3 = n.GetStringValue(); } },
-                { "line_4", n => { Line4 = n.GetStringValue(); } },
-                { "locality", n => { Locality = n.GetStringValue(); } },
-                { "longitude", n => { Longitude = n.GetStringValue(); } },
-                { "option", n => { Option = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.SelectOption>(global::Soenneker.Attio.OpenApiClient.Models.SelectOption.CreateFromDiscriminatorValue); } },
-                { "original_email_address", n => { OriginalEmailAddress = n.GetStringValue(); } },
-                { "original_phone_number", n => { OriginalPhoneNumber = n.GetStringValue(); } },
-                { "owner_actor", n => { OwnerActor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOwnerActor>(global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOwnerActor.CreateFromDiscriminatorValue); } },
-                { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "postcode", n => { Postcode = n.GetStringValue(); } },
-                { "referenced_actor_id", n => { ReferencedActorId = n.GetGuidValue(); } },
-                { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemReferencedActorType>(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
-                { "root_domain", n => { RootDomain = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.Status>(global::Soenneker.Attio.OpenApiClient.Models.Status.CreateFromDiscriminatorValue); } },
-                { "target_object", n => { TargetObject = n.GetStringValue(); } },
-                { "target_record_id", n => { TargetRecordId = n.GetGuidValue(); } },
-                { "value", n => { Value = n.GetBoolValue(); } },
-            };
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8.GetFieldDeserializers();
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9 != null)
+            {
+                return GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -318,45 +312,74 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
-            writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemAttributeType>("attribute_type", AttributeType);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCountryCode>("country_code", CountryCode);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCreatedByActor>("created_by_actor", CreatedByActor);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemCurrencyCode>("currency_code", CurrencyCode);
-            writer.WriteDoubleValue("currency_value", CurrencyValue);
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("email_address", EmailAddress);
-            writer.WriteStringValue("email_domain", EmailDomain);
-            writer.WriteStringValue("email_local_specifier", EmailLocalSpecifier);
-            writer.WriteStringValue("email_root_domain", EmailRootDomain);
-            writer.WriteStringValue("first_name", FirstName);
-            writer.WriteStringValue("full_name", FullName);
-            writer.WriteDateTimeOffsetValue("interacted_at", InteractedAt);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemInteractionType>("interaction_type", InteractionType);
-            writer.WriteStringValue("last_name", LastName);
-            writer.WriteStringValue("latitude", Latitude);
-            writer.WriteStringValue("line_1", Line1);
-            writer.WriteStringValue("line_2", Line2);
-            writer.WriteStringValue("line_3", Line3);
-            writer.WriteStringValue("line_4", Line4);
-            writer.WriteStringValue("locality", Locality);
-            writer.WriteStringValue("longitude", Longitude);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.SelectOption>("option", Option);
-            writer.WriteStringValue("original_email_address", OriginalEmailAddress);
-            writer.WriteStringValue("original_phone_number", OriginalPhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOwnerActor>("owner_actor", OwnerActor);
-            writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteStringValue("postcode", Postcode);
-            writer.WriteGuidValue("referenced_actor_id", ReferencedActorId);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemReferencedActorType>("referenced_actor_type", ReferencedActorType);
-            writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("root_domain", RootDomain);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.Status>("status", Status);
-            writer.WriteStringValue("target_object", TargetObject);
-            writer.WriteGuidValue("target_record_id", TargetRecordId);
-            writer.WriteBoolValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf1);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf10);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf11);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf12);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf13);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf14);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf15);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf16);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf17);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf2);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf3);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf4);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf5);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf7);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf8);
+            }
+            else if(GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9>(null, GetV2ObjectsCompaniesRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf9);
+            }
         }
     }
 }

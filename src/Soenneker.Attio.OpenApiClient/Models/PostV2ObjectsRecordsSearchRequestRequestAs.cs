@@ -8,32 +8,35 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// Specifies the context in which to perform the search. Use &apos;workspace&apos; to return all search results or specify a workspace member to limit results to what one specific person in your workspace can see.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostV2ObjectsRecordsSearchRequestRequestAs : IAdditionalDataHolder, IParsable
+    public partial class PostV2ObjectsRecordsSearchRequestRequestAs : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email_address property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailAddress { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1? PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string EmailAddress { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1 PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsType? Type { get; set; }
-        /// <summary>The workspace_member_id property</summary>
-        public Guid? WorkspaceMemberId { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs"/> and sets the default values.
-        /// </summary>
-        public PostV2ObjectsRecordsSearchRequestRequestAs()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2? PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2 PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3? PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3 PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +45,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs();
+            result.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1();
+            result.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2();
+            result.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,12 +57,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1 != null || PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2 != null || PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3 != null)
             {
-                { "email_address", n => { EmailAddress = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsType>(); } },
-                { "workspace_member_id", n => { WorkspaceMemberId = n.GetGuidValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1, PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2, PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -64,10 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email_address", EmailAddress);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsType>("type", Type);
-            writer.WriteGuidValue("workspace_member_id", WorkspaceMemberId);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1>(null, PostV2ObjectsRecordsSearchRequestRequestAsAnyOf1, PostV2ObjectsRecordsSearchRequestRequestAsAnyOf2, PostV2ObjectsRecordsSearchRequestRequestAsAnyOf3);
         }
     }
 }

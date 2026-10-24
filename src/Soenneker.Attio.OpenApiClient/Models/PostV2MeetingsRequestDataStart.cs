@@ -8,38 +8,27 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// When the meeting starts. Use a datetime and optional timezone for non-all day meetings, or a date for all day meetings.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostV2MeetingsRequestDataStart : IAdditionalDataHolder, IParsable
+    public partial class PostV2MeetingsRequestDataStart : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An ISO 8601 date indicating when an all day meeting starts.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Date { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf1? PostV2MeetingsRequestDataStartAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Date { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf1 PostV2MeetingsRequestDataStartAnyOf1 { get; set; }
 #endif
-        /// <summary>An ISO 8601 datetime indicating when a non-all day meeting starts.</summary>
-        public DateTimeOffset? Datetime { get; set; }
-        /// <summary>The IANA timezone the meeting starts in. If a datetime value is provided without an offset, this timezone will be used to convert the datetime to UTC using the timezone offset. If a datetime value is provided with an offset, this timezone will not be used to apply any additional offset to the datetime. Invalid timezones will be treated as UTC.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf2? PostV2MeetingsRequestDataStartAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf2 PostV2MeetingsRequestDataStartAnyOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart"/> and sets the default values.
-        /// </summary>
-        public PostV2MeetingsRequestDataStart()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +37,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart();
+            result.PostV2MeetingsRequestDataStartAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf1();
+            result.PostV2MeetingsRequestDataStartAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +48,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostV2MeetingsRequestDataStartAnyOf1 != null || PostV2MeetingsRequestDataStartAnyOf2 != null)
             {
-                { "date", n => { Date = n.GetStringValue(); } },
-                { "datetime", n => { Datetime = n.GetDateTimeOffsetValue(); } },
-                { "timezone", n => { Timezone = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostV2MeetingsRequestDataStartAnyOf1, PostV2MeetingsRequestDataStartAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -70,10 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("date", Date);
-            writer.WriteDateTimeOffsetValue("datetime", Datetime);
-            writer.WriteStringValue("timezone", Timezone);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStartAnyOf1>(null, PostV2MeetingsRequestDataStartAnyOf1, PostV2MeetingsRequestDataStartAnyOf2);
         }
     }
 }

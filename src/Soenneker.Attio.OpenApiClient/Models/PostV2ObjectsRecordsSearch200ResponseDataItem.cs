@@ -7,76 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostV2ObjectsRecordsSearch200ResponseDataItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PostV2ObjectsRecordsSearch200ResponseDataItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The company&apos;s domains.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1? PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<string> Domains { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1 PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The person&apos;s email addresses.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EmailAddresses { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2? PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2 { get; set; }
 #nullable restore
 #else
-        public List<string> EmailAddresses { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2 PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2 { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3? PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3 PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3 { get; set; }
 #endif
-        /// <summary>The slug of the object this record belongs to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ObjectSlug { get; set; }
-#nullable restore
-#else
-        public string ObjectSlug { get; set; }
-#endif
-        /// <summary>The person&apos;s phone numbers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PhoneNumbers { get; set; }
-#nullable restore
-#else
-        public List<string> PhoneNumbers { get; set; }
-#endif
-        /// <summary>The image for the record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RecordImage { get; set; }
-#nullable restore
-#else
-        public string RecordImage { get; set; }
-#endif
-        /// <summary>A human-readable label for the record. Present on records from all objects.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RecordText { get; set; }
-#nullable restore
-#else
-        public string RecordText { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItem"/> and sets the default values.
-        /// </summary>
-        public PostV2ObjectsRecordsSearch200ResponseDataItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,7 +45,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItem();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItem();
+            result.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1();
+            result.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2();
+            result.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,16 +57,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1 != null || PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2 != null || PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3 != null)
             {
-                { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "email_addresses", n => { EmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemId>(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemId.CreateFromDiscriminatorValue); } },
-                { "object_slug", n => { ObjectSlug = n.GetStringValue(); } },
-                { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "record_image", n => { RecordImage = n.GetStringValue(); } },
-                { "record_text", n => { RecordText = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1, PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2, PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -111,14 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
-            writer.WriteCollectionOfPrimitiveValues<string>("email_addresses", EmailAddresses);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemId>("id", Id);
-            writer.WriteStringValue("object_slug", ObjectSlug);
-            writer.WriteCollectionOfPrimitiveValues<string>("phone_numbers", PhoneNumbers);
-            writer.WriteStringValue("record_image", RecordImage);
-            writer.WriteStringValue("record_text", RecordText);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1>(null, PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf1, PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf2, PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3);
         }
     }
 }

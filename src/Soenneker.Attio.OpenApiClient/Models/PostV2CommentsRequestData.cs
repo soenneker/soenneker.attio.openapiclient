@@ -7,64 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf1"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostV2CommentsRequestData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PostV2CommentsRequestData : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The workspace member who wrote this comment. Note that other types of actors are not currently supported.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthor? Author { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf1? PostV2CommentsRequestDataAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthor Author { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf1 PostV2CommentsRequestDataAnyOf1 { get; set; }
 #endif
-        /// <summary>The content of the comment itself. Workspace members can be mentioned using their email address, otherwise email addresses will be presented to users as clickable mailto links.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf2? PostV2CommentsRequestDataAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Content { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf2 PostV2CommentsRequestDataAnyOf2 { get; set; }
 #endif
-        /// <summary>`created_at` will default to the current time. However, if you wish to backdate a comment for migration or other purposes, you can override with a custom `created_at` value. Note that dates before 1970 or in the future are not allowed.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf3? PostV2CommentsRequestDataAnyOf3 { get; set; }
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf3 PostV2CommentsRequestDataAnyOf3 { get; set; }
 #endif
-        /// <summary>The entry property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry? Entry { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry Entry { get; set; }
-#endif
-        /// <summary>The format of the task content to be created. Rich text formatting, links and @references are not supported.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat? Format { get; set; }
-        /// <summary>The record property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord? Record { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord Record { get; set; }
-#endif
-        /// <summary>If responding to an existing thread, this would be the ID of that thread.</summary>
-        public Guid? ThreadId { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestData"/> and sets the default values.
-        /// </summary>
-        public PostV2CommentsRequestData()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,7 +45,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestData();
+            var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestData();
+            result.PostV2CommentsRequestDataAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf1();
+            result.PostV2CommentsRequestDataAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf2();
+            result.PostV2CommentsRequestDataAnyOf3 = new global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf3();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,16 +57,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostV2CommentsRequestDataAnyOf1 != null || PostV2CommentsRequestDataAnyOf2 != null || PostV2CommentsRequestDataAnyOf3 != null)
             {
-                { "author", n => { Author = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthor>(global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthor.CreateFromDiscriminatorValue); } },
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "entry", n => { Entry = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry>(global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat>(); } },
-                { "record", n => { Record = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord>(global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord.CreateFromDiscriminatorValue); } },
-                { "thread_id", n => { ThreadId = n.GetGuidValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostV2CommentsRequestDataAnyOf1, PostV2CommentsRequestDataAnyOf2, PostV2CommentsRequestDataAnyOf3);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -99,14 +70,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAuthor>("author", Author);
-            writer.WriteStringValue("content", Content);
-            writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataEntry>("entry", Entry);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat>("format", Format);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataRecord>("record", Record);
-            writer.WriteGuidValue("thread_id", ThreadId);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2CommentsRequestDataAnyOf1>(null, PostV2CommentsRequestDataAnyOf1, PostV2CommentsRequestDataAnyOf2, PostV2CommentsRequestDataAnyOf3);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
-    /// <summary>The format of the task content to be created. Rich text formatting, links and @references are not supported.</summary>
+    /// <summary>The format that the comment content is provided in. The `plaintext` format uses the line feed character `\n` to create new lines within the note content. Rich text formatting and links are not supported.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PlaintextFormat
     {

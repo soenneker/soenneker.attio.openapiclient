@@ -37,13 +37,13 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem();
-            if("NoteTagsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("workspace-member".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.NoteTagsItemOneOf1 = new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf1();
             }
-            else if("NoteTagsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("record".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.NoteTagsItemOneOf2 = new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf2();
             }

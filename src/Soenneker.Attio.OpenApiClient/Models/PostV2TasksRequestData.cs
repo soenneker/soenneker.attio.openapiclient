@@ -38,7 +38,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
 #else
         public string DeadlineAt { get; set; }
 #endif
-        /// <summary>The format of the task content to be created. Rich text formatting, links and @references are not supported.</summary>
+        /// <summary>The format that the comment content is provided in. The `plaintext` format uses the line feed character `\n` to create new lines within the note content. Rich text formatting and links are not supported.</summary>
         public global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat? Format { get; set; }
         /// <summary>Whether the task has been completed.</summary>
         public bool? IsCompleted { get; set; }

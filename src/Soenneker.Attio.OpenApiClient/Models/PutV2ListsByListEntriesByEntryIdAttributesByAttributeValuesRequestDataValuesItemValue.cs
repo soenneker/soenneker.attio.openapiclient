@@ -8,42 +8,30 @@ using System;
 namespace Soenneker.Attio.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2? PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1? PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2 PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2 { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1 PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3? PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3 PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4? PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4 PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1? PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1 PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,10 +42,21 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue();
-            result.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2();
-            result.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3();
-            result.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4();
-            result.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1();
+            }
             return result;
         }
         /// <summary>
@@ -66,9 +65,9 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2 != null || PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3 != null || PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4 != null || PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1 != null)
+            if(PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,7 +78,21 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2>(null, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch2, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch3, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueBranch4, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1>(null, PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1);
+            }
         }
     }
 }
