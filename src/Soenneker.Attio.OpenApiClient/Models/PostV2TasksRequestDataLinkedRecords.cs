@@ -38,11 +38,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecordsAnyOf2Item>(global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecordsAnyOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecordsAnyOf2Item> postV2TasksRequestDataLinkedRecordsAnyOf2ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecordsAnyOf2Item>(global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecordsAnyOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecordsAnyOf2Item> postV2TasksRequestDataLinkedRecordsAnyOf2ItemValue)
             {
                 result.PostV2TasksRequestDataLinkedRecordsAnyOf2Item = postV2TasksRequestDataLinkedRecordsAnyOf2ItemValue;
             }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
                 result.String = stringValue;
             }

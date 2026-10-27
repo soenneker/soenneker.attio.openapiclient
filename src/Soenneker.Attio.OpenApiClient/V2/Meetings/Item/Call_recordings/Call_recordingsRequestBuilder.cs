@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` should always be provided — it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.Supported token levels: `workspace`, `user`.
+        /// Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` is required. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
             return requestInfo;
         }
         /// <summary>
-        /// Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` should always be provided — it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.Supported token levels: `workspace`, `user`.
+        /// Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` is required. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

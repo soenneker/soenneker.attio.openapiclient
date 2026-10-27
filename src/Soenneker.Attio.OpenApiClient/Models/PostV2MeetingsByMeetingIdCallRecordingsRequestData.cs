@@ -14,7 +14,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The call recording&apos;s transcript.This field is technically optional for backwards compatibility, but you should always provide it — a call recording created without a transcript will be missing summaries and other transcript-derived features. This field will become required in a future version of this endpoint.</summary>
+        /// <summary>The call recording&apos;s transcript. It must contain at least one transcript segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem>? Transcript { get; set; }

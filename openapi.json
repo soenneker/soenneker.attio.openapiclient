@@ -65177,7 +65177,7 @@
       },
       "post": {
         "summary": "Create call recording",
-        "description": "Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.\n\nA \u0060transcript\u0060 should always be provided \u2014 it is technically optional for backwards compatibility, but a call recording created without one will be missing summaries and other transcript-derived features. \u0060video_url\u0060 is optional, and a transcript-only call recording (with no video) is fully supported.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.\n\nA \u0060transcript\u0060 is required. \u0060video_url\u0060 is optional, and a transcript-only call recording (with no video) is fully supported.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060meeting:read\u0060, \u0060call_recording:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "tags": [
           "Call recordings"
         ],
@@ -65271,10 +65271,14 @@
                             "speaker"
                           ]
                         },
+                        "minItems": 1,
                         "maxItems": 4000,
-                        "description": "The call recording\u0027s transcript.\n\nThis field is technically optional for backwards compatibility, but you should always provide it \u2014 a call recording created without a transcript will be missing summaries and other transcript-derived features. This field will become required in a future version of this endpoint."
+                        "description": "The call recording\u0027s transcript. It must contain at least one transcript segment."
                       }
-                    }
+                    },
+                    "required": [
+                      "transcript"
+                    ]
                   }
                 },
                 "required": [

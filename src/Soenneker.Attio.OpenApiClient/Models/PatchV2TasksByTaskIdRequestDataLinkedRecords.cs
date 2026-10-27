@@ -38,11 +38,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskIdRequestDataLinkedRecords();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2Item>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2Item> patchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2Item>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2Item> patchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2ItemValue)
             {
                 result.PatchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2Item = patchV2TasksByTaskIdRequestDataLinkedRecordsAnyOf2ItemValue;
             }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
                 result.String = stringValue;
             }
