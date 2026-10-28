@@ -94,7 +94,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsCompaniesRecordsByRecordId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this endpoint to update company records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values. Please note, the `logo_url` attribute cannot currently be updated via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// Use this endpoint to update company records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsCompaniesRecordsByRecordId200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +163,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Companies.Records.Item
             return requestInfo;
         }
         /// <summary>
-        /// Use this endpoint to update company records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values. Please note, the `logo_url` attribute cannot currently be updated via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// Use this endpoint to update company records by `record_id`. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

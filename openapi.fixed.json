@@ -7732,7 +7732,7 @@
           "People"
         ],
         "summary": "Create a person Record",
-        "description": "Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like \u0060email_addresses\u0060. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the \u0060avatar_url\u0060 attribute cannot currently be set via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like \u0060email_addresses\u0060. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsPeopleRecords",
         "requestBody": {
           "content": {
@@ -7952,7 +7952,7 @@
           "People"
         ],
         "summary": "Update a person Record",
-        "description": "Use this endpoint to update person records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert person endpoint](/reference/put_v2-objects-people-records) to overwrite or remove multiselect attribute values. Please note, the \u0060avatar_url\u0060 attribute cannot currently be updated via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Use this endpoint to update person records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert person endpoint](/reference/put_v2-objects-people-records) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsPeopleRecordsByRecordId",
         "parameters": [
           {
@@ -8325,7 +8325,7 @@
           "Companies"
         ],
         "summary": "Create a company record",
-        "description": "Creates a new company record. This endpoint will throw on conflicts of unique attributes, like \u0060domains\u0060. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead. Please note, the \u0060logo_url\u0060 attribute cannot currently be set via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Creates a new company record. This endpoint will throw on conflicts of unique attributes, like \u0060domains\u0060. If you would prefer to update company records on conflicts, please use the Assert company record endpoint instead.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2ObjectsCompaniesRecords",
         "requestBody": {
           "content": {
@@ -8545,7 +8545,7 @@
           "Companies"
         ],
         "summary": "Update a company record",
-        "description": "Use this endpoint to update company records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values. Please note, the \u0060logo_url\u0060 attribute cannot currently be updated via the API.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Use this endpoint to update company records by \u0060record_id\u0060. If the update payload includes multiselect attributes, the values supplied will be created and prepended to the list of values that already exist (if any). Use the [Upsert company endpoint](/rest-api/endpoint-reference/standard-objects/companies/upsert-a-company-record) to overwrite or remove multiselect attribute values.\n\nRequired scopes: \u0060record_permission:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PatchV2ObjectsCompaniesRecordsByRecordId",
         "parameters": [
           {
@@ -77161,6 +77161,7 @@
             }
           ],
           "description": "Developer met at event",
+          "avatar_url": "https://example.com/avatar.png",
           "company": [
             {
               "target_object": "companies",
@@ -77507,6 +77508,7 @@
             }
           ],
           "description": "Developer met at event",
+          "avatar_url": "https://example.com/avatar.png",
           "company": [
             {
               "target_object": "companies",
@@ -78637,6 +78639,7 @@
             }
           ],
           "description": "Developer met at event",
+          "avatar_url": "https://example.com/avatar.png",
           "company": [
             {
               "target_object": "companies",
@@ -79895,6 +79898,7 @@
           ],
           "name": "Attio",
           "description": "Customer relationship magic",
+          "logo_url": "https://example.com/logo.png",
           "team": [
             "alice@attio.com"
           ],
@@ -80291,6 +80295,7 @@
           ],
           "name": "Attio",
           "description": "Customer relationship magic",
+          "logo_url": "https://example.com/logo.png",
           "team": [
             "alice@attio.com"
           ],
@@ -81640,6 +81645,7 @@
           ],
           "name": "Attio",
           "description": "Customer relationship magic",
+          "logo_url": "https://example.com/logo.png",
           "team": [
             "alice@attio.com"
           ],

@@ -53,7 +53,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records
         {
         }
         /// <summary>
-        /// Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the `avatar_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsPeopleRecords200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +115,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.People.Records
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead. Please note, the `avatar_url` attribute cannot currently be set via the API.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// Creates a new person Record. This endpoint will throw on conflicts of unique attributes, like `email_addresses`. If you would prefer to update person records on conflicts, please use the Assert person record endpoint instead.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
