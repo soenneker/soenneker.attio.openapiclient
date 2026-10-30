@@ -49,7 +49,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item.Entries
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdEntries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdEntries200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all entries, across all lists, for which this record is the parent. The response includes metadata for each entry, including `entry_id`, `list_id`, and `created_at`, but does not include entry values. To retrieve the values, call [Get a list entry](/rest-api/endpoint-reference/entries/get-a-list-entry) separately for each entry.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.Supported token levels: `workspace`, `user`.

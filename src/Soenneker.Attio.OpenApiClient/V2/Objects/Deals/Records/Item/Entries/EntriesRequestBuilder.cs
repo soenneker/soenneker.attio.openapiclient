@@ -49,7 +49,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records.Item.Entries
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordIdEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordIdEntries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordIdEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsDealsRecordsByRecordIdEntries200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all entries, across all lists, for which this deal record is the parent.Required scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.Supported token levels: `workspace`, `user`.

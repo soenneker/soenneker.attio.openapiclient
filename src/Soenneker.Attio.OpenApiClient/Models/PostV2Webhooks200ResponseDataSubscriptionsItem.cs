@@ -11,18 +11,30 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2Webhooks200ResponseDataSubscriptionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of event the webhook is subscribed to.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemEventType? EventType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemEventType? _explicitNullValueEventType = default!;
         /// <summary>Filters to determine whether the webhook event should be sent. If null, the filter always passes.When filters are compared for uniqueness, key order and the order of operations are ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilter? Filter { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilter? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilter Filter { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilter _explicitNullValueFilter = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItem"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemEventType>("event_type", EventType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilter>("filter", Filter);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -62,7 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Threads
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Threads200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Threads200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Threads200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Threads200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List threads of comments on a record or list entry.Each thread in the response includes at most `80` replies, starting with the oldest. When a thread holds more, its `has_more_comments` is `true`; use [Get a thread and its comments](/rest-api/endpoint-reference/threads/get-a-thread-and-its-comments) to page through every comment in that thread.To view threads on records, you will need the `object_configuration:read` and `record_permission:read` scopes.To view threads on list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.Required scopes: `comment:read`.Supported token levels: `workspace`, `user`.

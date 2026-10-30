@@ -86,6 +86,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecords403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecords404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecords409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -117,6 +119,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecords403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecords404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecords409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

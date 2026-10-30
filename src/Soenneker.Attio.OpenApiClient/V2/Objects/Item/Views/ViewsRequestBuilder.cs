@@ -53,6 +53,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

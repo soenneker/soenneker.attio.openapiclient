@@ -12,42 +12,63 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttributeRelationship : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_multiselect") is { } nullNodeIsMultiselect && nullNodeIsMultiselect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMultiselect = null;
+            if (parseNode.GetChildNode("object_slug") is { } nullNodeObjectSlug && nullNodeObjectSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectSlug = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API slug identifying the related attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiSlug { get; set; }
+        public string? ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string? _explicitNullValueApiSlug = default!;
 #nullable restore
 #else
-        public string ApiSlug { get; set; }
+        public string ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string _explicitNullValueApiSlug = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationshipId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationshipId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationshipId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationshipId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationshipId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationshipId _explicitNullValueId = default!;
 #endif
         /// <summary>Whether the related attribute supports selecting multiple values. Combined with the parent attribute&apos;s `is_multiselect`, this determines the relationship type: both `false` = one-to-one, parent `true` + related `false` = many-to-one, parent `false` + related `true` = one-to-many, both `true` = many-to-many.</summary>
-        public bool? IsMultiselect { get; set; }
+        public bool? IsMultiselect { get => _explicitNullValueIsMultiselect; set { _explicitNullValueIsMultiselect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_multiselect"); else _explicitNullProperties?.Remove("is_multiselect"); } }
+        private bool? _explicitNullValueIsMultiselect = default!;
         /// <summary>The slug of the object that the related attribute belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectSlug { get; set; }
+        public string? ObjectSlug { get => _explicitNullValueObjectSlug; set { _explicitNullValueObjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_slug"); else _explicitNullProperties?.Remove("object_slug"); } }
+        private string? _explicitNullValueObjectSlug = default!;
 #nullable restore
 #else
-        public string ObjectSlug { get; set; }
+        public string ObjectSlug { get => _explicitNullValueObjectSlug; set { _explicitNullValueObjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_slug"); else _explicitNullProperties?.Remove("object_slug"); } }
+        private string _explicitNullValueObjectSlug = default!;
 #endif
         /// <summary>The title of the related attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationship"/> and sets the default values.
@@ -64,7 +85,9 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationship();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.AttributeRelationship(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +116,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteBoolValue("is_multiselect", IsMultiselect);
             writer.WriteStringValue("object_slug", ObjectSlug);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

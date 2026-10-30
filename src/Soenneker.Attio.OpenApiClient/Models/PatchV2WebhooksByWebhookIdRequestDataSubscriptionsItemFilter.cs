@@ -12,7 +12,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilter : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,10 +51,17 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilter();
-            result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 = new global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1();
-            result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 = new global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2();
-            result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 = new global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1();
-            return result;
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("$or") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("$and") != null))();
+            if (result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 == null && result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 == null && result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1(), parseNode);
+            if (result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 == null && result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 == null && result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2(), parseNode);
+            if (result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 == null && result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 == null && result.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +81,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 == null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 == null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 != null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 == null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 == null) { if (PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1); return; }
+            if (PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 != null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 == null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 == null) { if (PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2); return; }
+            if (PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 != null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1 == null && PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2 == null) { if (PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1>(null, PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf1, PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterAnyOf2, PatchV2WebhooksByWebhookIdRequestDataSubscriptionsItemFilterMember1);
         }

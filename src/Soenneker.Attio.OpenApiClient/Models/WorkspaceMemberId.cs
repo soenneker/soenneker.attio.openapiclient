@@ -11,13 +11,24 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkspaceMemberId : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+            if (parseNode.GetChildNode("workspace_member_id") is { } nullNodeWorkspaceMemberIdProp && nullNodeWorkspaceMemberIdProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceMemberIdProp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the workspace the workspace member belongs to.</summary>
-        public Guid? WorkspaceId { get; set; }
+        public Guid? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private Guid? _explicitNullValueWorkspaceId = default!;
         /// <summary>The ID of the workspace member.</summary>
-        public Guid? WorkspaceMemberIdProp { get; set; }
+        public Guid? WorkspaceMemberIdProp { get => _explicitNullValueWorkspaceMemberIdProp; set { _explicitNullValueWorkspaceMemberIdProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_member_id"); else _explicitNullProperties?.Remove("workspace_member_id"); } }
+        private Guid? _explicitNullValueWorkspaceMemberIdProp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberId"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberId CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberId();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberId(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteGuidValue("workspace_member_id", WorkspaceMemberIdProp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

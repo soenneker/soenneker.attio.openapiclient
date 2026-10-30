@@ -62,7 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Tasks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Tasks200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Tasks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Tasks200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new task.At present, tasks can only be created from plaintext without record reference formatting.Required scopes: `task:read-write`, `object_configuration:read`, `record_permission:read`, `user_management:read`.Supported token levels: `workspace`, `user`.
@@ -88,6 +88,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2Tasks400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2Tasks404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Tasks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Tasks200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

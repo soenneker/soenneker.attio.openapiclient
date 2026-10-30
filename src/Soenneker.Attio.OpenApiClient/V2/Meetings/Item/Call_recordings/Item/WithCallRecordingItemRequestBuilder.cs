@@ -58,6 +58,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingIdCallRecordingsByCallRecordingId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -81,6 +83,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

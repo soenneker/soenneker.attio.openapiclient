@@ -62,7 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordings200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a call recording for a meeting. This endpoint is rate limited to 1 request per second.A `transcript` is required. `video_url` is optional, and a transcript-only call recording (with no video) is fully supported.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `meeting:read`, `call_recording:read-write`.Supported token levels: `workspace`, `user`.
@@ -90,6 +90,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item.Call_recordings
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

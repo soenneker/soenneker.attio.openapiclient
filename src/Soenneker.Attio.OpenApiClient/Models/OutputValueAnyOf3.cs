@@ -11,13 +11,26 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OutputValueAnyOf3 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("currency_value") is { } nullNodeCurrencyValue && nullNodeCurrencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyValue = null;
+        }
+
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType? AttributeType { get => _explicitNullValueAttributeType; set { _explicitNullValueAttributeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_type"); else _explicitNullProperties?.Remove("attribute_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType? _explicitNullValueAttributeType = default!;
         /// <summary>The ISO4217 currency code representing the currency that the value is stored in.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3CurrencyCode? CurrencyCode { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3CurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3CurrencyCode? _explicitNullValueCurrencyCode = default!;
         /// <summary>A numerical representation of the currency value. A decimal with a max of 4 decimal places.</summary>
-        public double? CurrencyValue { get; set; }
+        public double? CurrencyValue { get => _explicitNullValueCurrencyValue; set { _explicitNullValueCurrencyValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_value"); else _explicitNullProperties?.Remove("currency_value"); } }
+        private double? _explicitNullValueCurrencyValue = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -26,7 +39,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +63,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CurrencyAttributeType>("attribute_type", AttributeType);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf3CurrencyCode>("currency_code", CurrencyCode);
-            writer.WriteDoubleValue("currency_value", CurrencyValue);
+            writer.WriteDoubleValue("currency_value", CurrencyValue);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

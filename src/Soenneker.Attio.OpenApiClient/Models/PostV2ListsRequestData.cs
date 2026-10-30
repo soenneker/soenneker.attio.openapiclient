@@ -11,42 +11,63 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ListsRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parent_object") is { } nullNodeParentObject && nullNodeParentObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentObject = null;
+            if (parseNode.GetChildNode("workspace_access") is { } nullNodeWorkspaceAccess && nullNodeWorkspaceAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceAccess = null;
+            if (parseNode.GetChildNode("workspace_member_access") is { } nullNodeWorkspaceMemberAccess && nullNodeWorkspaceMemberAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceMemberAccess = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A unique, human-readable slug to access the list through API calls. Should be formatted in snake case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiSlug { get; set; }
+        public string? ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string? _explicitNullValueApiSlug = default!;
 #nullable restore
 #else
-        public string ApiSlug { get; set; }
+        public string ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string _explicitNullValueApiSlug = default!;
 #endif
         /// <summary>The human-readable name of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>A UUID or slug to identify the allowed object type for records added to this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentObject { get; set; }
+        public string? ParentObject { get => _explicitNullValueParentObject; set { _explicitNullValueParentObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_object"); else _explicitNullProperties?.Remove("parent_object"); } }
+        private string? _explicitNullValueParentObject = default!;
 #nullable restore
 #else
-        public string ParentObject { get; set; }
+        public string ParentObject { get => _explicitNullValueParentObject; set { _explicitNullValueParentObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_object"); else _explicitNullProperties?.Remove("parent_object"); } }
+        private string _explicitNullValueParentObject = default!;
 #endif
         /// <summary>The level of access granted to all members of the workspace for this list. Pass `null` to keep the list private and only grant access to specific workspace members.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceAccess? WorkspaceAccess { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceAccess? WorkspaceAccess { get => _explicitNullValueWorkspaceAccess; set { _explicitNullValueWorkspaceAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_access"); else _explicitNullProperties?.Remove("workspace_access"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceAccess? _explicitNullValueWorkspaceAccess = default!;
         /// <summary>The level of access granted to specific workspace members for this list. Pass an empty array to grant access to no workspace members.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceMemberAccessItem>? WorkspaceMemberAccess { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceMemberAccessItem>? WorkspaceMemberAccess { get => _explicitNullValueWorkspaceMemberAccess; set { _explicitNullValueWorkspaceMemberAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_member_access"); else _explicitNullProperties?.Remove("workspace_member_access"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceMemberAccessItem>? _explicitNullValueWorkspaceMemberAccess = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceMemberAccessItem> WorkspaceMemberAccess { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceMemberAccessItem> WorkspaceMemberAccess { get => _explicitNullValueWorkspaceMemberAccess; set { _explicitNullValueWorkspaceMemberAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_member_access"); else _explicitNullProperties?.Remove("workspace_member_access"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceMemberAccessItem> _explicitNullValueWorkspaceMemberAccess = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestData"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteStringValue("parent_object", ParentObject);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceAccess>("workspace_access", WorkspaceAccess);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsRequestDataWorkspaceMemberAccessItem>("workspace_member_access", WorkspaceMemberAccess);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

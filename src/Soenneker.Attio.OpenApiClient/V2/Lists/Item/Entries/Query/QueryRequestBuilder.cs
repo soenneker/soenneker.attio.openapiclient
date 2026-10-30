@@ -55,6 +55,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Query
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntriesQuery404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntriesQuery200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntriesQuery200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

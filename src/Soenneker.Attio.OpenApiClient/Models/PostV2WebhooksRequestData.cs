@@ -11,24 +11,37 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2WebhooksRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
+            if (parseNode.GetChildNode("target_url") is { } nullNodeTargetUrl && nullNodeTargetUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>One or more events the webhook is subscribed to.Within a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate — whether against another webhook or repeated within a single request — is rejected with a `409 uniqueness_conflict`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestDataSubscriptionsItem>? Subscriptions { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestDataSubscriptionsItem>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestDataSubscriptionsItem>? _explicitNullValueSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestDataSubscriptionsItem> Subscriptions { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestDataSubscriptionsItem> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestDataSubscriptionsItem> _explicitNullValueSubscriptions = default!;
 #endif
         /// <summary>URL where the webhook events will be delivered to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetUrl { get; set; }
+        public string? TargetUrl { get => _explicitNullValueTargetUrl; set { _explicitNullValueTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_url"); else _explicitNullProperties?.Remove("target_url"); } }
+        private string? _explicitNullValueTargetUrl = default!;
 #nullable restore
 #else
-        public string TargetUrl { get; set; }
+        public string TargetUrl { get => _explicitNullValueTargetUrl; set { _explicitNullValueTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_url"); else _explicitNullProperties?.Remove("target_url"); } }
+        private string _explicitNullValueTargetUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestData"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2WebhooksRequestDataSubscriptionsItem>("subscriptions", Subscriptions);
             writer.WriteStringValue("target_url", TargetUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

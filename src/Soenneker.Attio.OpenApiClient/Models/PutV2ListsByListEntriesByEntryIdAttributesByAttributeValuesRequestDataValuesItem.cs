@@ -11,18 +11,32 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_from") is { } nullNodeActiveFrom && nullNodeActiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveFrom = null;
+            if (parseNode.GetChildNode("active_until") is { } nullNodeActiveUntil && nullNodeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveUntil = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>An RFC 3339 timestamp for when this value became active. May not be in the future.</summary>
-        public DateTimeOffset? ActiveFrom { get; set; }
+        public DateTimeOffset? ActiveFrom { get => _explicitNullValueActiveFrom; set { _explicitNullValueActiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_from"); else _explicitNullProperties?.Remove("active_from"); } }
+        private DateTimeOffset? _explicitNullValueActiveFrom = default!;
         /// <summary>An RFC 3339 timestamp for when this value stopped being active, or `null` if it is still active. Must be after `active_from` and may not be in the future. This key is required: omitting it is almost always a mistake in a migration.</summary>
-        public DateTimeOffset? ActiveUntil { get; set; }
+        public DateTimeOffset? ActiveUntil { get => _explicitNullValueActiveUntil; set { _explicitNullValueActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_until"); else _explicitNullProperties?.Remove("active_until"); } }
+        private DateTimeOffset? _explicitNullValueActiveUntil = default!;
         /// <summary>The value itself, in the same form accepted when updating a record or list entry. For complete documentation on values for all attribute types, please see our [attribute type docs](/docs/attribute-types).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue? Value { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue Value { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +70,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("active_from", ActiveFrom);
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValue>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

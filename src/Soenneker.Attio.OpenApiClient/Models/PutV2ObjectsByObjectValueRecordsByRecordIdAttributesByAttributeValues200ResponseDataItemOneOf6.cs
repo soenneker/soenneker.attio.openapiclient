@@ -11,62 +11,93 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_from") is { } nullNodeActiveFrom && nullNodeActiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveFrom = null;
+            if (parseNode.GetChildNode("active_until") is { } nullNodeActiveUntil && nullNodeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveUntil = null;
+            if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("created_by_actor") is { } nullNodeCreatedByActor && nullNodeCreatedByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByActor = null;
+            if (parseNode.GetChildNode("email_address") is { } nullNodeEmailAddress && nullNodeEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddress = null;
+            if (parseNode.GetChildNode("email_domain") is { } nullNodeEmailDomain && nullNodeEmailDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDomain = null;
+            if (parseNode.GetChildNode("email_local_specifier") is { } nullNodeEmailLocalSpecifier && nullNodeEmailLocalSpecifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailLocalSpecifier = null;
+            if (parseNode.GetChildNode("email_root_domain") is { } nullNodeEmailRootDomain && nullNodeEmailRootDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailRootDomain = null;
+            if (parseNode.GetChildNode("original_email_address") is { } nullNodeOriginalEmailAddress && nullNodeOriginalEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalEmailAddress = null;
+        }
+
         /// <summary>The point in time at which this value was made &quot;active&quot;. `active_from` can be considered roughly analogous to `created_at`.</summary>
-        public DateTimeOffset? ActiveFrom { get; set; }
+        public DateTimeOffset? ActiveFrom { get => _explicitNullValueActiveFrom; set { _explicitNullValueActiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_from"); else _explicitNullProperties?.Remove("active_from"); } }
+        private DateTimeOffset? _explicitNullValueActiveFrom = default!;
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
-        public DateTimeOffset? ActiveUntil { get; set; }
+        public DateTimeOffset? ActiveUntil { get => _explicitNullValueActiveUntil; set { _explicitNullValueActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_until"); else _explicitNullProperties?.Remove("active_until"); } }
+        private DateTimeOffset? _explicitNullValueActiveUntil = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType? AttributeType { get => _explicitNullValueAttributeType; set { _explicitNullValueAttributeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_type"); else _explicitNullProperties?.Remove("attribute_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType? _explicitNullValueAttributeType = default!;
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6CreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6CreatedByActor? CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6CreatedByActor? _explicitNullValueCreatedByActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6CreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6CreatedByActor CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6CreatedByActor _explicitNullValueCreatedByActor = default!;
 #endif
         /// <summary>The email_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailAddress { get; set; }
+        public string? EmailAddress { get => _explicitNullValueEmailAddress; set { _explicitNullValueEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_address"); else _explicitNullProperties?.Remove("email_address"); } }
+        private string? _explicitNullValueEmailAddress = default!;
 #nullable restore
 #else
-        public string EmailAddress { get; set; }
+        public string EmailAddress { get => _explicitNullValueEmailAddress; set { _explicitNullValueEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_address"); else _explicitNullProperties?.Remove("email_address"); } }
+        private string _explicitNullValueEmailAddress = default!;
 #endif
         /// <summary>The email_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailDomain { get; set; }
+        public string? EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_domain"); else _explicitNullProperties?.Remove("email_domain"); } }
+        private string? _explicitNullValueEmailDomain = default!;
 #nullable restore
 #else
-        public string EmailDomain { get; set; }
+        public string EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_domain"); else _explicitNullProperties?.Remove("email_domain"); } }
+        private string _explicitNullValueEmailDomain = default!;
 #endif
         /// <summary>The email_local_specifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailLocalSpecifier { get; set; }
+        public string? EmailLocalSpecifier { get => _explicitNullValueEmailLocalSpecifier; set { _explicitNullValueEmailLocalSpecifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_local_specifier"); else _explicitNullProperties?.Remove("email_local_specifier"); } }
+        private string? _explicitNullValueEmailLocalSpecifier = default!;
 #nullable restore
 #else
-        public string EmailLocalSpecifier { get; set; }
+        public string EmailLocalSpecifier { get => _explicitNullValueEmailLocalSpecifier; set { _explicitNullValueEmailLocalSpecifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_local_specifier"); else _explicitNullProperties?.Remove("email_local_specifier"); } }
+        private string _explicitNullValueEmailLocalSpecifier = default!;
 #endif
         /// <summary>The email_root_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailRootDomain { get; set; }
+        public string? EmailRootDomain { get => _explicitNullValueEmailRootDomain; set { _explicitNullValueEmailRootDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_root_domain"); else _explicitNullProperties?.Remove("email_root_domain"); } }
+        private string? _explicitNullValueEmailRootDomain = default!;
 #nullable restore
 #else
-        public string EmailRootDomain { get; set; }
+        public string EmailRootDomain { get => _explicitNullValueEmailRootDomain; set { _explicitNullValueEmailRootDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_root_domain"); else _explicitNullProperties?.Remove("email_root_domain"); } }
+        private string _explicitNullValueEmailRootDomain = default!;
 #endif
         /// <summary>The original_email_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalEmailAddress { get; set; }
+        public string? OriginalEmailAddress { get => _explicitNullValueOriginalEmailAddress; set { _explicitNullValueOriginalEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_email_address"); else _explicitNullProperties?.Remove("original_email_address"); } }
+        private string? _explicitNullValueOriginalEmailAddress = default!;
 #nullable restore
 #else
-        public string OriginalEmailAddress { get; set; }
+        public string OriginalEmailAddress { get => _explicitNullValueOriginalEmailAddress; set { _explicitNullValueOriginalEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_email_address"); else _explicitNullProperties?.Remove("original_email_address"); } }
+        private string _explicitNullValueOriginalEmailAddress = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6"/> and sets the default values.
@@ -83,7 +114,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200ResponseDataItemOneOf6(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +151,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteStringValue("email_local_specifier", EmailLocalSpecifier);
             writer.WriteStringValue("email_root_domain", EmailRootDomain);
             writer.WriteStringValue("original_email_address", OriginalEmailAddress);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

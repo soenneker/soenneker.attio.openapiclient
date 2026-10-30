@@ -63,6 +63,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ActivitiesByActivity200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,6 +88,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ActivitiesByActivity404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ActivitiesByActivity200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ActivitiesByActivity200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -117,6 +121,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ActivitiesByActivity200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

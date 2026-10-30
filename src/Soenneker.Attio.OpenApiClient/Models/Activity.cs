@@ -11,58 +11,85 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Activity : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("extends") is { } nullNodeExtends && nullNodeExtends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extends = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_system_activity") is { } nullNodeIsSystemActivity && nullNodeIsSystemActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSystemActivity = null;
+            if (parseNode.GetChildNode("plural_noun") is { } nullNodePluralNoun && nullNodePluralNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralNoun = null;
+            if (parseNode.GetChildNode("singular_noun") is { } nullNodeSingularNoun && nullNodeSingularNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularNoun = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A unique, human-readable slug to access the activity through URLs and API calls. Formatted in snake case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiSlug { get; set; }
+        public string? ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string? _explicitNullValueApiSlug = default!;
 #nullable restore
 #else
-        public string ApiSlug { get; set; }
+        public string ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string _explicitNullValueApiSlug = default!;
 #endif
         /// <summary>When the activity was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The schemas this activity directly extends, which supply its inherited attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.ActivityExtendsItem>? Extends { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.ActivityExtendsItem>? Extends { get => _explicitNullValueExtends; set { _explicitNullValueExtends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extends"); else _explicitNullProperties?.Remove("extends"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.ActivityExtendsItem>? _explicitNullValueExtends = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.ActivityExtendsItem> Extends { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.ActivityExtendsItem> Extends { get => _explicitNullValueExtends; set { _explicitNullValueExtends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extends"); else _explicitNullProperties?.Remove("extends"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.ActivityExtendsItem> _explicitNullValueExtends = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.ActivityId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ActivityId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ActivityId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.ActivityId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ActivityId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ActivityId _explicitNullValueId = default!;
 #endif
         /// <summary>`true` when Attio defines the activity, `false` when it&apos;s a custom activity.</summary>
-        public bool? IsSystemActivity { get; set; }
+        public bool? IsSystemActivity { get => _explicitNullValueIsSystemActivity; set { _explicitNullValueIsSystemActivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_system_activity"); else _explicitNullProperties?.Remove("is_system_activity"); } }
+        private bool? _explicitNullValueIsSystemActivity = default!;
         /// <summary>The plural form of the activity&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PluralNoun { get; set; }
+        public string? PluralNoun { get => _explicitNullValuePluralNoun; set { _explicitNullValuePluralNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_noun"); else _explicitNullProperties?.Remove("plural_noun"); } }
+        private string? _explicitNullValuePluralNoun = default!;
 #nullable restore
 #else
-        public string PluralNoun { get; set; }
+        public string PluralNoun { get => _explicitNullValuePluralNoun; set { _explicitNullValuePluralNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_noun"); else _explicitNullProperties?.Remove("plural_noun"); } }
+        private string _explicitNullValuePluralNoun = default!;
 #endif
         /// <summary>The singular form of the activity&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingularNoun { get; set; }
+        public string? SingularNoun { get => _explicitNullValueSingularNoun; set { _explicitNullValueSingularNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_noun"); else _explicitNullProperties?.Remove("singular_noun"); } }
+        private string? _explicitNullValueSingularNoun = default!;
 #nullable restore
 #else
-        public string SingularNoun { get; set; }
+        public string SingularNoun { get => _explicitNullValueSingularNoun; set { _explicitNullValueSingularNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_noun"); else _explicitNullProperties?.Remove("singular_noun"); } }
+        private string _explicitNullValueSingularNoun = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.Activity"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.Activity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.Activity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.Activity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteBoolValue("is_system_activity", IsSystemActivity);
             writer.WriteStringValue("plural_noun", PluralNoun);
             writer.WriteStringValue("singular_noun", SingularNoun);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

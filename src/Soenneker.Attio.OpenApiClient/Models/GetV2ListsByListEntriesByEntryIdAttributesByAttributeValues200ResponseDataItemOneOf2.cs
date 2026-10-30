@@ -11,23 +11,41 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_from") is { } nullNodeActiveFrom && nullNodeActiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveFrom = null;
+            if (parseNode.GetChildNode("active_until") is { } nullNodeActiveUntil && nullNodeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveUntil = null;
+            if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("created_by_actor") is { } nullNodeCreatedByActor && nullNodeCreatedByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByActor = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>The point in time at which this value was made &quot;active&quot;. `active_from` can be considered roughly analogous to `created_at`.</summary>
-        public DateTimeOffset? ActiveFrom { get; set; }
+        public DateTimeOffset? ActiveFrom { get => _explicitNullValueActiveFrom; set { _explicitNullValueActiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_from"); else _explicitNullProperties?.Remove("active_from"); } }
+        private DateTimeOffset? _explicitNullValueActiveFrom = default!;
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
-        public DateTimeOffset? ActiveUntil { get; set; }
+        public DateTimeOffset? ActiveUntil { get => _explicitNullValueActiveUntil; set { _explicitNullValueActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_until"); else _explicitNullProperties?.Remove("active_until"); } }
+        private DateTimeOffset? _explicitNullValueActiveUntil = default!;
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.CheckboxAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CheckboxAttributeType? AttributeType { get => _explicitNullValueAttributeType; set { _explicitNullValueAttributeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_type"); else _explicitNullProperties?.Remove("attribute_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CheckboxAttributeType? _explicitNullValueAttributeType = default!;
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2CreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2CreatedByActor? CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2CreatedByActor? _explicitNullValueCreatedByActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2CreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2CreatedByActor CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2CreatedByActor _explicitNullValueCreatedByActor = default!;
 #endif
         /// <summary>A boolean representing whether the checkbox is checked or not. The string values &apos;true&apos; and &apos;false&apos; are also accepted.</summary>
-        public bool? Value { get; set; }
+        public bool? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private bool? _explicitNullValueValue = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +54,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +82,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("active_until", ActiveUntil);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CheckboxAttributeType>("attribute_type", AttributeType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200ResponseDataItemOneOf2CreatedByActor>("created_by_actor", CreatedByActor);
-            writer.WriteBoolValue("value", Value);
+            writer.WriteBoolValue("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

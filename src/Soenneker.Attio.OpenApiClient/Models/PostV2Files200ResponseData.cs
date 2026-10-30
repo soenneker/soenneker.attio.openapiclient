@@ -12,7 +12,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostV2Files200ResponseData : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,21 +50,30 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2Files200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("file_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Attio.OpenApiClient.Models.PostV2Files200ResponseData();
-            if("connected-file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ConnectedFile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ConnectedFile = new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile();
+                
             }
-            else if("connected-folder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ConnectedFolder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ConnectedFolder = new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFolder();
+                
             }
-            else if("folder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Folder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.Folder = new global::Soenneker.Attio.OpenApiClient.Models.Folder();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("object_id") != null && parseNode.GetChildNode("object_slug") != null && parseNode.GetChildNode("record_id") != null && parseNode.GetChildNode("storage_provider") != null && (parseNode.GetChildNode("storage_provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("attio".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "dropbox".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "box".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "google-drive".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "microsoft-onedrive".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("created_by_actor") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("file_type") != null && (parseNode.GetChildNode("file_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("folder".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("parent_folder_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("object_id") != null && parseNode.GetChildNode("object_slug") != null && parseNode.GetChildNode("record_id") != null && parseNode.GetChildNode("storage_provider") != null && (parseNode.GetChildNode("storage_provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("attio".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "dropbox".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "box".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "google-drive".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "microsoft-onedrive".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("created_by_actor") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("file_type") != null && (parseNode.GetChildNode("file_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("connected-file".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("external_provider_file_id") != null && parseNode.GetChildNode("microsoft_drive_id") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("object_id") != null && parseNode.GetChildNode("object_slug") != null && parseNode.GetChildNode("record_id") != null && parseNode.GetChildNode("storage_provider") != null && (parseNode.GetChildNode("storage_provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("attio".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "dropbox".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "box".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "google-drive".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "microsoft-onedrive".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("created_by_actor") != null && parseNode.GetChildNode("created_at") != null && parseNode.GetChildNode("file_type") != null && (parseNode.GetChildNode("file_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("connected-folder".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("external_provider_file_id") != null && parseNode.GetChildNode("microsoft_drive_id") != null))();
+            if (result.ConnectedFile == null && result.ConnectedFolder == null && result.Folder == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.Folder = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.Folder(), parseNode);
+            if (result.ConnectedFile == null && result.ConnectedFolder == null && result.Folder == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.ConnectedFile = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile(), parseNode);
+            if (result.ConnectedFile == null && result.ConnectedFolder == null && result.Folder == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.ConnectedFolder = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFolder(), parseNode);
+            if (result.ConnectedFile == null && result.ConnectedFolder == null && result.Folder == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ConnectedFile == null && ConnectedFolder == null && Folder == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ConnectedFile != null && ConnectedFolder == null && Folder == null) { if (ConnectedFile is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectedFile); return; }
+            if (ConnectedFolder != null && ConnectedFile == null && Folder == null) { if (ConnectedFolder is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectedFolder); return; }
+            if (Folder != null && ConnectedFile == null && ConnectedFolder == null) { if (Folder is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Folder); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ConnectedFile != null)
             {
+                if (ConnectedFile is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile>(null, ConnectedFile);
             }
             else if(ConnectedFolder != null)
             {
+                if (ConnectedFolder is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.ConnectedFolder>(null, ConnectedFolder);
             }
             else if(Folder != null)
             {
+                if (Folder is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.Folder>(null, Folder);
             }
         }

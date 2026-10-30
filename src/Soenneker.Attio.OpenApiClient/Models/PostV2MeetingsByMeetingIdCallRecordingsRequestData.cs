@@ -11,24 +11,37 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2MeetingsByMeetingIdCallRecordingsRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("transcript") is { } nullNodeTranscript && nullNodeTranscript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcript = null;
+            if (parseNode.GetChildNode("video_url") is { } nullNodeVideoUrl && nullNodeVideoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The call recording&apos;s transcript. It must contain at least one transcript segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem>? Transcript { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem>? Transcript { get => _explicitNullValueTranscript; set { _explicitNullValueTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript"); else _explicitNullProperties?.Remove("transcript"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem>? _explicitNullValueTranscript = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem> Transcript { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem> Transcript { get => _explicitNullValueTranscript; set { _explicitNullValueTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript"); else _explicitNullProperties?.Remove("transcript"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem> _explicitNullValueTranscript = default!;
 #endif
         /// <summary>A publicly accessible URL to a video file of the call recording. Attio will download the video from this URL asynchronously.This field is optional — a call recording can be created with only a `transcript` and no video.**Requirements:**- **Protocol:** The URL must use the `https` protocol.- **File type:** The file must be a `.mp4` file.- **File size:** The file must not exceed 1GB in size.- **Accessibility:** For the request to be accepted, the URL must be publicly accessible. Attio will make a `HEAD` request to the URL to verify its accessibility and retrieve file metadata. The response to this request must include a `Content-Length` header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VideoUrl { get; set; }
+        public string? VideoUrl { get => _explicitNullValueVideoUrl; set { _explicitNullValueVideoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_url"); else _explicitNullProperties?.Remove("video_url"); } }
+        private string? _explicitNullValueVideoUrl = default!;
 #nullable restore
 #else
-        public string VideoUrl { get; set; }
+        public string VideoUrl { get => _explicitNullValueVideoUrl; set { _explicitNullValueVideoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_url"); else _explicitNullProperties?.Remove("video_url"); } }
+        private string _explicitNullValueVideoUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestData"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem>("transcript", Transcript);
             writer.WriteStringValue("video_url", VideoUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -55,6 +55,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Sequences.Unsubscribed_emails
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2SequencesUnsubscribedEmails400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2SequencesUnsubscribedEmails200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2SequencesUnsubscribedEmails200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

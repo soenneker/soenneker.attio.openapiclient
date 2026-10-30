@@ -11,25 +11,45 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_from") is { } nullNodeActiveFrom && nullNodeActiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveFrom = null;
+            if (parseNode.GetChildNode("active_until") is { } nullNodeActiveUntil && nullNodeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveUntil = null;
+            if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("created_by_actor") is { } nullNodeCreatedByActor && nullNodeCreatedByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByActor = null;
+            if (parseNode.GetChildNode("referenced_actor_id") is { } nullNodeReferencedActorId && nullNodeReferencedActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorId = null;
+            if (parseNode.GetChildNode("referenced_actor_type") is { } nullNodeReferencedActorType && nullNodeReferencedActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorType = null;
+        }
+
         /// <summary>The point in time at which this value was made &quot;active&quot;. `active_from` can be considered roughly analogous to `created_at`.</summary>
-        public DateTimeOffset? ActiveFrom { get; set; }
+        public DateTimeOffset? ActiveFrom { get => _explicitNullValueActiveFrom; set { _explicitNullValueActiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_from"); else _explicitNullProperties?.Remove("active_from"); } }
+        private DateTimeOffset? _explicitNullValueActiveFrom = default!;
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
-        public DateTimeOffset? ActiveUntil { get; set; }
+        public DateTimeOffset? ActiveUntil { get => _explicitNullValueActiveUntil; set { _explicitNullValueActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_until"); else _explicitNullProperties?.Remove("active_until"); } }
+        private DateTimeOffset? _explicitNullValueActiveUntil = default!;
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.ActorReferenceAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ActorReferenceAttributeType? AttributeType { get => _explicitNullValueAttributeType; set { _explicitNullValueAttributeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_type"); else _explicitNullProperties?.Remove("attribute_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ActorReferenceAttributeType? _explicitNullValueAttributeType = default!;
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemCreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemCreatedByActor? CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemCreatedByActor? _explicitNullValueCreatedByActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemCreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemCreatedByActor CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemCreatedByActor _explicitNullValueCreatedByActor = default!;
 #endif
         /// <summary>The ID of the referenced actor.</summary>
-        public Guid? ReferencedActorId { get; set; }
+        public Guid? ReferencedActorId { get => _explicitNullValueReferencedActorId; set { _explicitNullValueReferencedActorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_actor_id"); else _explicitNullProperties?.Remove("referenced_actor_id"); } }
+        private Guid? _explicitNullValueReferencedActorId = default!;
         /// <summary>The type of the referenced actor. [Read more information on actor types here](/docs/actors).</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemReferencedActorType? ReferencedActorType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemReferencedActorType? ReferencedActorType { get => _explicitNullValueReferencedActorType; set { _explicitNullValueReferencedActorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_actor_type"); else _explicitNullProperties?.Remove("referenced_actor_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemReferencedActorType? _explicitNullValueReferencedActorType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +58,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +88,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.ActorReferenceAttributeType>("attribute_type", AttributeType);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteGuidValue("referenced_actor_id", ReferencedActorId);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemReferencedActorType>("referenced_actor_type", ReferencedActorType);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsCompaniesRecords200ResponseDataValuesStrongestConnectionUserItemReferencedActorType>("referenced_actor_type", ReferencedActorType);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

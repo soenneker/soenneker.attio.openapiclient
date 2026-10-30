@@ -66,6 +66,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Statuses
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttributeStatuses404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttributeStatuses200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttributeStatuses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -97,6 +99,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item.Statuses
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeStatuses403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeStatuses404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeStatuses409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeStatuses200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesByAttributeStatuses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

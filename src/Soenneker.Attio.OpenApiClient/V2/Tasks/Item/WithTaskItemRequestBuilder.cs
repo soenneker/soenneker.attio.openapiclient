@@ -53,6 +53,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2TasksByTaskId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2TasksByTaskId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2TasksByTaskId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,6 +78,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2TasksByTaskId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2TasksByTaskId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2TasksByTaskId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,6 +107,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Tasks.Item
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskId400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2TasksByTaskId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

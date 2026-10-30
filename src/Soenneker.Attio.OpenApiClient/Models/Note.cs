@@ -11,76 +11,111 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Note : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content_markdown") is { } nullNodeContentMarkdown && nullNodeContentMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentMarkdown = null;
+            if (parseNode.GetChildNode("content_plaintext") is { } nullNodeContentPlaintext && nullNodeContentPlaintext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentPlaintext = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("created_by_actor") is { } nullNodeCreatedByActor && nullNodeCreatedByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByActor = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("meeting_id") is { } nullNodeMeetingId && nullNodeMeetingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeetingId = null;
+            if (parseNode.GetChildNode("parent_object") is { } nullNodeParentObject && nullNodeParentObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentObject = null;
+            if (parseNode.GetChildNode("parent_record_id") is { } nullNodeParentRecordId && nullNodeParentRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentRecordId = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The markdown representation of the note content. Supports a subset of markdown features including:- Headings (levels 1-3 only with `#`, `##`, `###`)- Unordered lists (`-`, `*`, `+`)- Ordered lists (`1.`, `2.`, etc.)- Text styling: `**bold**`, `*italic*`, `~~strikethrough~~`, `==highlighted==`- Links: `[link text](https://example.com)`Note that note images are not returned as part of the markdown API representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentMarkdown { get; set; }
+        public string? ContentMarkdown { get => _explicitNullValueContentMarkdown; set { _explicitNullValueContentMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_markdown"); else _explicitNullProperties?.Remove("content_markdown"); } }
+        private string? _explicitNullValueContentMarkdown = default!;
 #nullable restore
 #else
-        public string ContentMarkdown { get; set; }
+        public string ContentMarkdown { get => _explicitNullValueContentMarkdown; set { _explicitNullValueContentMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_markdown"); else _explicitNullProperties?.Remove("content_markdown"); } }
+        private string _explicitNullValueContentMarkdown = default!;
 #endif
         /// <summary>The plaintext representation of the note content. The line feed character `\n` represents new lines within the note content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentPlaintext { get; set; }
+        public string? ContentPlaintext { get => _explicitNullValueContentPlaintext; set { _explicitNullValueContentPlaintext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_plaintext"); else _explicitNullProperties?.Remove("content_plaintext"); } }
+        private string? _explicitNullValueContentPlaintext = default!;
 #nullable restore
 #else
-        public string ContentPlaintext { get; set; }
+        public string ContentPlaintext { get => _explicitNullValueContentPlaintext; set { _explicitNullValueContentPlaintext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_plaintext"); else _explicitNullProperties?.Remove("content_plaintext"); } }
+        private string _explicitNullValueContentPlaintext = default!;
 #endif
         /// <summary>When the note was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The actor that created this note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.NoteCreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.NoteCreatedByActor? CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.NoteCreatedByActor? _explicitNullValueCreatedByActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.NoteCreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.NoteCreatedByActor CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.NoteCreatedByActor _explicitNullValueCreatedByActor = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.NoteId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.NoteId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.NoteId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.NoteId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.NoteId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.NoteId _explicitNullValueId = default!;
 #endif
         /// <summary>The ID of the meeting associated with this note, or null if no meeting is associated.</summary>
-        public Guid? MeetingId { get; set; }
+        public Guid? MeetingId { get => _explicitNullValueMeetingId; set { _explicitNullValueMeetingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_id"); else _explicitNullProperties?.Remove("meeting_id"); } }
+        private Guid? _explicitNullValueMeetingId = default!;
         /// <summary>The slug or ID of the parent object the note belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentObject { get; set; }
+        public string? ParentObject { get => _explicitNullValueParentObject; set { _explicitNullValueParentObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_object"); else _explicitNullProperties?.Remove("parent_object"); } }
+        private string? _explicitNullValueParentObject = default!;
 #nullable restore
 #else
-        public string ParentObject { get; set; }
+        public string ParentObject { get => _explicitNullValueParentObject; set { _explicitNullValueParentObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_object"); else _explicitNullProperties?.Remove("parent_object"); } }
+        private string _explicitNullValueParentObject = default!;
 #endif
         /// <summary>The ID of the parent record the note belongs to.</summary>
-        public Guid? ParentRecordId { get; set; }
+        public Guid? ParentRecordId { get => _explicitNullValueParentRecordId; set { _explicitNullValueParentRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_record_id"); else _explicitNullProperties?.Remove("parent_record_id"); } }
+        private Guid? _explicitNullValueParentRecordId = default!;
         /// <summary>An array of records or workspace members that are @-tagged in the note content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem>? Tags { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem> Tags { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem> _explicitNullValueTags = default!;
 #endif
         /// <summary>The note title. The title is plaintext only and has no formatting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.Note"/> and sets the default values.
@@ -97,7 +132,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.Note CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.Note();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.Note(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +171,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteGuidValue("parent_record_id", ParentRecordId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem>("tags", Tags);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

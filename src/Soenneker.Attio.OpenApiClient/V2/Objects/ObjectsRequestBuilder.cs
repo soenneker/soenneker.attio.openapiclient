@@ -98,7 +98,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Objects200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Objects200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Objects200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Objects200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new custom object in your workspace.Required scopes: `object_configuration:read-write`.Supported token levels: `workspace`, `user`.
@@ -126,6 +126,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects403Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Objects200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

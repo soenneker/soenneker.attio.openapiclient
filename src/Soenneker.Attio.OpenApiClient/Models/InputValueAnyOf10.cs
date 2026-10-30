@@ -11,18 +11,32 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InputValueAnyOf10 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("interacted_at") is { } nullNodeInteractedAt && nullNodeInteractedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractedAt = null;
+            if (parseNode.GetChildNode("interaction_type") is { } nullNodeInteractionType && nullNodeInteractionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionType = null;
+            if (parseNode.GetChildNode("owner_actor") is { } nullNodeOwnerActor && nullNodeOwnerActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerActor = null;
+        }
+
         /// <summary>When the interaction occurred.</summary>
-        public DateTimeOffset? InteractedAt { get; set; }
+        public DateTimeOffset? InteractedAt { get => _explicitNullValueInteractedAt; set { _explicitNullValueInteractedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interacted_at"); else _explicitNullProperties?.Remove("interacted_at"); } }
+        private DateTimeOffset? _explicitNullValueInteractedAt = default!;
         /// <summary>The type of interaction e.g. calendar or email.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10InteractionType? InteractionType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10InteractionType? InteractionType { get => _explicitNullValueInteractionType; set { _explicitNullValueInteractionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interaction_type"); else _explicitNullProperties?.Remove("interaction_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10InteractionType? _explicitNullValueInteractionType = default!;
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor? OwnerActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor? OwnerActor { get => _explicitNullValueOwnerActor; set { _explicitNullValueOwnerActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_actor"); else _explicitNullProperties?.Remove("owner_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor? _explicitNullValueOwnerActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor OwnerActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor OwnerActor { get => _explicitNullValueOwnerActor; set { _explicitNullValueOwnerActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_actor"); else _explicitNullProperties?.Remove("owner_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor _explicitNullValueOwnerActor = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +46,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +70,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("interacted_at", InteractedAt);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10InteractionType>("interaction_type", InteractionType);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor>("owner_actor", OwnerActor);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.InputValueAnyOf10OwnerActor>("owner_actor", OwnerActor);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,27 +11,42 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutV2ListsByListEntriesRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entry_values") is { } nullNodeEntryValues && nullNodeEntryValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryValues = null;
+            if (parseNode.GetChildNode("parent_object") is { } nullNodeParentObject && nullNodeParentObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentObject = null;
+            if (parseNode.GetChildNode("parent_record_id") is { } nullNodeParentRecordId && nullNodeParentRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentRecordId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object with an attribute `api_slug` or `attribute_id` as the key, and a single value (for single-select attributes), or an array of values (for single or multi-select attributes) as the values. For complete documentation on values for all attribute types, please see our [attribute type docs](/docs/attribute-types).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestDataEntryValues? EntryValues { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestDataEntryValues? EntryValues { get => _explicitNullValueEntryValues; set { _explicitNullValueEntryValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_values"); else _explicitNullProperties?.Remove("entry_values"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestDataEntryValues? _explicitNullValueEntryValues = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestDataEntryValues EntryValues { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestDataEntryValues EntryValues { get => _explicitNullValueEntryValues; set { _explicitNullValueEntryValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_values"); else _explicitNullProperties?.Remove("entry_values"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestDataEntryValues _explicitNullValueEntryValues = default!;
 #endif
         /// <summary>A UUID or slug identifying the object that the added parent record belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentObject { get; set; }
+        public string? ParentObject { get => _explicitNullValueParentObject; set { _explicitNullValueParentObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_object"); else _explicitNullProperties?.Remove("parent_object"); } }
+        private string? _explicitNullValueParentObject = default!;
 #nullable restore
 #else
-        public string ParentObject { get; set; }
+        public string ParentObject { get => _explicitNullValueParentObject; set { _explicitNullValueParentObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_object"); else _explicitNullProperties?.Remove("parent_object"); } }
+        private string _explicitNullValueParentObject = default!;
 #endif
         /// <summary>A UUID identifying the record you want to add to the list. The record will become the &apos;parent&apos; of the created list entry.</summary>
-        public Guid? ParentRecordId { get; set; }
+        public Guid? ParentRecordId { get => _explicitNullValueParentRecordId; set { _explicitNullValueParentRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_record_id"); else _explicitNullProperties?.Remove("parent_record_id"); } }
+        private Guid? _explicitNullValueParentRecordId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestData"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesRequestDataEntryValues>("entry_values", EntryValues);
             writer.WriteStringValue("parent_object", ParentObject);
             writer.WriteGuidValue("parent_record_id", ParentRecordId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

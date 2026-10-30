@@ -12,13 +12,24 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrency : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("default_currency_code") is { } nullNodeDefaultCurrencyCode && nullNodeDefaultCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultCurrencyCode = null;
+            if (parseNode.GetChildNode("display_type") is { } nullNodeDisplayType && nullNodeDisplayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ISO4217 code representing the currency that values for this attribute should be stored in.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDefaultCurrencyCode? DefaultCurrencyCode { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDefaultCurrencyCode? DefaultCurrencyCode { get => _explicitNullValueDefaultCurrencyCode; set { _explicitNullValueDefaultCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_currency_code"); else _explicitNullProperties?.Remove("default_currency_code"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDefaultCurrencyCode? _explicitNullValueDefaultCurrencyCode = default!;
         /// <summary>How the currency should be displayed across the app. &quot;code&quot; will display the ISO currency code e.g. &quot;USD&quot;, &quot;name&quot; will display the localized currency name e.g. &quot;British pound&quot;, &quot;narrowSymbol&quot; will display &quot;$1&quot; instead of &quot;US$1&quot; and &quot;symbol&quot; will display a localized currency symbol such as &quot;$&quot;.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDisplayType? DisplayType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDisplayType? DisplayType { get => _explicitNullValueDisplayType; set { _explicitNullValueDisplayType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_type"); else _explicitNullProperties?.Remove("display_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDisplayType? _explicitNullValueDisplayType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrency"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrency CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrency();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrency(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDefaultCurrencyCode>("default_currency_code", DefaultCurrencyCode);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataConfigCurrencyDisplayType>("display_type", DisplayType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

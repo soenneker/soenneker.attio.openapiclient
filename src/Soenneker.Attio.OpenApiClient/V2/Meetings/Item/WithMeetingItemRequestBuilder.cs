@@ -61,6 +61,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2MeetingsByMeetingId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,6 +86,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -111,6 +115,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PatchV2MeetingsByMeetingId400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2MeetingsByMeetingId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2MeetingsByMeetingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2MeetingsByMeetingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -138,6 +144,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Meetings.Item
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PutV2MeetingsByMeetingId400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2MeetingsByMeetingId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2MeetingsByMeetingId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2MeetingsByMeetingId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

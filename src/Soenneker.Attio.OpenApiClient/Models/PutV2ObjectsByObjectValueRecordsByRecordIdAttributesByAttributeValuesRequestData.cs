@@ -11,16 +11,28 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("replace_history") is { } nullNodeReplaceHistory && nullNodeReplaceHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplaceHistory = null;
+            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+        }
+
         /// <summary>Must be `true`. Acknowledges that this request replaces the attribute&apos;s entire value history, destroying every value it currently has, including values not present in this request.</summary>
-        public bool? ReplaceHistory { get; set; }
+        public bool? ReplaceHistory { get => _explicitNullValueReplaceHistory; set { _explicitNullValueReplaceHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_history"); else _explicitNullProperties?.Remove("replace_history"); } }
+        private bool? _explicitNullValueReplaceHistory = default!;
         /// <summary>The complete value history to write, replacing any existing values. Values may be supplied in any order. Gaps between intervals are allowed. At least one value is required, and a maximum of 400 values may be written in one request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem>? Values { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem> Values { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem> _explicitNullValueValues = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +42,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("replace_history", ReplaceHistory);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem>("values", Values);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValuesRequestDataValuesItem>("values", Values);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

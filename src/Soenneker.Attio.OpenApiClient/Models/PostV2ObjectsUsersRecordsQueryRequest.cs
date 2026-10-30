@@ -11,28 +11,45 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ObjectsUsersRecordsQueryRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
+            if (parseNode.GetChildNode("sorts") is { } nullNodeSorts && nullNodeSorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sorts = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object used to filter results to a subset of records. See the [full guide to filtering and sorting here](/rest-api/guides/filtering-and-sorting).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestFilter? Filter { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestFilter? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestFilter Filter { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestFilter _explicitNullValueFilter = default!;
 #endif
         /// <summary>The maximum number of results to return. Defaults to 500. See the [full guide to pagination here](/rest-api/guides/pagination).</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>The number of results to skip over before returning. Defaults to 0. See the [full guide to pagination here](/rest-api/guides/pagination).</summary>
-        public double? Offset { get; set; }
+        public double? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private double? _explicitNullValueOffset = default!;
         /// <summary>An object used to sort results. See the [full guide to filtering and sorting here](/rest-api/guides/filtering-and-sorting).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestSortsItem>? Sorts { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestSortsItem>? Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestSortsItem>? _explicitNullValueSorts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestSortsItem> Sorts { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestSortsItem> Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestSortsItem> _explicitNullValueSorts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequest"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteDoubleValue("offset", Offset);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsUsersRecordsQueryRequestSortsItem>("sorts", Sorts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

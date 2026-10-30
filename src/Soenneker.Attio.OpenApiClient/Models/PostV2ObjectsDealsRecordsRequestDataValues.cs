@@ -12,56 +12,81 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostV2ObjectsDealsRecordsRequestDataValues : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("associated_company") is { } nullNodeAssociatedCompany && nullNodeAssociatedCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedCompany = null;
+            if (parseNode.GetChildNode("associated_people") is { } nullNodeAssociatedPeople && nullNodeAssociatedPeople.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedPeople = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("stage") is { } nullNodeStage && nullNodeStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stage = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The associated_company property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem>? AssociatedCompany { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem>? AssociatedCompany { get => _explicitNullValueAssociatedCompany; set { _explicitNullValueAssociatedCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_company"); else _explicitNullProperties?.Remove("associated_company"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem>? _explicitNullValueAssociatedCompany = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem> AssociatedCompany { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem> AssociatedCompany { get => _explicitNullValueAssociatedCompany; set { _explicitNullValueAssociatedCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_company"); else _explicitNullProperties?.Remove("associated_company"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItem> _explicitNullValueAssociatedCompany = default!;
 #endif
         /// <summary>The associated_people property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedPeopleItem>? AssociatedPeople { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedPeopleItem>? AssociatedPeople { get => _explicitNullValueAssociatedPeople; set { _explicitNullValueAssociatedPeople = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_people"); else _explicitNullProperties?.Remove("associated_people"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedPeopleItem>? _explicitNullValueAssociatedPeople = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedPeopleItem> AssociatedPeople { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedPeopleItem> AssociatedPeople { get => _explicitNullValueAssociatedPeople; set { _explicitNullValueAssociatedPeople = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_people"); else _explicitNullProperties?.Remove("associated_people"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedPeopleItem> _explicitNullValueAssociatedPeople = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesNameItem>? Name { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesNameItem>? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesNameItem>? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesNameItem> Name { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesNameItem> Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesNameItem> _explicitNullValueName = default!;
 #endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem>? Owner { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem>? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem>? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem> Owner { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem> Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem> _explicitNullValueOwner = default!;
 #endif
         /// <summary>The stage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesStageItem>? Stage { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesStageItem>? Stage { get => _explicitNullValueStage; set { _explicitNullValueStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stage"); else _explicitNullProperties?.Remove("stage"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesStageItem>? _explicitNullValueStage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesStageItem> Stage { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesStageItem> Stage { get => _explicitNullValueStage; set { _explicitNullValueStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stage"); else _explicitNullProperties?.Remove("stage"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesStageItem> _explicitNullValueStage = default!;
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesValueItem>? Value { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesValueItem>? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesValueItem>? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesValueItem> Value { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesValueItem> Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesValueItem> _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValues"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValues CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValues();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValues(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesOwnerItem>("owner", Owner);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesStageItem>("stage", Stage);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesValueItem>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

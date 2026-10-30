@@ -11,40 +11,64 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_from") is { } nullNodeActiveFrom && nullNodeActiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveFrom = null;
+            if (parseNode.GetChildNode("active_until") is { } nullNodeActiveUntil && nullNodeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveUntil = null;
+            if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("country_code") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("created_by_actor") is { } nullNodeCreatedByActor && nullNodeCreatedByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByActor = null;
+            if (parseNode.GetChildNode("original_phone_number") is { } nullNodeOriginalPhoneNumber && nullNodeOriginalPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPhoneNumber = null;
+            if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+        }
+
         /// <summary>The point in time at which this value was made &quot;active&quot;. `active_from` can be considered roughly analogous to `created_at`.</summary>
-        public DateTimeOffset? ActiveFrom { get; set; }
+        public DateTimeOffset? ActiveFrom { get => _explicitNullValueActiveFrom; set { _explicitNullValueActiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_from"); else _explicitNullProperties?.Remove("active_from"); } }
+        private DateTimeOffset? _explicitNullValueActiveFrom = default!;
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
-        public DateTimeOffset? ActiveUntil { get; set; }
+        public DateTimeOffset? ActiveUntil { get => _explicitNullValueActiveUntil; set { _explicitNullValueActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_until"); else _explicitNullProperties?.Remove("active_until"); } }
+        private DateTimeOffset? _explicitNullValueActiveUntil = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType? AttributeType { get => _explicitNullValueAttributeType; set { _explicitNullValueAttributeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_type"); else _explicitNullProperties?.Remove("attribute_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType? _explicitNullValueAttributeType = default!;
         /// <summary>The ISO 3166-1 alpha-2 country code representing the country that this phone number belongs to.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCountryCode? CountryCode { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCountryCode? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_code"); else _explicitNullProperties?.Remove("country_code"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCountryCode? _explicitNullValueCountryCode = default!;
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor? CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor? _explicitNullValueCreatedByActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor _explicitNullValueCreatedByActor = default!;
 #endif
         /// <summary>The raw, original phone number, as inputted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalPhoneNumber { get; set; }
+        public string? OriginalPhoneNumber { get => _explicitNullValueOriginalPhoneNumber; set { _explicitNullValueOriginalPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_phone_number"); else _explicitNullProperties?.Remove("original_phone_number"); } }
+        private string? _explicitNullValueOriginalPhoneNumber = default!;
 #nullable restore
 #else
-        public string OriginalPhoneNumber { get; set; }
+        public string OriginalPhoneNumber { get => _explicitNullValueOriginalPhoneNumber; set { _explicitNullValueOriginalPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_phone_number"); else _explicitNullProperties?.Remove("original_phone_number"); } }
+        private string _explicitNullValueOriginalPhoneNumber = default!;
 #endif
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber { get; set; }
+        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItem"/> and sets the default values.
@@ -61,7 +85,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecords200ResponseDataValuesPhoneNumbersItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteStringValue("original_phone_number", OriginalPhoneNumber);
             writer.WriteStringValue("phone_number", PhoneNumber);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,11 +11,22 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ObjectsByObjectValueRecordsMergeRequestData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("primary_record_id") is { } nullNodePrimaryRecordId && nullNodePrimaryRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryRecordId = null;
+            if (parseNode.GetChildNode("secondary_record_id") is { } nullNodeSecondaryRecordId && nullNodeSecondaryRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryRecordId = null;
+        }
+
         /// <summary>The ID of the record to keep values from. Where both records have a value for the same attribute, the primary record&apos;s value takes precedence.</summary>
-        public Guid? PrimaryRecordId { get; set; }
+        public Guid? PrimaryRecordId { get => _explicitNullValuePrimaryRecordId; set { _explicitNullValuePrimaryRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_record_id"); else _explicitNullProperties?.Remove("primary_record_id"); } }
+        private Guid? _explicitNullValuePrimaryRecordId = default!;
         /// <summary>The ID of the record to merge into the primary record. Its values are only kept where the primary record has no value for that attribute.</summary>
-        public Guid? SecondaryRecordId { get; set; }
+        public Guid? SecondaryRecordId { get => _explicitNullValueSecondaryRecordId; set { _explicitNullValueSecondaryRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_record_id"); else _explicitNullProperties?.Remove("secondary_record_id"); } }
+        private Guid? _explicitNullValueSecondaryRecordId = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -24,7 +35,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +57,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("primary_record_id", PrimaryRecordId);
-            writer.WriteGuidValue("secondary_record_id", SecondaryRecordId);
+            writer.WriteGuidValue("secondary_record_id", SecondaryRecordId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -80,6 +80,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -111,6 +113,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Workspaces.Records
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsWorkspacesRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -47,7 +47,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files.Item.Download
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Downloads a file by redirecting to a signed URL.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `object_configuration:read`, `record_permission:read`, `file:read`.Supported token levels: `workspace`, `user`.

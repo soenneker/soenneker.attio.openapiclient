@@ -55,6 +55,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item.Attributes.
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,6 +86,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Item.Attributes.
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsByObjectValueRecordsByRecordIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

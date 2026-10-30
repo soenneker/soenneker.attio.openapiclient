@@ -36,7 +36,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Merge
         /// <summary>
         /// Merges two records of the same object together. Where both records have a value for the same attribute, the primary record&apos;s value takes precedence.Merging produces a **new** record, so the `new_record_id` returned will match neither of the records supplied in the request. Both of the original records are marked as merged and can no longer be read or written.Large merges are completed asynchronously. A `200` response means the merged record is readable immediately. A `202` response means the merge has been accepted but is still being applied, and reading the merged record will return a `404` with the `merge_in_progress` error code until it completes.This endpoint is not idempotent. Because both original records are marked as merged, repeating the same request returns `404`.This endpoint is rate limited to 5 requests per second.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -45,11 +45,11 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Merge
         /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge200Response?> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeSuccessResponse?> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge200Response> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeSuccessResponse> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -59,8 +59,10 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Records.Merge
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeSuccessResponse>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMergeSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Merges two records of the same object together. Where both records have a value for the same attribute, the primary record&apos;s value takes precedence.Merging produces a **new** record, so the `new_record_id` returned will match neither of the records supplied in the request. Both of the original records are marked as merged and can no longer be read or written.Large merges are completed asynchronously. A `200` response means the merged record is readable immediately. A `202` response means the merge has been accepted but is still being applied, and reading the merged record will return a `404` with the `merge_in_progress` error code until it completes.This endpoint is not idempotent. Because both original records are marked as merged, repeating the same request returns `404`.This endpoint is rate limited to 5 requests per second.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.

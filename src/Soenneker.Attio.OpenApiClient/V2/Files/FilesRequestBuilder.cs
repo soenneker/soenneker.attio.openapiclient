@@ -68,7 +68,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Files200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Files200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Files200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Files200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a native folder entry or a connected file/folder entry on an object record.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `file:read-write`, `object_configuration:read`, `record_permission:read`.Supported token levels: `workspace`, `user`.
@@ -88,7 +88,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Files
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Files200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Files200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Files200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Files200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists internal files, externally connected files and folders for a specific record. Use the `object` and `record_id` query parameters to specify the record. Optional query parameters may be provided to filter results by storage provider or parent folder.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `object_configuration:read`, `record_permission:read`, `file:read`.Supported token levels: `workspace`, `user`.

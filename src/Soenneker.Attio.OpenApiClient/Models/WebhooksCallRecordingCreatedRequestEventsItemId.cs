@@ -11,15 +11,28 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WebhooksCallRecordingCreatedRequestEventsItemId : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("call_recording_id") is { } nullNodeCallRecordingId && nullNodeCallRecordingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallRecordingId = null;
+            if (parseNode.GetChildNode("meeting_id") is { } nullNodeMeetingId && nullNodeMeetingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeetingId = null;
+            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the created call recording.</summary>
-        public Guid? CallRecordingId { get; set; }
+        public Guid? CallRecordingId { get => _explicitNullValueCallRecordingId; set { _explicitNullValueCallRecordingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_recording_id"); else _explicitNullProperties?.Remove("call_recording_id"); } }
+        private Guid? _explicitNullValueCallRecordingId = default!;
         /// <summary>The ID of the meeting this call recording belongs to.</summary>
-        public Guid? MeetingId { get; set; }
+        public Guid? MeetingId { get => _explicitNullValueMeetingId; set { _explicitNullValueMeetingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_id"); else _explicitNullProperties?.Remove("meeting_id"); } }
+        private Guid? _explicitNullValueMeetingId = default!;
         /// <summary>The ID of the workspace.</summary>
-        public Guid? WorkspaceId { get; set; }
+        public Guid? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private Guid? _explicitNullValueWorkspaceId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.WebhooksCallRecordingCreatedRequestEventsItemId"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.WebhooksCallRecordingCreatedRequestEventsItemId CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.WebhooksCallRecordingCreatedRequestEventsItemId();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.WebhooksCallRecordingCreatedRequestEventsItemId(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteGuidValue("call_recording_id", CallRecordingId);
             writer.WriteGuidValue("meeting_id", MeetingId);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

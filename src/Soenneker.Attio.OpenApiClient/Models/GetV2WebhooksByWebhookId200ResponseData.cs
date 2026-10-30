@@ -11,42 +11,63 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetV2WebhooksByWebhookId200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
+            if (parseNode.GetChildNode("target_url") is { } nullNodeTargetUrl && nullNodeTargetUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the webhook was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataId _explicitNullValueId = default!;
 #endif
         /// <summary>The state of the webhook. Webhooks marked as active and degraded will receive events, inactive ones will not. If a webhook remains in the degraded state for 7 days, it will be marked inactive.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataStatus? Status { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataStatus? _explicitNullValueStatus = default!;
         /// <summary>One or more events the webhook is subscribed to.Within a workspace, the combination of target URL, event type and filter must be unique across all of your webhooks. A duplicate — whether against another webhook or repeated within a single request — is rejected with a `409 uniqueness_conflict`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem>? Subscriptions { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem>? _explicitNullValueSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem> Subscriptions { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem> _explicitNullValueSubscriptions = default!;
 #endif
         /// <summary>URL where the webhook events will be delivered to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetUrl { get; set; }
+        public string? TargetUrl { get => _explicitNullValueTargetUrl; set { _explicitNullValueTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_url"); else _explicitNullProperties?.Remove("target_url"); } }
+        private string? _explicitNullValueTargetUrl = default!;
 #nullable restore
 #else
-        public string TargetUrl { get; set; }
+        public string TargetUrl { get => _explicitNullValueTargetUrl; set { _explicitNullValueTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_url"); else _explicitNullProperties?.Remove("target_url"); } }
+        private string _explicitNullValueTargetUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseData"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.GetV2WebhooksByWebhookId200ResponseDataSubscriptionsItem>("subscriptions", Subscriptions);
             writer.WriteStringValue("target_url", TargetUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -80,6 +80,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -111,6 +113,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Deals.Records
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsDealsRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

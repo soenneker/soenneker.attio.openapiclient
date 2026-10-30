@@ -11,19 +11,31 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TaskLinkedRecordsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("target_object_id") is { } nullNodeTargetObjectId && nullNodeTargetObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetObjectId = null;
+            if (parseNode.GetChildNode("target_record_id") is { } nullNodeTargetRecordId && nullNodeTargetRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetRecordId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the parent object the task refers to. At present, only `people` and `companies` are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetObjectId { get; set; }
+        public string? TargetObjectId { get => _explicitNullValueTargetObjectId; set { _explicitNullValueTargetObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_object_id"); else _explicitNullProperties?.Remove("target_object_id"); } }
+        private string? _explicitNullValueTargetObjectId = default!;
 #nullable restore
 #else
-        public string TargetObjectId { get; set; }
+        public string TargetObjectId { get => _explicitNullValueTargetObjectId; set { _explicitNullValueTargetObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_object_id"); else _explicitNullProperties?.Remove("target_object_id"); } }
+        private string _explicitNullValueTargetObjectId = default!;
 #endif
         /// <summary>The ID of the parent record the task refers to.</summary>
-        public Guid? TargetRecordId { get; set; }
+        public Guid? TargetRecordId { get => _explicitNullValueTargetRecordId; set { _explicitNullValueTargetRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_record_id"); else _explicitNullProperties?.Remove("target_record_id"); } }
+        private Guid? _explicitNullValueTargetRecordId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.TaskLinkedRecordsItem"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.TaskLinkedRecordsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.TaskLinkedRecordsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.TaskLinkedRecordsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("target_object_id", TargetObjectId);
             writer.WriteGuidValue("target_record_id", TargetRecordId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

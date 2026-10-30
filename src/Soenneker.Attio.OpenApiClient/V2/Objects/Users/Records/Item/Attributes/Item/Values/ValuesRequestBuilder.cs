@@ -55,6 +55,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Users.Records.Item.Attributes
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsUsersRecordsByRecordIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

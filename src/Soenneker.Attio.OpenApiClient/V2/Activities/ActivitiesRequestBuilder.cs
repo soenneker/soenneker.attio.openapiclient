@@ -62,7 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
@@ -88,6 +88,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
             {
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities403Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

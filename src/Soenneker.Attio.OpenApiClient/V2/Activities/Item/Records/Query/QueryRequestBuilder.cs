@@ -57,6 +57,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities.Item.Records.Query
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecordsQuery400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecordsQuery404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecordsQuery200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecordsQuery200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

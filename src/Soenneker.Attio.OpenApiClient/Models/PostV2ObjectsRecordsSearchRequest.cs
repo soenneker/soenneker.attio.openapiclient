@@ -11,34 +11,52 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ObjectsRecordsSearchRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("objects") is { } nullNodeObjects && nullNodeObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Objects = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("request_as") is { } nullNodeRequestAs && nullNodeRequestAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestAs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of results to return. Defaults to 25.</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>Specifies which objects to filter results by. At least one object must be specified. Accepts object slugs or IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Objects { get; set; }
+        public List<string>? Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
+        private List<string>? _explicitNullValueObjects = default!;
 #nullable restore
 #else
-        public List<string> Objects { get; set; }
+        public List<string> Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
+        private List<string> _explicitNullValueObjects = default!;
 #endif
         /// <summary>Query string to search for. An empty string returns a default set of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>Specifies the context in which to perform the search. Use &apos;workspace&apos; to return all search results or specify a workspace member to limit results to what one specific person in your workspace can see.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs? RequestAs { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs? RequestAs { get => _explicitNullValueRequestAs; set { _explicitNullValueRequestAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_as"); else _explicitNullProperties?.Remove("request_as"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs? _explicitNullValueRequestAs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs RequestAs { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs RequestAs { get => _explicitNullValueRequestAs; set { _explicitNullValueRequestAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_as"); else _explicitNullProperties?.Remove("request_as"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs _explicitNullValueRequestAs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequest"/> and sets the default values.
@@ -56,7 +74,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("objects", Objects);
             writer.WriteStringValue("query", Query);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearchRequestRequestAs>("request_as", RequestAs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

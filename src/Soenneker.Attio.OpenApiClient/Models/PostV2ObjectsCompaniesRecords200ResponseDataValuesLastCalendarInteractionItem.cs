@@ -11,32 +11,55 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_from") is { } nullNodeActiveFrom && nullNodeActiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveFrom = null;
+            if (parseNode.GetChildNode("active_until") is { } nullNodeActiveUntil && nullNodeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveUntil = null;
+            if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("created_by_actor") is { } nullNodeCreatedByActor && nullNodeCreatedByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByActor = null;
+            if (parseNode.GetChildNode("interacted_at") is { } nullNodeInteractedAt && nullNodeInteractedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractedAt = null;
+            if (parseNode.GetChildNode("interaction_type") is { } nullNodeInteractionType && nullNodeInteractionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionType = null;
+            if (parseNode.GetChildNode("owner_actor") is { } nullNodeOwnerActor && nullNodeOwnerActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerActor = null;
+        }
+
         /// <summary>The point in time at which this value was made &quot;active&quot;. `active_from` can be considered roughly analogous to `created_at`.</summary>
-        public DateTimeOffset? ActiveFrom { get; set; }
+        public DateTimeOffset? ActiveFrom { get => _explicitNullValueActiveFrom; set { _explicitNullValueActiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_from"); else _explicitNullProperties?.Remove("active_from"); } }
+        private DateTimeOffset? _explicitNullValueActiveFrom = default!;
         /// <summary>The point in time at which this value was deactivated. If `null`, the value is active.</summary>
-        public DateTimeOffset? ActiveUntil { get; set; }
+        public DateTimeOffset? ActiveUntil { get => _explicitNullValueActiveUntil; set { _explicitNullValueActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_until"); else _explicitNullProperties?.Remove("active_until"); } }
+        private DateTimeOffset? _explicitNullValueActiveUntil = default!;
         /// <summary>The attribute type of the value.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType? AttributeType { get => _explicitNullValueAttributeType; set { _explicitNullValueAttributeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute_type"); else _explicitNullProperties?.Remove("attribute_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.InteractionAttributeType? _explicitNullValueAttributeType = default!;
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemCreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemCreatedByActor? CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemCreatedByActor? _explicitNullValueCreatedByActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemCreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemCreatedByActor CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemCreatedByActor _explicitNullValueCreatedByActor = default!;
 #endif
         /// <summary>When the interaction occurred.</summary>
-        public DateTimeOffset? InteractedAt { get; set; }
+        public DateTimeOffset? InteractedAt { get => _explicitNullValueInteractedAt; set { _explicitNullValueInteractedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interacted_at"); else _explicitNullProperties?.Remove("interacted_at"); } }
+        private DateTimeOffset? _explicitNullValueInteractedAt = default!;
         /// <summary>The type of interaction e.g. calendar or email.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType? InteractionType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType? InteractionType { get => _explicitNullValueInteractionType; set { _explicitNullValueInteractionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interaction_type"); else _explicitNullProperties?.Remove("interaction_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType? _explicitNullValueInteractionType = default!;
         /// <summary>The actor that created this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor? OwnerActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor? OwnerActor { get => _explicitNullValueOwnerActor; set { _explicitNullValueOwnerActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_actor"); else _explicitNullProperties?.Remove("owner_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor? _explicitNullValueOwnerActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor OwnerActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor OwnerActor { get => _explicitNullValueOwnerActor; set { _explicitNullValueOwnerActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_actor"); else _explicitNullProperties?.Remove("owner_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor _explicitNullValueOwnerActor = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +69,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +101,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemCreatedByActor>("created_by_actor", CreatedByActor);
             writer.WriteDateTimeOffsetValue("interacted_at", InteractedAt);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemInteractionType>("interaction_type", InteractionType);
-            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor>("owner_actor", OwnerActor);
+            writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesLastCalendarInteractionItemOwnerActor>("owner_actor", OwnerActor);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,44 +11,67 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2TasksRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assignees") is { } nullNodeAssignees && nullNodeAssignees.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Assignees = null;
+            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("deadline_at") is { } nullNodeDeadlineAt && nullNodeDeadlineAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeadlineAt = null;
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("is_completed") is { } nullNodeIsCompleted && nullNodeIsCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCompleted = null;
+            if (parseNode.GetChildNode("linked_records") is { } nullNodeLinkedRecords && nullNodeLinkedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedRecords = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Workspace members assigned to this task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem>? Assignees { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem>? Assignees { get => _explicitNullValueAssignees; set { _explicitNullValueAssignees = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignees"); else _explicitNullProperties?.Remove("assignees"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem>? _explicitNullValueAssignees = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem> Assignees { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem> Assignees { get => _explicitNullValueAssignees; set { _explicitNullValueAssignees = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignees"); else _explicitNullProperties?.Remove("assignees"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItem> _explicitNullValueAssignees = default!;
 #endif
         /// <summary>The text content of the task, in the format specified by the `format` property. A max length of 2000 characters is enforced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string _explicitNullValueContent = default!;
 #endif
         /// <summary>The deadline of the task, in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeadlineAt { get; set; }
+        public string? DeadlineAt { get => _explicitNullValueDeadlineAt; set { _explicitNullValueDeadlineAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deadline_at"); else _explicitNullProperties?.Remove("deadline_at"); } }
+        private string? _explicitNullValueDeadlineAt = default!;
 #nullable restore
 #else
-        public string DeadlineAt { get; set; }
+        public string DeadlineAt { get => _explicitNullValueDeadlineAt; set { _explicitNullValueDeadlineAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deadline_at"); else _explicitNullProperties?.Remove("deadline_at"); } }
+        private string _explicitNullValueDeadlineAt = default!;
 #endif
         /// <summary>The format that the comment content is provided in. The `plaintext` format uses the line feed character `\n` to create new lines within the note content. Rich text formatting and links are not supported.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat? Format { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat? _explicitNullValueFormat = default!;
         /// <summary>Whether the task has been completed.</summary>
-        public bool? IsCompleted { get; set; }
+        public bool? IsCompleted { get => _explicitNullValueIsCompleted; set { _explicitNullValueIsCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_completed"); else _explicitNullProperties?.Remove("is_completed"); } }
+        private bool? _explicitNullValueIsCompleted = default!;
         /// <summary>Records linked to the task. Records can be linked by domain (for companies), email address (for people), record ID (for all objects) or by a unique matching attribute (for all objects). Creating record links within task content text is not possible via the API at present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords? LinkedRecords { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords? LinkedRecords { get => _explicitNullValueLinkedRecords; set { _explicitNullValueLinkedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_records"); else _explicitNullProperties?.Remove("linked_records"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords? _explicitNullValueLinkedRecords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords LinkedRecords { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords LinkedRecords { get => _explicitNullValueLinkedRecords; set { _explicitNullValueLinkedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_records"); else _explicitNullProperties?.Remove("linked_records"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords _explicitNullValueLinkedRecords = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestData"/> and sets the default values.
@@ -65,7 +88,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PlaintextFormat>("format", Format);
             writer.WriteBoolValue("is_completed", IsCompleted);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataLinkedRecords>("linked_records", LinkedRecords);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

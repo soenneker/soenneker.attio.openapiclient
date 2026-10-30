@@ -11,75 +11,108 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Comment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("content_plaintext") is { } nullNodeContentPlaintext && nullNodeContentPlaintext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentPlaintext = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("entry") is { } nullNodeEntry && nullNodeEntry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entry = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("record") is { } nullNodeRecord && nullNodeRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Record = null;
+            if (parseNode.GetChildNode("resolved_at") is { } nullNodeResolvedAt && nullNodeResolvedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvedAt = null;
+            if (parseNode.GetChildNode("resolved_by") is { } nullNodeResolvedBy && nullNodeResolvedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvedBy = null;
+            if (parseNode.GetChildNode("thread_id") is { } nullNodeThreadId && nullNodeThreadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreadId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Who wrote this comment. Note that the API provides the ability for API tokens to write comments on behalf of other actors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentAuthor? Author { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentAuthor? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentAuthor? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentAuthor Author { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentAuthor Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentAuthor _explicitNullValueAuthor = default!;
 #endif
         /// <summary>A plaintext representation of the content of the comment. References to workspace members are cast into email addresses, all other stylistic elements are removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentPlaintext { get; set; }
+        public string? ContentPlaintext { get => _explicitNullValueContentPlaintext; set { _explicitNullValueContentPlaintext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_plaintext"); else _explicitNullProperties?.Remove("content_plaintext"); } }
+        private string? _explicitNullValueContentPlaintext = default!;
 #nullable restore
 #else
-        public string ContentPlaintext { get; set; }
+        public string ContentPlaintext { get => _explicitNullValueContentPlaintext; set { _explicitNullValueContentPlaintext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_plaintext"); else _explicitNullProperties?.Remove("content_plaintext"); } }
+        private string _explicitNullValueContentPlaintext = default!;
 #endif
         /// <summary>When the note was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The entry the comment belongs to, `null` for comments on records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentEntry? Entry { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentEntry? Entry { get => _explicitNullValueEntry; set { _explicitNullValueEntry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry"); else _explicitNullProperties?.Remove("entry"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentEntry? _explicitNullValueEntry = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentEntry Entry { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentEntry Entry { get => _explicitNullValueEntry; set { _explicitNullValueEntry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry"); else _explicitNullProperties?.Remove("entry"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentEntry _explicitNullValueEntry = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentId _explicitNullValueId = default!;
 #endif
         /// <summary>The record the comment belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentRecord? Record { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentRecord? Record { get => _explicitNullValueRecord; set { _explicitNullValueRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record"); else _explicitNullProperties?.Remove("record"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentRecord? _explicitNullValueRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentRecord Record { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentRecord Record { get => _explicitNullValueRecord; set { _explicitNullValueRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record"); else _explicitNullProperties?.Remove("record"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentRecord _explicitNullValueRecord = default!;
 #endif
         /// <summary>Whether the comment is resolved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResolvedAt { get; set; }
+        public string? ResolvedAt { get => _explicitNullValueResolvedAt; set { _explicitNullValueResolvedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_at"); else _explicitNullProperties?.Remove("resolved_at"); } }
+        private string? _explicitNullValueResolvedAt = default!;
 #nullable restore
 #else
-        public string ResolvedAt { get; set; }
+        public string ResolvedAt { get => _explicitNullValueResolvedAt; set { _explicitNullValueResolvedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_at"); else _explicitNullProperties?.Remove("resolved_at"); } }
+        private string _explicitNullValueResolvedAt = default!;
 #endif
         /// <summary>The actor that resolved this comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentResolvedBy? ResolvedBy { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentResolvedBy? ResolvedBy { get => _explicitNullValueResolvedBy; set { _explicitNullValueResolvedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_by"); else _explicitNullProperties?.Remove("resolved_by"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentResolvedBy? _explicitNullValueResolvedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentResolvedBy ResolvedBy { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentResolvedBy ResolvedBy { get => _explicitNullValueResolvedBy; set { _explicitNullValueResolvedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_by"); else _explicitNullProperties?.Remove("resolved_by"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentResolvedBy _explicitNullValueResolvedBy = default!;
 #endif
         /// <summary>The ID of the thread the comment belongs to.</summary>
-        public Guid? ThreadId { get; set; }
+        public Guid? ThreadId { get => _explicitNullValueThreadId; set { _explicitNullValueThreadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thread_id"); else _explicitNullProperties?.Remove("thread_id"); } }
+        private Guid? _explicitNullValueThreadId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.Comment"/> and sets the default values.
         /// </summary>
@@ -95,7 +128,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.Comment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.Comment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.Comment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +165,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteStringValue("resolved_at", ResolvedAt);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.CommentResolvedBy>("resolved_by", ResolvedBy);
             writer.WriteGuidValue("thread_id", ThreadId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

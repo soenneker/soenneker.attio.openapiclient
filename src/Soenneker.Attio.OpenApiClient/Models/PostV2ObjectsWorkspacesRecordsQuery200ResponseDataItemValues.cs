@@ -12,48 +12,70 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValues : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avatar_url") is { } nullNodeAvatarUrl && nullNodeAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUrl = null;
+            if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("users") is { } nullNodeUsers && nullNodeUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Users = null;
+            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The avatar_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesAvatarUrlItem>? AvatarUrl { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesAvatarUrlItem>? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesAvatarUrlItem>? _explicitNullValueAvatarUrl = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesAvatarUrlItem> AvatarUrl { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesAvatarUrlItem> AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesAvatarUrlItem> _explicitNullValueAvatarUrl = default!;
 #endif
         /// <summary>The company property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesCompanyItem>? Company { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesCompanyItem>? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesCompanyItem>? _explicitNullValueCompany = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesCompanyItem> Company { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesCompanyItem> Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesCompanyItem> _explicitNullValueCompany = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesNameItem>? Name { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesNameItem>? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesNameItem>? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesNameItem> Name { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesNameItem> Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesNameItem> _explicitNullValueName = default!;
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesUsersItem>? Users { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesUsersItem>? Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesUsersItem>? _explicitNullValueUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesUsersItem> Users { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesUsersItem> Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesUsersItem> _explicitNullValueUsers = default!;
 #endif
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesWorkspaceIdItem>? WorkspaceId { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesWorkspaceIdItem>? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesWorkspaceIdItem>? _explicitNullValueWorkspaceId = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesWorkspaceIdItem> WorkspaceId { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesWorkspaceIdItem> WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesWorkspaceIdItem> _explicitNullValueWorkspaceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValues"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValues CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValues();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValues(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesNameItem>("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesUsersItem>("users", Users);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsWorkspacesRecordsQuery200ResponseDataItemValuesWorkspaceIdItem>("workspace_id", WorkspaceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

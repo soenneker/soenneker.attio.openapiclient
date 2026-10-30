@@ -11,63 +11,96 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ByTargetByIdentifierAttributesRequestData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("default_value") is { } nullNodeDefaultValue && nullNodeDefaultValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultValue = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("is_multiselect") is { } nullNodeIsMultiselect && nullNodeIsMultiselect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMultiselect = null;
+            if (parseNode.GetChildNode("is_required") is { } nullNodeIsRequired && nullNodeIsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRequired = null;
+            if (parseNode.GetChildNode("is_unique") is { } nullNodeIsUnique && nullNodeIsUnique.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUnique = null;
+            if (parseNode.GetChildNode("relationship") is { } nullNodeRelationship && nullNodeRelationship.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relationship = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>A unique, human-readable slug to access the attribute through URLs and API calls. Formatted in snake case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiSlug { get; set; }
+        public string? ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string? _explicitNullValueApiSlug = default!;
 #nullable restore
 #else
-        public string ApiSlug { get; set; }
+        public string ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        private string _explicitNullValueApiSlug = default!;
 #endif
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfig? Config { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfig Config { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The default value for this attribute. Static values are used to directly populate values using their contents. Dynamic values are used to lookup data at the point of creation. For example, you could use a dynamic value to insert a value for the currently logged in user. Which default values are available is dependent on the type of the attribute. Default values are not currently supported on people or company objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataDefaultValue? DefaultValue { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataDefaultValue? DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_value"); else _explicitNullProperties?.Remove("default_value"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataDefaultValue? _explicitNullValueDefaultValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataDefaultValue DefaultValue { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataDefaultValue DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_value"); else _explicitNullProperties?.Remove("default_value"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataDefaultValue _explicitNullValueDefaultValue = default!;
 #endif
         /// <summary>A text description for the attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether or not this attribute can have multiple values. Multiselect is only available on some value types.</summary>
-        public bool? IsMultiselect { get; set; }
+        public bool? IsMultiselect { get => _explicitNullValueIsMultiselect; set { _explicitNullValueIsMultiselect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_multiselect"); else _explicitNullProperties?.Remove("is_multiselect"); } }
+        private bool? _explicitNullValueIsMultiselect = default!;
         /// <summary>When `is_required` is `true`, new records/entries must have a value for this attribute. If `false`, values may be `null`. This value does not affect existing data and you do not need to backfill `null` values if changing `is_required` from `false` to `true`.</summary>
-        public bool? IsRequired { get; set; }
+        public bool? IsRequired { get => _explicitNullValueIsRequired; set { _explicitNullValueIsRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_required"); else _explicitNullProperties?.Remove("is_required"); } }
+        private bool? _explicitNullValueIsRequired = default!;
         /// <summary>Whether or not new values for this attribute must be unique. Uniqueness restrictions are only applied to new data and do not apply retroactively to previously created data.</summary>
-        public bool? IsUnique { get; set; }
+        public bool? IsUnique { get => _explicitNullValueIsUnique; set { _explicitNullValueIsUnique = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_unique"); else _explicitNullProperties?.Remove("is_unique"); } }
+        private bool? _explicitNullValueIsUnique = default!;
         /// <summary>Optional relationship configuration. When provided, creates a bidirectional relationship between two objects. Can only be used with attributes of type &quot;record-reference&quot;. If `config.record_reference.allowed_objects` is also provided, it must contain only the relationship object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataRelationship? Relationship { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataRelationship? Relationship { get => _explicitNullValueRelationship; set { _explicitNullValueRelationship = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationship"); else _explicitNullProperties?.Remove("relationship"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataRelationship? _explicitNullValueRelationship = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataRelationship Relationship { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataRelationship Relationship { get => _explicitNullValueRelationship; set { _explicitNullValueRelationship = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationship"); else _explicitNullProperties?.Remove("relationship"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataRelationship _explicitNullValueRelationship = default!;
 #endif
         /// <summary>The name of the attribute. The title will be visible across Attio&apos;s UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The type of the attribute. This value affects the possible `config` values.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataType? Type { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,7 +109,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,7 +147,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteBoolValue("is_unique", IsUnique);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataRelationship>("relationship", Relationship);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,65 +11,98 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectedFile : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("created_by_actor") is { } nullNodeCreatedByActor && nullNodeCreatedByActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByActor = null;
+            if (parseNode.GetChildNode("external_provider_file_id") is { } nullNodeExternalProviderFileId && nullNodeExternalProviderFileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalProviderFileId = null;
+            if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("microsoft_drive_id") is { } nullNodeMicrosoftDriveId && nullNodeMicrosoftDriveId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MicrosoftDriveId = null;
+            if (parseNode.GetChildNode("object_id") is { } nullNodeObjectId && nullNodeObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectId = null;
+            if (parseNode.GetChildNode("object_slug") is { } nullNodeObjectSlug && nullNodeObjectSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectSlug = null;
+            if (parseNode.GetChildNode("record_id") is { } nullNodeRecordId && nullNodeRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordId = null;
+            if (parseNode.GetChildNode("storage_provider") is { } nullNodeStorageProvider && nullNodeStorageProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageProvider = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp representing when the file entry was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The actor that created this file entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileCreatedByActor? CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileCreatedByActor? CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileCreatedByActor? _explicitNullValueCreatedByActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileCreatedByActor CreatedByActor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileCreatedByActor CreatedByActor { get => _explicitNullValueCreatedByActor; set { _explicitNullValueCreatedByActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_actor"); else _explicitNullProperties?.Remove("created_by_actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileCreatedByActor _explicitNullValueCreatedByActor = default!;
 #endif
         /// <summary>The file ID in the external storage provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalProviderFileId { get; set; }
+        public string? ExternalProviderFileId { get => _explicitNullValueExternalProviderFileId; set { _explicitNullValueExternalProviderFileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_provider_file_id"); else _explicitNullProperties?.Remove("external_provider_file_id"); } }
+        private string? _explicitNullValueExternalProviderFileId = default!;
 #nullable restore
 #else
-        public string ExternalProviderFileId { get; set; }
+        public string ExternalProviderFileId { get => _explicitNullValueExternalProviderFileId; set { _explicitNullValueExternalProviderFileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_provider_file_id"); else _explicitNullProperties?.Remove("external_provider_file_id"); } }
+        private string _explicitNullValueExternalProviderFileId = default!;
 #endif
         /// <summary>The type of file entry.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileFileType? FileType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileFileType? _explicitNullValueFileType = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileId _explicitNullValueId = default!;
 #endif
         /// <summary>Microsoft drive ID. This field is only populated for `microsoft-onedrive` entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MicrosoftDriveId { get; set; }
+        public string? MicrosoftDriveId { get => _explicitNullValueMicrosoftDriveId; set { _explicitNullValueMicrosoftDriveId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microsoft_drive_id"); else _explicitNullProperties?.Remove("microsoft_drive_id"); } }
+        private string? _explicitNullValueMicrosoftDriveId = default!;
 #nullable restore
 #else
-        public string MicrosoftDriveId { get; set; }
+        public string MicrosoftDriveId { get => _explicitNullValueMicrosoftDriveId; set { _explicitNullValueMicrosoftDriveId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microsoft_drive_id"); else _explicitNullProperties?.Remove("microsoft_drive_id"); } }
+        private string _explicitNullValueMicrosoftDriveId = default!;
 #endif
         /// <summary>The ID of the object the record belongs to.</summary>
-        public Guid? ObjectId { get; set; }
+        public Guid? ObjectId { get => _explicitNullValueObjectId; set { _explicitNullValueObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_id"); else _explicitNullProperties?.Remove("object_id"); } }
+        private Guid? _explicitNullValueObjectId = default!;
         /// <summary>The slug of the object the record belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectSlug { get; set; }
+        public string? ObjectSlug { get => _explicitNullValueObjectSlug; set { _explicitNullValueObjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_slug"); else _explicitNullProperties?.Remove("object_slug"); } }
+        private string? _explicitNullValueObjectSlug = default!;
 #nullable restore
 #else
-        public string ObjectSlug { get; set; }
+        public string ObjectSlug { get => _explicitNullValueObjectSlug; set { _explicitNullValueObjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_slug"); else _explicitNullProperties?.Remove("object_slug"); } }
+        private string _explicitNullValueObjectSlug = default!;
 #endif
         /// <summary>The ID of the record the file is linked to.</summary>
-        public Guid? RecordId { get; set; }
+        public Guid? RecordId { get => _explicitNullValueRecordId; set { _explicitNullValueRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_id"); else _explicitNullProperties?.Remove("record_id"); } }
+        private Guid? _explicitNullValueRecordId = default!;
         /// <summary>The storage provider for this file entry.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileStorageProvider? StorageProvider { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileStorageProvider? StorageProvider { get => _explicitNullValueStorageProvider; set { _explicitNullValueStorageProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_provider"); else _explicitNullProperties?.Remove("storage_provider"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileStorageProvider? _explicitNullValueStorageProvider = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile"/> and sets the default values.
         /// </summary>
@@ -85,7 +118,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.ConnectedFile(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,6 +157,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteStringValue("object_slug", ObjectSlug);
             writer.WriteGuidValue("record_id", RecordId);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.ConnectedFileStorageProvider>("storage_provider", StorageProvider);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

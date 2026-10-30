@@ -11,74 +11,124 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetV2Self200ResponseAnyOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("aud") is { } nullNodeAud && nullNodeAud.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aud = null;
+            if (parseNode.GetChildNode("authorized_by_workspace_member_id") is { } nullNodeAuthorizedByWorkspaceMemberId && nullNodeAuthorizedByWorkspaceMemberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedByWorkspaceMemberId = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("exp") is { } nullNodeExp && nullNodeExp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exp = null;
+            if (parseNode.GetChildNode("iat") is { } nullNodeIat && nullNodeIat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iat = null;
+            if (parseNode.GetChildNode("iss") is { } nullNodeIss && nullNodeIss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iss = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("sub") is { } nullNodeSub && nullNodeSub.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sub = null;
+            if (parseNode.GetChildNode("token_level") is { } nullNodeTokenLevel && nullNodeTokenLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenLevel = null;
+            if (parseNode.GetChildNode("token_type") is { } nullNodeTokenType && nullNodeTokenType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenType = null;
+            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+            if (parseNode.GetChildNode("workspace_logo_url") is { } nullNodeWorkspaceLogoUrl && nullNodeWorkspaceLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceLogoUrl = null;
+            if (parseNode.GetChildNode("workspace_name") is { } nullNodeWorkspaceName && nullNodeWorkspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceName = null;
+            if (parseNode.GetChildNode("workspace_slug") is { } nullNodeWorkspaceSlug && nullNodeWorkspaceSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceSlug = null;
+        }
+
         /// <summary>Whether the token is currently active and usable.</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The intended audience for this token, for Bearer tokens this is the same as the client_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Aud { get; set; }
+        public string? Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
+        private string? _explicitNullValueAud = default!;
 #nullable restore
 #else
-        public string Aud { get; set; }
+        public string Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
+        private string _explicitNullValueAud = default!;
 #endif
         /// <summary>The ID of the workspace member who authorized this token initially. Almost every token has one, but it is omitted for the app access tokens that Attio created itself rather than on a member&apos;s behalf.</summary>
-        public Guid? AuthorizedByWorkspaceMemberId { get; set; }
+        public Guid? AuthorizedByWorkspaceMemberId { get => _explicitNullValueAuthorizedByWorkspaceMemberId; set { _explicitNullValueAuthorizedByWorkspaceMemberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_by_workspace_member_id"); else _explicitNullProperties?.Remove("authorized_by_workspace_member_id"); } }
+        private Guid? _explicitNullValueAuthorizedByWorkspaceMemberId = default!;
         /// <summary>Identifies the client the token was issued to. For app access tokens this is the app ID. Workspace access tokens have no OAuth client, so this is the workspace access token ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The time at which this token will expire, if set, as a number of seconds since January 1 1970 UTC. Attio access tokens do not currently expire, so this is always null.</summary>
-        public double? Exp { get; set; }
+        public double? Exp { get => _explicitNullValueExp; set { _explicitNullValueExp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exp"); else _explicitNullProperties?.Remove("exp"); } }
+        private double? _explicitNullValueExp = default!;
         /// <summary>The time at which this token was issued, as a number of seconds since January 1 1970 UTC.</summary>
-        public double? Iat { get; set; }
+        public double? Iat { get => _explicitNullValueIat; set { _explicitNullValueIat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iat"); else _explicitNullProperties?.Remove("iat"); } }
+        private double? _explicitNullValueIat = default!;
         /// <summary>The issuer of the token. Always attio.com</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.AttioComIss? Iss { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.AttioComIss? Iss { get => _explicitNullValueIss; set { _explicitNullValueIss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iss"); else _explicitNullProperties?.Remove("iss"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.AttioComIss? _explicitNullValueIss = default!;
         /// <summary>A space-separated list of scopes associated with this token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope { get; set; }
+        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private string? _explicitNullValueScope = default!;
 #nullable restore
 #else
-        public string Scope { get; set; }
+        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private string _explicitNullValueScope = default!;
 #endif
-        /// <summary>Since Bearer tokens grant Workspace-level permissions, this property contains the workspace_id.</summary>
-        public Guid? Sub { get; set; }
+        /// <summary>The subject of the token. For a workspace-level token, this is the workspace ID. For a user-level token, this is an opaque value that identifies the workspace member. Do not parse this value. To get the workspace ID, use workspace_id. To get the workspace member ID, use authorized_by_workspace_member_id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sub { get => _explicitNullValueSub; set { _explicitNullValueSub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub"); else _explicitNullProperties?.Remove("sub"); } }
+        private string? _explicitNullValueSub = default!;
+#nullable restore
+#else
+        public string Sub { get => _explicitNullValueSub; set { _explicitNullValueSub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub"); else _explicitNullProperties?.Remove("sub"); } }
+        private string _explicitNullValueSub = default!;
+#endif
         /// <summary>Whether the token acts for the whole workspace or for a single workspace member.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2TokenLevel? TokenLevel { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2TokenLevel? TokenLevel { get => _explicitNullValueTokenLevel; set { _explicitNullValueTokenLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_level"); else _explicitNullProperties?.Remove("token_level"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2TokenLevel? _explicitNullValueTokenLevel = default!;
         /// <summary>The type of token, always Bearer.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType? TokenType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType? TokenType { get => _explicitNullValueTokenType; set { _explicitNullValueTokenType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_type"); else _explicitNullProperties?.Remove("token_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType? _explicitNullValueTokenType = default!;
         /// <summary>The ID of the workspace the token is scoped to.</summary>
-        public Guid? WorkspaceId { get; set; }
+        public Guid? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private Guid? _explicitNullValueWorkspaceId = default!;
         /// <summary>The logo URL of the workspace the token is scoped to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceLogoUrl { get; set; }
+        public string? WorkspaceLogoUrl { get => _explicitNullValueWorkspaceLogoUrl; set { _explicitNullValueWorkspaceLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_logo_url"); else _explicitNullProperties?.Remove("workspace_logo_url"); } }
+        private string? _explicitNullValueWorkspaceLogoUrl = default!;
 #nullable restore
 #else
-        public string WorkspaceLogoUrl { get; set; }
+        public string WorkspaceLogoUrl { get => _explicitNullValueWorkspaceLogoUrl; set { _explicitNullValueWorkspaceLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_logo_url"); else _explicitNullProperties?.Remove("workspace_logo_url"); } }
+        private string _explicitNullValueWorkspaceLogoUrl = default!;
 #endif
         /// <summary>The name of the workspace the token is scoped to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceName { get; set; }
+        public string? WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
+        private string? _explicitNullValueWorkspaceName = default!;
 #nullable restore
 #else
-        public string WorkspaceName { get; set; }
+        public string WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
+        private string _explicitNullValueWorkspaceName = default!;
 #endif
         /// <summary>The slug of the workspace the token is scoped to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceSlug { get; set; }
+        public string? WorkspaceSlug { get => _explicitNullValueWorkspaceSlug; set { _explicitNullValueWorkspaceSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_slug"); else _explicitNullProperties?.Remove("workspace_slug"); } }
+        private string? _explicitNullValueWorkspaceSlug = default!;
 #nullable restore
 #else
-        public string WorkspaceSlug { get; set; }
+        public string WorkspaceSlug { get => _explicitNullValueWorkspaceSlug; set { _explicitNullValueWorkspaceSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_slug"); else _explicitNullProperties?.Remove("workspace_slug"); } }
+        private string _explicitNullValueWorkspaceSlug = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2"/> and sets the default values.
@@ -95,7 +145,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,7 +163,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
                 { "iat", n => { Iat = n.GetDoubleValue(); } },
                 { "iss", n => { Iss = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttioComIss>(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
-                { "sub", n => { Sub = n.GetGuidValue(); } },
+                { "sub", n => { Sub = n.GetStringValue(); } },
                 { "token_level", n => { TokenLevel = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2TokenLevel>(); } },
                 { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType>(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
@@ -137,13 +187,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteDoubleValue("iat", Iat);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AttioComIss>("iss", Iss);
             writer.WriteStringValue("scope", Scope);
-            writer.WriteGuidValue("sub", Sub);
+            writer.WriteStringValue("sub", Sub);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.GetV2Self200ResponseAnyOf2TokenLevel>("token_level", TokenLevel);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.BearerTokenType>("token_type", TokenType);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteStringValue("workspace_logo_url", WorkspaceLogoUrl);
             writer.WriteStringValue("workspace_name", WorkspaceName);
             writer.WriteStringValue("workspace_slug", WorkspaceSlug);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

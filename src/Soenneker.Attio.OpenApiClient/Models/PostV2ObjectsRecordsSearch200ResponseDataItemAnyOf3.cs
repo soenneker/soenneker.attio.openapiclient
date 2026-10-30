@@ -11,42 +11,63 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("object_slug") is { } nullNodeObjectSlug && nullNodeObjectSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectSlug = null;
+            if (parseNode.GetChildNode("record_image") is { } nullNodeRecordImage && nullNodeRecordImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordImage = null;
+            if (parseNode.GetChildNode("record_text") is { } nullNodeRecordText && nullNodeRecordText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordText = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The company&apos;s domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get; set; }
+        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private List<string>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<string> Domains { get; set; }
+        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private List<string> _explicitNullValueDomains = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id _explicitNullValueId = default!;
 #endif
         /// <summary>The slug of the object this record belongs to.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug? ObjectSlug { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug? ObjectSlug { get => _explicitNullValueObjectSlug; set { _explicitNullValueObjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_slug"); else _explicitNullProperties?.Remove("object_slug"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug? _explicitNullValueObjectSlug = default!;
         /// <summary>The image for the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordImage { get; set; }
+        public string? RecordImage { get => _explicitNullValueRecordImage; set { _explicitNullValueRecordImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_image"); else _explicitNullProperties?.Remove("record_image"); } }
+        private string? _explicitNullValueRecordImage = default!;
 #nullable restore
 #else
-        public string RecordImage { get; set; }
+        public string RecordImage { get => _explicitNullValueRecordImage; set { _explicitNullValueRecordImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_image"); else _explicitNullProperties?.Remove("record_image"); } }
+        private string _explicitNullValueRecordImage = default!;
 #endif
         /// <summary>A human-readable label for the record. Present on records from all objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordText { get; set; }
+        public string? RecordText { get => _explicitNullValueRecordText; set { _explicitNullValueRecordText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_text"); else _explicitNullProperties?.Remove("record_text"); } }
+        private string? _explicitNullValueRecordText = default!;
 #nullable restore
 #else
-        public string RecordText { get; set; }
+        public string RecordText { get => _explicitNullValueRecordText; set { _explicitNullValueRecordText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_text"); else _explicitNullProperties?.Remove("record_text"); } }
+        private string _explicitNullValueRecordText = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug>("object_slug", ObjectSlug);
             writer.WriteStringValue("record_image", RecordImage);
             writer.WriteStringValue("record_text", RecordText);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

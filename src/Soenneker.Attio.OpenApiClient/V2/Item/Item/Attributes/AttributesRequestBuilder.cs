@@ -62,7 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributes200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new attribute on either an object, a list or an activity.For record-reference attributes, you can optionally create a bidirectional relationship by providing a `relationship` object. This will create two entangled attributes: one on the specified object and a reverse attribute on the related object.To create an attribute on an object, you must also have the `object_configuration:read-write` scope.To create an attribute on a list, you must also have the `list_configuration:read-write` scope.To create an attribute on an activity, you must also have the `activity_configuration:read-write` scope.Supported token levels: `workspace`, `user`.
@@ -92,6 +92,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,50 +11,74 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Email : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("linked_records") is { } nullNodeLinkedRecords && nullNodeLinkedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedRecords = null;
+            if (parseNode.GetChildNode("participants") is { } nullNodeParticipants && nullNodeParticipants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Participants = null;
+            if (parseNode.GetChildNode("sent_at") is { } nullNodeSentAt && nullNodeSentAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAt = null;
+            if (parseNode.GetChildNode("subject_line") is { } nullNodeSubjectLine && nullNodeSubjectLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectLine = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the email was sent from your workspace or received by it.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.EmailDirection? Direction { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.EmailDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.EmailDirection? _explicitNullValueDirection = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.EmailId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.EmailId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.EmailId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.EmailId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.EmailId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.EmailId _explicitNullValueId = default!;
 #endif
         /// <summary>The person and company records whose email addresses or domains match this email&apos;s participants. Unlike meetings, this link is derived when you make the request rather than stored, so it reflects your records as they are now: creating a person record today will make older emails start reporting it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem>? LinkedRecords { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem>? LinkedRecords { get => _explicitNullValueLinkedRecords; set { _explicitNullValueLinkedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_records"); else _explicitNullProperties?.Remove("linked_records"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem>? _explicitNullValueLinkedRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem> LinkedRecords { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem> LinkedRecords { get => _explicitNullValueLinkedRecords; set { _explicitNullValueLinkedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_records"); else _explicitNullProperties?.Remove("linked_records"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.EmailLinkedRecordsItem> _explicitNullValueLinkedRecords = default!;
 #endif
         /// <summary>The participants on the email. Note that `bcc` participants are realistically only present on outbound email: inbound messages do not disclose the other recipients&apos; blind copies, so an absent `bcc` participant is not evidence that there was none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem>? Participants { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem>? Participants { get => _explicitNullValueParticipants; set { _explicitNullValueParticipants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participants"); else _explicitNullProperties?.Remove("participants"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem>? _explicitNullValueParticipants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem> Participants { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem> Participants { get => _explicitNullValueParticipants; set { _explicitNullValueParticipants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participants"); else _explicitNullProperties?.Remove("participants"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem> _explicitNullValueParticipants = default!;
 #endif
         /// <summary>Timestamp representing when the email was sent, taken from the email&apos;s own headers rather than from when Attio imported it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SentAt { get; set; }
+        public string? SentAt { get => _explicitNullValueSentAt; set { _explicitNullValueSentAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at"); else _explicitNullProperties?.Remove("sent_at"); } }
+        private string? _explicitNullValueSentAt = default!;
 #nullable restore
 #else
-        public string SentAt { get; set; }
+        public string SentAt { get => _explicitNullValueSentAt; set { _explicitNullValueSentAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at"); else _explicitNullProperties?.Remove("sent_at"); } }
+        private string _explicitNullValueSentAt = default!;
 #endif
         /// <summary>The subject line of the email. This is `null` when the email has no subject or is from a mailbox shared as metadata only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectLine { get; set; }
+        public string? SubjectLine { get => _explicitNullValueSubjectLine; set { _explicitNullValueSubjectLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_line"); else _explicitNullProperties?.Remove("subject_line"); } }
+        private string? _explicitNullValueSubjectLine = default!;
 #nullable restore
 #else
-        public string SubjectLine { get; set; }
+        public string SubjectLine { get => _explicitNullValueSubjectLine; set { _explicitNullValueSubjectLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_line"); else _explicitNullProperties?.Remove("subject_line"); } }
+        private string _explicitNullValueSubjectLine = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.Email"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.Email CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.Email();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.Email(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.EmailParticipantsItem>("participants", Participants);
             writer.WriteStringValue("sent_at", SentAt);
             writer.WriteStringValue("subject_line", SubjectLine);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

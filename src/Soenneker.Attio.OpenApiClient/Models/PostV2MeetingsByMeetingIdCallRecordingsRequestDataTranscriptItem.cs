@@ -11,29 +11,46 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("speaker") is { } nullNodeSpeaker && nullNodeSpeaker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speaker = null;
+            if (parseNode.GetChildNode("speech") is { } nullNodeSpeech && nullNodeSpeech.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speech = null;
+            if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end time of this speech segment in seconds.</summary>
-        public double? EndTime { get; set; }
+        public double? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private double? _explicitNullValueEndTime = default!;
         /// <summary>The speaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItemSpeaker? Speaker { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItemSpeaker? Speaker { get => _explicitNullValueSpeaker; set { _explicitNullValueSpeaker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker"); else _explicitNullProperties?.Remove("speaker"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItemSpeaker? _explicitNullValueSpeaker = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItemSpeaker Speaker { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItemSpeaker Speaker { get => _explicitNullValueSpeaker; set { _explicitNullValueSpeaker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker"); else _explicitNullProperties?.Remove("speaker"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItemSpeaker _explicitNullValueSpeaker = default!;
 #endif
         /// <summary>The spoken text for this segment of the transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Speech { get; set; }
+        public string? Speech { get => _explicitNullValueSpeech; set { _explicitNullValueSpeech = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech"); else _explicitNullProperties?.Remove("speech"); } }
+        private string? _explicitNullValueSpeech = default!;
 #nullable restore
 #else
-        public string Speech { get; set; }
+        public string Speech { get => _explicitNullValueSpeech; set { _explicitNullValueSpeech = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech"); else _explicitNullProperties?.Remove("speech"); } }
+        private string _explicitNullValueSpeech = default!;
 #endif
         /// <summary>The start time of this speech segment in seconds.</summary>
-        public double? StartTime { get; set; }
+        public double? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private double? _explicitNullValueStartTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsByMeetingIdCallRecordingsRequestDataTranscriptItemSpeaker>("speaker", Speaker);
             writer.WriteStringValue("speech", Speech);
             writer.WriteDoubleValue("start_time", StartTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

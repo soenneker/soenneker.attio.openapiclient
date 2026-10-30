@@ -68929,8 +68929,7 @@
                         },
                         "sub": {
                           "type": "string",
-                          "format": "uuid",
-                          "description": "Since Bearer tokens grant Workspace-level permissions, this property contains the workspace_id."
+                          "description": "The subject of the token. For a workspace-level token, this is the workspace ID. For a user-level token, this is an opaque value that identifies the workspace member. Do not parse this value. To get the workspace ID, use workspace_id. To get the workspace member ID, use authorized_by_workspace_member_id."
                         },
                         "aud": {
                           "type": "string",
@@ -69047,7 +69046,7 @@
                       "token_type": "Bearer",
                       "exp": null,
                       "iat": 1672585200,
-                      "sub": "14beef7a-99f7-4534-a87e-70b564330a4c",
+                      "sub": "wsm_14beef7a-99f7-4534-a87e-70b564330a4c_50cf242c-7fa3-4cad-87d0-75b1af71c57b",
                       "aud": "1e4a3f7c-8d29-4b51-9e0f-6c3a5d8b21e7",
                       "iss": "attio.com",
                       "token_level": "user",

@@ -53,6 +53,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item.Attributes.It
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,6 +84,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item.Attributes.It
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryIdAttributesByAttributeValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

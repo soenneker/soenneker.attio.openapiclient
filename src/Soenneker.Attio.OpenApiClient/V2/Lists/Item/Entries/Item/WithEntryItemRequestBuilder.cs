@@ -61,6 +61,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             {
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ListsByListEntriesByEntryId403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ListsByListEntriesByEntryId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ListsByListEntriesByEntryId200ResponseSchema>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.DeleteV2ListsByListEntriesByEntryId200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,6 +86,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ListsByListEntriesByEntryId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -113,6 +117,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ListsByListEntriesByEntryId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -142,6 +148,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries.Item
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntriesByEntryId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

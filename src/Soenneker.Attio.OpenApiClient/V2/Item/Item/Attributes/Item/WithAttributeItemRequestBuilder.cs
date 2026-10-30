@@ -65,6 +65,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttribute404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttribute200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ByTargetByIdentifierAttributesByAttribute200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -94,6 +96,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Item.Item.Attributes.Item
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttribute400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttribute403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttribute404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttribute200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PatchV2ByTargetByIdentifierAttributesByAttribute200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

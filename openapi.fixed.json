@@ -2520,6 +2520,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecordsMergeSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecordsMerge200Response"
                 }
               }
@@ -2530,6 +2533,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecordsMergeSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecordsMerge202Response"
                 }
               }
@@ -7642,7 +7648,7 @@
                       "token_type": "Bearer",
                       "exp": null,
                       "iat": 1672585200,
-                      "sub": "14beef7a-99f7-4534-a87e-70b564330a4c",
+                      "sub": "wsm_14beef7a-99f7-4534-a87e-70b564330a4c_50cf242c-7fa3-4cad-87d0-75b1af71c57b",
                       "aud": "1e4a3f7c-8d29-4b51-9e0f-6c3a5d8b21e7",
                       "iss": "attio.com",
                       "token_level": "user",
@@ -27818,9 +27824,6 @@
         }
       },
       "GetV2Files200ResponseDataItem": {
-        "required": [
-          "file_type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/File"
@@ -27835,12 +27838,7 @@
             "$ref": "#/components/schemas/ConnectedFolder"
           }
         ],
-        "properties": {
-          "file_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "file_type",
           "mapping": {
             "file": "#/components/schemas/File",
@@ -27981,9 +27979,6 @@
         "additionalProperties": false
       },
       "PostV2Files200ResponseData": {
-        "required": [
-          "file_type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/Folder"
@@ -27995,12 +27990,7 @@
             "$ref": "#/components/schemas/ConnectedFolder"
           }
         ],
-        "properties": {
-          "file_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "file_type",
           "mapping": {
             "folder": "#/components/schemas/Folder",
@@ -28250,8 +28240,7 @@
           },
           "sub": {
             "type": "string",
-            "description": "Since Bearer tokens grant Workspace-level permissions, this property contains the workspace_id.",
-            "format": "uuid"
+            "description": "The subject of the token. For a workspace-level token, this is the workspace ID. For a user-level token, this is an opaque value that identifies the workspace member. Do not parse this value. To get the workspace ID, use workspace_id. To get the workspace member ID, use authorized_by_workspace_member_id."
           },
           "aud": {
             "type": "string",
@@ -331449,6 +331438,16 @@
       "PutV2ListsByListEntriesByEntryIdAttributesByAttributeValuesRequestDataValuesItemValueAnyOf1": {
         "type": "object",
         "additionalProperties": {}
+      },
+      "PostV2ObjectsByObjectValueRecordsMergeSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecordsMerge200Response"
+          },
+          {
+            "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecordsMerge202Response"
+          }
+        ]
       }
     },
     "securitySchemes": {

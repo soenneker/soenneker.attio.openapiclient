@@ -62,7 +62,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Webhooks200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a webhook and associated subscriptions.Each combination of target URL, event type and filter must be unique within your workspace; duplicates are rejected with a 409.Required scopes: `webhook:read-write`.Supported token levels: `workspace`.
@@ -88,6 +88,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Webhooks
             {
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks400Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks409Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

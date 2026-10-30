@@ -78,6 +78,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ListsByListEntries200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,6 +109,8 @@ namespace Soenneker.Attio.OpenApiClient.V2.Lists.Item.Entries
                 { "400", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2ListsByListEntries200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

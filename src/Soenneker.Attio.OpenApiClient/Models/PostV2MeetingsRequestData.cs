@@ -11,58 +11,85 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2MeetingsRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("is_all_day") is { } nullNodeIsAllDay && nullNodeIsAllDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAllDay = null;
+            if (parseNode.GetChildNode("linked_records") is { } nullNodeLinkedRecords && nullNodeLinkedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedRecords = null;
+            if (parseNode.GetChildNode("participants") is { } nullNodeParticipants && nullNodeParticipants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Participants = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>When the meeting ends. Use a datetime and optional timezone for non-all day meetings, or a date for all day meetings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataEnd? End { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataEnd? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataEnd? _explicitNullValueEnd = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataEnd End { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataEnd End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataEnd _explicitNullValueEnd = default!;
 #endif
         /// <summary>Whether or not the meeting is an all day event. All day events may span multiple days. When true, start and end must use date format. When false, start and end must use datetime with timezone format.</summary>
-        public bool? IsAllDay { get; set; }
+        public bool? IsAllDay { get => _explicitNullValueIsAllDay; set { _explicitNullValueIsAllDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_all_day"); else _explicitNullProperties?.Remove("is_all_day"); } }
+        private bool? _explicitNullValueIsAllDay = default!;
         /// <summary>A list of records to link to the meeting. Each record is specified by its object (slug or UUID) and record ID (UUID). Attio will automatically link the meeting participants&apos; companies to the meeting; this behavior is asynchronous.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataLinkedRecordsItem>? LinkedRecords { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataLinkedRecordsItem>? LinkedRecords { get => _explicitNullValueLinkedRecords; set { _explicitNullValueLinkedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_records"); else _explicitNullProperties?.Remove("linked_records"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataLinkedRecordsItem>? _explicitNullValueLinkedRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataLinkedRecordsItem> LinkedRecords { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataLinkedRecordsItem> LinkedRecords { get => _explicitNullValueLinkedRecords; set { _explicitNullValueLinkedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_records"); else _explicitNullProperties?.Remove("linked_records"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataLinkedRecordsItem> _explicitNullValueLinkedRecords = default!;
 #endif
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataParticipantsItem>? Participants { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataParticipantsItem>? Participants { get => _explicitNullValueParticipants; set { _explicitNullValueParticipants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participants"); else _explicitNullProperties?.Remove("participants"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataParticipantsItem>? _explicitNullValueParticipants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataParticipantsItem> Participants { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataParticipantsItem> Participants { get => _explicitNullValueParticipants; set { _explicitNullValueParticipants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participants"); else _explicitNullProperties?.Remove("participants"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataParticipantsItem> _explicitNullValueParticipants = default!;
 #endif
         /// <summary>When the meeting starts. Use a datetime and optional timezone for non-all day meetings, or a date for all day meetings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart? Start { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart? _explicitNullValueStart = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart Start { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart _explicitNullValueStart = default!;
 #endif
         /// <summary>The title of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestData"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataParticipantsItem>("participants", Participants);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2MeetingsRequestDataStart>("start", Start);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

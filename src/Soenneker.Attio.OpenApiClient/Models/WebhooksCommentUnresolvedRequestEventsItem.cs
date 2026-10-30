@@ -12,37 +12,62 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhooksCommentUnresolvedRequestEventsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("entry_id") is { } nullNodeEntryId && nullNodeEntryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryId = null;
+            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("list_id") is { } nullNodeListId && nullNodeListId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListId = null;
+            if (parseNode.GetChildNode("object_id") is { } nullNodeObjectId && nullNodeObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectId = null;
+            if (parseNode.GetChildNode("record_id") is { } nullNodeRecordId && nullNodeRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordId = null;
+            if (parseNode.GetChildNode("thread_id") is { } nullNodeThreadId && nullNodeThreadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreadId = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemActor? Actor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemActor Actor { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If the comment relates to a list entry, this is the ID of that list entry, otherwise null.</summary>
-        public Guid? EntryId { get; set; }
+        public Guid? EntryId { get => _explicitNullValueEntryId; set { _explicitNullValueEntryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_id"); else _explicitNullProperties?.Remove("entry_id"); } }
+        private Guid? _explicitNullValueEntryId = default!;
         /// <summary>The event_type property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.CommentUnresolvedEventType? EventType { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.CommentUnresolvedEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.CommentUnresolvedEventType? _explicitNullValueEventType = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItemId _explicitNullValueId = default!;
 #endif
         /// <summary>If the comment relates to a list entry, this is the ID of that list, otherwise null.</summary>
-        public Guid? ListId { get; set; }
+        public Guid? ListId { get => _explicitNullValueListId; set { _explicitNullValueListId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_id"); else _explicitNullProperties?.Remove("list_id"); } }
+        private Guid? _explicitNullValueListId = default!;
         /// <summary>The ID of the object that the comment relates to.</summary>
-        public Guid? ObjectId { get; set; }
+        public Guid? ObjectId { get => _explicitNullValueObjectId; set { _explicitNullValueObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_id"); else _explicitNullProperties?.Remove("object_id"); } }
+        private Guid? _explicitNullValueObjectId = default!;
         /// <summary>The ID of the record that the comment relates to.</summary>
-        public Guid? RecordId { get; set; }
+        public Guid? RecordId { get => _explicitNullValueRecordId; set { _explicitNullValueRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_id"); else _explicitNullProperties?.Remove("record_id"); } }
+        private Guid? _explicitNullValueRecordId = default!;
         /// <summary>The ID of the thread that the comment belongs to.</summary>
-        public Guid? ThreadId { get; set; }
+        public Guid? ThreadId { get => _explicitNullValueThreadId; set { _explicitNullValueThreadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thread_id"); else _explicitNullProperties?.Remove("thread_id"); } }
+        private Guid? _explicitNullValueThreadId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItem"/> and sets the default values.
         /// </summary>
@@ -58,7 +83,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentUnresolvedRequestEventsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +118,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteGuidValue("object_id", ObjectId);
             writer.WriteGuidValue("record_id", RecordId);
             writer.WriteGuidValue("thread_id", ThreadId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

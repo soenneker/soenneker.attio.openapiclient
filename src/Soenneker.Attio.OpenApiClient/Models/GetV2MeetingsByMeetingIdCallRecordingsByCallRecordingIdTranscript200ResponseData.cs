@@ -11,40 +11,59 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("raw_transcript") is { } nullNodeRawTranscript && nullNodeRawTranscript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawTranscript = null;
+            if (parseNode.GetChildNode("transcript") is { } nullNodeTranscript && nullNodeTranscript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcript = null;
+            if (parseNode.GetChildNode("web_url") is { } nullNodeWebUrl && nullNodeWebUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataId? Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataId Id { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataId _explicitNullValueId = default!;
 #endif
         /// <summary>The raw transcript of the call recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawTranscript { get; set; }
+        public string? RawTranscript { get => _explicitNullValueRawTranscript; set { _explicitNullValueRawTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_transcript"); else _explicitNullProperties?.Remove("raw_transcript"); } }
+        private string? _explicitNullValueRawTranscript = default!;
 #nullable restore
 #else
-        public string RawTranscript { get; set; }
+        public string RawTranscript { get => _explicitNullValueRawTranscript; set { _explicitNullValueRawTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_transcript"); else _explicitNullProperties?.Remove("raw_transcript"); } }
+        private string _explicitNullValueRawTranscript = default!;
 #endif
         /// <summary>The transcript segments with speech, timing, and speaker information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataTranscriptItem>? Transcript { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataTranscriptItem>? Transcript { get => _explicitNullValueTranscript; set { _explicitNullValueTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript"); else _explicitNullProperties?.Remove("transcript"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataTranscriptItem>? _explicitNullValueTranscript = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataTranscriptItem> Transcript { get; set; }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataTranscriptItem> Transcript { get => _explicitNullValueTranscript; set { _explicitNullValueTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript"); else _explicitNullProperties?.Remove("transcript"); } }
+        private List<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataTranscriptItem> _explicitNullValueTranscript = default!;
 #endif
         /// <summary>A URL that links directly to the call recording transcript in the Attio web application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl { get; set; }
+        public string? WebUrl { get => _explicitNullValueWebUrl; set { _explicitNullValueWebUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_url"); else _explicitNullProperties?.Remove("web_url"); } }
+        private string? _explicitNullValueWebUrl = default!;
 #nullable restore
 #else
-        public string WebUrl { get; set; }
+        public string WebUrl { get => _explicitNullValueWebUrl; set { _explicitNullValueWebUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_url"); else _explicitNullProperties?.Remove("web_url"); } }
+        private string _explicitNullValueWebUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseData"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteStringValue("raw_transcript", RawTranscript);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.GetV2MeetingsByMeetingIdCallRecordingsByCallRecordingIdTranscript200ResponseDataTranscriptItem>("transcript", Transcript);
             writer.WriteStringValue("web_url", WebUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

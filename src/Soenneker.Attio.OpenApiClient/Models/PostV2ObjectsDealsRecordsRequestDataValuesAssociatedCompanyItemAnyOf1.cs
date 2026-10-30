@@ -11,17 +11,29 @@ namespace Soenneker.Attio.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("target_object") is { } nullNodeTargetObject && nullNodeTargetObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetObject = null;
+            if (parseNode.GetChildNode("target_record_id") is { } nullNodeTargetRecordId && nullNodeTargetRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetRecordId = null;
+        }
+
         /// <summary>A UUID or slug to identify the object that the referenced record belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetObject { get; set; }
+        public string? TargetObject { get => _explicitNullValueTargetObject; set { _explicitNullValueTargetObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_object"); else _explicitNullProperties?.Remove("target_object"); } }
+        private string? _explicitNullValueTargetObject = default!;
 #nullable restore
 #else
-        public string TargetObject { get; set; }
+        public string TargetObject { get => _explicitNullValueTargetObject; set { _explicitNullValueTargetObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_object"); else _explicitNullProperties?.Remove("target_object"); } }
+        private string _explicitNullValueTargetObject = default!;
 #endif
         /// <summary>A UUID to identify the referenced record.</summary>
-        public Guid? TargetRecordId { get; set; }
+        public Guid? TargetRecordId { get => _explicitNullValueTargetRecordId; set { _explicitNullValueTargetRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_record_id"); else _explicitNullProperties?.Remove("target_record_id"); } }
+        private Guid? _explicitNullValueTargetRecordId = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +42,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsDealsRecordsRequestDataValuesAssociatedCompanyItemAnyOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("target_object", TargetObject);
-            writer.WriteGuidValue("target_record_id", TargetRecordId);
+            writer.WriteGuidValue("target_record_id", TargetRecordId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -12,28 +12,45 @@ namespace Soenneker.Attio.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReference : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("create") is { } nullNodeCreate && nullNodeCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Create = null;
+            if (parseNode.GetChildNode("if_multiple_matches") is { } nullNodeIfMultipleMatches && nullNodeIfMultipleMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IfMultipleMatches = null;
+            if (parseNode.GetChildNode("if_unmatched") is { } nullNodeIfUnmatched && nullNodeIfUnmatched.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IfUnmatched = null;
+            if (parseNode.GetChildNode("match") is { } nullNodeMatch && nullNodeMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Match = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The values of the record to create. Only considered for `if_unmatched: &quot;create&quot;`. The value from `match` is added automatically and must not be repeated here. These values may not contain another `target_record_reference`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceCreate? Create { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceCreate? Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceCreate? _explicitNullValueCreate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceCreate Create { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceCreate Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceCreate _explicitNullValueCreate = default!;
 #endif
         /// <summary>What to do when more than one record matches. `error` rejects the request and `match_all` references every record that matches, up to 50 records.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfMultipleMatches? IfMultipleMatches { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfMultipleMatches? IfMultipleMatches { get => _explicitNullValueIfMultipleMatches; set { _explicitNullValueIfMultipleMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("if_multiple_matches"); else _explicitNullProperties?.Remove("if_multiple_matches"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfMultipleMatches? _explicitNullValueIfMultipleMatches = default!;
         /// <summary>What to do when no record matches. `error` rejects the request, `ignore` drops the value, and `create` creates a new record from `match` and `create`. Creating a record needs the `record_permission:read-write` and `object_configuration:read` scopes, and each record created counts as one more write against the rate limit of the request. A request may create at most 10 referenced records.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfUnmatched? IfUnmatched { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfUnmatched? IfUnmatched { get => _explicitNullValueIfUnmatched; set { _explicitNullValueIfUnmatched = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("if_unmatched"); else _explicitNullProperties?.Remove("if_unmatched"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfUnmatched? _explicitNullValueIfUnmatched = default!;
         /// <summary>Exactly one matching attribute, given as the slug or ID of the attribute and a single value of that attribute&apos;s type. The attribute does not have to be unique, but we recommend a unique attribute, such as a domain, an email address or an ID from your own system. Matching on more than one value is not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceMatch? Match { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceMatch? Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceMatch? _explicitNullValueMatch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceMatch Match { get; set; }
+        public global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceMatch Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceMatch _explicitNullValueMatch = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReference"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public static global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReference();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReference(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfMultipleMatches>("if_multiple_matches", IfMultipleMatches);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceIfUnmatched>("if_unmatched", IfUnmatched);
             writer.WriteObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItemAnyOf3TargetRecordReferenceMatch>("match", Match);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
