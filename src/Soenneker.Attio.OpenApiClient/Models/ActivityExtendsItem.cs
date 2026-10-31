@@ -17,23 +17,25 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("schema_id") is { } nullNodeSchemaId && nullNodeSchemaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaId = null;
-            if (parseNode.GetChildNode("schema_slug") is { } nullNodeSchemaSlug && nullNodeSchemaSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaSlug = null;
+            if (parseNode.GetChildNode("schema_id") is null) { _explicitNullValueSchemaId = default!; _explicitNullProperties?.Remove("schema_id"); }
+            else if (parseNode.GetChildNode("schema_id") is { } nullNodeSchemaId && nullNodeSchemaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaId = null;
+            if (parseNode.GetChildNode("schema_slug") is null) { _explicitNullValueSchemaSlug = default!; _explicitNullProperties?.Remove("schema_slug"); }
+            else if (parseNode.GetChildNode("schema_slug") is { } nullNodeSchemaSlug && nullNodeSchemaSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A UUID to identify the schema.</summary>
-        public Guid? SchemaId { get => _explicitNullValueSchemaId; set { _explicitNullValueSchemaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_id"); else _explicitNullProperties?.Remove("schema_id"); } }
+        public Guid? SchemaId { get => _explicitNullValueSchemaId; set { _explicitNullValueSchemaId = value; AdditionalData?.Remove("schema_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_id"); else _explicitNullProperties?.Remove("schema_id"); } }
         private Guid? _explicitNullValueSchemaId = default!;
         /// <summary>The human-readable slug of the schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemaSlug { get => _explicitNullValueSchemaSlug; set { _explicitNullValueSchemaSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_slug"); else _explicitNullProperties?.Remove("schema_slug"); } }
+        public string? SchemaSlug { get => _explicitNullValueSchemaSlug; set { _explicitNullValueSchemaSlug = value; AdditionalData?.Remove("schema_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_slug"); else _explicitNullProperties?.Remove("schema_slug"); } }
         private string? _explicitNullValueSchemaSlug = default!;
 #nullable restore
 #else
-        public string SchemaSlug { get => _explicitNullValueSchemaSlug; set { _explicitNullValueSchemaSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_slug"); else _explicitNullProperties?.Remove("schema_slug"); } }
+        public string SchemaSlug { get => _explicitNullValueSchemaSlug; set { _explicitNullValueSchemaSlug = value; AdditionalData?.Remove("schema_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_slug"); else _explicitNullProperties?.Remove("schema_slug"); } }
         private string _explicitNullValueSchemaSlug = default!;
 #endif
         /// <summary>

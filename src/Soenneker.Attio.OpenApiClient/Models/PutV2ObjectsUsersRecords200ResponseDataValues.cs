@@ -18,10 +18,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("person") is { } nullNodePerson && nullNodePerson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Person = null;
-            if (parseNode.GetChildNode("primary_email_address") is { } nullNodePrimaryEmailAddress && nullNodePrimaryEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryEmailAddress = null;
-            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
-            if (parseNode.GetChildNode("workspace") is { } nullNodeWorkspace && nullNodeWorkspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workspace = null;
+            if (parseNode.GetChildNode("person") is null) { _explicitNullValuePerson = default!; _explicitNullProperties?.Remove("person"); }
+            else if (parseNode.GetChildNode("person") is { } nullNodePerson && nullNodePerson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Person = null;
+            if (parseNode.GetChildNode("primary_email_address") is null) { _explicitNullValuePrimaryEmailAddress = default!; _explicitNullProperties?.Remove("primary_email_address"); }
+            else if (parseNode.GetChildNode("primary_email_address") is { } nullNodePrimaryEmailAddress && nullNodePrimaryEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryEmailAddress = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("workspace") is null) { _explicitNullValueWorkspace = default!; _explicitNullProperties?.Remove("workspace"); }
+            else if (parseNode.GetChildNode("workspace") is { } nullNodeWorkspace && nullNodeWorkspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workspace = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The person property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPersonItem>? Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPersonItem>? Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; AdditionalData?.Remove("person"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPersonItem>? _explicitNullValuePerson = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPersonItem> Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPersonItem> Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; AdditionalData?.Remove("person"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPersonItem> _explicitNullValuePerson = default!;
 #endif
         /// <summary>The primary_email_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPrimaryEmailAddressItem>? PrimaryEmailAddress { get => _explicitNullValuePrimaryEmailAddress; set { _explicitNullValuePrimaryEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_email_address"); else _explicitNullProperties?.Remove("primary_email_address"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPrimaryEmailAddressItem>? PrimaryEmailAddress { get => _explicitNullValuePrimaryEmailAddress; set { _explicitNullValuePrimaryEmailAddress = value; AdditionalData?.Remove("primary_email_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_email_address"); else _explicitNullProperties?.Remove("primary_email_address"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPrimaryEmailAddressItem>? _explicitNullValuePrimaryEmailAddress = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPrimaryEmailAddressItem> PrimaryEmailAddress { get => _explicitNullValuePrimaryEmailAddress; set { _explicitNullValuePrimaryEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_email_address"); else _explicitNullProperties?.Remove("primary_email_address"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPrimaryEmailAddressItem> PrimaryEmailAddress { get => _explicitNullValuePrimaryEmailAddress; set { _explicitNullValuePrimaryEmailAddress = value; AdditionalData?.Remove("primary_email_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_email_address"); else _explicitNullProperties?.Remove("primary_email_address"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesPrimaryEmailAddressItem> _explicitNullValuePrimaryEmailAddress = default!;
 #endif
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesUserIdItem>? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesUserIdItem>? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesUserIdItem>? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesUserIdItem> UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesUserIdItem> UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesUserIdItem> _explicitNullValueUserId = default!;
 #endif
         /// <summary>The workspace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesWorkspaceItem>? Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesWorkspaceItem>? Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesWorkspaceItem>? _explicitNullValueWorkspace = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesWorkspaceItem> Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesWorkspaceItem> Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsUsersRecords200ResponseDataValuesWorkspaceItem> _explicitNullValueWorkspace = default!;
 #endif
         /// <summary>

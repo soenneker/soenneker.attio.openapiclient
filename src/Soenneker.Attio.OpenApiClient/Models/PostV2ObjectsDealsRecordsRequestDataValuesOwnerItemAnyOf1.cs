@@ -17,8 +17,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("referenced_actor_id") is { } nullNodeReferencedActorId && nullNodeReferencedActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorId = null;
-            if (parseNode.GetChildNode("referenced_actor_type") is { } nullNodeReferencedActorType && nullNodeReferencedActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorType = null;
+            if (parseNode.GetChildNode("referenced_actor_id") is null) { _explicitNullValueReferencedActorId = default!; _explicitNullProperties?.Remove("referenced_actor_id"); }
+            else if (parseNode.GetChildNode("referenced_actor_id") is { } nullNodeReferencedActorId && nullNodeReferencedActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorId = null;
+            if (parseNode.GetChildNode("referenced_actor_type") is null) { _explicitNullValueReferencedActorType = default!; _explicitNullProperties?.Remove("referenced_actor_type"); }
+            else if (parseNode.GetChildNode("referenced_actor_type") is { } nullNodeReferencedActorType && nullNodeReferencedActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorType = null;
         }
 
         /// <summary>The ID of the referenced Actor.</summary>

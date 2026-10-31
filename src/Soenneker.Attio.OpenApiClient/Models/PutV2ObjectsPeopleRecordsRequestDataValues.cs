@@ -18,20 +18,34 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("angellist") is { } nullNodeAngellist && nullNodeAngellist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Angellist = null;
-            if (parseNode.GetChildNode("avatar_url") is { } nullNodeAvatarUrl && nullNodeAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUrl = null;
-            if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("email_addresses") is { } nullNodeEmailAddresses && nullNodeEmailAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddresses = null;
-            if (parseNode.GetChildNode("facebook") is { } nullNodeFacebook && nullNodeFacebook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facebook = null;
-            if (parseNode.GetChildNode("instagram") is { } nullNodeInstagram && nullNodeInstagram.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instagram = null;
-            if (parseNode.GetChildNode("job_title") is { } nullNodeJobTitle && nullNodeJobTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobTitle = null;
-            if (parseNode.GetChildNode("linkedin") is { } nullNodeLinkedin && nullNodeLinkedin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Linkedin = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
-            if (parseNode.GetChildNode("primary_location") is { } nullNodePrimaryLocation && nullNodePrimaryLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryLocation = null;
-            if (parseNode.GetChildNode("twitter") is { } nullNodeTwitter && nullNodeTwitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Twitter = null;
-            if (parseNode.GetChildNode("twitter_follower_count") is { } nullNodeTwitterFollowerCount && nullNodeTwitterFollowerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwitterFollowerCount = null;
+            if (parseNode.GetChildNode("angellist") is null) { _explicitNullValueAngellist = default!; _explicitNullProperties?.Remove("angellist"); }
+            else if (parseNode.GetChildNode("angellist") is { } nullNodeAngellist && nullNodeAngellist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Angellist = null;
+            if (parseNode.GetChildNode("avatar_url") is null) { _explicitNullValueAvatarUrl = default!; _explicitNullProperties?.Remove("avatar_url"); }
+            else if (parseNode.GetChildNode("avatar_url") is { } nullNodeAvatarUrl && nullNodeAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUrl = null;
+            if (parseNode.GetChildNode("company") is null) { _explicitNullValueCompany = default!; _explicitNullProperties?.Remove("company"); }
+            else if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("email_addresses") is null) { _explicitNullValueEmailAddresses = default!; _explicitNullProperties?.Remove("email_addresses"); }
+            else if (parseNode.GetChildNode("email_addresses") is { } nullNodeEmailAddresses && nullNodeEmailAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddresses = null;
+            if (parseNode.GetChildNode("facebook") is null) { _explicitNullValueFacebook = default!; _explicitNullProperties?.Remove("facebook"); }
+            else if (parseNode.GetChildNode("facebook") is { } nullNodeFacebook && nullNodeFacebook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facebook = null;
+            if (parseNode.GetChildNode("instagram") is null) { _explicitNullValueInstagram = default!; _explicitNullProperties?.Remove("instagram"); }
+            else if (parseNode.GetChildNode("instagram") is { } nullNodeInstagram && nullNodeInstagram.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instagram = null;
+            if (parseNode.GetChildNode("job_title") is null) { _explicitNullValueJobTitle = default!; _explicitNullProperties?.Remove("job_title"); }
+            else if (parseNode.GetChildNode("job_title") is { } nullNodeJobTitle && nullNodeJobTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobTitle = null;
+            if (parseNode.GetChildNode("linkedin") is null) { _explicitNullValueLinkedin = default!; _explicitNullProperties?.Remove("linkedin"); }
+            else if (parseNode.GetChildNode("linkedin") is { } nullNodeLinkedin && nullNodeLinkedin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Linkedin = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("phone_numbers") is null) { _explicitNullValuePhoneNumbers = default!; _explicitNullProperties?.Remove("phone_numbers"); }
+            else if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("primary_location") is null) { _explicitNullValuePrimaryLocation = default!; _explicitNullProperties?.Remove("primary_location"); }
+            else if (parseNode.GetChildNode("primary_location") is { } nullNodePrimaryLocation && nullNodePrimaryLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryLocation = null;
+            if (parseNode.GetChildNode("twitter") is null) { _explicitNullValueTwitter = default!; _explicitNullProperties?.Remove("twitter"); }
+            else if (parseNode.GetChildNode("twitter") is { } nullNodeTwitter && nullNodeTwitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Twitter = null;
+            if (parseNode.GetChildNode("twitter_follower_count") is null) { _explicitNullValueTwitterFollowerCount = default!; _explicitNullProperties?.Remove("twitter_follower_count"); }
+            else if (parseNode.GetChildNode("twitter_follower_count") is { } nullNodeTwitterFollowerCount && nullNodeTwitterFollowerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwitterFollowerCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,141 +53,141 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The angellist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAngellistItem>? Angellist { get => _explicitNullValueAngellist; set { _explicitNullValueAngellist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("angellist"); else _explicitNullProperties?.Remove("angellist"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAngellistItem>? Angellist { get => _explicitNullValueAngellist; set { _explicitNullValueAngellist = value; AdditionalData?.Remove("angellist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("angellist"); else _explicitNullProperties?.Remove("angellist"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAngellistItem>? _explicitNullValueAngellist = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAngellistItem> Angellist { get => _explicitNullValueAngellist; set { _explicitNullValueAngellist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("angellist"); else _explicitNullProperties?.Remove("angellist"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAngellistItem> Angellist { get => _explicitNullValueAngellist; set { _explicitNullValueAngellist = value; AdditionalData?.Remove("angellist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("angellist"); else _explicitNullProperties?.Remove("angellist"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAngellistItem> _explicitNullValueAngellist = default!;
 #endif
         /// <summary>The avatar_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAvatarUrlItem>? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAvatarUrlItem>? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatar_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAvatarUrlItem>? _explicitNullValueAvatarUrl = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAvatarUrlItem> AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAvatarUrlItem> AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatar_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesAvatarUrlItem> _explicitNullValueAvatarUrl = default!;
 #endif
         /// <summary>The company property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesCompanyItem>? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesCompanyItem>? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; AdditionalData?.Remove("company"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesCompanyItem>? _explicitNullValueCompany = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesCompanyItem> Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesCompanyItem> Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; AdditionalData?.Remove("company"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesCompanyItem> _explicitNullValueCompany = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesDescriptionItem>? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesDescriptionItem>? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesDescriptionItem>? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesDescriptionItem> Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesDescriptionItem> Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesDescriptionItem> _explicitNullValueDescription = default!;
 #endif
         /// <summary>The email_addresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesEmailAddressesItem>? EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_addresses"); else _explicitNullProperties?.Remove("email_addresses"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesEmailAddressesItem>? EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; AdditionalData?.Remove("email_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_addresses"); else _explicitNullProperties?.Remove("email_addresses"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesEmailAddressesItem>? _explicitNullValueEmailAddresses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesEmailAddressesItem> EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_addresses"); else _explicitNullProperties?.Remove("email_addresses"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesEmailAddressesItem> EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; AdditionalData?.Remove("email_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_addresses"); else _explicitNullProperties?.Remove("email_addresses"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesEmailAddressesItem> _explicitNullValueEmailAddresses = default!;
 #endif
         /// <summary>The facebook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesFacebookItem>? Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesFacebookItem>? Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; AdditionalData?.Remove("facebook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesFacebookItem>? _explicitNullValueFacebook = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesFacebookItem> Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesFacebookItem> Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; AdditionalData?.Remove("facebook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesFacebookItem> _explicitNullValueFacebook = default!;
 #endif
         /// <summary>The instagram property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesInstagramItem>? Instagram { get => _explicitNullValueInstagram; set { _explicitNullValueInstagram = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram"); else _explicitNullProperties?.Remove("instagram"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesInstagramItem>? Instagram { get => _explicitNullValueInstagram; set { _explicitNullValueInstagram = value; AdditionalData?.Remove("instagram"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram"); else _explicitNullProperties?.Remove("instagram"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesInstagramItem>? _explicitNullValueInstagram = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesInstagramItem> Instagram { get => _explicitNullValueInstagram; set { _explicitNullValueInstagram = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram"); else _explicitNullProperties?.Remove("instagram"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesInstagramItem> Instagram { get => _explicitNullValueInstagram; set { _explicitNullValueInstagram = value; AdditionalData?.Remove("instagram"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram"); else _explicitNullProperties?.Remove("instagram"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesInstagramItem> _explicitNullValueInstagram = default!;
 #endif
         /// <summary>The job_title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesJobTitleItem>? JobTitle { get => _explicitNullValueJobTitle; set { _explicitNullValueJobTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_title"); else _explicitNullProperties?.Remove("job_title"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesJobTitleItem>? JobTitle { get => _explicitNullValueJobTitle; set { _explicitNullValueJobTitle = value; AdditionalData?.Remove("job_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_title"); else _explicitNullProperties?.Remove("job_title"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesJobTitleItem>? _explicitNullValueJobTitle = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesJobTitleItem> JobTitle { get => _explicitNullValueJobTitle; set { _explicitNullValueJobTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_title"); else _explicitNullProperties?.Remove("job_title"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesJobTitleItem> JobTitle { get => _explicitNullValueJobTitle; set { _explicitNullValueJobTitle = value; AdditionalData?.Remove("job_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_title"); else _explicitNullProperties?.Remove("job_title"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesJobTitleItem> _explicitNullValueJobTitle = default!;
 #endif
         /// <summary>The linkedin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesLinkedinItem>? Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesLinkedinItem>? Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; AdditionalData?.Remove("linkedin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesLinkedinItem>? _explicitNullValueLinkedin = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesLinkedinItem> Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesLinkedinItem> Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; AdditionalData?.Remove("linkedin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesLinkedinItem> _explicitNullValueLinkedin = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesNameItem>? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesNameItem>? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesNameItem>? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesNameItem> Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesNameItem> Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesNameItem> _explicitNullValueName = default!;
 #endif
         /// <summary>The phone_numbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPhoneNumbersItem>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPhoneNumbersItem>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; AdditionalData?.Remove("phone_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPhoneNumbersItem>? _explicitNullValuePhoneNumbers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPhoneNumbersItem> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPhoneNumbersItem> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; AdditionalData?.Remove("phone_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPhoneNumbersItem> _explicitNullValuePhoneNumbers = default!;
 #endif
         /// <summary>The primary_location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPrimaryLocationItem>? PrimaryLocation { get => _explicitNullValuePrimaryLocation; set { _explicitNullValuePrimaryLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_location"); else _explicitNullProperties?.Remove("primary_location"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPrimaryLocationItem>? PrimaryLocation { get => _explicitNullValuePrimaryLocation; set { _explicitNullValuePrimaryLocation = value; AdditionalData?.Remove("primary_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_location"); else _explicitNullProperties?.Remove("primary_location"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPrimaryLocationItem>? _explicitNullValuePrimaryLocation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPrimaryLocationItem> PrimaryLocation { get => _explicitNullValuePrimaryLocation; set { _explicitNullValuePrimaryLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_location"); else _explicitNullProperties?.Remove("primary_location"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPrimaryLocationItem> PrimaryLocation { get => _explicitNullValuePrimaryLocation; set { _explicitNullValuePrimaryLocation = value; AdditionalData?.Remove("primary_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_location"); else _explicitNullProperties?.Remove("primary_location"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesPrimaryLocationItem> _explicitNullValuePrimaryLocation = default!;
 #endif
         /// <summary>The twitter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterItem>? Twitter { get => _explicitNullValueTwitter; set { _explicitNullValueTwitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter"); else _explicitNullProperties?.Remove("twitter"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterItem>? Twitter { get => _explicitNullValueTwitter; set { _explicitNullValueTwitter = value; AdditionalData?.Remove("twitter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter"); else _explicitNullProperties?.Remove("twitter"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterItem>? _explicitNullValueTwitter = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterItem> Twitter { get => _explicitNullValueTwitter; set { _explicitNullValueTwitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter"); else _explicitNullProperties?.Remove("twitter"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterItem> Twitter { get => _explicitNullValueTwitter; set { _explicitNullValueTwitter = value; AdditionalData?.Remove("twitter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter"); else _explicitNullProperties?.Remove("twitter"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterItem> _explicitNullValueTwitter = default!;
 #endif
         /// <summary>The twitter_follower_count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterFollowerCountItem>? TwitterFollowerCount { get => _explicitNullValueTwitterFollowerCount; set { _explicitNullValueTwitterFollowerCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_follower_count"); else _explicitNullProperties?.Remove("twitter_follower_count"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterFollowerCountItem>? TwitterFollowerCount { get => _explicitNullValueTwitterFollowerCount; set { _explicitNullValueTwitterFollowerCount = value; AdditionalData?.Remove("twitter_follower_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_follower_count"); else _explicitNullProperties?.Remove("twitter_follower_count"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterFollowerCountItem>? _explicitNullValueTwitterFollowerCount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterFollowerCountItem> TwitterFollowerCount { get => _explicitNullValueTwitterFollowerCount; set { _explicitNullValueTwitterFollowerCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_follower_count"); else _explicitNullProperties?.Remove("twitter_follower_count"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterFollowerCountItem> TwitterFollowerCount { get => _explicitNullValueTwitterFollowerCount; set { _explicitNullValueTwitterFollowerCount = value; AdditionalData?.Remove("twitter_follower_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_follower_count"); else _explicitNullProperties?.Remove("twitter_follower_count"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PutV2ObjectsPeopleRecordsRequestDataValuesTwitterFollowerCountItem> _explicitNullValueTwitterFollowerCount = default!;
 #endif
         /// <summary>

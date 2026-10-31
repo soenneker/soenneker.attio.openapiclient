@@ -17,10 +17,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
-            if (parseNode.GetChildNode("extends") is { } nullNodeExtends && nullNodeExtends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extends = null;
-            if (parseNode.GetChildNode("plural_noun") is { } nullNodePluralNoun && nullNodePluralNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralNoun = null;
-            if (parseNode.GetChildNode("singular_noun") is { } nullNodeSingularNoun && nullNodeSingularNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularNoun = null;
+            if (parseNode.GetChildNode("api_slug") is null) { _explicitNullValueApiSlug = default!; _explicitNullProperties?.Remove("api_slug"); }
+            else if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
+            if (parseNode.GetChildNode("extends") is null) { _explicitNullValueExtends = default!; _explicitNullProperties?.Remove("extends"); }
+            else if (parseNode.GetChildNode("extends") is { } nullNodeExtends && nullNodeExtends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extends = null;
+            if (parseNode.GetChildNode("plural_noun") is null) { _explicitNullValuePluralNoun = default!; _explicitNullProperties?.Remove("plural_noun"); }
+            else if (parseNode.GetChildNode("plural_noun") is { } nullNodePluralNoun && nullNodePluralNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralNoun = null;
+            if (parseNode.GetChildNode("singular_noun") is null) { _explicitNullValueSingularNoun = default!; _explicitNullProperties?.Remove("singular_noun"); }
+            else if (parseNode.GetChildNode("singular_noun") is { } nullNodeSingularNoun && nullNodeSingularNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularNoun = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>A unique, human-readable slug to access the activity through URLs and API calls. Should be formatted in snake case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        public string? ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; AdditionalData?.Remove("api_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
         private string? _explicitNullValueApiSlug = default!;
 #nullable restore
 #else
-        public string ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
+        public string ApiSlug { get => _explicitNullValueApiSlug; set { _explicitNullValueApiSlug = value; AdditionalData?.Remove("api_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_slug"); else _explicitNullProperties?.Remove("api_slug"); } }
         private string _explicitNullValueApiSlug = default!;
 #endif
         /// <summary>The schema the new activity extends, which supplies its inherited attributes. One of `activities`, `interactions`, `calls` or `emails`.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesRequestDataExtends? Extends { get => _explicitNullValueExtends; set { _explicitNullValueExtends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extends"); else _explicitNullProperties?.Remove("extends"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesRequestDataExtends? Extends { get => _explicitNullValueExtends; set { _explicitNullValueExtends = value; AdditionalData?.Remove("extends"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extends"); else _explicitNullProperties?.Remove("extends"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesRequestDataExtends? _explicitNullValueExtends = default!;
         /// <summary>The plural form of the activity&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PluralNoun { get => _explicitNullValuePluralNoun; set { _explicitNullValuePluralNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_noun"); else _explicitNullProperties?.Remove("plural_noun"); } }
+        public string? PluralNoun { get => _explicitNullValuePluralNoun; set { _explicitNullValuePluralNoun = value; AdditionalData?.Remove("plural_noun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_noun"); else _explicitNullProperties?.Remove("plural_noun"); } }
         private string? _explicitNullValuePluralNoun = default!;
 #nullable restore
 #else
-        public string PluralNoun { get => _explicitNullValuePluralNoun; set { _explicitNullValuePluralNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_noun"); else _explicitNullProperties?.Remove("plural_noun"); } }
+        public string PluralNoun { get => _explicitNullValuePluralNoun; set { _explicitNullValuePluralNoun = value; AdditionalData?.Remove("plural_noun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_noun"); else _explicitNullProperties?.Remove("plural_noun"); } }
         private string _explicitNullValuePluralNoun = default!;
 #endif
         /// <summary>The singular form of the activity&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingularNoun { get => _explicitNullValueSingularNoun; set { _explicitNullValueSingularNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_noun"); else _explicitNullProperties?.Remove("singular_noun"); } }
+        public string? SingularNoun { get => _explicitNullValueSingularNoun; set { _explicitNullValueSingularNoun = value; AdditionalData?.Remove("singular_noun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_noun"); else _explicitNullProperties?.Remove("singular_noun"); } }
         private string? _explicitNullValueSingularNoun = default!;
 #nullable restore
 #else
-        public string SingularNoun { get => _explicitNullValueSingularNoun; set { _explicitNullValueSingularNoun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_noun"); else _explicitNullProperties?.Remove("singular_noun"); } }
+        public string SingularNoun { get => _explicitNullValueSingularNoun; set { _explicitNullValueSingularNoun = value; AdditionalData?.Remove("singular_noun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_noun"); else _explicitNullProperties?.Remove("singular_noun"); } }
         private string _explicitNullValueSingularNoun = default!;
 #endif
         /// <summary>
@@ -84,7 +88,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_slug", n => { ApiSlug = n.GetStringValue(); } },
-                { "extends", n => { Extends = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesRequestDataExtends>(); } },
+                { "extends", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesRequestDataExtends>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExtends = default; _explicitNullProperties?.Remove("extends"); AdditionalData["extends"] = unknown; } else { Extends = parsed; AdditionalData.Remove("extends"); } } },
                 { "plural_noun", n => { PluralNoun = n.GetStringValue(); } },
                 { "singular_noun", n => { SingularNoun = n.GetStringValue(); } },
             };

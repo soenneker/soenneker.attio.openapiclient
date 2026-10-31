@@ -17,9 +17,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
-            if (parseNode.GetChildNode("target_object") is { } nullNodeTargetObject && nullNodeTargetObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetObject = null;
-            if (parseNode.GetChildNode("target_record_id") is { } nullNodeTargetRecordId && nullNodeTargetRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetRecordId = null;
+            if (parseNode.GetChildNode("attribute_type") is null) { _explicitNullValueAttributeType = default!; _explicitNullProperties?.Remove("attribute_type"); }
+            else if (parseNode.GetChildNode("attribute_type") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("target_object") is null) { _explicitNullValueTargetObject = default!; _explicitNullProperties?.Remove("target_object"); }
+            else if (parseNode.GetChildNode("target_object") is { } nullNodeTargetObject && nullNodeTargetObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetObject = null;
+            if (parseNode.GetChildNode("target_record_id") is null) { _explicitNullValueTargetRecordId = default!; _explicitNullProperties?.Remove("target_record_id"); }
+            else if (parseNode.GetChildNode("target_record_id") is { } nullNodeTargetRecordId && nullNodeTargetRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetRecordId = null;
         }
 
         /// <summary>The attribute type of the value.</summary>

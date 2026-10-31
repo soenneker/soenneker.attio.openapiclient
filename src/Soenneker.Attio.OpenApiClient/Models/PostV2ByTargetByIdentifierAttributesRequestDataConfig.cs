@@ -17,8 +17,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("record_reference") is { } nullNodeRecordReference && nullNodeRecordReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordReference = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("record_reference") is null) { _explicitNullValueRecordReference = default!; _explicitNullProperties?.Remove("record_reference"); }
+            else if (parseNode.GetChildNode("record_reference") is { } nullNodeRecordReference && nullNodeRecordReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Configuration available for attributes of type &quot;currency&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrency? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrency? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrency? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrency Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrency Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrency _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Configuration available for attributes of type &quot;record-reference&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigRecordReference? RecordReference { get => _explicitNullValueRecordReference; set { _explicitNullValueRecordReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_reference"); else _explicitNullProperties?.Remove("record_reference"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigRecordReference? RecordReference { get => _explicitNullValueRecordReference; set { _explicitNullValueRecordReference = value; AdditionalData?.Remove("record_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_reference"); else _explicitNullProperties?.Remove("record_reference"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigRecordReference? _explicitNullValueRecordReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigRecordReference RecordReference { get => _explicitNullValueRecordReference; set { _explicitNullValueRecordReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_reference"); else _explicitNullProperties?.Remove("record_reference"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigRecordReference RecordReference { get => _explicitNullValueRecordReference; set { _explicitNullValueRecordReference = value; AdditionalData?.Remove("record_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_reference"); else _explicitNullProperties?.Remove("record_reference"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigRecordReference _explicitNullValueRecordReference = default!;
 #endif
         /// <summary>

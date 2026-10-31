@@ -17,9 +17,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
-            if (parseNode.GetChildNode("plural_noun") is { } nullNodePluralNoun && nullNodePluralNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralNoun = null;
-            if (parseNode.GetChildNode("singular_noun") is { } nullNodeSingularNoun && nullNodeSingularNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularNoun = null;
+            if (parseNode.GetChildNode("api_slug") is null) { _explicitNullValueApiSlug = default!; _explicitNullProperties?.Remove("api_slug"); }
+            else if (parseNode.GetChildNode("api_slug") is { } nullNodeApiSlug && nullNodeApiSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSlug = null;
+            if (parseNode.GetChildNode("plural_noun") is null) { _explicitNullValuePluralNoun = default!; _explicitNullProperties?.Remove("plural_noun"); }
+            else if (parseNode.GetChildNode("plural_noun") is { } nullNodePluralNoun && nullNodePluralNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralNoun = null;
+            if (parseNode.GetChildNode("singular_noun") is null) { _explicitNullValueSingularNoun = default!; _explicitNullProperties?.Remove("singular_noun"); }
+            else if (parseNode.GetChildNode("singular_noun") is { } nullNodeSingularNoun && nullNodeSingularNoun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularNoun = null;
         }
 
         /// <summary>A unique, human-readable slug to access the activity through URLs and API calls. Should be formatted in snake case.</summary>

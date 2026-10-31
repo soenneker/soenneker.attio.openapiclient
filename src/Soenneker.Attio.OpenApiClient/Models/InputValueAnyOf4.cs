@@ -17,7 +17,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency_value") is { } nullNodeCurrencyValue && nullNodeCurrencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyValue = null;
+            if (parseNode.GetChildNode("currency_value") is null) { _explicitNullValueCurrencyValue = default!; _explicitNullProperties?.Remove("currency_value"); }
+            else if (parseNode.GetChildNode("currency_value") is { } nullNodeCurrencyValue && nullNodeCurrencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyValue = null;
         }
 
         /// <summary>A numerical representation of the currency value. A decimal with a max of 4 decimal places.</summary>

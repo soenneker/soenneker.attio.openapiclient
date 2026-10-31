@@ -17,17 +17,19 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
-            if (parseNode.GetChildNode("workspace_member_id") is { } nullNodeWorkspaceMemberId && nullNodeWorkspaceMemberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceMemberId = null;
+            if (parseNode.GetChildNode("level") is null) { _explicitNullValueLevel = default!; _explicitNullProperties?.Remove("level"); }
+            else if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
+            if (parseNode.GetChildNode("workspace_member_id") is null) { _explicitNullValueWorkspaceMemberId = default!; _explicitNullProperties?.Remove("workspace_member_id"); }
+            else if (parseNode.GetChildNode("workspace_member_id") is { } nullNodeWorkspaceMemberId && nullNodeWorkspaceMemberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceMemberId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The level of access to the list.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.ListWorkspaceMemberAccessItemLevel? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.ListWorkspaceMemberAccessItemLevel? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; AdditionalData?.Remove("level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.ListWorkspaceMemberAccessItemLevel? _explicitNullValueLevel = default!;
         /// <summary>A UUID to identify the workspace member to grant access to.</summary>
-        public Guid? WorkspaceMemberId { get => _explicitNullValueWorkspaceMemberId; set { _explicitNullValueWorkspaceMemberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_member_id"); else _explicitNullProperties?.Remove("workspace_member_id"); } }
+        public Guid? WorkspaceMemberId { get => _explicitNullValueWorkspaceMemberId; set { _explicitNullValueWorkspaceMemberId = value; AdditionalData?.Remove("workspace_member_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_member_id"); else _explicitNullProperties?.Remove("workspace_member_id"); } }
         private Guid? _explicitNullValueWorkspaceMemberId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.ListWorkspaceMemberAccessItem"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "level", n => { Level = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.ListWorkspaceMemberAccessItemLevel>(); } },
+                { "level", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.ListWorkspaceMemberAccessItemLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLevel = default; _explicitNullProperties?.Remove("level"); AdditionalData["level"] = unknown; } else { Level = parsed; AdditionalData.Remove("level"); } } },
                 { "workspace_member_id", n => { WorkspaceMemberId = n.GetGuidValue(); } },
             };
         }

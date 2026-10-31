@@ -17,8 +17,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("target_object") is { } nullNodeTargetObject && nullNodeTargetObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetObject = null;
-            if (parseNode.GetChildNode("target_record_reference") is { } nullNodeTargetRecordReference && nullNodeTargetRecordReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetRecordReference = null;
+            if (parseNode.GetChildNode("target_object") is null) { _explicitNullValueTargetObject = default!; _explicitNullProperties?.Remove("target_object"); }
+            else if (parseNode.GetChildNode("target_object") is { } nullNodeTargetObject && nullNodeTargetObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetObject = null;
+            if (parseNode.GetChildNode("target_record_reference") is null) { _explicitNullValueTargetRecordReference = default!; _explicitNullProperties?.Remove("target_record_reference"); }
+            else if (parseNode.GetChildNode("target_record_reference") is { } nullNodeTargetRecordReference && nullNodeTargetRecordReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetRecordReference = null;
         }
 
         /// <summary>A UUID or slug to identify the object that the referenced record belongs to.</summary>

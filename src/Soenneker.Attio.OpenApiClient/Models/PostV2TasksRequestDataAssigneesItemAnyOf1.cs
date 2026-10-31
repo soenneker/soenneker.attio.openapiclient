@@ -17,17 +17,19 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("referenced_actor_id") is { } nullNodeReferencedActorId && nullNodeReferencedActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorId = null;
-            if (parseNode.GetChildNode("referenced_actor_type") is { } nullNodeReferencedActorType && nullNodeReferencedActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorType = null;
+            if (parseNode.GetChildNode("referenced_actor_id") is null) { _explicitNullValueReferencedActorId = default!; _explicitNullProperties?.Remove("referenced_actor_id"); }
+            else if (parseNode.GetChildNode("referenced_actor_id") is { } nullNodeReferencedActorId && nullNodeReferencedActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorId = null;
+            if (parseNode.GetChildNode("referenced_actor_type") is null) { _explicitNullValueReferencedActorType = default!; _explicitNullProperties?.Remove("referenced_actor_type"); }
+            else if (parseNode.GetChildNode("referenced_actor_type") is { } nullNodeReferencedActorType && nullNodeReferencedActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedActorType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the actor assigned to this task.</summary>
-        public Guid? ReferencedActorId { get => _explicitNullValueReferencedActorId; set { _explicitNullValueReferencedActorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_actor_id"); else _explicitNullProperties?.Remove("referenced_actor_id"); } }
+        public Guid? ReferencedActorId { get => _explicitNullValueReferencedActorId; set { _explicitNullValueReferencedActorId = value; AdditionalData?.Remove("referenced_actor_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_actor_id"); else _explicitNullProperties?.Remove("referenced_actor_id"); } }
         private Guid? _explicitNullValueReferencedActorId = default!;
         /// <summary>The type of the referenced actor. Currently, only workspace members can be written into actor reference attributes. [Read more information on actor types here](/docs/actors).</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType? ReferencedActorType { get => _explicitNullValueReferencedActorType; set { _explicitNullValueReferencedActorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_actor_type"); else _explicitNullProperties?.Remove("referenced_actor_type"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType? ReferencedActorType { get => _explicitNullValueReferencedActorType; set { _explicitNullValueReferencedActorType = value; AdditionalData?.Remove("referenced_actor_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_actor_type"); else _explicitNullProperties?.Remove("referenced_actor_type"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType? _explicitNullValueReferencedActorType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2TasksRequestDataAssigneesItemAnyOf1"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "referenced_actor_id", n => { ReferencedActorId = n.GetGuidValue(); } },
-                { "referenced_actor_type", n => { ReferencedActorType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>(); } },
+                { "referenced_actor_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberReferencedActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReferencedActorType = default; _explicitNullProperties?.Remove("referenced_actor_type"); AdditionalData["referenced_actor_type"] = unknown; } else { ReferencedActorType = parsed; AdditionalData.Remove("referenced_actor_type"); } } },
             };
         }
         /// <summary>

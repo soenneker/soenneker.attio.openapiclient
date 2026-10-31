@@ -12811,7 +12811,10 @@
             "$ref": "#/components/schemas/DynamicType"
           },
           "template": {
-            "$ref": "#/components/schemas/AttributeDefaultValueAnyOf1Template"
+            "type": "string",
+            "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
+            "example": "P1M",
+            "x-client-inline-scalar": true
           }
         }
       },
@@ -13004,21 +13007,10 @@
         }
       },
       "AttributeDefaultValueAnyOf1Template": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AttributeDefaultValueAnyOf1TemplateAnyOf1"
-          },
-          {
-            "type": "string",
-            "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
-            "example": "P1M"
-          },
-          {
-            "type": "string",
-            "description": "Date attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
-            "example": "P1M"
-          }
-        ]
+        "type": "string",
+        "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
+        "example": "P1M",
+        "x-client-inline-scalar": true
       },
       "StatusId": {
         "required": [
@@ -30349,7 +30341,10 @@
             "$ref": "#/components/schemas/DynamicType"
           },
           "template": {
-            "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributesRequestDataDefaultValueOneOf1Template"
+            "type": "string",
+            "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
+            "example": "P1M",
+            "x-client-inline-scalar": true
           }
         }
       },
@@ -30387,7 +30382,10 @@
             "$ref": "#/components/schemas/DynamicType"
           },
           "template": {
-            "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Template"
+            "type": "string",
+            "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
+            "example": "P1M",
+            "x-client-inline-scalar": true
           }
         }
       },
@@ -30452,7 +30450,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ObjectsByObjectValueRecordsQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -37138,7 +37138,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecordsQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -42225,7 +42227,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ListsByListEntriesQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -49240,7 +49244,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ObjectsPeopleRecordsQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -50303,7 +50309,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ObjectsCompaniesRecordsQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -51366,7 +51374,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ObjectsUsersRecordsQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -53949,7 +53959,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -55216,7 +55228,9 @@
               "minItems": 2,
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PostV2ObjectsWorkspacesRecordsQueryRequestSortsItemAnyOf2PathItemItem"
+                "type": "string",
+                "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+                "x-client-inline-scalar": true
               }
             },
             "description": "You may use the \u0060path\u0060 property to traverse record reference attributes and parent records on list entries. \u0060path\u0060 accepts an array of tuples where the first element of each tuple is the slug or ID of a list/object, and the second element is the slug or ID of an attribute on that list/object. The first element of the first tuple must correspond to the list or object that you are querying. For example, if you wanted to sort by the name of the parent record (a company) on a list with the slug \u0022sales\u0022, you would pass the value \u0060[[\u0027sales\u0027, \u0027parent_record\u0027], [\u0027companies\u0027, \u0027name\u0027]]\u0060."
@@ -55229,74 +55243,31 @@
         "description": "Sort by path"
       },
       "PostV2ByTargetByIdentifierAttributesRequestDataDefaultValueOneOf1Template": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PostV2ByTargetByIdentifierAttributesRequestDataDefaultValueOneOf1TemplateAnyOf1"
-          },
-          {
-            "type": "string",
-            "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
-            "example": "P1M"
-          },
-          {
-            "type": "string",
-            "description": "Date attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
-            "example": "P1M"
-          }
-        ]
+        "type": "string",
+        "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
+        "example": "P1M",
+        "x-client-inline-scalar": true
       },
       "PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1Template": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PatchV2ByTargetByIdentifierAttributesByAttributeRequestDataDefaultValueOneOf1TemplateAnyOf1"
-          },
-          {
-            "type": "string",
-            "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
-            "example": "P1M"
-          },
-          {
-            "type": "string",
-            "description": "Date attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
-            "example": "P1M"
-          }
-        ]
+        "type": "string",
+        "description": "Timestamp attributes may use an ISO 8601 duration as a dynamic value. For example, \u0060\u0022P1M\u0022\u0060 would set the value to the current time plus one month.",
+        "example": "P1M",
+        "x-client-inline-scalar": true
       },
       "PostV2ObjectsByObjectValueRecordsQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PostV2ActivitiesByActivityRecordsQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PostV2ListsByListEntriesQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PostV2TasksRequestDataLinkedRecordsAnyOf2ItemAnyOf1": {
         "required": [
@@ -55601,16 +55572,9 @@
         }
       },
       "PostV2ObjectsPeopleRecordsQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PostV2ObjectsPeopleRecordsRequestDataValuesCompanyItemAnyOf2SlugOrIdOfMatchingAttributeItem": {
         "anyOf": [
@@ -55727,16 +55691,9 @@
         ]
       },
       "PostV2ObjectsCompaniesRecordsQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PostV2ObjectsCompaniesRecordsRequestDataValuesTeamItemAnyOf2SlugOrIdOfMatchingAttributeItem": {
         "anyOf": [
@@ -55853,16 +55810,9 @@
         ]
       },
       "PostV2ObjectsUsersRecordsQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PostV2ObjectsUsersRecordsRequestDataValuesPersonItemAnyOf2SlugOrIdOfMatchingAttributeItem": {
         "anyOf": [
@@ -56321,16 +56271,9 @@
         ]
       },
       "PostV2ObjectsDealsRecordsQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PutV2ObjectsWorkspacesRecordsRequestDataValuesUsersItemAnyOf2SlugOrIdOfMatchingAttributeItem": {
         "anyOf": [
@@ -56561,16 +56504,9 @@
         ]
       },
       "PostV2ObjectsWorkspacesRecordsQueryRequestSortsItemAnyOf2PathItemItem": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The slug or ID of the object e.g. \u0022people\u0022."
-          },
-          {
-            "type": "string",
-            "description": "A slug or ID to identify the attribute to sort by."
-          }
-        ]
+        "type": "string",
+        "description": "The slug or ID of the object e.g. \u0022people\u0022.",
+        "x-client-inline-scalar": true
       },
       "PostV2TasksRequestDataLinkedRecordsAnyOf2ItemAnyOf2SlugOrIdOfMatchingAttributeItem": {
         "anyOf": [

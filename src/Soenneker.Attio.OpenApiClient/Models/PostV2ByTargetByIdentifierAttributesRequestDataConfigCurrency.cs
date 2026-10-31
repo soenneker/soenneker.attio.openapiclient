@@ -18,17 +18,19 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_currency_code") is { } nullNodeDefaultCurrencyCode && nullNodeDefaultCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultCurrencyCode = null;
-            if (parseNode.GetChildNode("display_type") is { } nullNodeDisplayType && nullNodeDisplayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayType = null;
+            if (parseNode.GetChildNode("default_currency_code") is null) { _explicitNullValueDefaultCurrencyCode = default!; _explicitNullProperties?.Remove("default_currency_code"); }
+            else if (parseNode.GetChildNode("default_currency_code") is { } nullNodeDefaultCurrencyCode && nullNodeDefaultCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultCurrencyCode = null;
+            if (parseNode.GetChildNode("display_type") is null) { _explicitNullValueDisplayType = default!; _explicitNullProperties?.Remove("display_type"); }
+            else if (parseNode.GetChildNode("display_type") is { } nullNodeDisplayType && nullNodeDisplayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ISO4217 code representing the currency that values for this attribute should be stored in.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDefaultCurrencyCode? DefaultCurrencyCode { get => _explicitNullValueDefaultCurrencyCode; set { _explicitNullValueDefaultCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_currency_code"); else _explicitNullProperties?.Remove("default_currency_code"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDefaultCurrencyCode? DefaultCurrencyCode { get => _explicitNullValueDefaultCurrencyCode; set { _explicitNullValueDefaultCurrencyCode = value; AdditionalData?.Remove("default_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_currency_code"); else _explicitNullProperties?.Remove("default_currency_code"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDefaultCurrencyCode? _explicitNullValueDefaultCurrencyCode = default!;
         /// <summary>How the currency should be displayed across the app. &quot;code&quot; will display the ISO currency code e.g. &quot;USD&quot;, &quot;name&quot; will display the localized currency name e.g. &quot;British pound&quot;, &quot;narrowSymbol&quot; will display &quot;$1&quot; instead of &quot;US$1&quot; and &quot;symbol&quot; will display a localized currency symbol such as &quot;$&quot;.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDisplayType? DisplayType { get => _explicitNullValueDisplayType; set { _explicitNullValueDisplayType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_type"); else _explicitNullProperties?.Remove("display_type"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDisplayType? DisplayType { get => _explicitNullValueDisplayType; set { _explicitNullValueDisplayType = value; AdditionalData?.Remove("display_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_type"); else _explicitNullProperties?.Remove("display_type"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDisplayType? _explicitNullValueDisplayType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrency"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_currency_code", n => { DefaultCurrencyCode = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDefaultCurrencyCode>(); } },
-                { "display_type", n => { DisplayType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDisplayType>(); } },
+                { "default_currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDefaultCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDefaultCurrencyCode = default; _explicitNullProperties?.Remove("default_currency_code"); AdditionalData["default_currency_code"] = unknown; } else { DefaultCurrencyCode = parsed; AdditionalData.Remove("default_currency_code"); } } },
+                { "display_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ByTargetByIdentifierAttributesRequestDataConfigCurrencyDisplayType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayType = default; _explicitNullProperties?.Remove("display_type"); AdditionalData["display_type"] = unknown; } else { DisplayType = parsed; AdditionalData.Remove("display_type"); } } },
             };
         }
         /// <summary>

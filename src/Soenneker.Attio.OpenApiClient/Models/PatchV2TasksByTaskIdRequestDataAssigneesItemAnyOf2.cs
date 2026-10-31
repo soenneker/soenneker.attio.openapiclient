@@ -17,7 +17,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("workspace_member_email_address") is { } nullNodeWorkspaceMemberEmailAddress && nullNodeWorkspaceMemberEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceMemberEmailAddress = null;
+            if (parseNode.GetChildNode("workspace_member_email_address") is null) { _explicitNullValueWorkspaceMemberEmailAddress = default!; _explicitNullProperties?.Remove("workspace_member_email_address"); }
+            else if (parseNode.GetChildNode("workspace_member_email_address") is { } nullNodeWorkspaceMemberEmailAddress && nullNodeWorkspaceMemberEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceMemberEmailAddress = null;
         }
 
         /// <summary>Workspace member actors can be referenced by email address as well as actor ID.</summary>

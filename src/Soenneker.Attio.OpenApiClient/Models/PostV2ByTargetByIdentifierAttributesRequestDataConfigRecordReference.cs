@@ -18,7 +18,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_objects") is { } nullNodeAllowedObjects && nullNodeAllowedObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedObjects = null;
+            if (parseNode.GetChildNode("allowed_objects") is null) { _explicitNullValueAllowedObjects = default!; _explicitNullProperties?.Remove("allowed_objects"); }
+            else if (parseNode.GetChildNode("allowed_objects") is { } nullNodeAllowedObjects && nullNodeAllowedObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedObjects = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>A list of slugs or UUIDs to indicate which objects records are allowed to belong to. If `relationship` is also provided, this must contain only the relationship object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedObjects { get => _explicitNullValueAllowedObjects; set { _explicitNullValueAllowedObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_objects"); else _explicitNullProperties?.Remove("allowed_objects"); } }
+        public List<string>? AllowedObjects { get => _explicitNullValueAllowedObjects; set { _explicitNullValueAllowedObjects = value; AdditionalData?.Remove("allowed_objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_objects"); else _explicitNullProperties?.Remove("allowed_objects"); } }
         private List<string>? _explicitNullValueAllowedObjects = default!;
 #nullable restore
 #else
-        public List<string> AllowedObjects { get => _explicitNullValueAllowedObjects; set { _explicitNullValueAllowedObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_objects"); else _explicitNullProperties?.Remove("allowed_objects"); } }
+        public List<string> AllowedObjects { get => _explicitNullValueAllowedObjects; set { _explicitNullValueAllowedObjects = value; AdditionalData?.Remove("allowed_objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_objects"); else _explicitNullProperties?.Remove("allowed_objects"); } }
         private List<string> _explicitNullValueAllowedObjects = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("primary_record_id") is { } nullNodePrimaryRecordId && nullNodePrimaryRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryRecordId = null;
-            if (parseNode.GetChildNode("secondary_record_id") is { } nullNodeSecondaryRecordId && nullNodeSecondaryRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryRecordId = null;
+            if (parseNode.GetChildNode("primary_record_id") is null) { _explicitNullValuePrimaryRecordId = default!; _explicitNullProperties?.Remove("primary_record_id"); }
+            else if (parseNode.GetChildNode("primary_record_id") is { } nullNodePrimaryRecordId && nullNodePrimaryRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryRecordId = null;
+            if (parseNode.GetChildNode("secondary_record_id") is null) { _explicitNullValueSecondaryRecordId = default!; _explicitNullProperties?.Remove("secondary_record_id"); }
+            else if (parseNode.GetChildNode("secondary_record_id") is { } nullNodeSecondaryRecordId && nullNodeSecondaryRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryRecordId = null;
         }
 
         /// <summary>The ID of the record to keep values from. Where both records have a value for the same attribute, the primary record&apos;s value takes precedence.</summary>

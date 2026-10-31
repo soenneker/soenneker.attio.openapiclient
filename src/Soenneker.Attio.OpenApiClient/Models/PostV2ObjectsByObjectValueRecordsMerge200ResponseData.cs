@@ -17,13 +17,14 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_record_id") is { } nullNodeNewRecordId && nullNodeNewRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewRecordId = null;
+            if (parseNode.GetChildNode("new_record_id") is null) { _explicitNullValueNewRecordId = default!; _explicitNullProperties?.Remove("new_record_id"); }
+            else if (parseNode.GetChildNode("new_record_id") is { } nullNodeNewRecordId && nullNodeNewRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewRecordId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the merged record. This is a new ID, which will usually match neither of the records supplied in the request.</summary>
-        public Guid? NewRecordId { get => _explicitNullValueNewRecordId; set { _explicitNullValueNewRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_record_id"); else _explicitNullProperties?.Remove("new_record_id"); } }
+        public Guid? NewRecordId { get => _explicitNullValueNewRecordId; set { _explicitNullValueNewRecordId = value; AdditionalData?.Remove("new_record_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_record_id"); else _explicitNullProperties?.Remove("new_record_id"); } }
         private Guid? _explicitNullValueNewRecordId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueRecordsMerge200ResponseData"/> and sets the default values.

@@ -17,9 +17,12 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("interacted_at") is { } nullNodeInteractedAt && nullNodeInteractedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractedAt = null;
-            if (parseNode.GetChildNode("interaction_type") is { } nullNodeInteractionType && nullNodeInteractionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionType = null;
-            if (parseNode.GetChildNode("owner_actor") is { } nullNodeOwnerActor && nullNodeOwnerActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerActor = null;
+            if (parseNode.GetChildNode("interacted_at") is null) { _explicitNullValueInteractedAt = default!; _explicitNullProperties?.Remove("interacted_at"); }
+            else if (parseNode.GetChildNode("interacted_at") is { } nullNodeInteractedAt && nullNodeInteractedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractedAt = null;
+            if (parseNode.GetChildNode("interaction_type") is null) { _explicitNullValueInteractionType = default!; _explicitNullProperties?.Remove("interaction_type"); }
+            else if (parseNode.GetChildNode("interaction_type") is { } nullNodeInteractionType && nullNodeInteractionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionType = null;
+            if (parseNode.GetChildNode("owner_actor") is null) { _explicitNullValueOwnerActor = default!; _explicitNullProperties?.Remove("owner_actor"); }
+            else if (parseNode.GetChildNode("owner_actor") is { } nullNodeOwnerActor && nullNodeOwnerActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerActor = null;
         }
 
         /// <summary>When the interaction occurred.</summary>

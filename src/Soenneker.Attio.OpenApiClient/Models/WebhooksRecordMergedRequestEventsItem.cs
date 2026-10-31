@@ -18,42 +18,47 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
-            if (parseNode.GetChildNode("duplicate_object_id") is { } nullNodeDuplicateObjectId && nullNodeDuplicateObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateObjectId = null;
-            if (parseNode.GetChildNode("duplicate_record_id") is { } nullNodeDuplicateRecordId && nullNodeDuplicateRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateRecordId = null;
-            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("duplicate_object_id") is null) { _explicitNullValueDuplicateObjectId = default!; _explicitNullProperties?.Remove("duplicate_object_id"); }
+            else if (parseNode.GetChildNode("duplicate_object_id") is { } nullNodeDuplicateObjectId && nullNodeDuplicateObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateObjectId = null;
+            if (parseNode.GetChildNode("duplicate_record_id") is null) { _explicitNullValueDuplicateRecordId = default!; _explicitNullProperties?.Remove("duplicate_record_id"); }
+            else if (parseNode.GetChildNode("duplicate_record_id") is { } nullNodeDuplicateRecordId && nullNodeDuplicateRecordId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateRecordId = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the object that the original record belongs to. Always matches `id.object_id`.</summary>
-        public Guid? DuplicateObjectId { get => _explicitNullValueDuplicateObjectId; set { _explicitNullValueDuplicateObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_object_id"); else _explicitNullProperties?.Remove("duplicate_object_id"); } }
+        public Guid? DuplicateObjectId { get => _explicitNullValueDuplicateObjectId; set { _explicitNullValueDuplicateObjectId = value; AdditionalData?.Remove("duplicate_object_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_object_id"); else _explicitNullProperties?.Remove("duplicate_object_id"); } }
         private Guid? _explicitNullValueDuplicateObjectId = default!;
         /// <summary>The ID of one of the two original records that were merged. Each of the two events fired for a single merge names a different original record here.</summary>
-        public Guid? DuplicateRecordId { get => _explicitNullValueDuplicateRecordId; set { _explicitNullValueDuplicateRecordId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_record_id"); else _explicitNullProperties?.Remove("duplicate_record_id"); } }
+        public Guid? DuplicateRecordId { get => _explicitNullValueDuplicateRecordId; set { _explicitNullValueDuplicateRecordId = value; AdditionalData?.Remove("duplicate_record_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_record_id"); else _explicitNullProperties?.Remove("duplicate_record_id"); } }
         private Guid? _explicitNullValueDuplicateRecordId = default!;
         /// <summary>The event_type property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.RecordMergedEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.RecordMergedEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.RecordMergedEventType? _explicitNullValueEventType = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId _explicitNullValueId = default!;
 #endif
         /// <summary>
@@ -84,7 +89,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor>(global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemActor.CreateFromDiscriminatorValue); } },
                 { "duplicate_object_id", n => { DuplicateObjectId = n.GetGuidValue(); } },
                 { "duplicate_record_id", n => { DuplicateRecordId = n.GetGuidValue(); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.RecordMergedEventType>(); } },
+                { "event_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.RecordMergedEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("event_type"); AdditionalData["event_type"] = unknown; } else { EventType = parsed; AdditionalData.Remove("event_type"); } } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId>(global::Soenneker.Attio.OpenApiClient.Models.WebhooksRecordMergedRequestEventsItemId.CreateFromDiscriminatorValue); } },
             };
         }

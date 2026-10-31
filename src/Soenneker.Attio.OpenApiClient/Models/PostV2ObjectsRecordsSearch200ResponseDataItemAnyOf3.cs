@@ -17,11 +17,16 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("object_slug") is { } nullNodeObjectSlug && nullNodeObjectSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectSlug = null;
-            if (parseNode.GetChildNode("record_image") is { } nullNodeRecordImage && nullNodeRecordImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordImage = null;
-            if (parseNode.GetChildNode("record_text") is { } nullNodeRecordText && nullNodeRecordText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordText = null;
+            if (parseNode.GetChildNode("domains") is null) { _explicitNullValueDomains = default!; _explicitNullProperties?.Remove("domains"); }
+            else if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("object_slug") is null) { _explicitNullValueObjectSlug = default!; _explicitNullProperties?.Remove("object_slug"); }
+            else if (parseNode.GetChildNode("object_slug") is { } nullNodeObjectSlug && nullNodeObjectSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectSlug = null;
+            if (parseNode.GetChildNode("record_image") is null) { _explicitNullValueRecordImage = default!; _explicitNullProperties?.Remove("record_image"); }
+            else if (parseNode.GetChildNode("record_image") is { } nullNodeRecordImage && nullNodeRecordImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordImage = null;
+            if (parseNode.GetChildNode("record_text") is null) { _explicitNullValueRecordText = default!; _explicitNullProperties?.Remove("record_text"); }
+            else if (parseNode.GetChildNode("record_text") is { } nullNodeRecordText && nullNodeRecordText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordText = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>The company&apos;s domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string> _explicitNullValueDomains = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id _explicitNullValueId = default!;
 #endif
         /// <summary>The slug of the object this record belongs to.</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug? ObjectSlug { get => _explicitNullValueObjectSlug; set { _explicitNullValueObjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_slug"); else _explicitNullProperties?.Remove("object_slug"); } }
+        public global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug? ObjectSlug { get => _explicitNullValueObjectSlug; set { _explicitNullValueObjectSlug = value; AdditionalData?.Remove("object_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object_slug"); else _explicitNullProperties?.Remove("object_slug"); } }
         private global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug? _explicitNullValueObjectSlug = default!;
         /// <summary>The image for the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordImage { get => _explicitNullValueRecordImage; set { _explicitNullValueRecordImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_image"); else _explicitNullProperties?.Remove("record_image"); } }
+        public string? RecordImage { get => _explicitNullValueRecordImage; set { _explicitNullValueRecordImage = value; AdditionalData?.Remove("record_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_image"); else _explicitNullProperties?.Remove("record_image"); } }
         private string? _explicitNullValueRecordImage = default!;
 #nullable restore
 #else
-        public string RecordImage { get => _explicitNullValueRecordImage; set { _explicitNullValueRecordImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_image"); else _explicitNullProperties?.Remove("record_image"); } }
+        public string RecordImage { get => _explicitNullValueRecordImage; set { _explicitNullValueRecordImage = value; AdditionalData?.Remove("record_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_image"); else _explicitNullProperties?.Remove("record_image"); } }
         private string _explicitNullValueRecordImage = default!;
 #endif
         /// <summary>A human-readable label for the record. Present on records from all objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordText { get => _explicitNullValueRecordText; set { _explicitNullValueRecordText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_text"); else _explicitNullProperties?.Remove("record_text"); } }
+        public string? RecordText { get => _explicitNullValueRecordText; set { _explicitNullValueRecordText = value; AdditionalData?.Remove("record_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_text"); else _explicitNullProperties?.Remove("record_text"); } }
         private string? _explicitNullValueRecordText = default!;
 #nullable restore
 #else
-        public string RecordText { get => _explicitNullValueRecordText; set { _explicitNullValueRecordText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_text"); else _explicitNullProperties?.Remove("record_text"); } }
+        public string RecordText { get => _explicitNullValueRecordText; set { _explicitNullValueRecordText = value; AdditionalData?.Remove("record_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_text"); else _explicitNullProperties?.Remove("record_text"); } }
         private string _explicitNullValueRecordText = default!;
 #endif
         /// <summary>
@@ -96,7 +101,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
             {
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id>(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id.CreateFromDiscriminatorValue); } },
-                { "object_slug", n => { ObjectSlug = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug>(); } },
+                { "object_slug", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.CompaniesObjectSlug>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueObjectSlug = default; _explicitNullProperties?.Remove("object_slug"); AdditionalData["object_slug"] = unknown; } else { ObjectSlug = parsed; AdditionalData.Remove("object_slug"); } } },
                 { "record_image", n => { RecordImage = n.GetStringValue(); } },
                 { "record_text", n => { RecordText = n.GetStringValue(); } },
             };

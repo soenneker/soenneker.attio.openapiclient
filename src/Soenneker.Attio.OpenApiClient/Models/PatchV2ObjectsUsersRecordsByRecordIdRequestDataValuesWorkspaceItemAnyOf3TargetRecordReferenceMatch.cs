@@ -18,7 +18,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("[slug_or_id_of_matching_attribute]") is { } nullNodeSlugOrIdOfMatchingAttribute && nullNodeSlugOrIdOfMatchingAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SlugOrIdOfMatchingAttribute = null;
+            if (parseNode.GetChildNode("[slug_or_id_of_matching_attribute]") is null) { _explicitNullValueSlugOrIdOfMatchingAttribute = default!; _explicitNullProperties?.Remove("[slug_or_id_of_matching_attribute]"); }
+            else if (parseNode.GetChildNode("[slug_or_id_of_matching_attribute]") is { } nullNodeSlugOrIdOfMatchingAttribute && nullNodeSlugOrIdOfMatchingAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SlugOrIdOfMatchingAttribute = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>An array containing a single value of the matching attribute&apos;s type. A single value may also be passed directly, without the array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordIdRequestDataValuesWorkspaceItemAnyOf3TargetRecordReferenceMatchSlugOrIdOfMatchingAttributeItem>? SlugOrIdOfMatchingAttribute { get => _explicitNullValueSlugOrIdOfMatchingAttribute; set { _explicitNullValueSlugOrIdOfMatchingAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("[slug_or_id_of_matching_attribute]"); else _explicitNullProperties?.Remove("[slug_or_id_of_matching_attribute]"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordIdRequestDataValuesWorkspaceItemAnyOf3TargetRecordReferenceMatchSlugOrIdOfMatchingAttributeItem>? SlugOrIdOfMatchingAttribute { get => _explicitNullValueSlugOrIdOfMatchingAttribute; set { _explicitNullValueSlugOrIdOfMatchingAttribute = value; AdditionalData?.Remove("[slug_or_id_of_matching_attribute]"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("[slug_or_id_of_matching_attribute]"); else _explicitNullProperties?.Remove("[slug_or_id_of_matching_attribute]"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordIdRequestDataValuesWorkspaceItemAnyOf3TargetRecordReferenceMatchSlugOrIdOfMatchingAttributeItem>? _explicitNullValueSlugOrIdOfMatchingAttribute = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordIdRequestDataValuesWorkspaceItemAnyOf3TargetRecordReferenceMatchSlugOrIdOfMatchingAttributeItem> SlugOrIdOfMatchingAttribute { get => _explicitNullValueSlugOrIdOfMatchingAttribute; set { _explicitNullValueSlugOrIdOfMatchingAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("[slug_or_id_of_matching_attribute]"); else _explicitNullProperties?.Remove("[slug_or_id_of_matching_attribute]"); } }
+        public List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordIdRequestDataValuesWorkspaceItemAnyOf3TargetRecordReferenceMatchSlugOrIdOfMatchingAttributeItem> SlugOrIdOfMatchingAttribute { get => _explicitNullValueSlugOrIdOfMatchingAttribute; set { _explicitNullValueSlugOrIdOfMatchingAttribute = value; AdditionalData?.Remove("[slug_or_id_of_matching_attribute]"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("[slug_or_id_of_matching_attribute]"); else _explicitNullProperties?.Remove("[slug_or_id_of_matching_attribute]"); } }
         private List<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsUsersRecordsByRecordIdRequestDataValuesWorkspaceItemAnyOf3TargetRecordReferenceMatchSlugOrIdOfMatchingAttributeItem> _explicitNullValueSlugOrIdOfMatchingAttribute = default!;
 #endif
         /// <summary>
