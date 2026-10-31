@@ -6861,6 +6861,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteV2MeetingsByMeetingIdCallRecordingsByCallRecordingId204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -7123,6 +7134,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2FilesUpload201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
