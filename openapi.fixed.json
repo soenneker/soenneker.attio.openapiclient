@@ -331944,6 +331944,10 @@
       "description": "Sequences are automated email campaigns sent from Attio."
     },
     {
+      "name": "Workspace blocklist",
+      "description": "An address is an email address (jane@acme.com) or a domain (acme.com). The workspace blocklist is the workspace-wide list of addresses whose emails and calendar events are hidden in Attio. An email address matches only itself, and a domain matches every email address at that domain. The address itself is the key: there is no separate ID."
+    },
+    {
       "name": "Call recordings",
       "description": "Call recordings store video, audio, transcript and speaker information for calls. They are linked to meetings."
     },
