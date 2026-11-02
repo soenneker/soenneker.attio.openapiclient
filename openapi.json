@@ -191,7 +191,9 @@
               "activity_record:read": "View, and optionally write, activity records.",
               "activity_record:read-write": "View, and optionally write, activity records.",
               "sequence_unsubscribe:read": "View, and optionally add to, the sequence unsubscribe list.",
-              "sequence_unsubscribe:read-write": "View, and optionally add to, the sequence unsubscribe list."
+              "sequence_unsubscribe:read-write": "View, and optionally add to, the sequence unsubscribe list.",
+              "email_calendar_blocklist:read": "View, and optionally manage, the addresses (email addresses and domains) whose emails and calendar events are hidden in Attio.",
+              "email_calendar_blocklist:read-write": "View, and optionally manage, the addresses (email addresses and domains) whose emails and calendar events are hidden in Attio."
             }
           }
         }
