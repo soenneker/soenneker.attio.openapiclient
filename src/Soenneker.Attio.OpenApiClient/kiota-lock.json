@@ -2,7 +2,7 @@
   "descriptionHash": "B88510F5865A2E66972649F3EE0B471CBA5970E2707C81A1C2694971DAB8A8872C30E5F9FC8A0FF4E200F21E1924CAE79DE5F61F06D80E6183D71978719E7E15",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "AttioOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Attio.OpenApiClient",
