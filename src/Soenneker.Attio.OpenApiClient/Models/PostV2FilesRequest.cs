@@ -51,9 +51,9 @@ namespace Soenneker.Attio.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("file_type")?.GetStringValue();
             return mappingValue switch
             {
-                "connected-file" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestPostV2FilesRequestConnectedFile(),
-                "connected-folder" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestPostV2FilesRequestConnectedFolder(),
-                "folder" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestPostV2FilesRequestFolder(),
+                "connected-file" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFileVariant(),
+                "connected-folder" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestConnectedFolderVariant(),
+                "folder" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequestFolderVariant(),
                 _ => new global::Soenneker.Attio.OpenApiClient.Models.PostV2FilesRequest(),
             };
         }

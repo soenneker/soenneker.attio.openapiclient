@@ -17,6 +17,7 @@ using Soenneker.Attio.OpenApiClient.V2.Sql;
 using Soenneker.Attio.OpenApiClient.V2.Tasks;
 using Soenneker.Attio.OpenApiClient.V2.Threads;
 using Soenneker.Attio.OpenApiClient.V2.Webhooks;
+using Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses;
 using Soenneker.Attio.OpenApiClient.V2.Workspace_members;
 using System.Collections.Generic;
 using System.IO;
@@ -99,6 +100,11 @@ namespace Soenneker.Attio.OpenApiClient.V2
         public global::Soenneker.Attio.OpenApiClient.V2.Webhooks.WebhooksRequestBuilder Webhooks
         {
             get => new global::Soenneker.Attio.OpenApiClient.V2.Webhooks.WebhooksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The workspace_blocklist_addresses property</summary>
+        public global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder Workspace_blocklist_addresses
+        {
+            get => new global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workspace_members property</summary>
         public global::Soenneker.Attio.OpenApiClient.V2.Workspace_members.Workspace_membersRequestBuilder Workspace_members

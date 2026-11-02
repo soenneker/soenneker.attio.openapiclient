@@ -51,8 +51,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("operator")?.GetStringValue();
             return mappingValue switch
             {
-                "equals" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilterAnyOf1OrItemPostV2Webhooks200ResponseDataSubscriptionsItemFilterAnyOf1OrItemAnyOf1(),
-                "not_equals" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilterAnyOf1OrItemPostV2Webhooks200ResponseDataSubscriptionsItemFilterAnyOf1OrItemAnyOf2(),
+                "equals" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilterAnyOf1OrItemAnyOf1Variant(),
+                "not_equals" => new global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilterAnyOf1OrItemAnyOf2Variant(),
                 _ => new global::Soenneker.Attio.OpenApiClient.Models.PostV2Webhooks200ResponseDataSubscriptionsItemFilterAnyOf1OrItem(),
             };
         }

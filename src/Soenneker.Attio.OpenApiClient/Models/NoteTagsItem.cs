@@ -51,8 +51,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "record" => new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemNoteTagsItemOneOf2(),
-                "workspace-member" => new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemNoteTagsItemOneOf1(),
+                "record" => new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf2Variant(),
+                "workspace-member" => new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItemOneOf1Variant(),
                 _ => new global::Soenneker.Attio.OpenApiClient.Models.NoteTagsItem(),
             };
         }
