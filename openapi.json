@@ -63936,6 +63936,207 @@
       }
     },
     "/v2/workspace_blocklist_addresses": {
+      "get": {
+        "summary": "List workspace blocklist addresses",
+        "description": "An address is an email address (jane@acme.com) or a domain (acme.com).\n\nLists every address on the workspace blocklist, at both enforcement levels. Email addresses come first, then domains, each in alphabetical order.\n\nA user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060email_calendar_blocklist:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Workspace blocklist"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "email_calendar_blocklist:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500,
+              "default": 500,
+              "description": "The maximum number of addresses to return. Must be between 1 and 500. Defaults to 500.",
+              "example": 500
+            },
+            "required": false,
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "A pagination cursor used to fetch the next page of addresses. Responses with more addresses will include a cursor for you to use here. If not provided, the first page will be returned."
+            },
+            "required": false,
+            "name": "cursor",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string",
+                            "description": "The normalized email address or domain. It is the address\u0027s key on the workspace blocklist.",
+                            "example": "jane@acme.com"
+                          },
+                          "address_type": {
+                            "type": "string",
+                            "enum": [
+                              "email_address",
+                              "domain"
+                            ],
+                            "description": "Whether the address is an email address or a domain.",
+                            "example": "email_address"
+                          },
+                          "enforcement_level": {
+                            "type": "string",
+                            "enum": [
+                              "protected",
+                              "blocked"
+                            ],
+                            "description": "\u0060protected\u0060: emails and calendar events are hidden unless at least one participant is not on the workspace blocklist. \u0060blocked\u0060: they are hidden even when other participants are included.",
+                            "example": "blocked"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "When the address was given its current enforcement level.",
+                            "example": "2026-10-28T09:12:44.210Z"
+                          }
+                        },
+                        "required": [
+                          "address",
+                          "address_type",
+                          "enforcement_level",
+                          "created_at"
+                        ]
+                      }
+                    },
+                    "pagination": {
+                      "type": "object",
+                      "properties": {
+                        "next_cursor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "next_cursor"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "pagination"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "validation_type"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid cursor."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "A user-level access token can only manage the workspace blocklist if the member it acts for is a workspace admin."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          }
+        }
+      },
       "put": {
         "summary": "Add or update workspace blocklist addresses",
         "description": "An address is an email address (jane@acme.com) or a domain (acme.com).\n\nSets each address in the request to the given enforcement level on the workspace blocklist. The address itself is its key: there is no separate ID.\n\nAn address that isn\u0027t on the workspace blocklist is added. An address already at the requested level is left unchanged, so this endpoint is safe to retry. An address at the other level is moved to the requested level.\n\nThis endpoint only adds and updates the addresses in the request. Addresses on the workspace blocklist that aren\u0027t in the request are left alone; it never replaces the whole list.\n\nAddresses are normalized: email addresses and domains are trimmed and lowercased, a URL is reduced to its hostname, and a leading \u0060www.\u0060 is removed. The response returns the normalized value, which is the key for the address. Duplicate addresses are collapsed, and a request that gives the same address two different enforcement levels is rejected.\n\nThe request is applied all or nothing. Protected changes take effect immediately. Blocked changes take effect once each connected mailbox has re-synced, which may take a few minutes.\n\nA user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060email_calendar_blocklist:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
@@ -64072,7 +64273,7 @@
                             "type": "string",
                             "format": "date-time",
                             "description": "When the address was given its current enforcement level.",
-                            "example": "2026-10-28T09:12:44.210000000Z"
+                            "example": "2026-10-28T09:12:44.210Z"
                           }
                         },
                         "required": [

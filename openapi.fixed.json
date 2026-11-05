@@ -6140,6 +6140,80 @@
       }
     },
     "/v2/workspace_blocklist_addresses": {
+      "get": {
+        "tags": [
+          "Workspace blocklist"
+        ],
+        "summary": "List workspace blocklist addresses",
+        "description": "An address is an email address (jane@acme.com) or a domain (acme.com).\n\nLists every address on the workspace blocklist, at both enforcement levels. Email addresses come first, then domains, each in alphabetical order.\n\nA user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.\n\nThis endpoint is in alpha and may be subject to breaking changes as we gather feedback.\n\nRequired scopes: \u0060email_calendar_blocklist:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "operationId": "GetV2WorkspaceBlocklistAddresses",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "maximum": 500,
+              "minimum": 1,
+              "type": "integer",
+              "description": "The maximum number of addresses to return. Must be between 1 and 500. Defaults to 500.",
+              "default": 500,
+              "example": 500
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "description": "A pagination cursor used to fetch the next page of addresses. Responses with more addresses will include a cursor for you to use here. If not provided, the first page will be returned."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses400Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses403Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "email_calendar_blocklist:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "ALPHA"
+          }
+        }
+      },
       "put": {
         "tags": [
           "Workspace blocklist"
@@ -18923,6 +18997,75 @@
           }
         },
         "description": "Bad Request"
+      },
+      "GetV2WorkspaceBlocklistAddresses200Response": {
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses200ResponseDataItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses200ResponsePagination"
+          }
+        },
+        "description": "Success"
+      },
+      "GetV2WorkspaceBlocklistAddresses400Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses400ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/InvalidRequestErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ValidationTypeCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Invalid cursor."
+          }
+        },
+        "description": "Bad Request"
+      },
+      "GetV2WorkspaceBlocklistAddresses403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnauthorizedCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "A user-level access token can only manage the workspace blocklist if the member it acts for is a workspace admin."
+          }
+        },
+        "description": "Forbidden"
       },
       "PutV2WorkspaceBlocklistAddressesRequest": {
         "required": [
@@ -39856,6 +39999,48 @@
           }
         }
       },
+      "GetV2WorkspaceBlocklistAddresses200ResponseDataItem": {
+        "required": [
+          "address",
+          "address_type",
+          "enforcement_level",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "The normalized email address or domain. It is the address\u0027s key on the workspace blocklist.",
+            "example": "jane@acme.com"
+          },
+          "address_type": {
+            "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses200ResponseDataItemAddressType"
+          },
+          "enforcement_level": {
+            "$ref": "#/components/schemas/GetV2WorkspaceBlocklistAddresses200ResponseDataItemEnforcementLevel"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the address was given its current enforcement level.",
+            "format": "date-time",
+            "example": "2026-10-28T09:12:44.210Z"
+          }
+        }
+      },
+      "GetV2WorkspaceBlocklistAddresses200ResponsePagination": {
+        "required": [
+          "next_cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "next_cursor": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
       "PutV2WorkspaceBlocklistAddressesRequestData": {
         "required": [
           "addresses"
@@ -39898,7 +40083,7 @@
             "type": "string",
             "description": "When the address was given its current enforcement level.",
             "format": "date-time",
-            "example": "2026-10-28T09:12:44.210000000Z"
+            "example": "2026-10-28T09:12:44.210Z"
           }
         }
       },
@@ -96107,6 +96292,18 @@
       "PostV2SequencesUnsubscribedEmails400ResponseStatusCode": {
         "enum": [
           400
+        ],
+        "type": "number"
+      },
+      "GetV2WorkspaceBlocklistAddresses400ResponseStatusCode": {
+        "enum": [
+          400
+        ],
+        "type": "number"
+      },
+      "GetV2WorkspaceBlocklistAddresses403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number"
       },
@@ -239112,6 +239309,52 @@
             {
               "value": "markdown",
               "name": "Markdown"
+            }
+          ]
+        }
+      },
+      "GetV2WorkspaceBlocklistAddresses200ResponseDataItemAddressType": {
+        "enum": [
+          "email_address",
+          "domain"
+        ],
+        "type": "string",
+        "description": "Whether the address is an email address or a domain.",
+        "example": "email_address",
+        "x-ms-enum": {
+          "name": "GetV2WorkspaceBlocklistAddresses200ResponseDataItemAddressType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "email_address",
+              "name": "EmailAddress"
+            },
+            {
+              "value": "domain",
+              "name": "Domain"
+            }
+          ]
+        }
+      },
+      "GetV2WorkspaceBlocklistAddresses200ResponseDataItemEnforcementLevel": {
+        "enum": [
+          "protected",
+          "blocked"
+        ],
+        "type": "string",
+        "description": "\u0060protected\u0060: emails and calendar events are hidden unless at least one participant is not on the workspace blocklist. \u0060blocked\u0060: they are hidden even when other participants are included.",
+        "example": "blocked",
+        "x-ms-enum": {
+          "name": "GetV2WorkspaceBlocklistAddresses200ResponseDataItemEnforcementLevel",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "protected",
+              "name": "ProtectedValue"
+            },
+            {
+              "value": "blocked",
+              "name": "Blocked"
             }
           ]
         }

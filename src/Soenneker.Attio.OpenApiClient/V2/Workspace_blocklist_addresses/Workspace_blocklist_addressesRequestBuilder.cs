@@ -35,7 +35,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Workspace_blocklist_addressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/workspace_blocklist_addresses", pathParameters)
+        public Workspace_blocklist_addressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/workspace_blocklist_addresses{?cursor*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,8 +43,35 @@ namespace Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Workspace_blocklist_addressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/workspace_blocklist_addresses", rawUrl)
+        public Workspace_blocklist_addressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/workspace_blocklist_addresses{?cursor*,limit*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// An address is an email address (jane@acme.com) or a domain (acme.com).Lists every address on the workspace blocklist, at both enforcement levels. Email addresses come first, then domains, each in alphabetical order.A user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `email_calendar_blocklist:read`.Supported token levels: `workspace`, `user`.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses200Response"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses403Response">When receiving a 403 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder.Workspace_blocklist_addressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder.Workspace_blocklist_addressesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2WorkspaceBlocklistAddresses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// An address is an email address (jane@acme.com) or a domain (acme.com).Sets each address in the request to the given enforcement level on the workspace blocklist. The address itself is its key: there is no separate ID.An address that isn&apos;t on the workspace blocklist is added. An address already at the requested level is left unchanged, so this endpoint is safe to retry. An address at the other level is moved to the requested level.This endpoint only adds and updates the addresses in the request. Addresses on the workspace blocklist that aren&apos;t in the request are left alone; it never replaces the whole list.Addresses are normalized: email addresses and domains are trimmed and lowercased, a URL is reduced to its hostname, and a leading `www.` is removed. The response returns the normalized value, which is the key for the address. Duplicate addresses are collapsed, and a request that gives the same address two different enforcement levels is rejected.The request is applied all or nothing. Protected changes take effect immediately. Blocked changes take effect once each connected mailbox has re-synced, which may take a few minutes.A user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `email_calendar_blocklist:read-write`.Supported token levels: `workspace`, `user`.
@@ -78,6 +105,25 @@ namespace Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PutV2WorkspaceBlocklistAddresses200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PutV2WorkspaceBlocklistAddresses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// An address is an email address (jane@acme.com) or a domain (acme.com).Lists every address on the workspace blocklist, at both enforcement levels. Email addresses come first, then domains, each in alphabetical order.A user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `email_calendar_blocklist:read`.Supported token levels: `workspace`, `user`.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder.Workspace_blocklist_addressesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder.Workspace_blocklist_addressesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// An address is an email address (jane@acme.com) or a domain (acme.com).Sets each address in the request to the given enforcement level on the workspace blocklist. The address itself is its key: there is no separate ID.An address that isn&apos;t on the workspace blocklist is added. An address already at the requested level is left unchanged, so this endpoint is safe to retry. An address at the other level is moved to the requested level.This endpoint only adds and updates the addresses in the request. Addresses on the workspace blocklist that aren&apos;t in the request are left alone; it never replaces the whole list.Addresses are normalized: email addresses and domains are trimmed and lowercased, a URL is reduced to its hostname, and a leading `www.` is removed. The response returns the normalized value, which is the key for the address. Duplicate addresses are collapsed, and a request that gives the same address two different enforcement levels is rejected.The request is applied all or nothing. Protected changes take effect immediately. Blocked changes take effect once each connected mailbox has re-synced, which may take a few minutes.A user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `email_calendar_blocklist:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -107,6 +153,30 @@ namespace Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses
         public global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Attio.OpenApiClient.V2.Workspace_blocklist_addresses.Workspace_blocklist_addressesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// An address is an email address (jane@acme.com) or a domain (acme.com).Lists every address on the workspace blocklist, at both enforcement levels. Email addresses come first, then domains, each in alphabetical order.A user-level access token can only call this endpoint if the workspace member it acts for is a workspace admin.This endpoint is in alpha and may be subject to breaking changes as we gather feedback.Required scopes: `email_calendar_blocklist:read`.Supported token levels: `workspace`, `user`.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Workspace_blocklist_addressesRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+            #pragma warning restore CS1591
+#endif
+            #pragma warning disable CS1591
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }
