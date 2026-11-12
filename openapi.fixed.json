@@ -333925,12 +333925,40 @@
           "type": "string",
           "description": "The column title. If omitted, the column shows the title of the attribute.",
           "example": "Employer"
+        },
+        "aggregation": {
+          "$ref": "#/components/schemas/ViewAttributeAggregation"
         }
       },
       "description": "An attribute that the view shows.",
       "example": {
         "attribute": "name",
         "field": "first_name"
+      }
+    },
+    "ViewKanbanAggregation": {
+      "required": [
+        "attribute",
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "attribute": {
+          "$ref": "#/components/schemas/ViewAttributePath"
+        },
+        "field": {
+          "type": "string",
+          "description": "The field to aggregate. If omitted, the default field of the attribute type is used. Location and interaction attributes need a field.",
+          "example": "currency_value"
+        },
+        "type": {
+          "$ref": "#/components/schemas/ViewKanbanAggregationType"
+        }
+      },
+      "description": "The calculation that the footer of each column of the board shows. \u0060null\u0060 when the board has none.",
+      "example": {
+        "attribute": "deal_value",
+        "type": "sum"
       }
     },
     "ObjectViewWithDefinition": {
@@ -334252,6 +334280,26 @@
         }
       ]
     },
+    "ObjectViewWithDefinitionAllOf2KanbanAggregation": {
+      "required": [
+        "attribute",
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "attribute": {
+          "$ref": "#/components/schemas/ViewAttributePath"
+        },
+        "field": {
+          "type": "string",
+          "description": "The field to aggregate. If omitted, the default field of the attribute type is used. Location and interaction attributes need a field.",
+          "example": "currency_value"
+        },
+        "type": {
+          "$ref": "#/components/schemas/ViewKanbanAggregationType"
+        }
+      }
+    },
     "ListViewWithDefinitionAllOf2Filter": {
       "description": "The filter of the view. \u0060null\u0060 when the view shows all records.",
       "oneOf": [
@@ -334297,6 +334345,26 @@
           "description": "The status attribute whose statuses are the columns of the board, on the view\u0027s object or on the parent record of a list entry. \u0060null\u0060 when none is set yet."
         }
       ]
+    },
+    "ListViewWithDefinitionAllOf2KanbanAggregation": {
+      "required": [
+        "attribute",
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "attribute": {
+          "$ref": "#/components/schemas/ViewAttributePath"
+        },
+        "field": {
+          "type": "string",
+          "description": "The field to aggregate. If omitted, the default field of the attribute type is used. Location and interaction attributes need a field.",
+          "example": "currency_value"
+        },
+        "type": {
+          "$ref": "#/components/schemas/ViewKanbanAggregationType"
+        }
+      }
     },
     "NoteTagsItemOneOf1": {
       "required": [
@@ -334369,12 +334437,26 @@
     },
     "ObjectViewWithDefinitionAllOf2Kanban": {
       "required": [
-        "status_attribute"
+        "status_attribute",
+        "show_no_status_column",
+        "attribute_label_display",
+        "aggregation"
       ],
       "type": "object",
       "properties": {
         "status_attribute": {
           "$ref": "#/components/schemas/ObjectViewWithDefinitionAllOf2KanbanStatusAttribute"
+        },
+        "show_no_status_column": {
+          "type": "boolean",
+          "description": "Whether the board shows a column for the records that have no status.",
+          "example": true
+        },
+        "attribute_label_display": {
+          "$ref": "#/components/schemas/ObjectViewWithDefinitionAllOf2KanbanAttributeLabelDisplay"
+        },
+        "aggregation": {
+          "$ref": "#/components/schemas/ObjectViewWithDefinitionAllOf2KanbanAggregation"
         }
       },
       "description": "The settings of a kanban view. Omitted for table views."
@@ -334395,12 +334477,26 @@
     },
     "ListViewWithDefinitionAllOf2Kanban": {
       "required": [
-        "status_attribute"
+        "status_attribute",
+        "show_no_status_column",
+        "attribute_label_display",
+        "aggregation"
       ],
       "type": "object",
       "properties": {
         "status_attribute": {
           "$ref": "#/components/schemas/ListViewWithDefinitionAllOf2KanbanStatusAttribute"
+        },
+        "show_no_status_column": {
+          "type": "boolean",
+          "description": "Whether the board shows a column for the records that have no status.",
+          "example": true
+        },
+        "attribute_label_display": {
+          "$ref": "#/components/schemas/ListViewWithDefinitionAllOf2KanbanAttributeLabelDisplay"
+        },
+        "aggregation": {
+          "$ref": "#/components/schemas/ListViewWithDefinitionAllOf2KanbanAggregation"
         }
       },
       "description": "The settings of a kanban view. Omitted for table views."
@@ -357364,6 +357460,115 @@
         ]
       }
     },
+    "ViewAttributeAggregation": {
+      "enum": [
+        "count_empty",
+        "count_not_empty",
+        "percent_empty",
+        "percent_not_empty",
+        "sum",
+        "mean",
+        "max",
+        "min"
+      ],
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The calculation that the column footer of a table view shows, on the field that the column shows. Omitted when the column has none. Not allowed on a kanban view, which uses \u0060kanban.aggregation\u0060. In an update, an omitted aggregation keeps the aggregation of a column with the same attribute and field, and \u0060null\u0060 removes it. Each field can count and give the percentage of records where it is empty or not empty. \u0060sum\u0060, \u0060mean\u0060, \u0060min\u0060 and \u0060max\u0060 are only for number, currency and rating attributes.",
+      "example": "sum",
+      "x-ms-enum": {
+        "name": "ViewAttributeAggregation",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "count_empty",
+            "name": "CountEmpty"
+          },
+          {
+            "value": "count_not_empty",
+            "name": "CountNotEmpty"
+          },
+          {
+            "value": "percent_empty",
+            "name": "PercentEmpty"
+          },
+          {
+            "value": "percent_not_empty",
+            "name": "PercentNotEmpty"
+          },
+          {
+            "value": "sum",
+            "name": "Sum"
+          },
+          {
+            "value": "mean",
+            "name": "Mean"
+          },
+          {
+            "value": "max",
+            "name": "Max"
+          },
+          {
+            "value": "min",
+            "name": "Min"
+          }
+        ]
+      }
+    },
+    "ViewKanbanAggregationType": {
+      "enum": [
+        "count_empty",
+        "count_not_empty",
+        "percent_empty",
+        "percent_not_empty",
+        "sum",
+        "mean",
+        "max",
+        "min"
+      ],
+      "type": "string",
+      "description": "The calculation. Each field can count and give the percentage of records where it is empty or not empty. \u0060sum\u0060, \u0060mean\u0060, \u0060min\u0060 and \u0060max\u0060 are only for number, currency and rating attributes.",
+      "example": "sum",
+      "x-ms-enum": {
+        "name": "ViewKanbanAggregationType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "count_empty",
+            "name": "CountEmpty"
+          },
+          {
+            "value": "count_not_empty",
+            "name": "CountNotEmpty"
+          },
+          {
+            "value": "percent_empty",
+            "name": "PercentEmpty"
+          },
+          {
+            "value": "percent_not_empty",
+            "name": "PercentNotEmpty"
+          },
+          {
+            "value": "sum",
+            "name": "Sum"
+          },
+          {
+            "value": "mean",
+            "name": "Mean"
+          },
+          {
+            "value": "max",
+            "name": "Max"
+          },
+          {
+            "value": "min",
+            "name": "Min"
+          }
+        ]
+      }
+    },
     "ObjectViewWithDefinitionType": {
       "enum": [
         "table",
@@ -357424,6 +357629,52 @@
           {
             "value": "current-user",
             "name": "CurrentUser"
+          }
+        ]
+      }
+    },
+    "ObjectViewWithDefinitionAllOf2KanbanAttributeLabelDisplay": {
+      "enum": [
+        "icon",
+        "text"
+      ],
+      "type": "string",
+      "description": "How the cards label the attributes that they show: with the attribute icon or with the attribute title.",
+      "example": "icon",
+      "x-ms-enum": {
+        "name": "ObjectViewWithDefinitionAllOf2KanbanAttributeLabelDisplay",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "icon",
+            "name": "Icon"
+          },
+          {
+            "value": "text",
+            "name": "Text"
+          }
+        ]
+      }
+    },
+    "ListViewWithDefinitionAllOf2KanbanAttributeLabelDisplay": {
+      "enum": [
+        "icon",
+        "text"
+      ],
+      "type": "string",
+      "description": "How the cards label the attributes that they show: with the attribute icon or with the attribute title.",
+      "example": "icon",
+      "x-ms-enum": {
+        "name": "ListViewWithDefinitionAllOf2KanbanAttributeLabelDisplay",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "icon",
+            "name": "Icon"
+          },
+          {
+            "value": "text",
+            "name": "Text"
           }
         ]
       }
