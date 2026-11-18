@@ -78,7 +78,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "attribute_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PhoneNumberAttributeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAttributeType = default; _explicitNullProperties?.Remove("attribute_type"); AdditionalData["attribute_type"] = unknown; } else { AttributeType = parsed; AdditionalData.Remove("attribute_type"); } } },
                 { "country_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.OutputValueAnyOf12CountryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCountryCode = default; _explicitNullProperties?.Remove("country_code"); AdditionalData["country_code"] = unknown; } else { CountryCode = parsed; AdditionalData.Remove("country_code"); } } },

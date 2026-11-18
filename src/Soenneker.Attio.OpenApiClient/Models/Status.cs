@@ -90,7 +90,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "celebration_enabled", n => { CelebrationEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.StatusId>(global::Soenneker.Attio.OpenApiClient.Models.StatusId.CreateFromDiscriminatorValue); } },

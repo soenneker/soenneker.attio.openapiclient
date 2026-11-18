@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Attio.OpenApiClient.Models;
+using Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,18 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ViewsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Attio.OpenApiClient.v2.objects.item.views.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views.Item.WithViewItemRequestBuilder"/></returns>
+        public global::Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views.Item.WithViewItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("viewId", position);
+                return new global::Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views.Item.WithViewItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views.ViewsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -59,6 +72,37 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2ObjectsByObjectValueViews200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Creates a view of an object with a filter, sorts, shown attributes and kanban settings. Attributes, objects, options and statuses can be referenced by slug, ID or title; the response references them by ID, as the get view endpoint does.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `view:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews200Response"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews404Response">When receiving a 404 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews200Response?> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViewsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews200Response> PostAsync(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViewsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViews200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Lists saved views for an object. Results are ordered by view ID (`id.view_id` ascending).Required scopes: `object_configuration:read`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -75,6 +119,28 @@ namespace Soenneker.Attio.OpenApiClient.V2.Objects.Item.Views
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Creates a view of an object with a filter, sorts, shown attributes and kanban settings. Attributes, objects, options and statuses can be referenced by slug, ID or title; the response references them by ID, as the get view endpoint does.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `view:read-write`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViewsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsByObjectValueViewsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

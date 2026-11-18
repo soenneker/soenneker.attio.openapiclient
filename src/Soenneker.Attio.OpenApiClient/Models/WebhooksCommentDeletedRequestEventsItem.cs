@@ -99,7 +99,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentDeletedRequestEventsItemActor>(global::Soenneker.Attio.OpenApiClient.Models.WebhooksCommentDeletedRequestEventsItemActor.CreateFromDiscriminatorValue); } },
                 { "entry_id", n => { EntryId = n.GetGuidValue(); } },

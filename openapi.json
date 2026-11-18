@@ -15,16 +15,12 @@
       "description": "Objects are the core data models inside of Attio. They contain standard objects, such as [people](/rest-api/endpoint-reference/standard-objects/people/list-person-records), [companies](/rest-api/endpoint-reference/standard-objects/companies/list-company-records) or [deals](/docs/standard-objects-deals), and custom objects that are specific to your use-case. See our [objects and lists guide](/docs/objects-and-lists) for more information."
     },
     {
-      "name": "Object views",
-      "description": "Object views are saved table or board layouts for an object."
-    },
-    {
       "name": "Activities",
       "description": "Activities model event-based data that can be logged against a record, for example a phone call. Each activity extends a schema, which supplies the attributes that every activity of that kind shares."
     },
     {
-      "name": "List views",
-      "description": "List views are saved table or board layouts for a list."
+      "name": "Views",
+      "description": "Views are saved table or board layouts for an object or a list."
     },
     {
       "name": "Attributes",
@@ -6476,7 +6472,7 @@
         "summary": "List views for object",
         "description": "Lists saved views for an object. Results are ordered by view ID (\u0060id.view_id\u0060 ascending).\n\nRequired scopes: \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "tags": [
-          "Objects"
+          "Views"
         ],
         "security": [
           {
@@ -6597,6 +6593,912 @@
                     "message": {
                       "type": "string",
                       "example": "Object with slug/ID \u0022people\u0022 not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create an object view",
+        "description": "Creates a view of an object with a filter, sorts, shown attributes and kanban settings. Attributes, objects, options and statuses can be referenced by slug, ID or title; the response references them by ID, as the get view endpoint does.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read-write",
+              "object_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the object.",
+              "example": "people"
+            },
+            "required": true,
+            "name": "object",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The title of the view.",
+                        "example": "Leads"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "table",
+                          "kanban"
+                        ],
+                        "description": "How the view shows records.",
+                        "example": "table"
+                      },
+                      "filter": {
+                        "description": "The filter of the view. Omitted or \u0060null\u0060 to show all records.",
+                        "oneOf": [
+                          {
+                            "$ref": "#/components/schemas/view-filter"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "sorts": {
+                        "type": "array",
+                        "description": "The sorts, in order. Omitted for no sorts.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-sort"
+                        },
+                        "maxItems": 5
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "description": "The attributes that the view shows, in display order. Omitted for no attributes, as a new view in the app has.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-attribute"
+                        },
+                        "maxItems": 100
+                      },
+                      "kanban": {
+                        "type": "object",
+                        "description": "The settings of a kanban view. Required for kanban views and not allowed for table views.",
+                        "properties": {
+                          "status_attribute": {
+                            "$ref": "#/components/schemas/view-attribute-path",
+                            "description": "The status attribute whose statuses are the columns of the board, on the view\u0027s object or on the parent record of a list entry."
+                          },
+                          "show_no_status_column": {
+                            "type": "boolean",
+                            "description": "Whether the board shows a column for the records that have no status. If omitted, the setting of a new kanban view in the app is used: \u0060true\u0060, \u0060icon\u0060 and \u0060null\u0060."
+                          },
+                          "attribute_label_display": {
+                            "type": "string",
+                            "enum": [
+                              "icon",
+                              "text"
+                            ],
+                            "description": "How the cards label the attributes that they show: with the attribute icon or with the attribute title. If omitted, the setting of a new kanban view in the app is used: \u0060true\u0060, \u0060icon\u0060 and \u0060null\u0060."
+                          },
+                          "aggregation": {
+                            "oneOf": [
+                              {
+                                "$ref": "#/components/schemas/view-kanban-aggregation"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ],
+                            "description": "The calculation that the footer of each column of the board shows. \u0060null\u0060 when the board has none. If omitted, the setting of a new kanban view in the app is used: \u0060true\u0060, \u0060icon\u0060 and \u0060null\u0060."
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "status_attribute"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "title",
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/object-view-with-definition"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "unknown_attribute"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "No attribute matches \u0022nickname\u0022 on this object"
+                    },
+                    "path": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number"
+                          }
+                        ]
+                      },
+                      "example": [
+                        "data",
+                        "filter",
+                        "attribute"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message",
+                    "path"
+                  ],
+                  "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to create views of this object."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced object was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/objects/{object}/views/{view_id}": {
+      "get": {
+        "summary": "Get an object view",
+        "description": "Gets a view of an object with its filter, sorts, shown attributes and kanban settings. Attributes, objects, options, statuses and teams are referenced by ID; \u0060metadata\u0060 has their titles and slugs.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read",
+              "object_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the object.",
+              "example": "people"
+            },
+            "required": true,
+            "name": "object",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID identifying the view.",
+              "example": "cf7aaeb5-7507-4a84-9c26-9d36e34d7b70"
+            },
+            "required": true,
+            "name": "view_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/object-view-with-definition"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced view was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        422
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "view_not_encodable"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The filter of this view cannot be expressed in the view format of the API."
+                    },
+                    "view_part": {
+                      "type": "string",
+                      "enum": [
+                        "filter",
+                        "sorts",
+                        "attributes",
+                        "kanban"
+                      ]
+                    },
+                    "reason": {
+                      "type": "string",
+                      "example": "PARAMETER_VALUE"
+                    },
+                    "stored_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "uuid"
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message",
+                    "view_part",
+                    "reason",
+                    "stored_id"
+                  ],
+                  "description": "Unprocessable Entity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an object view",
+        "description": "Deletes a view of an object, including an archived view. Records are not changed.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read-write",
+              "object_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the object.",
+              "example": "people"
+            },
+            "required": true,
+            "name": "object",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID identifying the view.",
+              "example": "cf7aaeb5-7507-4a84-9c26-9d36e34d7b70"
+            },
+            "required": true,
+            "name": "view_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to delete views of this object."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced view was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update an object view",
+        "description": "Updates the title, type, filter, sorts, shown attributes or kanban settings of a view of an object. Each given field replaces that part of the view, and an omitted field stays as it is. Attributes, objects, options and statuses can be referenced by slug, ID or title; the response references them by ID, as the get view endpoint does.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read-write\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read-write",
+              "object_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the object.",
+              "example": "people"
+            },
+            "required": true,
+            "name": "object",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID identifying the view.",
+              "example": "cf7aaeb5-7507-4a84-9c26-9d36e34d7b70"
+            },
+            "required": true,
+            "name": "view_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The title of the view.",
+                        "example": "Leads"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "table",
+                          "kanban"
+                        ],
+                        "description": "How the view shows records. A change to \u0060kanban\u0060 requires \u0060kanban.status_attribute\u0060. A change to \u0060table\u0060 removes the kanban settings.",
+                        "example": "kanban"
+                      },
+                      "filter": {
+                        "description": "The filter of the view, which replaces the current filter. \u0060null\u0060 to show all records.",
+                        "oneOf": [
+                          {
+                            "$ref": "#/components/schemas/view-filter"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "sorts": {
+                        "type": "array",
+                        "description": "The sorts, in order, which replace the current sorts.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-sort"
+                        },
+                        "maxItems": 5
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "description": "The attributes that the view shows, in display order, which replace the current attributes. A shown attribute with the same attribute and field keeps its column width and display settings, and its aggregation when it omits \u0060aggregation\u0060.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-attribute"
+                        },
+                        "maxItems": 100
+                      },
+                      "kanban": {
+                        "type": "object",
+                        "description": "The kanban settings to change. A change of the type to kanban requires \u0060status_attribute\u0060. Not allowed for table views.",
+                        "properties": {
+                          "status_attribute": {
+                            "$ref": "#/components/schemas/view-attribute-path",
+                            "description": "The status attribute whose statuses are the columns of the board, on the view\u0027s object or on the parent record of a list entry."
+                          },
+                          "show_no_status_column": {
+                            "type": "boolean",
+                            "description": "Whether the board shows a column for the records that have no status. If omitted, the setting stays as it is."
+                          },
+                          "attribute_label_display": {
+                            "type": "string",
+                            "enum": [
+                              "icon",
+                              "text"
+                            ],
+                            "description": "How the cards label the attributes that they show: with the attribute icon or with the attribute title. If omitted, the setting stays as it is."
+                          },
+                          "aggregation": {
+                            "oneOf": [
+                              {
+                                "$ref": "#/components/schemas/view-kanban-aggregation"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ],
+                            "description": "The calculation that the footer of each column of the board shows. \u0060null\u0060 when the board has none. If omitted, the setting stays as it is."
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/object-view-with-definition"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "unknown_attribute"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "No attribute matches \u0022nickname\u0022 on this object"
+                    },
+                    "path": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number"
+                          }
+                        ]
+                      },
+                      "example": [
+                        "data",
+                        "filter",
+                        "attribute"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message",
+                    "path"
+                  ],
+                  "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to update views of this object."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced view was not found."
                     }
                   },
                   "required": [
@@ -43336,7 +44238,7 @@
         "summary": "List views for list",
         "description": "Lists saved views for a list. Results are ordered by view ID (\u0060id.view_id\u0060 ascending).\n\nRequired scopes: \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "tags": [
-          "Lists"
+          "Views"
         ],
         "security": [
           {
@@ -43457,6 +44359,912 @@
                     "message": {
                       "type": "string",
                       "example": "List with slug/ID \u0022enterprise_sales\u0022 not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a list view",
+        "description": "Creates a view of a list with a filter, sorts, shown attributes and kanban settings. Attributes, objects, options and statuses can be referenced by slug, ID or title; the response references them by ID, as the get view endpoint does.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read-write",
+              "list_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the list.",
+              "example": "33ebdbe9-e529-47c9-b894-0ba25e9c15c0"
+            },
+            "required": true,
+            "name": "list",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The title of the view.",
+                        "example": "Leads"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "table",
+                          "kanban"
+                        ],
+                        "description": "How the view shows records.",
+                        "example": "table"
+                      },
+                      "filter": {
+                        "description": "The filter of the view. Omitted or \u0060null\u0060 to show all records.",
+                        "oneOf": [
+                          {
+                            "$ref": "#/components/schemas/view-filter"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "sorts": {
+                        "type": "array",
+                        "description": "The sorts, in order. Omitted for no sorts.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-sort"
+                        },
+                        "maxItems": 5
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "description": "The attributes that the view shows, in display order. Omitted for no attributes, as a new view in the app has.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-attribute"
+                        },
+                        "maxItems": 100
+                      },
+                      "kanban": {
+                        "type": "object",
+                        "description": "The settings of a kanban view. Required for kanban views and not allowed for table views.",
+                        "properties": {
+                          "status_attribute": {
+                            "$ref": "#/components/schemas/view-attribute-path",
+                            "description": "The status attribute whose statuses are the columns of the board, on the view\u0027s object or on the parent record of a list entry."
+                          },
+                          "show_no_status_column": {
+                            "type": "boolean",
+                            "description": "Whether the board shows a column for the records that have no status. If omitted, the setting of a new kanban view in the app is used: \u0060true\u0060, \u0060icon\u0060 and \u0060null\u0060."
+                          },
+                          "attribute_label_display": {
+                            "type": "string",
+                            "enum": [
+                              "icon",
+                              "text"
+                            ],
+                            "description": "How the cards label the attributes that they show: with the attribute icon or with the attribute title. If omitted, the setting of a new kanban view in the app is used: \u0060true\u0060, \u0060icon\u0060 and \u0060null\u0060."
+                          },
+                          "aggregation": {
+                            "oneOf": [
+                              {
+                                "$ref": "#/components/schemas/view-kanban-aggregation"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ],
+                            "description": "The calculation that the footer of each column of the board shows. \u0060null\u0060 when the board has none. If omitted, the setting of a new kanban view in the app is used: \u0060true\u0060, \u0060icon\u0060 and \u0060null\u0060."
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "status_attribute"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "title",
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/list-view-with-definition"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "unknown_attribute"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "No attribute matches \u0022nickname\u0022 on this object"
+                    },
+                    "path": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number"
+                          }
+                        ]
+                      },
+                      "example": [
+                        "data",
+                        "filter",
+                        "attribute"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message",
+                    "path"
+                  ],
+                  "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to create views of this list."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced list was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/lists/{list}/views/{view_id}": {
+      "get": {
+        "summary": "Get a list view",
+        "description": "Gets a view of a list with its filter, sorts, shown attributes and kanban settings. Attributes, objects, options, statuses and teams are referenced by ID; \u0060metadata\u0060 has their titles and slugs.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read",
+              "list_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the list.",
+              "example": "33ebdbe9-e529-47c9-b894-0ba25e9c15c0"
+            },
+            "required": true,
+            "name": "list",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID identifying the view.",
+              "example": "cf7aaeb5-7507-4a84-9c26-9d36e34d7b70"
+            },
+            "required": true,
+            "name": "view_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/list-view-with-definition"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced view was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        422
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "view_not_encodable"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The filter of this view cannot be expressed in the view format of the API."
+                    },
+                    "view_part": {
+                      "type": "string",
+                      "enum": [
+                        "filter",
+                        "sorts",
+                        "attributes",
+                        "kanban"
+                      ]
+                    },
+                    "reason": {
+                      "type": "string",
+                      "example": "PARAMETER_VALUE"
+                    },
+                    "stored_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "uuid"
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message",
+                    "view_part",
+                    "reason",
+                    "stored_id"
+                  ],
+                  "description": "Unprocessable Entity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a list view",
+        "description": "Deletes a view of a list, including an archived view. Entries are not changed.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read-write",
+              "list_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the list.",
+              "example": "33ebdbe9-e529-47c9-b894-0ba25e9c15c0"
+            },
+            "required": true,
+            "name": "list",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID identifying the view.",
+              "example": "cf7aaeb5-7507-4a84-9c26-9d36e34d7b70"
+            },
+            "required": true,
+            "name": "view_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to delete views of this list."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced view was not found."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Not Found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update a list view",
+        "description": "Updates the title, type, filter, sorts, shown attributes or kanban settings of a view of a list. Each given field replaces that part of the view, and an omitted field stays as it is. Attributes, objects, options and statuses can be referenced by slug, ID or title; the response references them by ID, as the get view endpoint does.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060view:read-write\u0060, \u0060list_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "tags": [
+          "Views"
+        ],
+        "security": [
+          {
+            "oauth2": [
+              "view:read-write",
+              "list_configuration:read"
+            ]
+          }
+        ],
+        "x-mint": {
+          "metadata": {
+            "tag": "BETA"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "A UUID or slug to identify the list.",
+              "example": "33ebdbe9-e529-47c9-b894-0ba25e9c15c0"
+            },
+            "required": true,
+            "name": "list",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID identifying the view.",
+              "example": "cf7aaeb5-7507-4a84-9c26-9d36e34d7b70"
+            },
+            "required": true,
+            "name": "view_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The title of the view.",
+                        "example": "Leads"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "table",
+                          "kanban"
+                        ],
+                        "description": "How the view shows records. A change to \u0060kanban\u0060 requires \u0060kanban.status_attribute\u0060. A change to \u0060table\u0060 removes the kanban settings.",
+                        "example": "kanban"
+                      },
+                      "filter": {
+                        "description": "The filter of the view, which replaces the current filter. \u0060null\u0060 to show all records.",
+                        "oneOf": [
+                          {
+                            "$ref": "#/components/schemas/view-filter"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "sorts": {
+                        "type": "array",
+                        "description": "The sorts, in order, which replace the current sorts.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-sort"
+                        },
+                        "maxItems": 5
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "description": "The attributes that the view shows, in display order, which replace the current attributes. A shown attribute with the same attribute and field keeps its column width and display settings, and its aggregation when it omits \u0060aggregation\u0060.",
+                        "items": {
+                          "$ref": "#/components/schemas/view-attribute"
+                        },
+                        "maxItems": 100
+                      },
+                      "kanban": {
+                        "type": "object",
+                        "description": "The kanban settings to change. A change of the type to kanban requires \u0060status_attribute\u0060. Not allowed for table views.",
+                        "properties": {
+                          "status_attribute": {
+                            "$ref": "#/components/schemas/view-attribute-path",
+                            "description": "The status attribute whose statuses are the columns of the board, on the view\u0027s object or on the parent record of a list entry."
+                          },
+                          "show_no_status_column": {
+                            "type": "boolean",
+                            "description": "Whether the board shows a column for the records that have no status. If omitted, the setting stays as it is."
+                          },
+                          "attribute_label_display": {
+                            "type": "string",
+                            "enum": [
+                              "icon",
+                              "text"
+                            ],
+                            "description": "How the cards label the attributes that they show: with the attribute icon or with the attribute title. If omitted, the setting stays as it is."
+                          },
+                          "aggregation": {
+                            "oneOf": [
+                              {
+                                "$ref": "#/components/schemas/view-kanban-aggregation"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ],
+                            "description": "The calculation that the footer of each column of the board shows. \u0060null\u0060 when the board has none. If omitted, the setting stays as it is."
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/list-view-with-definition"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "description": "Success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        400
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "unknown_attribute"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "No attribute matches \u0022nickname\u0022 on this object"
+                    },
+                    "path": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number"
+                          }
+                        ]
+                      },
+                      "example": [
+                        "data",
+                        "filter",
+                        "attribute"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message",
+                    "path"
+                  ],
+                  "description": "Bad Request"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the necessary permissions to update views of this list."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        404
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "invalid_request_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "not_found"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The referenced view was not found."
                     }
                   },
                   "required": [

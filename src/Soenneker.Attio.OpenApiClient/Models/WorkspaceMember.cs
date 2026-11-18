@@ -121,7 +121,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "access_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.WorkspaceMemberAccessLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccessLevel = default; _explicitNullProperties?.Remove("access_level"); AdditionalData["access_level"] = unknown; } else { AccessLevel = parsed; AdditionalData.Remove("access_level"); } } },
                 { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },

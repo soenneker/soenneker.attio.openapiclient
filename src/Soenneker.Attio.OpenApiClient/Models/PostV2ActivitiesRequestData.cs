@@ -85,7 +85,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "api_slug", n => { ApiSlug = n.GetStringValue(); } },
                 { "extends", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesRequestDataExtends>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExtends = default; _explicitNullProperties?.Remove("extends"); AdditionalData["extends"] = unknown; } else { Extends = parsed; AdditionalData.Remove("extends"); } } },

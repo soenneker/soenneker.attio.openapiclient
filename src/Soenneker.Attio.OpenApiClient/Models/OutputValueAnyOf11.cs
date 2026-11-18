@@ -76,7 +76,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "attribute_type", n => { AttributeType = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PersonalNameAttributeType>(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },

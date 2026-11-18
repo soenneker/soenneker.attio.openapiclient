@@ -97,7 +97,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id>(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsRecordsSearch200ResponseDataItemAnyOf3Id.CreateFromDiscriminatorValue); } },

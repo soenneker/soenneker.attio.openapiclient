@@ -369,7 +369,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(27)
             {
                 { "angellist", n => { Angellist = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesAngellistItem>(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesAngellistItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesCategoriesItem>(global::Soenneker.Attio.OpenApiClient.Models.PostV2ObjectsCompaniesRecords200ResponseDataValuesCategoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },

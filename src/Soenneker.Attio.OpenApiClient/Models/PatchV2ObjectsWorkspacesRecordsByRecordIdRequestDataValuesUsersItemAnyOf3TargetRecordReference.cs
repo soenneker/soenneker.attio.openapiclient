@@ -79,7 +79,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "create", n => { Create = n.GetObjectValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordIdRequestDataValuesUsersItemAnyOf3TargetRecordReferenceCreate>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordIdRequestDataValuesUsersItemAnyOf3TargetRecordReferenceCreate.CreateFromDiscriminatorValue); } },
                 { "if_multiple_matches", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsWorkspacesRecordsByRecordIdRequestDataValuesUsersItemAnyOf3TargetRecordReferenceIfMultipleMatches>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIfMultipleMatches = default; _explicitNullProperties?.Remove("if_multiple_matches"); AdditionalData["if_multiple_matches"] = unknown; } else { IfMultipleMatches = parsed; AdditionalData.Remove("if_multiple_matches"); } } },

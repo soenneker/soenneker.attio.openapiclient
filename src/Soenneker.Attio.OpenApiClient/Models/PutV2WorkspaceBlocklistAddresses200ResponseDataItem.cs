@@ -71,7 +71,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "address_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PutV2WorkspaceBlocklistAddresses200ResponseDataItemAddressType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAddressType = default; _explicitNullProperties?.Remove("address_type"); AdditionalData["address_type"] = unknown; } else { AddressType = parsed; AdditionalData.Remove("address_type"); } } },

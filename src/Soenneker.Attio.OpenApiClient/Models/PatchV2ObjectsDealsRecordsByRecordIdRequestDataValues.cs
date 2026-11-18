@@ -117,7 +117,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "associated_company", n => { AssociatedCompany = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItem>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedCompanyItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "associated_people", n => { AssociatedPeople = n.GetCollectionOfObjectValues<global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedPeopleItem>(global::Soenneker.Attio.OpenApiClient.Models.PatchV2ObjectsDealsRecordsByRecordIdRequestDataValuesAssociatedPeopleItem.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -109,7 +109,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "attribute_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.EmailAddressAttributeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAttributeType = default; _explicitNullProperties?.Remove("attribute_type"); AdditionalData["attribute_type"] = unknown; } else { AttributeType = parsed; AdditionalData.Remove("attribute_type"); } } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
