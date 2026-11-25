@@ -7601,7 +7601,7 @@
       },
       "post": {
         "summary": "Create an activity",
-        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled (unless the request comes from an app: apps may always create activities)\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "tags": [
           "Activities"
         ],
@@ -31736,6 +31736,47 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "billing_error"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Activities are not supported on your plan. Please upgrade or contact sales to gain access."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -33948,19 +33989,9 @@
                       ]
                     },
                     "code": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "enum": [
-                            "unauthorized"
-                          ]
-                        },
-                        {
-                          "type": "string",
-                          "enum": [
-                            "billing_error"
-                          ]
-                        }
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
                       ]
                     },
                     "message": {
@@ -36263,19 +36294,9 @@
                       ]
                     },
                     "code": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "enum": [
-                            "unauthorized"
-                          ]
-                        },
-                        {
-                          "type": "string",
-                          "enum": [
-                            "billing_error"
-                          ]
-                        }
+                      "type": "string",
+                      "enum": [
+                        "unauthorized"
                       ]
                     },
                     "message": {
@@ -38400,6 +38421,47 @@
                     "data"
                   ],
                   "description": "Success"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "number",
+                      "enum": [
+                        403
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "auth_error"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "billing_error"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Activities are not supported on your plan. Please upgrade or contact sales to gain access."
+                    }
+                  },
+                  "required": [
+                    "status_code",
+                    "type",
+                    "code",
+                    "message"
+                  ],
+                  "description": "Forbidden"
                 }
               }
             }

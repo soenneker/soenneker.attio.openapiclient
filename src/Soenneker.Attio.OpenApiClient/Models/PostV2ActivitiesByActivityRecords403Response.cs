@@ -32,8 +32,8 @@ namespace Soenneker.Attio.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
-        public global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords403ResponseCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
-        private global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords403ResponseCode? _explicitNullValueCode = default!;
+        public global::Soenneker.Attio.OpenApiClient.Models.UnauthorizedCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private global::Soenneker.Attio.OpenApiClient.Models.UnauthorizedCode? _explicitNullValueCode = default!;
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
         /// <summary>The message property</summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(4)
             {
-                { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords403ResponseCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
+                { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.UnauthorizedCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status_code", n => { StatusCode = n.GetDoubleValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AuthErrorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -90,7 +90,7 @@ namespace Soenneker.Attio.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.PostV2ActivitiesByActivityRecords403ResponseCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.UnauthorizedCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteDoubleValue("status_code", StatusCode);
             writer.WriteEnumValue<global::Soenneker.Attio.OpenApiClient.Models.AuthErrorType>("type", Type);

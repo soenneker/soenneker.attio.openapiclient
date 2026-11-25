@@ -800,7 +800,7 @@
           "Activities"
         ],
         "summary": "Create an activity",
-        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled (unless the request comes from an app: apps may always create activities)\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060activity_configuration:read-write\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "operationId": "PostV2Activities",
         "requestBody": {
           "content": {
@@ -3335,6 +3335,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecordsQuery403Response"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -3683,6 +3693,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetV2ActivitiesByActivityRecordsByRecordId200Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetV2ActivitiesByActivityRecordsByRecordId403Response"
                 }
               }
             }
@@ -18270,6 +18290,31 @@
         },
         "description": "Bad Request"
       },
+      "PostV2ActivitiesByActivityRecordsQuery403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecordsQuery403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/BillingErrorCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Activities are not supported on your plan. Please upgrade or contact sales to gain access."
+          }
+        },
+        "description": "Forbidden"
+      },
       "PostV2ActivitiesByActivityRecordsQuery404Response": {
         "required": [
           "status_code",
@@ -18359,7 +18404,7 @@
             "$ref": "#/components/schemas/AuthErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/PostV2ActivitiesByActivityRecords403ResponseCode"
+            "$ref": "#/components/schemas/UnauthorizedCode"
           },
           "message": {
             "type": "string",
@@ -18482,7 +18527,7 @@
             "$ref": "#/components/schemas/AuthErrorType"
           },
           "code": {
-            "$ref": "#/components/schemas/PutV2ActivitiesByActivityRecords403ResponseCode"
+            "$ref": "#/components/schemas/UnauthorizedCode"
           },
           "message": {
             "type": "string",
@@ -18552,6 +18597,31 @@
           }
         },
         "description": "Success"
+      },
+      "GetV2ActivitiesByActivityRecordsByRecordId403Response": {
+        "required": [
+          "status_code",
+          "type",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "$ref": "#/components/schemas/GetV2ActivitiesByActivityRecordsByRecordId403ResponseStatusCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuthErrorType"
+          },
+          "code": {
+            "$ref": "#/components/schemas/BillingErrorCode"
+          },
+          "message": {
+            "type": "string",
+            "example": "Activities are not supported on your plan. Please upgrade or contact sales to gain access."
+          }
+        },
+        "description": "Forbidden"
       },
       "GetV2ActivitiesByActivityRecordsByRecordId404Response": {
         "required": [
@@ -28805,27 +28875,6 @@
           ]
         }
       },
-      "PostV2ActivitiesByActivityRecords403ResponseCode": {
-        "enum": [
-          "unauthorized",
-          "billing_error"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "PostV2ActivitiesByActivityRecords403ResponseCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "unauthorized",
-              "name": "Unauthorized"
-            },
-            {
-              "value": "billing_error",
-              "name": "BillingError"
-            }
-          ]
-        }
-      },
       "PostV2ActivitiesByActivityRecords409ResponseCode": {
         "enum": [
           "concurrent_write_conflict",
@@ -29004,27 +29053,6 @@
             {
               "value": "limit_reached",
               "name": "LimitReached"
-            }
-          ]
-        }
-      },
-      "PutV2ActivitiesByActivityRecords403ResponseCode": {
-        "enum": [
-          "unauthorized",
-          "billing_error"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "PutV2ActivitiesByActivityRecords403ResponseCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "unauthorized",
-              "name": "Unauthorized"
-            },
-            {
-              "value": "billing_error",
-              "name": "BillingError"
             }
           ]
         }
@@ -98539,6 +98567,28 @@
         ],
         "type": "number"
       },
+      "PostV2ActivitiesByActivityRecordsQuery403ResponseStatusCode": {
+        "enum": [
+          403
+        ],
+        "type": "number"
+      },
+      "BillingErrorCode": {
+        "enum": [
+          "billing_error"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "BillingErrorCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "billing_error",
+              "name": "BillingError"
+            }
+          ]
+        }
+      },
       "PostV2ActivitiesByActivityRecordsQuery404ResponseStatusCode": {
         "enum": [
           404
@@ -98590,6 +98640,12 @@
       "PutV2ActivitiesByActivityRecords409ResponseStatusCode": {
         "enum": [
           409
+        ],
+        "type": "number"
+      },
+      "GetV2ActivitiesByActivityRecordsByRecordId403ResponseStatusCode": {
+        "enum": [
+          403
         ],
         "type": "number"
       },
@@ -98676,22 +98732,6 @@
           403
         ],
         "type": "number"
-      },
-      "BillingErrorCode": {
-        "enum": [
-          "billing_error"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "BillingErrorCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "billing_error",
-              "name": "BillingError"
-            }
-          ]
-        }
       },
       "PostV2Lists404ResponseStatusCode": {
         "enum": [
@@ -360987,38 +361027,6 @@
         ]
       }
     },
-    "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf1": {
-      "enum": [
-        "unauthorized"
-      ],
-      "type": "string",
-      "x-ms-enum": {
-        "name": "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf1",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "unauthorized",
-            "name": "Unauthorized"
-          }
-        ]
-      }
-    },
-    "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf2": {
-      "enum": [
-        "billing_error"
-      ],
-      "type": "string",
-      "x-ms-enum": {
-        "name": "PostV2ActivitiesByActivityRecords403ResponseCodeAnyOf2",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "billing_error",
-            "name": "BillingError"
-          }
-        ]
-      }
-    },
     "PostV2ActivitiesByActivityRecords409ResponseCodeAnyOf1": {
       "enum": [
         "concurrent_write_conflict"
@@ -361175,38 +361183,6 @@
           {
             "value": "limit_reached",
             "name": "LimitReached"
-          }
-        ]
-      }
-    },
-    "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf1": {
-      "enum": [
-        "unauthorized"
-      ],
-      "type": "string",
-      "x-ms-enum": {
-        "name": "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf1",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "unauthorized",
-            "name": "Unauthorized"
-          }
-        ]
-      }
-    },
-    "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf2": {
-      "enum": [
-        "billing_error"
-      ],
-      "type": "string",
-      "x-ms-enum": {
-        "name": "PutV2ActivitiesByActivityRecords403ResponseCodeAnyOf2",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "billing_error",
-            "name": "BillingError"
           }
         ]
       }

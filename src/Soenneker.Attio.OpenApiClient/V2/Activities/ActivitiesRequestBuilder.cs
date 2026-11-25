@@ -65,7 +65,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.GetV2Activities200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
+        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled (unless the request comes from an app: apps may always create activities)This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Activities200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Activities
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled. Public apps may instead create activities with the integration activities billing feature.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
+        /// Creates a new custom activity in your workspace. Your workspace must have the custom activities billing feature enabled (unless the request comes from an app: apps may always create activities)This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `activity_configuration:read-write`.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
