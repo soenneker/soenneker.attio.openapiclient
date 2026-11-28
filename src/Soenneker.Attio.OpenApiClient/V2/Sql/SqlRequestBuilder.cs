@@ -34,7 +34,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Sql
         {
         }
         /// <summary>
-        /// Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.This endpoint is rate limited to 2 requests per second.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.To query records, you will need the `object_configuration:read` and `record_permission:read` scopes.To query list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.To query activities, you will need the `activity_configuration:read` and `activity_record:read` scopes.To query workspace members, you will need the `user_management:read` scope.This endpoint is rate limited to 2 requests per second.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Attio.OpenApiClient.Models.PostV2Sql200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Attio.OpenApiClient.V2.Sql
             return await RequestAdapter.SendAsync<global::Soenneker.Attio.OpenApiClient.Models.PostV2Sql200Response>(requestInfo, global::Soenneker.Attio.OpenApiClient.Models.PostV2Sql200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.This endpoint is rate limited to 2 requests per second.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Required scopes: `record_permission:read`, `object_configuration:read`.Supported token levels: `workspace`, `user`.
+        /// Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.To query records, you will need the `object_configuration:read` and `record_permission:read` scopes.To query list entries, you will need the `list_configuration:read` and `list_entry:read` scopes.To query activities, you will need the `activity_configuration:read` and `activity_record:read` scopes.To query workspace members, you will need the `user_management:read` scope.This endpoint is rate limited to 2 requests per second.This endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.Supported token levels: `workspace`, `user`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

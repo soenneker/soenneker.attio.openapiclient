@@ -43266,16 +43266,13 @@
     "/v2/sql": {
       "post": {
         "summary": "Query SQL",
-        "description": "Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.\n\nThis endpoint is rate limited to 2 requests per second.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nRequired scopes: \u0060record_permission:read\u0060, \u0060object_configuration:read\u0060.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
+        "description": "Query records and lists with SQL. Your workspace must be on the Enterprise plan in order to access this endpoint.\n\nTo query records, you will need the \u0060object_configuration:read\u0060 and \u0060record_permission:read\u0060 scopes.\n\nTo query list entries, you will need the \u0060list_configuration:read\u0060 and \u0060list_entry:read\u0060 scopes.\n\nTo query activities, you will need the \u0060activity_configuration:read\u0060 and \u0060activity_record:read\u0060 scopes.\n\nTo query workspace members, you will need the \u0060user_management:read\u0060 scope.\n\nThis endpoint is rate limited to 2 requests per second.\n\nThis endpoint is in beta. We will aim to avoid breaking changes, but small updates may be made as we roll out to more users.\n\nSupported token levels: \u0060workspace\u0060, \u0060user\u0060.",
         "tags": [
           "SQL"
         ],
         "security": [
           {
-            "oauth2": [
-              "record_permission:read",
-              "object_configuration:read"
-            ]
+            "oauth2": []
           }
         ],
         "x-mint": {
